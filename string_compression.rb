@@ -6,9 +6,9 @@ def string_compression(string)
   current_letter = string[0]
 
   string.chars.each_with_index do |letter,idx|
-    count += 1 if letter == current_letter
+    # count += 1 if letter == current_letter
     if letter != current_letter
-      result.push("#{count}#{letter}")
+      result.push("#{count}#{current_letter}")
       count = 1
       current_letter = letter
     else

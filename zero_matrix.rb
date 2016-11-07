@@ -25,7 +25,13 @@ def zero_matrix(matrix)
     row += 1
   end
 
-  zero_rows.each {|x| matrix[x].map {|y| y = 0}}
+  zero_rows.each do |row|
+    column = 0
+    while column < matrix[row].length
+      matrix[row][column] = 0
+      column += 1
+    end
+  end
 
   matrix.each do |row|
     zero_columns.each do |column|

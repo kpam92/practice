@@ -13,7 +13,7 @@ def palindrome_permutation(string)
 
   result.each do |h,k|
     if k % 2 != 0
-      return false if count > 0
+      return false if one_count > 0
       one_count += 1
     end
   end

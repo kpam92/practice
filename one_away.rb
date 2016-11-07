@@ -17,9 +17,15 @@ def one_away(string1, string2)
     if string1[idx1] != string2[idx2]
       one_change += 1
       idx2 += 1 if string1.length == string2.length
+    else
+      idx2 += 1
     end
+
     idx1 += 1
-    return false if one_change > 1
+    if one_change > 1
+      return false
+    end
   end
+
   true
 end

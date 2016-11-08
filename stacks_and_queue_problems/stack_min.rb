@@ -23,6 +23,7 @@ class Stack
   end
 
   def min
+    return nil if @values.empty?
     @values.last[1]
   end
 end

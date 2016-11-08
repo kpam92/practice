@@ -6,17 +6,23 @@ class Stack
   attr_accessor :min
 
   def initialize()
-    @min = nil
     @values = []
   end
 
   def push(val)
-    @values.push(val)
-    @min = val if (val < @min) || @min.nil?
+    if @values.empty?
+      @values.push([val,val])
+    else
+      min = @values.last[1] < val ? @values.last[1] : val
+      @values.push([val,min])
+    end
   end
 
   def pop
-    
+    @values.pop
   end
 
+  def min
+    @values.last[1]
+  end
 end

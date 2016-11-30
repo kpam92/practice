@@ -13,6 +13,14 @@ def reverse_linked_list(head_node)
   prev_node = nil
 
   until node == nil
+
+    next_node = node.next_node
+
+    node.next = prev_node
+
+    prev_node = node
+
+    node = next_node
   end
-  
+
 end

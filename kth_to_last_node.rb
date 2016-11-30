@@ -16,5 +16,5 @@ def kth_to_last_node(int, node)
       node = node.next
   end
 
-  list[(-int)]
+  list[-int]
 end

@@ -24,17 +24,16 @@ def kth_to_last_node_2(int, node)
   left_node = node
   right_node = node
 
-  space = 1
-  until space == int
-    right_node = right_node.next
-    space += 1
+  (0...int - 1).each do |x|
+      return nil if !right_node.next
+
+      right_node = right_node.next
   end
 
-  until right_node == nil
+  while right_node.next
       right_node = right_node.next
       left_node = left_node.next
   end
-  
-  return nil if space < int
+
   left_node
 end

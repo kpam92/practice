@@ -21,6 +21,9 @@ def reverse_linked_list(head_node)
     prev_node = node
 
     node = next_node
+
   end
+
+  prev_node
 
 end

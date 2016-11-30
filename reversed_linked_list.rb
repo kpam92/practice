@@ -7,3 +7,12 @@ class LinkedListNode
       @next  = nil
   end
 end
+
+
+def reverse_linked_list(head_node)
+  prev_node = nil
+
+  until node == nil
+  end
+  
+end

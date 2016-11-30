@@ -8,7 +8,7 @@ def reverse_message(string)
     idx2 = string.length - (idx1 + 1)
 
     string[idx1], string[idx2] = string[idx2], string[idx1]
-
+    idx1 += 1
   end
   string.join(" ")
 end

@@ -8,6 +8,13 @@ class LinkedListNode
   end
 end
 
-def kth_to_last_node(int, head_node)
-  
+def kth_to_last_node(int, node)
+  list = []
+
+  until node == nil
+      list << node
+      node = node.next
+  end
+
+  list[(-int)]
 end

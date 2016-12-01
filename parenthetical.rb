@@ -6,7 +6,7 @@
 #   finds the corresponding closing parenthesis.
 
 
-#this
+#this is not considering O(1) space
 def par(string, position)
 opening = []
 closing = []
@@ -26,7 +26,7 @@ closing[opening.length - (1 + opening.index(position))]
 end
 
 
-
+#uses 0(1) space
 def par(string, position)
   open_count = 0
   target_count = nil

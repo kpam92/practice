@@ -5,6 +5,8 @@
 #  along with the position of an opening parenthesis,
 #   finds the corresponding closing parenthesis.
 
+
+#this
 def par(string, position)
 opening = []
 closing = []
@@ -27,12 +29,12 @@ end
 
 def par(string, position)
   open_count = 0
-
+  target_count = nil
   string.chars.each_with_index do |el,idx|
 
     if el == "("
       open_count += 1
-      target_count = open_count if idx == position
+      target_count = (open_count - 1) if idx == position
     elsif el == ")"
       open_count -= 1
       return idx if open_count == target_count
@@ -40,6 +42,5 @@ def par(string, position)
 
   end
 
-closing[opening.length - (1 + opening.index(position))]
-
+nil
 end

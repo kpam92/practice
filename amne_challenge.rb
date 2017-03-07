@@ -25,4 +25,10 @@ def array_thing(array,length,k)
     idx += 1
   end
 
+idx3 = 0
+while idx3 < array.length - k + 1
+  puts sub_array(differences[idx3..idx3+(k-2)])
+  idx3 += 1
+end
+
 end

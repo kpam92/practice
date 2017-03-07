@@ -15,3 +15,7 @@ def sub_array(array)
   end
   curr_count
 end
+
+def array_thing(array,length,k)
+  
+end

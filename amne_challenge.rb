@@ -16,7 +16,7 @@ def sub_array(array)
   curr_count
 end
 
-def array_thing(array,length,k)
+def array_subs(array,length,k)
   differences = []
 
   idx = 0

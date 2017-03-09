@@ -24,6 +24,9 @@ end
 def array_subs(array,length,k)
   differences = []
 
+  # validation checker to make sure that
+  # the variables given fit the constraints of the function
+
   raise "length is higher than 200,000" if length > 2000000
   raise "K is larger than N" if k > length
   raise "length variable and array length don't match" if array.length != length

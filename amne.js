@@ -17,7 +17,10 @@ if there is a contiguous progression. i.e. if the array is [1,1,1.0],
 count will go up for each 1, but it will also go up for [1,1],[1,1] & [1,1,1]
 */
 function subArray(array) {
-
+  /*
+  validation checker to make sure that
+  the variables given fit the constraints of the function
+  */
   if (length > 200000) {
   throw new Error( "length is higher than 200,000")
 } else if (k > length) {

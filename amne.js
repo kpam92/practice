@@ -23,17 +23,17 @@ function subArray(array) {
   */
   if (length > 200000) {
   throw new Error( "length is higher than 200,000")
-} else if (k > length) {
+  } else if (k > length) {
   throw new Error( 'K is larger than N')
-} else if (array.length != length) {
+  } else if (array.length != length) {
   throw new Error( "length variable and array length don\'t match")
-}
-array.forEach(function(element) {
-  if (element >= 1000000 ) {
-    throw new Error( "prices are larger than 1,000,000")
-
   }
-})
+  array.forEach(function(element) {
+    if (element >= 1000000 ) {
+      throw new Error( "prices are larger than 1,000,000")
+
+    }
+  });
 
   let idx1 = 0
   let idx2 = 1

@@ -45,7 +45,7 @@ function arraySubs(array,length,k){
   that will be passed into the subArray helper function above.
   */
   let idx1 = 0
-  while (idx1 < (length - 2)){
+  while (idx1 < (length - 1)){
     if (array[idx1] < array[idx1+1]) {
       differences.push(1)
     } else if (array[idx1] > array[idx1+1]) {

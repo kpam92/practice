@@ -24,6 +24,10 @@ end
 def array_subs(array,length,k)
   differences = []
 
+  # this while loop iterates through the array and compares every
+  # permutation pair, then pushes the result into the differences array.
+  # positive progression = 1, none = 0, negative = -1. This creates the array
+  # that will be passed into the subArray helper function above.
   idx = 0
   while idx < (length - 2)
     differences << (array[idx+1] <=> array[idx])

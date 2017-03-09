@@ -24,6 +24,7 @@ end
 def array_subs(array,length,k)
   differences = []
 
+  raise "length is higher than 200,000" if length > 2000000
   # this while loop iterates through the array and compares every
   # permutation pair, then pushes the result into the differences array.
   # positive progression = 1, none = 0, negative = -1. This creates the array

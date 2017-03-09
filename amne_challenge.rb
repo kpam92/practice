@@ -1,6 +1,11 @@
 
 
 def sub_array(array)
+# helper function that takes in array as an argument, presumably with
+# number -1,0, and 1, and crawls through each number, adding each number
+# to the count, while also adding an extra sum of numbers to the count
+# if there is a contiguous progression. i.e. if the array is [1,1,1.0],
+# count will go up for each 1, but it will also go up for [1,1],[1,1] & [1,1,1]
   idx1 = 0
   idx2 = 1
   curr_count = array[idx1]

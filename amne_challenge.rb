@@ -22,7 +22,6 @@ def sub_array(array)
 end
 
 def array_subs(array,length,k)
-  differences = []
 
   # validation checker to make sure that
   # the variables given fit the constraints of the function
@@ -35,6 +34,8 @@ def array_subs(array,length,k)
   # permutation pair, then pushes the result into the differences array.
   # positive progression = 1, none = 0, negative = -1. This creates the array
   # that will be passed into the subArray helper function above.
+  
+  differences = []
   idx = 0
   while idx < (length - 1)
     differences << (array[idx+1] <=> array[idx])

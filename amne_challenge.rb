@@ -34,6 +34,10 @@ def array_subs(array,length,k)
     idx += 1
   end
 
+  # this while loop passes the differences array into the subArray helper
+  # helper function and prints the results of each sub array window
+
+
 idx3 = 0
 while idx3 < array.length - k + 1
   puts sub_array(differences[idx3..idx3+(k-2)])

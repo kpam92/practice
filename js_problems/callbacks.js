@@ -7,3 +7,7 @@ function uniq(array) {
   })
   return result;
 }
+
+function twoSum(array,x) {
+  
+}

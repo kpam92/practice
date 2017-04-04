@@ -16,4 +16,9 @@ def cool_number?(num)
   end
 end
 
-cool_number?(23)
+# cool_number?(23)
+sum = 0
+(1..1000000).each {|x| sum += x if cool_number?(x)}
+
+# puts sum
+# sum = 70601040511

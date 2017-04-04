@@ -22,3 +22,20 @@ sum = 0
 
 # puts sum
 # sum = 70601040511
+
+
+# instructions for completing later
+
+# url: http://dev.getethos.com/
+# undo #instructions display:none
+
+# current ajax request:
+#
+#     for (let i = 1; i < 101; i++) {
+#         $.ajax({
+#     		method: 'POST',
+#     		url: `/code${i}`,
+#     		data: {"X-COOL-SUM": '70601040512'},
+#     		function(data){
+#             alal.push(data)}
+#         });}

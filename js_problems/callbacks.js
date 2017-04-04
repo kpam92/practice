@@ -65,6 +65,9 @@ class Clock {
 
 function addNumbers(sum,amount, completionCallback) {
   for (let i = 0; i < amount; i ++) {
-
-}
+    let response = prompt('give a number to sum');
+    sum += parseInt(response);
+    console.log(`current sum : ${sum}`);
+  }
+  completionCallback(sum);
 }

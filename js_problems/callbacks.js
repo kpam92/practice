@@ -23,10 +23,17 @@ function twoSum(array,x) {
 class Clock {
   constructor() {
     // 1. Create a Date object.
+    let date = new Date()
+
     // 2. Store the hours, minutes, and seconds.
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
     // 3. Call printTime.
+    printTime()
     // 4. Schedule the tick at 1 second intervals.
-  }
+    setInterval(tick,1000)
+    }
 
   printTime() {
     // Format the time in HH:MM:SS

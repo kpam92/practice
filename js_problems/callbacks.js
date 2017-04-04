@@ -37,11 +37,26 @@ class Clock {
 
   printTime() {
     // Format the time in HH:MM:SS
+    let curentTime = `${this.hours}:${this.minutes}:${this.seconds}`;
     // Use console.log to print it.
+    console.log(currentTime);
   }
 
   _tick() {
     // 1. Increment the time by one second.
+    this.seconds += 1
+    if this.seconds === 60 {
+      this.seconds = 0
+      this.minutes += 1
+    }
+    if this.minutes === 60 {
+      this.minutes = 0
+      this.hours += 1
+    }
+    if this.hours === 25 {
+      this.hours = 0
+    }
+    this.printTime()
     // 2. Call printTime.
   }
 }

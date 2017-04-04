@@ -29,5 +29,16 @@ end
 
 def merge(left,right,&prc)
   prc ||= proc {|num1, num2| num1 <=> num2}
-  
+  result = []
+  until left.empty? || right.empty?
+    case prc.call(left.first,right.first)
+    when 1
+      result.push(right.shift)
+    when 0
+      result.push(left.shift)
+    when -1
+      result.push(left.shift)
+    end
+  end
+  result.concat(left).concat(right)
 end

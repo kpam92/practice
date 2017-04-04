@@ -10,7 +10,7 @@ def cool_number?(num)
   until cool
     # byebug
     new_number = new_number.to_s.chars.map {|x| x.to_i**2}.reduce(:+)
-    return false if (seen_numbers.include?(new_number) || new_number == 4)
+    return false if (seen_numbers.include?(new_number) )
     seen_numbers.add(new_number)
     return true if new_number == 1
   end

@@ -20,3 +20,14 @@ def bubble_sort(array)
   end
   array
 end
+
+def merge_sort(array,&prc)
+  return array if array.length <= 1
+  middle_idx = array.length / 2
+  merge(merge_sort(array[0...middle_idx],&prc),merge_sort(array[middle_idx..-1]), &prc)
+end
+
+def merge(left,right,&prc)
+  prc ||= proc {|num1, num2| num1 <=> num2}
+  
+end

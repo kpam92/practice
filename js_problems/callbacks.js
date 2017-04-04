@@ -26,18 +26,18 @@ class Clock {
     let date = new Date()
 
     // 2. Store the hours, minutes, and seconds.
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let seconds = date.getSeconds();
+    this.hours = date.getHours();
+    this.minutes = date.getMinutes();
+    this.seconds = date.getSeconds();
     // 3. Call printTime.
-    printTime()
+    this.printTime()
     // 4. Schedule the tick at 1 second intervals.
-    setInterval(tick,1000)
+    setInterval(this._tick.bind(this),1000)
     }
 
   printTime() {
     // Format the time in HH:MM:SS
-    let curentTime = `${this.hours}:${this.minutes}:${this.seconds}`;
+    let currentTime = `${this.hours}:${this.minutes}:${this.seconds}`;
     // Use console.log to print it.
     console.log(currentTime);
   }
@@ -45,15 +45,15 @@ class Clock {
   _tick() {
     // 1. Increment the time by one second.
     this.seconds += 1
-    if this.seconds === 60 {
+    if (this.seconds === 60) {
       this.seconds = 0
       this.minutes += 1
     }
-    if this.minutes === 60 {
+    if (this.minutes === 60) {
       this.minutes = 0
       this.hours += 1
     }
-    if this.hours === 25 {
+    if (this.hours === 25) {
       this.hours = 0
     }
     this.printTime()

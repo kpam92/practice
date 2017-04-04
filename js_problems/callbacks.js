@@ -61,4 +61,10 @@ class Clock {
   }
 }
 
-const clock = new Clock();
+// const clock = new Clock();
+
+function addNumbers(sum,amount, completionCallback) {
+  for (let i = 0; i < amount; i ++) {
+
+}
+}

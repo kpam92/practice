@@ -4,3 +4,8 @@ function sum(...args) {
   args.forEach(arg=> sum += arg)
   return sum;
 }
+
+function curriedSum(numArgs) {
+  numbers = [];
+  
+}

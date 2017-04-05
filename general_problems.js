@@ -54,7 +54,12 @@ def quicksort(array,&prc)
 end
 // write myFind(array, callback). It should return the first element for which
 // callback returns true, or undefined if none is found.
+function myFind(array,callback) {
 
+  for(let i = 0; i < array.length; i++) {
+    gi
+  }
+}
 // write sumNPrimes(n)
 
 // write Function.prototype.myBind.

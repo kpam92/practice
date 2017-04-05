@@ -31,6 +31,10 @@ Function.prototype.myBind = function(ctx) {
 
 }
 
-Function.prototype.myBind2 = function() {
-  
+Function.prototype.myBind2 = function(ctx,...bindArgs) {
+  let that = this;
+  return function(...callArgs) {
+    return that.apply(ctx,bindArgs.concat(callArgs))
+  }
+
 }

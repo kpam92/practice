@@ -45,4 +45,9 @@ end
 
 
 def quicksort(array)
+
+  pivot = array.first
+  left,right = [],[]
+
+  
 end

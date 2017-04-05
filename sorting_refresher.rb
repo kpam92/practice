@@ -45,6 +45,7 @@ end
 
 
 def quicksort(array)
+  return array if array.length < 2
 
   pivot = array.first
   left,right = [],[]
@@ -56,5 +57,7 @@ def quicksort(array)
       right << el
     end
   end
+
+  return quicksort(left).concat([pivot]).concat(quicksort(right))
   
 end

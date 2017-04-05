@@ -64,8 +64,8 @@ function myFind(array,callback) {
   return undefined;
 }
 // write sumNPrimes(n)
-function prime?(n) {
-  if (n < 2) { return false }
+function isPrime(n) {
+  if (n < 2) { return false };
   for(let i = 2;i < n; i++) {
     if (n % i === 0) {
       return false
@@ -78,9 +78,9 @@ function sumNPrimes(num) {
   let counter = 0;
   let result = 0;
   let idx = 2
-  while counter < num {
-    if (prime?(idx) === true) {
-      result += 1;
+  while (counter < num) {
+    if (isPrime(idx) === true) {
+      result += idx;
       counter += 1;
     }
     idx += 1;

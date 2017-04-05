@@ -32,7 +32,26 @@ Array.prototype.myReduce = function(callback) {
 //     - otherwise, put it in the right half of the array.
 //   - recursively call quickSort on the left and right halves, and return the
 //   full sorted array.
+def quicksort(array,&prc)
 
+  prc ||= proc { |x,y| x <=> y }
+
+  return array if array.length < 2
+
+  pivot = array.first
+  left,right = [],[]
+
+  array.drop(1).each do |el|
+    if prc.call(el,pivot) == 1
+      left << el
+    else
+      right << el
+    end
+  end
+
+  return quicksort(left,prc).concat([pivot]).concat(quicksort(right,prc))
+
+end
 // write myFind(array, callback). It should return the first element for which
 // callback returns true, or undefined if none is found.
 

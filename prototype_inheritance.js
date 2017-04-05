@@ -64,3 +64,12 @@ class Prius extends Vehicle {
     return `${oldMove} ~~silence~~`
   }
 }
+
+
+
+// BEST PRACTICE MEANS OF CREATING A PROTOTYPE'S PROTO
+
+
+
+
+Dog.prototype = Object.create(Animal.prototype);

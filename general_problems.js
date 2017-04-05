@@ -57,8 +57,11 @@ end
 function myFind(array,callback) {
 
   for(let i = 0; i < array.length; i++) {
-    gi
-  }
+    if (callback(array[i]) === true) {
+      return array[i]
+    }
+  };
+  return undefined;
 }
 // write sumNPrimes(n)
 

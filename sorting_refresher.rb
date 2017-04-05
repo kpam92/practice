@@ -49,5 +49,12 @@ def quicksort(array)
   pivot = array.first
   left,right = [],[]
 
+  array.drop(1).each do |el|
+    if el < pivot
+      left << el
+    else
+      right << el
+    end
+  end
   
 end

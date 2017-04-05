@@ -54,7 +54,7 @@ end
 # worst case: O(n^2)
 
 def quicksort(array,&prc)
-  
+
   prc ||= proc { |x,y| x <=> y }
 
   return array if array.length < 2
@@ -63,13 +63,13 @@ def quicksort(array,&prc)
   left,right = [],[]
 
   array.drop(1).each do |el|
-    if el < pivot
+    if prc.call(el,pivot) == 1
       left << el
     else
       right << el
     end
   end
 
-  return quicksort(left).concat([pivot]).concat(quicksort(right))
+  return quicksort(left,prc).concat([pivot]).concat(quicksort(right,prc))
 
 end

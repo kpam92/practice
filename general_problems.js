@@ -15,6 +15,14 @@ String.prototype.mySlice = function() {
 
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
 
+Array.prototype.myReduce = function(callback) {
+  let accum = this[0];
+  this.slice(1).forEach(el=> {
+    accum = callback(accum,el);
+  })
+  return accum;
+}
+
 // write Array.prototype.quickSort(comparator). Here's a quick refresher if
 // you've forgotten how quickSort works:
 //   - choose a pivot element from the array (usually the first)

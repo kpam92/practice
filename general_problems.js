@@ -99,4 +99,6 @@ Function.prototype.inherits = function(parent) {
 
   let newClass = Object.create(parent.prototype);
   this.prototype = newClass;
+  this.prototype.constructor = this;
+
 }

@@ -75,7 +75,7 @@ function Cat (name, age) {
   this.age = age;
 }
 
-Cat.prototype.woof = function() {
+Cat.prototype.meow = function() {
   console.log(`${this.name} goes meow prrrr`)
 }
 

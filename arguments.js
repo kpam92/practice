@@ -22,6 +22,15 @@ function curriedSum(numArgs) {
 }
 
 Function.prototype.myBind = function(ctx) {
-  that = this;
+  let that = this;
+  let bindArgs = Array.from(arguments).slice(1);
+  return function() {
+    let callArgs = Array.from(arguments);
+    return that.apply(ctx,bindArgs.concat(callArgs));
+  };
+
+}
+
+Function.prototype.myBind2 = function() {
   
 }

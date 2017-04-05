@@ -53,7 +53,10 @@ end
 
 # worst case: O(n^2)
 
-def quicksort(array)
+def quicksort(array,&prc)
+  
+  prc ||= proc { |x,y| x <=> y }
+
   return array if array.length < 2
 
   pivot = array.first

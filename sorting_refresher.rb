@@ -42,3 +42,7 @@ def merge(left,right,&prc)
   end
   result.concat(left).concat(right)
 end
+
+
+def quicksort(array)
+end

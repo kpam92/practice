@@ -69,7 +69,15 @@ class Prius extends Vehicle {
 
 // BEST PRACTICE MEANS OF CREATING A PROTOTYPE'S PROTO
 
+function Cat (name, age) {
+  Animal.call(this, name);
+
+  this.age = age;
+}
+
+Cat.prototype.woof = function() {
+  console.log(`${this.name} goes meow prrrr`)
+}
 
 
-
-Dog.prototype = Object.create(Animal.prototype);
+Cat.prototype = Object.create(Animal.prototype);

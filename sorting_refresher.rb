@@ -21,6 +21,9 @@ def bubble_sort(array)
   array
 end
 
+
+# worst case: O(n(log)n)
+
 def merge_sort(array,&prc)
   return array if array.length <= 1
   middle_idx = array.length / 2
@@ -45,7 +48,7 @@ end
 
 
 
-# worst case: n^2
+# worst case: O(n^2)
 
 def quicksort(array)
   return array if array.length < 2

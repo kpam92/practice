@@ -18,14 +18,15 @@ function Dog (name, age) {
   this.age = age;
 }
 
+function Surrogate() {};
+Surrogate.prototype = Animal.prototype;
+Dog.prototype = new Surrogate();
+
 Dog.prototype.woof = function() {
   console.log(`${this.name} goes woof woof`)
 }
 
 
-function Surrogate() {};
-Surrogate.prototype = Animal.prototype;
-Dog.prototype = new Surrogate();
 
 
 // ES2015 extending through class
@@ -75,10 +76,9 @@ function Cat (name, age) {
   this.age = age;
 }
 
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+
 Cat.prototype.meow = function() {
   console.log(`${this.name} goes meow prrrr`)
 }
-
-
-Cat.prototype = Object.create(Animal.prototype);
-Cat.prototype.constructor = Cat;

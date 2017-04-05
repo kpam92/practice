@@ -90,7 +90,7 @@ function sumNPrimes(num) {
 // write Function.prototype.myBind.
 Function.prototype.myBind = function(ctx,...bindArgs) {
   return (...callArgs) => {
-    this.apply()
-  }
+    this.apply(ctx,bindArgs.concat(callArgs));
+  };
 }
 // write Function.prototype.inherits.

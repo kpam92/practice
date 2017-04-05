@@ -21,6 +21,7 @@ function Dog (name, age) {
 function Surrogate() {};
 Surrogate.prototype = Animal.prototype;
 Dog.prototype = new Surrogate();
+Dog.prototype.constructor = Dog;
 
 Dog.prototype.woof = function() {
   console.log(`${this.name} goes woof woof`)

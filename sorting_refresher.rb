@@ -44,6 +44,9 @@ def merge(left,right,&prc)
 end
 
 
+
+# worst case: n^2
+
 def quicksort(array)
   return array if array.length < 2
 
@@ -59,5 +62,5 @@ def quicksort(array)
   end
 
   return quicksort(left).concat([pivot]).concat(quicksort(right))
-  
+
 end

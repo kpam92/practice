@@ -88,5 +88,9 @@ function sumNPrimes(num) {
   return result;
 }
 // write Function.prototype.myBind.
-
+Function.prototype.myBind = function(ctx,...bindArgs) {
+  return (...callArgs) => {
+    this.apply()
+  }
+}
 // write Function.prototype.inherits.

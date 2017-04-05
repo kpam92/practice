@@ -94,3 +94,9 @@ Function.prototype.myBind = function(ctx,...bindArgs) {
   };
 }
 // write Function.prototype.inherits.
+
+Function.prototype.inherits = function(parent) {
+
+  let newClass = Object.create(parent.prototype);
+  this.prototype = newClass;
+}

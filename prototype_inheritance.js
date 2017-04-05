@@ -81,3 +81,4 @@ Cat.prototype.meow = function() {
 
 
 Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;

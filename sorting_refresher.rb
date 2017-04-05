@@ -1,5 +1,8 @@
 # a quick dive back into the various different manners of sorting.
 
+
+# worst case: O(n^2)
+
 def bubble_sort(array)
   sorted = false
 

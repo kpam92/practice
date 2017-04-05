@@ -6,6 +6,17 @@ function sum(...args) {
 }
 
 function curriedSum(numArgs) {
-  numbers = [];
-  
+  let numbers = [];
+  function _curriedSum(number){
+    numbers.push(number);
+
+    if (numbers.length === numArgs) {
+      total = 0;
+      numbers.forEach(el => total += el);
+      return total;
+    } else {
+      return _curriedSum;
+    }
+  }
+  return _curriedSum;
 }

@@ -20,3 +20,8 @@ function curriedSum(numArgs) {
   }
   return _curriedSum;
 }
+
+Function.prototype.myBind = function(ctx) {
+  that = this;
+  
+}

@@ -173,6 +173,21 @@ def rock_superstars
   # Select the artist who has recorded the most rock albums, as well as the
   # number of albums. HINT: use LIKE '%Rock%' in your query.
   execute(<<-SQL)
+  SELECT
+  a.artist, COUNT(DISTINCT t.album)
+  FROM
+  albums a
+  JOIN
+  tracks t ON t.album = a.asin
+  JOIN
+  styles s ON s.album = t.album
+  WHERE
+  s.style LIKE '%Rock%'
+  GROUP BY
+  a.artist
+  ORDER BY
+  COUNT(*) DESC
+  LIMIT 1
   SQL
 end
 
@@ -185,5 +200,28 @@ def expensive_tastes
   # subquery. Next, JOIN the styles table to this result and use aggregates to
   # determine the average price per track.
   execute(<<-SQL)
+  SELECT
+      styles.style,
+      (SUM(album_track_counts.price) / SUM(album_track_counts.count))
+    FROM
+      styles
+    JOIN (
+      SELECT
+        albums.*,
+        COUNT(tracks.*) AS count
+      FROM
+        albums
+      JOIN
+        tracks ON albums.asin = tracks.album
+      WHERE
+        albums.price IS NOT NULL
+      GROUP BY
+        albums.asin
+      ) AS album_track_counts ON styles.album = album_track_counts.asin
+    GROUP BY
+      styles.style
+    ORDER BY
+      (SUM(album_track_counts.price) / SUM(album_track_counts.count)) DESC
+    LIMIT 5
   SQL
 end

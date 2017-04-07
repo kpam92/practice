@@ -153,6 +153,19 @@ def top_track_counts
   # tracks. List the top 10 albums. Select both the album title and the track
   # count, and order by both track count and title (descending).
   execute(<<-SQL)
+  SELECT
+  a.title, COUNT(*)
+  FROM
+  albums a
+  JOIN
+  tracks t ON t.album = a.asin
+  GROUP BY
+  a.asin
+  ORDER BY
+  COUNT(*) DESC, a.title DESC
+  LIMIT
+  10
+
   SQL
 end
 

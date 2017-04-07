@@ -48,6 +48,12 @@ end
 def year_of_kane
   # Give year of 'Citizen Kane'.
   execute(<<-SQL)
+  SELECT
+  yr
+  FROM
+  movies
+  WHERE
+  title LIKE 'Citizen Kane'
   SQL
 end
 

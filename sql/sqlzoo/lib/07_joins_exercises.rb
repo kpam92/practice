@@ -40,6 +40,16 @@ end
 def ford_films
   # List the films in which 'Harrison Ford' has appeared.
   execute(<<-SQL)
+  SELECT
+  m.title
+  FROM
+  movies m
+  JOIN
+  castings c ON c.movie_id = m.id
+  JOIN
+  actors a ON a.id = c.actor_id
+  WHERE
+  a.name = 'Harrison Ford'
   SQL
 end
 

@@ -26,13 +26,19 @@ def continents
   DISTINCT continent
   FROM
   countries
-  
+
   SQL
 end
 
 def africa_gdp
   # Give the total GDP of Africa.
   execute(<<-SQL)
+  SELECT
+    SUM(gdp)
+  FROM
+    countries
+  WHERE
+    continent LIKE 'Africa'
   SQL
 end
 

@@ -22,6 +22,11 @@ end
 def continents
   # List all the continents - just once each.
   execute(<<-SQL)
+  SELECT
+  DISTINCT continent
+  FROM
+  countries
+  
   SQL
 end
 

@@ -16,7 +16,9 @@ class SQLObject
   end
 
   def self.table_name
-    # ...
+    class_name = self.to_s.split /(?=[A-Z])/
+    class_name = class_name.map(&:downcase).join("_") + "s"
+    
   end
 
   def self.all

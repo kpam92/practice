@@ -55,7 +55,9 @@ class SQLObject
   end
 
   def initialize(params = {})
-    # ...
+    params.keys.each do |param|
+      raise 'unknown attribute #{param}' unless self.columns.include?(param)
+    end
   end
 
   def attributes

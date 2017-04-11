@@ -1,5 +1,7 @@
 class Cat < ActiveRecord::Base
 
+  include ActionView::Helpers::DateHelper
+
   validates :color, inclusion: CAT_COLORS
   validates :sex, inclusion: %w(M F)
 
@@ -11,6 +13,10 @@ class Cat < ActiveRecord::Base
   :name,
   :sex,
   presence: true
+  )
 
-  
+  def age
+    time_ago_in_words(birth_date)
+  end
+
 end

@@ -5,6 +5,10 @@ class CatsController < ApplicationController
     render :index
   end
 
+  def show
+    @cat = Cat.find(params[:id])
+  end
+  
   def new
     @cat = Cat.new
     render :new
@@ -24,7 +28,7 @@ class CatsController < ApplicationController
   private
 
   def cat_params
-    params.require(:cats).permit(:age,:birth_date,:color,:description, :name, :sex)
+    params.require(:cat).permit(:age,:birth_date,:color,:description, :name, :sex)
   end
 
 end

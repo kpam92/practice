@@ -48,7 +48,11 @@ end
 module Associatable
   # Phase IIIb
   def belongs_to(name, options = {})
-    # ...
+    self.assoc_options[name] = BelongsToOptions.new(name, options)
+
+    define_method(name) do
+      options = self.class.assoc_options[name]
+    end
   end
 
   def has_many(name, options = {})

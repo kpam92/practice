@@ -19,8 +19,9 @@ class CatRentalRequest < ActiveRecord::Base
   end
 
   def overlapping_approved_requests
+    overlapping_requests.where("Status = 'APPROVED'")
   end
 
-  
+
 
 end

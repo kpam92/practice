@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20170411235410) do
     t.datetime "updated_at",                     null: false
   end
 
+  add_index "cat_rental_requests", ["cat_id"], name: "index_cat_rental_requests_on_cat_id", using: :btree
+
   create_table "cats", force: :cascade do |t|
     t.date     "birth_date",  null: false
     t.string   "color",       null: false

@@ -8,5 +8,6 @@ class CreateCatRentalRequests < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :cat_rental_requests, :cat_id
   end
 end

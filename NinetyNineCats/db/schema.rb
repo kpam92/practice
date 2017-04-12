@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170411235410) do
     t.integer  "cat_id",                         null: false
     t.date     "start_date",                     null: false
     t.date     "end_date",                       null: false
-    t.string   "status",     default: "Pending", null: false
+    t.string   "status",     default: "PENDING", null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end

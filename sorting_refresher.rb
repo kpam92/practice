@@ -70,3 +70,14 @@ def quicksort(array)
   return quicksort(left).concat([pivot]).concat(quicksort(right))
 
 end
+
+# Suppose we had an array of n integers sorted in ascending order.
+# How quickly could we check if a given integer is in the array?
+# answer: O(logn) time and O(1) space. We can use binary search
+# to traverse through a sorted array to find a specific integer
+def binary_search(array)
+  halfway = array[array.length/2]
+
+  
+
+end

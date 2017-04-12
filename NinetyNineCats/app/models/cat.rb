@@ -15,6 +15,12 @@ class Cat < ActiveRecord::Base
   presence: true
   )
 
+  has_many :cat_rental_requests,
+  primary_key: :id,
+  foreign_key: :cat_id,
+  class_name: 'CatRentalRequest',
+  dependent: :destroy
+
   def age
     time_ago_in_words(birth_date)
   end

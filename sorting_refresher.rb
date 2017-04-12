@@ -76,11 +76,15 @@ end
 # answer: O(logn) time and O(1) space. We can use binary search
 # to traverse through a sorted array to find a specific integer
 def binary_search(array, target)
-  halfway = array[array.length/2]
 
-  return true if halfway == target
+  halfway = array.length/2
+
+  return true if array[halfway] == target
   return false if array.length < 2
 
-  
-
+  if array[halfway] > target
+    binary_search(array[0...halfway],target)
+  else
+    binary_search(array[halfway+1..-1],target)
+  end
 end

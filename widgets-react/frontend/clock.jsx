@@ -8,7 +8,6 @@ class Clock extends React.Component {
   }
 
   tick(event) {
-    // event.preventDefault();
     this.setState({ time: new Date()})
   }
 

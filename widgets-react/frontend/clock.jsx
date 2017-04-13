@@ -6,11 +6,15 @@ class Clock extends React.Component {
     this.state = { time: new Date() }
     this.tick = this.tick.bind(this)
   }
-  
+
   tick(event) {
-    event.preventDefault();
+    // event.preventDefault();
+    this.setState({ time: new Date()})
   }
 
+  componentDidMount() {
+    setInterval(  () => this.tick(),  1000  );
+  }
 
   render(){
     return(

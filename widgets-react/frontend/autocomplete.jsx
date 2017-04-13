@@ -46,7 +46,7 @@ class AutoComplete extends React.Component {
     });
     return(
       <div>
-      <h1>QUEENS</h1>
+      <h1>Contestants</h1>
         <input onChange={this.handleInput} value={this.state.inputVal} placeholder='Search...'/>
       <ul>
         {results}

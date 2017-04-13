@@ -3,8 +3,9 @@ import React from 'react';
 class Clock extends React.Component {
   constructor(props){
     super(props)
-    this.state = { time: new Date() }
-    this.tick = this.tick.bind(this)
+    this.state = { time: new Date() };
+    this.tick = this.tick.bind(this);
+    this.clock_ticking_interval = (setInterval(  () => this.tick(),  1000  ));
   }
 
   tick(event) {
@@ -12,7 +13,11 @@ class Clock extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(  () => this.tick(),  1000  );
+    this.clock_ticking_interval;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.clock_ticking_interval);
   }
 
   render(){

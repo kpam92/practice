@@ -1,5 +1,7 @@
 import React from 'react';
 import Clock from './clock'
+import Weather from './weather'
+
 class Root extends React.Component {
 
   render() {
@@ -7,6 +9,7 @@ class Root extends React.Component {
 
       <div>
         <Clock/>
+        <Weather/>
       </div>
     )
   }

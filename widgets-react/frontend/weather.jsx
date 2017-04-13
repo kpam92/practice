@@ -11,7 +11,7 @@ const toQueryString = (obj) => {
   return parts.join('&');
 }
 
-class Weather extends React.Component {
+export default class Weather extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +33,7 @@ class Weather extends React.Component {
       lon: location.coords.longitude
     };
     url += toQueryString(params);
-    const apiKey = '924774c63602d3c5954864e205c2e2f';
+    const apiKey = '924774c63602d3c5954864e205c2e2fa';
     // This is our API key; please use your own!
     url += `&APPID=${apiKey}`;
 
@@ -73,5 +73,3 @@ class Weather extends React.Component {
     );
   }
 };
-
-export default Weather

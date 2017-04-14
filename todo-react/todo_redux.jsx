@@ -9,7 +9,7 @@ import allTodos from './frontend/reducers/selectors'
 document.addEventListener("DOMContentLoaded", () => {
 	const store = configureStore;
 	window.store = store;
-	window.allTodos = allTodos;
+
 	window.receiveTodo = receiveTodo;
 	window.receiveTodos = receiveTodos;
 

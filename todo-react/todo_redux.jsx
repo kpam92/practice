@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	window.receiveTodo = receiveTodo;
 	window.receiveTodos = receiveTodos;
 	window.allTodos = allTodos
+	// window.todos = window.allTodos(store.getState())
 
 
 	const root = document.getElementById("root");

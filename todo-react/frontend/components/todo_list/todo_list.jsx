@@ -1,6 +1,6 @@
 import React from 'react';
 import { allTodos } from '../../reducers/selectors'
-
+import TodoListItem from './todo_list_item'
 class TodoList extends React.Component {
   constructor(props) {
     super(props)
@@ -8,9 +8,21 @@ class TodoList extends React.Component {
 
   render(){
     const { todos, receiveTodo } = this.props;
+    const todoItems = todos.map(todo => (
+    <TodoListItem
+      key={`todo-list-item${todo.id}`}
+      todo={todo}
+      receiveTodo={ receiveTodo } />
+  )
+);
 
     return(
-      {this.todos.map((todo,idx) => <h1>{todo.title}</h1>)}
+      <div>
+        <ul className="todo-list">
+          { todoItems }
+        </ul>
+        
+      </div>
       )
 
   };

@@ -1,5 +1,5 @@
-import { connect} from 'react/redux';
-
+import { connect} from 'react-redux';
+import TodoList from './todo_list'
 const mapStateToProps = (state, ownProps) => ({
 
 });
@@ -14,4 +14,4 @@ const TodoListContainer = connect(
   mapDispatchToProps
 )(TodoList);
 
-export default TodolistContainer;
+export default TodoListContainer;

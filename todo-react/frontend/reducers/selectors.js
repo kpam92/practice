@@ -1,10 +1,7 @@
 
 
 const allTodos = state => {
-  switch(action.type) {
-    default:
-    return state;
-  }
+  Object.keys(state.todos).map(id => todos[id])
 }
 
 export default allTodos;

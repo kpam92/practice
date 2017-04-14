@@ -1,4 +1,5 @@
 import React from 'react';
+import { allTodos } from '../../reducers/selectors'
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -7,12 +8,9 @@ class TodoList extends React.Component {
 
   render(){
     const { todos, receiveTodo } = this.props;
-    const todoItems = todos.map(todo => (
-        <h1>{todo.title}</h1>
-      )
-    );
+
     return(
-      todoItems
+      <h1>{this.props.todos[0].title}</h1>
     )
   };
 }

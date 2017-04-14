@@ -8,7 +8,7 @@ class TodoList extends React.Component {
 
   render(){
     const { todos, receiveTodo } = this.props;
-
+    
     return(
       <h1>{this.props.todos[0].title}</h1>
     )

@@ -6,8 +6,13 @@ class TodoList extends React.Component {
   };
 
   render(){
+    const { todos, receiveTodo } = this.props;
+    const todoItems = todos.map(todo => (
+        <h1>{todo.title}</h1>
+      )
+    );
     return(
-      <h1>This is the todolist</h1>
+      todoItems
     )
   };
 }

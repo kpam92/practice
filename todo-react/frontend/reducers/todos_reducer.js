@@ -1,3 +1,6 @@
+import { RECEIVE_TODOS,RECEIVE_TODO } from '../actions/todo_actions'
+
+
 
 const initialState = {
   1: {
@@ -15,6 +18,11 @@ const initialState = {
 };
 const todosReducer = (state = initialState, action) => {
   switch(action.type) {
+    case RECEIVE_TODO:
+    const newState = {};
+    case RECEIVE_TODOS:
+    const newState = {};
+    return;
     default:
     return state;
   }

@@ -86,3 +86,7 @@ def stock_picker(array)
   end
   highest_diff
 end
+
+# This iterates through each value, and then iterates through each pairing,
+# checking to see if its difference is higher than current highest difference.
+# This has a loop within a loop, so time complexity is O(n^2), space is O(1).

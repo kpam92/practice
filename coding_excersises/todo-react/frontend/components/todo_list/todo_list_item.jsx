@@ -12,6 +12,10 @@ class TodoListItem extends React.Component {
     this.props.todo.done = changedStatus;
   }
 
+  toggleDetail(){
+
+  }
+
   render(){
 
 

@@ -7,7 +7,7 @@ class TodoDetailView extends React.Component {
 
   render(){
     return(
-
+      <h1>detail view</h1>
     )
   }
 }

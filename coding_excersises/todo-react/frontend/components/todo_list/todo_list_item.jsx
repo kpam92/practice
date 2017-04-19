@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container'
 
 class TodoListItem extends React.Component {
   constructor(props){

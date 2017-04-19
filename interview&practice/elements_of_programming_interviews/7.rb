@@ -5,11 +5,13 @@
 # &&& NO LIBRARY FUNCTIONS (i.e. 'to_s' and 'to_i')
 
 def str_to_int(string)
+  negative = false
+
   if string[0] == '-'
     negative = true
     string = string[1..-1]
   end
-  negative ||= false
+
   result = 0
   string.chars.each do |num|
     result = result * 10 + (num.ord - '0'.ord)
@@ -19,4 +21,13 @@ def str_to_int(string)
 end
 
 def int_to_str(integer)
+  number = ''
+  negative = integer < 0 ? true : false
+  integer = -integer if negative
+  while integer > 0
+    curr_num = integer % 10
+    number = (curr_num.ord + 48).chr + number
+    integer /= 10
+  end
+  negative ? number : number
 end

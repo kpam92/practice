@@ -16,10 +16,15 @@ class TodoListItem extends React.Component {
 
 
     const { todo, removeTodo } = this.props;
-
+    const detailView = <TodoDetailViewContainer todo={this.props.todo}/>
     return(
 
-      <li key={this.props.keys}>{this.props.todo.title}<button onClick={this.changeStatus}>Change Status</button></li>
+      <li key={this.props.keys}>
+        {this.props.todo.title}
+        <button onClick={this.changeStatus}>Change Status</button>
+        {detailView}
+
+      </li>
     )
   }
 }

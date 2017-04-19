@@ -36,8 +36,13 @@ def merge_lists(list_x, list_y)
       current_node.next_node = list_y
       list_y = list_y.next_node
     end
-
-
+    current_node = current_node.next_node
   end
 
+  if list_x.nil?
+    current_node.next_node = list_y
+  else
+    current_node.next_node = list_x
+  end
+  result_list
 end

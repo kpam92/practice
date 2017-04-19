@@ -4,7 +4,7 @@ import React from 'react';
 class TodoForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = { title: "", body: "", done: false };
+    this.state = { title: "", body: "", done: false, detail: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

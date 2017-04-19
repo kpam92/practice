@@ -69,5 +69,20 @@ end
 # and returns the maximum profit that could be made by buying and
 # then selling one share of that stock.
 
-def stock_picker
+#this is the hard code it out solution
+def stock_picker(array)
+  idx1 = 0
+  highest_diff = 0
+  while idx1 < array.length - 1
+    idx2 = idx1 + 1
+    while idx2 < array.length
+      current_diff = array[idx2] - array[idx1]
+      if current_diff > highest_diff
+        highest_diff = current_diff
+      end
+      idx2 += 1
+    end
+    idx1 += 1
+  end
+  highest_diff
 end

@@ -27,6 +27,7 @@ const todosReducer = (state = initialState, action) => {
       return merge({}, state, newTodo);
     case REMOVE_TODO:
       nextState =  merge({}, state);
+      delete nextState[action.todo.id];
     default:
     return state;
   }

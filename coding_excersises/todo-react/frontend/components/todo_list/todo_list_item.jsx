@@ -6,8 +6,10 @@ class TodoListItem extends React.Component {
   };
 
   render(){
+    const { todo, removeTodo } = this.props;
+
     return(
-      <li key={this.props.keys}>{this.props.todo.title}<button onClick={this.props.removeTodo(this.props.todo)}>DELETE</button></li>
+      <li key={this.props.keys}>{this.props.todo.title}<button onClick={removeTodo}>DELETE</button></li>
     )
   }
 }

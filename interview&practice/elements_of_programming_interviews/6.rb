@@ -107,3 +107,7 @@ def stock_picker(array)
   end
   highest_diff
 end
+
+# This solution iterates through once, keeping track of the highest
+# difference and changing the place of the low value when it passes along.
+# It has O(n) time complexity and O(1) space complexity.

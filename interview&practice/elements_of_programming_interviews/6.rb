@@ -49,3 +49,17 @@ def array_sorter(array,index)
   end
   array
 end
+
+# How this works:
+# the high and low idx keep track of how many more values are left
+# in the array that have not been iterated through.(we need this
+# as we keep shifting values around) If the element is greater than
+# the target value, it is swapped with the farthest unknown value
+# on the right side. If the element is smaller, it is swapped to
+# the right mos side, potentially with a value equal to target.
+# If element equals target, then the equal variable moves up, and
+# item will be moved closer to target after more sorting. The
+# sorted array is returned afterwards. The function only iterates
+# through each value once, so it is O(n) time complexity. Aside from
+# index variables, there is no addition space used, so space
+# complexity is O(1)

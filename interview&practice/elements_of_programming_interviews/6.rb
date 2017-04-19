@@ -47,4 +47,5 @@ def array_sorter(array,index)
       low_idx += 1
     end
   end
+  array
 end

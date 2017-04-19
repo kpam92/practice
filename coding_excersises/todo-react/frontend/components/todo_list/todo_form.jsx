@@ -24,9 +24,9 @@ class TodoForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>title: </label>
-          <input type="text" placeholder="ex: put on makeup"></input>
+          <input type="text" placeholder="ex: put on makeup" onChange={this.update('title')} value={this.state.title}/>
           <label>description: </label>
-          <input type="text" placeholder="make myself beautiful"></input>
+          <input type="text" placeholder="make myself beautiful" onChange={this.update('body')} value={this.state.body}/>
           <button>submit</button>
         </form>
       </div>

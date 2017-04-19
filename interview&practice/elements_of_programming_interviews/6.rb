@@ -2,3 +2,8 @@
 #  and rearranges the elements such that all elements less than
 #  A[i] (the 'pivot') appear first, followed by elements equal
 #  to the pivot, followed by elements greater than the pivot.
+
+# first-attempt
+
+def array_sorter(array,index)
+end

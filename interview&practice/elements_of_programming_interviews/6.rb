@@ -63,3 +63,11 @@ end
 # through each value once, so it is O(n) time complexity. Aside from
 # index variables, there is no addition space used, so space
 # complexity is O(1)
+
+
+# Write a program that takes an array denoting the daily stock price,
+# and returns the maximum profit that could be made by buying and
+# then selling one share of that stock.
+
+def stock_picker
+end

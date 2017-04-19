@@ -16,4 +16,28 @@ class Node
 end
 
 def merge_lists(list_x, list_y)
+
+  if list_x.val > list_y.val
+    result_list = list_y
+    result_list.next_node = nil
+    list_y = list_y.next
+  else
+    result_list = list_x
+    result_list.next_node = nil
+    list_x = list_x.next
+  end
+
+  current_node = result_list
+  until list_x.nil? || list_y.nil?
+    if list_y.val > list_x.val
+      current_node.next_node = list_x
+      list_x = list_x.next_node
+    else
+      current_node.next_node = list_y
+      list_y = list_y.next_node
+    end
+
+
+  end
+
 end

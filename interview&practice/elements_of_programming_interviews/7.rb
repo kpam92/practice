@@ -29,5 +29,11 @@ def int_to_str(integer)
     number = (curr_num.ord + 48).chr + number
     integer /= 10
   end
-  negative ? number : number
+  negative ? '-' + number : number
 end
+
+# How it works:
+# Both iterate through each digit of the number/string, and uses
+# the 'ord' element to switch into its opposite string or integer
+# form. This uses O(n) time, and O(1) space complexity
+# *****CHECK WITH SOMEONE IF SPACE COMPLEXITY IS CORRECT

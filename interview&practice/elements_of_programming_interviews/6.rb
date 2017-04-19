@@ -1,4 +1,4 @@
-# Write a program that takes an array A and an index i into A,
+# 6.1 Write a program that takes an array A and an index i into A,
 #  and rearranges the elements such that all elements less than
 #  A[i] (the 'pivot') appear first, followed by elements equal
 #  to the pivot, followed by elements greater than the pivot.
@@ -65,7 +65,7 @@ end
 # complexity is O(1)
 
 
-# Write a program that takes an array denoting the daily stock price,
+# 6.6 Write a program that takes an array denoting the daily stock price,
 # and returns the maximum profit that could be made by buying and
 # then selling one share of that stock.
 
@@ -108,6 +108,7 @@ def stock_picker(array)
   highest_diff
 end
 
+# How this works:
 # This solution iterates through once, keeping track of the highest
 # difference and changing the place of the low value when it passes along.
 # It has O(n) time complexity and O(1) space complexity.

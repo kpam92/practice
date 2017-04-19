@@ -8,7 +8,15 @@ class TodoForm extends React.Component {
 
   render() {
     return(
-      <h1>this is the form everyone</h1>
+      <div>
+        <h1>this is the form everyone</h1>
+        <form>
+          <label>title: </label>
+          <input type="text" placeholder="ex: put on makeup"></input>
+          <label>description: </label>
+          <input type="text" placeholder="make myself beautiful"></input>
+        </form>
+      </div>
     )
   }
 };

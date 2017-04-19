@@ -90,3 +90,20 @@ end
 # This iterates through each value, and then iterates through each pairing,
 # checking to see if its difference is higher than current highest difference.
 # This has a loop within a loop, so time complexity is O(n^2), space is O(1).
+# Let's try a more 'greedy' solution that only iterates once
+
+def stock_picker(array)
+  highest_diff = array[1] - array[0]
+  idx1 = 0
+  idx2 = 1
+  while idx2 < array.length
+    if array[idx2] < array[idx1]
+      idx1 = idx2
+    else
+      current_diff = array[idx2] - array[idx1]
+      highest_diff = current_diff if current_diff > highest_diff
+    end
+    idx2 += 1
+  end
+  highest_diff
+end

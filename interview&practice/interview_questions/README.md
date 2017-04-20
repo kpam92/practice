@@ -3,6 +3,7 @@
 * Explain event delegation
     - Event propogation/event bubbling means that whenever an event occurs in an achor tag, it essentially bubbles up the DOM tree, triggering each parent event handlers. With the example of a 'ul' with multiple 'li's, instead of creating an event handler for each 'li', we would instead place one on the 'ul' that would catch if a specific 'li' event occured.
 * Explain how `this` works in JavaScript
+    - 'this' can be used in three places, in global scale, in constructor functions, and methods. If used in a global scale, 'this' refers to the global object/window. In constructors for a class, this would refer to the new instance of the class being created. In methods, 'this' refers to the receiver, the object on which the method is invoked. One thing to be careful with is using 'this' when using closures, invoked methods within other methods. In many instances, 'this' will refer to the global scope; the best way to avoid this is ES6 fat arrow functions.
 * Explain how prototypal inheritance works
 * What do you think of AMD vs CommonJS?
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.

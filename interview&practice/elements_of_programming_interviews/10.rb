@@ -4,12 +4,18 @@
 # subtrees is at most 1.
 
 class BSTNode
-  attr_accessor :left, :right
+  attr_accessor :left, :right, :parent
   attr_reader :data
 
-  def initialize(data)
-    @data = data
+  def initialize(value, parent)
+    @value = value
+    @parent = parent
     @left = nil
     @right = nil
   end
+end
+
+
+def balanced_tree?(root)
+
 end

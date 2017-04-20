@@ -1,6 +1,11 @@
 #### JS Questions:
 
 * Explain event delegation
+  Event propogation/event bubbling means that whenever an event occurs in an achor tag,
+  it essentially bubbles up the DOM tree, triggering each parent event handlers. With
+  the example of a <ul> with multiple <li>s, instead of creating an event handler for
+  each <li>, we would instead place one on the <ul> that would catch if a specific <li>
+  event occured.
 * Explain how `this` works in JavaScript
 * Explain how prototypal inheritance works
 * What do you think of AMD vs CommonJS?
@@ -8,6 +13,8 @@
   * What needs to be changed to properly make it an IIFE?
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
+
+
 * What is a closure, and how/why would you use one?
 * What's a typical use case for anonymous functions?
 * How do you organize your code? (module pattern, classical inheritance?)

@@ -2,9 +2,10 @@
 # of a binary tree and checks whether the tree is height balanced.
 # This means that the difference in the height of its left and right
 # subtrees is at most 1.
+require 'byebug'
 
 class BSTNode
-  attr_accessor :left, :right, :parent
+  attr_accessor :left, :right, :parent, :value
   attr_reader :data
 
   def initialize(value, parent = nil)
@@ -30,16 +31,26 @@ def balanced_tree?(root)
   #this will return a false if somewhere down the line there
   #was an unbalance in subtrees
   return false if (left == false || right == false)
+  # left ||= 0
+  # right ||= 0
 
   #if both left and right calls returned a number, then
   #this code will check that it only has, at most, a difference
   #of 1
-
+  byebug;
   difference = (left - right).abs
   if difference == 1 || difference == 0
+    byebug;
+    return true if @parent.nil?
     return [left,right].max + 1
   else
     return false
   end
 
 end
+
+
+root = BSTNode.new(0)
+root.left = BSTNode.new(1,root)
+root.left.right = BSTNode.new(2,root)
+balanced_tree?(root)

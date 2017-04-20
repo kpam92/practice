@@ -46,3 +46,10 @@ def merge_lists(list_x, list_y)
   end
   result_list
 end
+
+# How it works:
+# This function iterates over the first node in each list, comparing
+# them to each other, and reassigning the next node for each so that
+# it turns in to one list. Iterating once, the time complexity is
+# O(n) (really O(m+n)), and space complexity is O(1) because nodes
+# are just reassigned, and nothing new is created in terms of space.

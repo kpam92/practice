@@ -20,11 +20,11 @@ def merge_lists(list_x, list_y)
   if list_x.val > list_y.val
     result_list = list_y
     result_list.next_node = nil
-    list_y = list_y.next
+    list_y = list_y.next_node
   else
     result_list = list_x
     result_list.next_node = nil
-    list_x = list_x.next
+    list_x = list_x.next_node
   end
 
   current_node = result_list

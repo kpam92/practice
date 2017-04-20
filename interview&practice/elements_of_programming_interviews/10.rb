@@ -7,7 +7,7 @@ class BSTNode
   attr_accessor :left, :right, :parent
   attr_reader :data
 
-  def initialize(value, parent)
+  def initialize(value, parent = nil)
     @value = value
     @parent = parent
     @left = nil
@@ -17,5 +17,5 @@ end
 
 
 def balanced_tree?(root)
-
+  return 1 if @right.nil? && @left.nil? && !@parent.nil?
 end

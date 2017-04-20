@@ -1,11 +1,7 @@
 #### JS Questions:
 
 * Explain event delegation
-  Event propogation/event bubbling means that whenever an event occurs in an achor tag,
-  it essentially bubbles up the DOM tree, triggering each parent event handlers. With
-  the example of a 'ul' with multiple 'li's, instead of creating an event handler for
-  each 'li', we would instead place one on the 'ul' that would catch if a specific 'li'
-  event occured.
+    - Event propogation/event bubbling means that whenever an event occurs in an achor tag, it essentially bubbles up the DOM tree, triggering each parent event handlers. With the example of a 'ul' with multiple 'li's, instead of creating an event handler for each 'li', we would instead place one on the 'ul' that would catch if a specific 'li' event occured.
 * Explain how `this` works in JavaScript
 * Explain how prototypal inheritance works
 * What do you think of AMD vs CommonJS?

@@ -10,14 +10,17 @@ class Stack
   end
 
   def push(val)
-    @values.push([val,val]) if @values.empty?
-    last_max = @values[-1][1]
-    curr_max = val > last_max ? val : last_max
-    @values.push([val,curr_max])
+    if @values.empty?
+      @values.push([val,val])
+    else
+      last_max = @values[-1][1]
+      curr_max = val > last_max ? val : last_max
+      @values.push([val,curr_max])
+    end
   end
 
   def pop
-    @values.pop
+    @values.pop[0]
   end
 
   def max

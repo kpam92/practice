@@ -7,4 +7,4 @@ related questions and answers to them.
 
 * What are the upsides to ES6, and fat arrow functions?
 
-* 
+* binary trees, BFS vs. DFS

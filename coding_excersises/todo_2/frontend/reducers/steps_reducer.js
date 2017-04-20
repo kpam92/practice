@@ -3,7 +3,7 @@ import {
   RECEIVE_STEP,
   REMOVE_STEP
 } from '../actions/step_actions';
-import merge from 'lodash/merge'
+import merge from 'lodash/merge';
 
 const stepsReducer = (state = {}, action) => {
   let nextState;
@@ -31,22 +31,18 @@ export default stepsReducer;
 // {
 //   1: {
 //     title: "walk to store",
-//     done: false,
-//     todo_id: 1
+//     done: false
 //   },
 //   2: {
 //     title: "buy soap",
-//     done: false,
-//     todo_id: 1
+//     done: false
 //   },
 //   3: {
 //     title: "walk to park",
-//     done: false,
-//     todo_id: 3
+//     done: false
 //   },
 //   4: {
 //     title: "play with dog",
-//     done: false,
-//     todo_id: 2
+//     done: false
 //   }
 // };

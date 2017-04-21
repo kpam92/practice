@@ -12291,7 +12291,7 @@ var TodoForm = function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var todo = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
-      this.props.receiveTodo(todo);
+      this.props.createTodo(todo);
       this.setState({
         title: "",
         body: ""
@@ -12467,7 +12467,20 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchTodos: function fetchTodos() {
       return dispatch((0, _todo_actions.fetchTodos)());
-    }
+    },
+    createTodo: function (_createTodo) {
+      function createTodo(_x) {
+        return _createTodo.apply(this, arguments);
+      }
+
+      createTodo.toString = function () {
+        return _createTodo.toString();
+      };
+
+      return createTodo;
+    }(function (todo) {
+      return dispatch(createTodo(todo));
+    })
   };
 };
 

@@ -20,8 +20,6 @@ const todosReducer = (state = {}, action) => {
       nextState = merge({}, state);
       delete nextState[action.todo.id];
       return nextState;
-    case TODO_ERROR:
-      alert(action.error);
     default:
       return state;
   }

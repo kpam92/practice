@@ -12291,7 +12291,7 @@ var TodoForm = function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var todo = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
-      this.props.createTodo(todo);
+      this.props.createTodo({ todo: todo });
       this.setState({
         title: "",
         body: ""

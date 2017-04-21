@@ -11699,16 +11699,15 @@ var _root_reducer = __webpack_require__(143);
 
 var _root_reducer2 = _interopRequireDefault(_root_reducer);
 
+var _thunk = __webpack_require__(337);
+
+var _thunk2 = _interopRequireDefault(_thunk);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var store = (0, _redux.createStore)(_root_reducer2.default, preloadedState);
-  store.subscribe(function () {
-    localStorage.state = JSON.stringify(store.getState());
-  });
-  return store;
+  return (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(_thunk2.default));
 };
 
 exports.default = configureStore;
@@ -12736,6 +12735,8 @@ var _store = __webpack_require__(129);
 
 var _store2 = _interopRequireDefault(_store);
 
+var _todo_actions = __webpack_require__(46);
+
 var _root = __webpack_require__(128);
 
 var _root2 = _interopRequireDefault(_root);
@@ -12748,6 +12749,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var root = document.getElementById('content');
   window.store = store;
+  window.receiveTodo = _todo_actions.receiveTodo;
+  window.removeTodo = _todo_actions.removeTodo;
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
 
@@ -28020,6 +28023,37 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
+
+/***/ }),
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var thunk = function thunk(_ref) {
+  var dispatch = _ref.dispatch,
+      getState = _ref.getState;
+  return function (next) {
+    return function (action) {
+      if (typeof action === 'function') {
+        return action(dispatch, getState);
+      }
+      return next(action);
+    };
+  };
+};
+
+exports.default = thunk;
 
 /***/ })
 /******/ ]);

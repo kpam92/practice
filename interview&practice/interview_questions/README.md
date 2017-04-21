@@ -5,10 +5,11 @@
 * Explain how `this` works in JavaScript
     - 'this' can be used in three places, in global scale, in constructor functions, and methods. If used in a global scale, 'this' refers to the global object/window. In constructors for a class, this would refer to the new instance of the class being created. In methods, 'this' refers to the receiver, the object on which the method is invoked. One thing to be careful with is using 'this' when using closures, invoked methods within other methods. In many instances, 'this' will refer to the global scope; the best way to avoid this is ES6 fat arrow functions, or by using the bind() method to explicitly attach the receiver of the method.
 * Explain how prototypal inheritance works
-    - Prototypal inheritance is the hierarchical inheritance structure in JavaScript. So if a function is invoked in an instance of a class, the interpreter will look for the it in the object itself, and then into the object's prototype until it is found or it reaches the end. 
+    - Prototypal inheritance is the hierarchical inheritance structure in JavaScript. So if a function is invoked in an instance of a class, the interpreter will look for the it in the object itself, and then into the object's prototype until it is found or it reaches the end.
 * What do you think of AMD vs CommonJS?
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
+  - An IIFE is an immediately invoked function expression. This doesn't work
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
 
@@ -28,6 +29,17 @@
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
 * Explain "hoisting".
+  - Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+  ```js
+  var x = 5; // Initialize x
+
+  elem = document.getElementById("demo"); // Find an element
+  elem.innerHTML = x + " " + y;           // Display x and y
+
+  var y = 7;    // declare var y and assign 7 to y
+  //will output '5 undefined'
+  ```
+  the code above displays how hoisting will hoist declaration (var y) to the top, but not initialization (y = 7)
 * Describe event bubbling.
 * What's the difference between an "attribute" and a "property"?
 * Why is extending built-in JavaScript objects not a good idea?

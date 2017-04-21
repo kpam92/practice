@@ -10,6 +10,7 @@
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
   <br><br>An IIFE is an immediately invoked function expression. This function shouldn't clutter up the global namespace by declaring the function with a variable name because it is supposed to be an anonymous immediately invoked function that is not called anywhere else. A better way to recreate the IIFE above is
+  
   ```js
     (function(){})()
   ```

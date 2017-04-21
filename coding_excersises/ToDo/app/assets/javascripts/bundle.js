@@ -12747,6 +12747,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var store = (0, _store2.default)(preloadedState);
 
   var root = document.getElementById('content');
+  window.store = store;
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
 

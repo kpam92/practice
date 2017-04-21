@@ -12399,6 +12399,7 @@ var TodoList = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           todos = _props.todos,
+          createTodo = _props.createTodo,
           receiveTodo = _props.receiveTodo;
 
       var todoItems = todos.map(function (todo) {
@@ -12416,7 +12417,7 @@ var TodoList = function (_React$Component) {
           { className: 'todo-list' },
           todoItems
         ),
-        _react2.default.createElement(_todo_form2.default, { receiveTodo: receiveTodo })
+        _react2.default.createElement(_todo_form2.default, { createTodo: createTodo })
       );
     }
   }]);

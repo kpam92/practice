@@ -28110,7 +28110,7 @@ var fetchTodos = exports.fetchTodos = function fetchTodos() {
 
 var createTodo = exports.createTodo = function createTodo(todo) {
   return $.ajax({
-    method: 'POST', url: '/api/todos'
+    method: 'POST', url: '/api/todos', data: todo
   });
 };
 

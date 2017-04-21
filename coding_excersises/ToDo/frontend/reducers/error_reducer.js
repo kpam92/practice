@@ -6,12 +6,11 @@ const errorReducer = (state = [], action) => {
 
   switch(action.type){
     case RECEIVE_ERRORS:
-      nextState = {};
-      action.todos.forEach(todo => nextState[todo.id] = todo);
+      nextState = action.errors;
       return nextState;
     case CLEAR ERRORS:
-      const newTodo = {[action.todo.id]: action.todo};
-      return merge({}, state, newTodo);
+      nextState = []
+      return nextState;
     default:
       return state;
   }

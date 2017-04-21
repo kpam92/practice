@@ -5031,9 +5031,26 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.fetchTodos = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+
+var _todo_api_util = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../util/todo_api_util\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var TodoAPIUtil = _interopRequireWildcard(_todo_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 var RECEIVE_TODOS = exports.RECEIVE_TODOS = "RECEIVE_TODOS";
 var RECEIVE_TODO = exports.RECEIVE_TODO = "RECEIVE_TODO";
 var REMOVE_TODO = exports.REMOVE_TODO = "REMOVE_TODO";
+var FETCH_TODOS = exports.FETCH_TODOS = "FETCH_TODOS";
+
+var fetchTodos = exports.fetchTodos = function fetchTodos() {
+  return function (dispatch) {
+    return TodoAPIUtil.fetchTodos().then(function (todos) {
+      return dispatch(receiveTodos(todos));
+    });
+  };
+};
 
 var receiveTodos = exports.receiveTodos = function receiveTodos(todos) {
   return {

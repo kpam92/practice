@@ -1,4 +1,4 @@
-class Api::TodosController < Api:ApiController
+class Api::TodosController < Api::ApiController
 
 
   def create

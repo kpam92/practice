@@ -12450,6 +12450,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     receiveTodo: function receiveTodo(todo) {
       return dispatch((0, _todo_actions.receiveTodo)(todo));
+    },
+    fetchTodos: function fetchTodos() {
+      return dispatch((0, _todo_actions.fetchTodos)());
     }
   };
 };

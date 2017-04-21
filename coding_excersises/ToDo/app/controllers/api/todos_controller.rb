@@ -11,6 +11,7 @@ class Api::TodosController < Api::ApiController
   end
 
   def index
+    render json: Todo.all
   end
 
   def show

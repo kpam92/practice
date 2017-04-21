@@ -5031,7 +5031,7 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.fetchTodos = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
 
 var _todo_api_util = __webpack_require__(338);
 
@@ -5043,11 +5043,20 @@ var RECEIVE_TODOS = exports.RECEIVE_TODOS = "RECEIVE_TODOS";
 var RECEIVE_TODO = exports.RECEIVE_TODO = "RECEIVE_TODO";
 var REMOVE_TODO = exports.REMOVE_TODO = "REMOVE_TODO";
 var FETCH_TODOS = exports.FETCH_TODOS = "FETCH_TODOS";
+var CREATE_TODO = exports.CREATE_TODO = "CREATE_TODO";
 
 var fetchTodos = exports.fetchTodos = function fetchTodos() {
   return function (dispatch) {
     return TodoAPIUtil.fetchTodos().then(function (todos) {
       return dispatch(receiveTodos(todos));
+    });
+  };
+};
+
+var createTodo = exports.createTodo = function createTodo(todo) {
+  return function (dispatch) {
+    return TodoAPIUtil.createTodo(todo).then(function (todo) {
+      return dispatch(receiveTodo(todo));
     });
   };
 };
@@ -28092,6 +28101,12 @@ Object.defineProperty(exports, "__esModule", {
 var fetchTodos = exports.fetchTodos = function fetchTodos() {
   return $.ajax({
     method: 'GET', url: '/api/todos'
+  });
+};
+
+var createTodo = exports.createTodo = function createTodo(todo) {
+  return $.ajax({
+    method: 'POST', url: '/api/todos'
   });
 };
 

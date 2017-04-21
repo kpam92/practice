@@ -5033,7 +5033,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.fetchTodos = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
 
-var _todo_api_util = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../util/todo_api_util\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _todo_api_util = __webpack_require__(338);
 
 var TodoAPIUtil = _interopRequireWildcard(_todo_api_util);
 
@@ -12766,8 +12766,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var root = document.getElementById('content');
   window.store = store;
-  window.receiveTodo = _todo_actions.receiveTodo;
-  window.removeTodo = _todo_actions.removeTodo;
+  window.fetchTodos = _todo_actions.fetchTodos;
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
 
@@ -28071,6 +28070,22 @@ var thunk = function thunk(_ref) {
 };
 
 exports.default = thunk;
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchTodos = exports.fetchTodos = function fetchTodos() {
+  return $.ajax({
+    method: 'GET', url: '/api/todos'
+  });
+};
 
 /***/ })
 /******/ ]);

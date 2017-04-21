@@ -1,4 +1,4 @@
-import * as TodoAPIUtil from '../util/todo_api_util'
+import * as TodoAPIUtil from '../utils/todo_api_util'
 
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";

@@ -5031,12 +5031,13 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
-exports.createTodo = createTodo;
+exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
 
 var _todo_api_util = __webpack_require__(338);
 
 var TodoAPIUtil = _interopRequireWildcard(_todo_api_util);
+
+var _error_actions = __webpack_require__(339);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -5054,15 +5055,15 @@ var fetchTodos = exports.fetchTodos = function fetchTodos() {
   };
 };
 
-function createTodo(todo) {
+var createTodo = exports.createTodo = function createTodo(todo) {
   return function (dispatch) {
-    return APIUtil.createTodo(todo).then(function (todo) {
-      return dispatch(receiveTodo(todo));
+    return TodoAPIUtil.createTodo(todo).then(function (todo) {
+      dispatch(receiveTodo(todo));dispatch((0, _error_actions.clearErrors)());
     }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+      return dispatch((0, _error_actions.receiveErrors)(err.responseJSON));
     });
   };
-}
+};
 
 var receiveTodos = exports.receiveTodos = function receiveTodos(todos) {
   return {
@@ -12609,11 +12610,16 @@ var _steps_reducer = __webpack_require__(144);
 
 var _steps_reducer2 = _interopRequireDefault(_steps_reducer);
 
+var _error_reducer = __webpack_require__(340);
+
+var _error_reducer2 = _interopRequireDefault(_error_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RootReducer = (0, _redux.combineReducers)({
   todos: _todos_reducer2.default,
-  steps: _steps_reducer2.default
+  steps: _steps_reducer2.default,
+  errors: _error_reducer2.default
 });
 
 exports.default = RootReducer;
@@ -28116,6 +28122,38 @@ var createTodo = exports.createTodo = function createTodo(todo) {
     method: 'POST', url: '/api/todos', data: todo
   });
 };
+
+/***/ }),
+/* 339 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var RECEIVE_ERRORS = exports.RECEIVE_ERRORS = "RECEIVE_ERRORS";
+var CLEAR_ERRORS = exports.CLEAR_ERRORS = "CLEAR_ERRORS";
+
+var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+
+var clearErrors = exports.clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+
+/***/ }),
+/* 340 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected : (11:15)\n\n\u001b[0m \u001b[90m  9 | \u001b[39m    \u001b[36mcase\u001b[39m \u001b[33mRECEIVE_ERRORS\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 10 | \u001b[39m      \u001b[36mreturn\u001b[39m action\u001b[33m.\u001b[39merrors\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 | \u001b[39m    \u001b[36mcase\u001b[39m \u001b[33mCLEAR\u001b[39m \u001b[33mERRORS\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m    | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 | \u001b[39m      \u001b[36mreturn\u001b[39m []\u001b[33m;\u001b[39m\n \u001b[90m 13 | \u001b[39m    \u001b[36mdefault\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 14 | \u001b[39m      \u001b[36mreturn\u001b[39m state\u001b[33m;\u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);

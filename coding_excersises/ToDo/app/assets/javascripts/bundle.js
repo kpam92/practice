@@ -12289,13 +12289,13 @@ var TodoForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var todo = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
-      this.props.createTodo({ todo: todo });
-      this.setState({
-        title: "",
-        body: ""
-      }); // reset form
+      this.props.createTodo({ todo: todo }).then(function () {
+        return _this3.setState({ title: "", body: "" });
+      });
     }
   }, {
     key: 'render',

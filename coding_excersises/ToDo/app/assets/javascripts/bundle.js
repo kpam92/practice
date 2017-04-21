@@ -12469,19 +12469,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchTodos: function fetchTodos() {
       return dispatch((0, _todo_actions.fetchTodos)());
     },
-    createTodo: function (_createTodo) {
-      function createTodo(_x) {
-        return _createTodo.apply(this, arguments);
-      }
-
-      createTodo.toString = function () {
-        return _createTodo.toString();
-      };
-
-      return createTodo;
-    }(function (todo) {
-      return dispatch(createTodo(todo));
-    })
+    createTodo: function createTodo(todo) {
+      return dispatch((0, _todo_actions.createTodo)(todo));
+    }
   };
 };
 

@@ -10,9 +10,13 @@ export const fetchTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))
 );
 
-export const createTodo = todo => dispatch => (
-  TodoAPIUtil.createTodo(todo).then(todo => dispatch(receiveTodo(todo)))
-);
+export function createTodo(todo) {
+  return (dispatch) => {
+    return APIUtil.createTodo(todo)
+      .then(todo => dispatch(receiveTodo(todo)),
+            err => dispatch(receiveErrors(err.responseJSON)));
+  };
+}
 
 export const receiveTodos = todos => ({
   type: RECEIVE_TODOS,

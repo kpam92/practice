@@ -5031,7 +5031,8 @@ module.exports = function(module) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+exports.todoError = exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+exports.createTodo = createTodo;
 
 var _todo_api_util = __webpack_require__(338);
 
@@ -5053,13 +5054,15 @@ var fetchTodos = exports.fetchTodos = function fetchTodos() {
   };
 };
 
-var createTodo = exports.createTodo = function createTodo(todo) {
+function createTodo(todo) {
   return function (dispatch) {
-    return TodoAPIUtil.createTodo(todo).then(function (todo) {
+    return APIUtil.createTodo(todo).then(function (todo) {
       return dispatch(receiveTodo(todo));
+    }, function (err) {
+      return dispatch(receiveErrors(err.responseJSON));
     });
   };
-};
+}
 
 var receiveTodos = exports.receiveTodos = function receiveTodos(todos) {
   return {

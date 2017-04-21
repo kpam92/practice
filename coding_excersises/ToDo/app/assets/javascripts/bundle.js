@@ -12381,6 +12381,11 @@ var TodoList = function (_React$Component) {
   }
 
   _createClass(TodoList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchTodos();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,

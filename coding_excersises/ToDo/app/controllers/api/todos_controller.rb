@@ -1,8 +1,12 @@
 class Api::TodosController < Api:ApiController
 
+  def index
+  end
+
   def show
     render json: Todo.find(params[:id])
   end
+
 
   def create
     @todo = Todo.new(todo_params)
@@ -13,4 +17,9 @@ class Api::TodosController < Api:ApiController
     end
   end
 
+  def destroy
+  end
+
+  def update
+  end
 end

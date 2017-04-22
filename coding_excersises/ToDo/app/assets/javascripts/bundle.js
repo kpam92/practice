@@ -3649,7 +3649,7 @@ var updateTodo = exports.updateTodo = function updateTodo(todo) {
 
 var deleteTodo = exports.deleteTodo = function deleteTodo(todo) {
   return function (dispatch) {
-    return TodoAPIUtil.updateTodo(todo).then(function (todo) {
+    return TodoAPIUtil.deleteTodo(todo).then(function (todo) {
       return dispatch(removeTodo(todo));
     });
   };
@@ -12204,7 +12204,7 @@ var TodoDetailView = function (_React$Component) {
     value: function render() {
       var _props = this.props,
           todo = _props.todo,
-          removeTodo = _props.removeTodo;
+          destroyTodo = _props.destroyTodo;
 
       return _react2.default.createElement(
         'div',
@@ -12219,7 +12219,7 @@ var TodoDetailView = function (_React$Component) {
           'button',
           {
             className: 'delete-button',
-            onClick: removeTodo },
+            onClick: destroyTodo },
           'Delete Todo'
         )
       );
@@ -12258,8 +12258,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
   var todo = _ref.todo;
   return {
-    removeTodo: function removeTodo() {
-      return dispatch((0, _todo_actions.removeTodo)(todo));
+    destroyTodo: function destroyTodo() {
+      return dispatch((0, _todo_actions.deleteTodo)(todo));
     }
   };
 };
@@ -12835,6 +12835,7 @@ var todosReducer = function todosReducer() {
       return (0, _merge2.default)({}, state, newTodo);
     case _todo_actions.REMOVE_TODO:
       nextState = (0, _merge2.default)({}, state);
+      debugger;
       delete nextState[action.todo.id];
       return nextState;
     default:
@@ -12927,7 +12928,8 @@ var updateTodo = exports.updateTodo = function updateTodo(todo) {
 
 var deleteTodo = exports.deleteTodo = function deleteTodo(todo) {
   return $.ajax({
-    method: 'DELETE', url: '/api/todos/' + todo.id, data: { todo: todo }
+    method: 'DELETE',
+    url: 'api/todos/' + todo.id
   });
 };
 

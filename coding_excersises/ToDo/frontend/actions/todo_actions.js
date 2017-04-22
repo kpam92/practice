@@ -11,7 +11,7 @@ export const updateTodo = todo => dispatch => (
 );
 
 export const deleteTodo = todo => dispatch => (
-  TodoAPIUtil.updateTodo(todo).then(todo => dispatch(removeTodo(todo)))
+  TodoAPIUtil.deleteTodo(todo).then(todo => dispatch(removeTodo(todo)))
 );
 
 export const fetchTodos = () => dispatch => (

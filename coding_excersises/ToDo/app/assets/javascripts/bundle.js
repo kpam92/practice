@@ -3642,9 +3642,7 @@ var REMOVE_TODO = exports.REMOVE_TODO = "REMOVE_TODO";
 var updateTodo = exports.updateTodo = function updateTodo(todo) {
   return function (dispatch) {
     return TodoAPIUtil.updateTodo(todo).then(function (todo) {
-      dispatch(receiveTodo(todo));dispatch((0, _error_actions.clearErrors)());
-    }, function (err) {
-      return dispatch((0, _error_actions.receiveErrors)(err.responseJSON));
+      return dispatch(receiveTodo(todo));
     });
   };
 };
@@ -12915,7 +12913,7 @@ var createTodo = exports.createTodo = function createTodo(todo) {
 
 var updateTodo = exports.updateTodo = function updateTodo(todo) {
   return $.ajax({
-    method: 'PATCH', url: '/api/todos/' + todo.id, data: todo
+    method: 'PATCH', url: '/api/todos/' + todo.id, data: { todo: todo }
   });
 };
 

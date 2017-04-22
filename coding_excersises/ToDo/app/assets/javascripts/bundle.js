@@ -3625,7 +3625,7 @@ exports.connect = _connect2["default"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.CREATE_TODO = exports.FETCH_TODOS = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
 
 var _todo_api_util = __webpack_require__(150);
 
@@ -3638,8 +3638,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 var RECEIVE_TODOS = exports.RECEIVE_TODOS = "RECEIVE_TODOS";
 var RECEIVE_TODO = exports.RECEIVE_TODO = "RECEIVE_TODO";
 var REMOVE_TODO = exports.REMOVE_TODO = "REMOVE_TODO";
-var FETCH_TODOS = exports.FETCH_TODOS = "FETCH_TODOS";
-var CREATE_TODO = exports.CREATE_TODO = "CREATE_TODO";
 
 var fetchTodos = exports.fetchTodos = function fetchTodos() {
   return function (dispatch) {

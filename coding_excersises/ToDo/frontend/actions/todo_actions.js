@@ -5,8 +5,7 @@ import { receiveErrors, clearErrors } from './error_actions';
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
-export const FETCH_TODOS = "FETCH_TODOS";
-export const CREATE_TODO = "CREATE_TODO";
+
 
 export const fetchTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))

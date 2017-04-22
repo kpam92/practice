@@ -12915,7 +12915,7 @@ var createTodo = exports.createTodo = function createTodo(todo) {
 
 var updateTodo = exports.updateTodo = function updateTodo(todo) {
   return $.ajax({
-    method: 'POST', url: '/api/todos/' + todo.id, data: todo
+    method: 'PATCH', url: '/api/todos/' + todo.id, data: todo
   });
 };
 

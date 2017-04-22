@@ -3617,10 +3617,76 @@ exports.connect = _connect2["default"];
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (9:46)\n\n\u001b[0m \u001b[90m  7 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mREMOVE_TODO\u001b[39m \u001b[33m=\u001b[39m \u001b[32m\"REMOVE_TODO\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m  8 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m updateTodo \u001b[33m=\u001b[39m todo \u001b[33m=>\u001b[39m dispatch \u001b[33m=\u001b[39m\u001b[33m<\u001b[39m (\n \u001b[90m    | \u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 | \u001b[39m  \u001b[33mTodoAPIUtil\u001b[39m\u001b[33m.\u001b[39mupdateTodo(todo)\n \u001b[90m 11 | \u001b[39m  \u001b[33m.\u001b[39mthen(todo \u001b[33m=>\u001b[39m { dispatch(receiveTodo(todo))\u001b[33m;\u001b[39m dispatch(clearErrors())}\u001b[33m,\u001b[39m\n \u001b[90m 12 | \u001b[39m  err \u001b[33m=>\u001b[39m dispatch(receiveErrors(err\u001b[33m.\u001b[39mresponseJSON)))\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.updateTodo = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+
+var _todo_api_util = __webpack_require__(150);
+
+var TodoAPIUtil = _interopRequireWildcard(_todo_api_util);
+
+var _error_actions = __webpack_require__(71);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_TODOS = exports.RECEIVE_TODOS = "RECEIVE_TODOS";
+var RECEIVE_TODO = exports.RECEIVE_TODO = "RECEIVE_TODO";
+var REMOVE_TODO = exports.REMOVE_TODO = "REMOVE_TODO";
+
+var updateTodo = exports.updateTodo = function updateTodo(todo) {
+  return function (dispatch) {
+    return TodoAPIUtil.updateTodo(todo).then(function (todo) {
+      dispatch(receiveTodo(todo));dispatch((0, _error_actions.clearErrors)());
+    }, function (err) {
+      return dispatch((0, _error_actions.receiveErrors)(err.responseJSON));
+    });
+  };
+};
+
+var fetchTodos = exports.fetchTodos = function fetchTodos() {
+  return function (dispatch) {
+    return TodoAPIUtil.fetchTodos().then(function (todos) {
+      return dispatch(receiveTodos(todos));
+    });
+  };
+};
+
+var createTodo = exports.createTodo = function createTodo(todo) {
+  return function (dispatch) {
+    return TodoAPIUtil.createTodo(todo).then(function (todo) {
+      dispatch(receiveTodo(todo));dispatch((0, _error_actions.clearErrors)());
+    }, function (err) {
+      return dispatch((0, _error_actions.receiveErrors)(err.responseJSON));
+    });
+  };
+};
+
+var receiveTodos = exports.receiveTodos = function receiveTodos(todos) {
+  return {
+    type: RECEIVE_TODOS,
+    todos: todos
+  };
+};
+
+var receiveTodo = exports.receiveTodo = function receiveTodo(todo) {
+  return {
+    type: RECEIVE_TODO,
+    todo: todo
+  };
+};
+
+var removeTodo = exports.removeTodo = function removeTodo(todo) {
+  return {
+    type: REMOVE_TODO,
+    todo: todo
+  };
+};
 
 /***/ }),
 /* 32 */
@@ -12823,7 +12889,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /***/ }),
-/* 150 */,
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchTodos = exports.fetchTodos = function fetchTodos() {
+  return $.ajax({
+    method: 'GET', url: '/api/todos'
+  });
+};
+
+var createTodo = exports.createTodo = function createTodo(todo) {
+  return $.ajax({
+    method: 'POST', url: '/api/todos', data: todo
+  });
+};
+
+var updateTodo = exports.updateTodo = function updateTodo(todo) {
+  return $.ajax({
+    method: 'POST', url: '/api/todos/' + todo.id, data: todo
+  });
+};
+
+/***/ }),
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 

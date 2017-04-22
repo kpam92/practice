@@ -11,3 +11,9 @@ export const createTodo = todo => (
     method: 'POST', url: '/api/todos', data: todo
   })
 )
+
+export const updateTodo = todo => (
+  $.ajax({
+    method: 'POST', url: `/api/todos/${todo.id}`, data: todo
+  })
+)

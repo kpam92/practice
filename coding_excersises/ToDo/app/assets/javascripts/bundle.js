@@ -3625,7 +3625,7 @@ exports.connect = _connect2["default"];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.updateTodo = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
+exports.removeTodo = exports.receiveTodo = exports.receiveTodos = exports.createTodo = exports.fetchTodos = exports.deleteTodo = exports.updateTodo = exports.REMOVE_TODO = exports.RECEIVE_TODO = exports.RECEIVE_TODOS = undefined;
 
 var _todo_api_util = __webpack_require__(150);
 
@@ -3643,6 +3643,14 @@ var updateTodo = exports.updateTodo = function updateTodo(todo) {
   return function (dispatch) {
     return TodoAPIUtil.updateTodo(todo).then(function (todo) {
       return dispatch(receiveTodo(todo));
+    });
+  };
+};
+
+var deleteTodo = exports.deleteTodo = function deleteTodo(todo) {
+  return function (dispatch) {
+    return TodoAPIUtil.updateTodo(todo).then(function (todo) {
+      return dispatch(removeTodo(todo));
     });
   };
 };
@@ -12914,6 +12922,12 @@ var createTodo = exports.createTodo = function createTodo(todo) {
 var updateTodo = exports.updateTodo = function updateTodo(todo) {
   return $.ajax({
     method: 'PATCH', url: '/api/todos/' + todo.id, data: { todo: todo }
+  });
+};
+
+var deleteTodo = exports.deleteTodo = function deleteTodo(todo) {
+  return $.ajax({
+    method: 'DELETE', url: '/api/todos/' + todo.id, data: { todo: todo }
   });
 };
 

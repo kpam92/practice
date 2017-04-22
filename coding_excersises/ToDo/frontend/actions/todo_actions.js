@@ -10,6 +10,10 @@ export const updateTodo = todo => dispatch => (
   TodoAPIUtil.updateTodo(todo).then(todo => dispatch(receiveTodo(todo)))
 );
 
+export const deleteTodo = todo => dispatch => (
+  TodoAPIUtil.updateTodo(todo).then(todo => dispatch(removeTodo(todo)))
+);
+
 export const fetchTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos().then(todos => dispatch(receiveTodos(todos)))
 );

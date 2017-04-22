@@ -12431,13 +12431,13 @@ var TodoList = function (_React$Component) {
       var _props = this.props,
           todos = _props.todos,
           createTodo = _props.createTodo,
-          receiveTodo = _props.receiveTodo;
+          updateTodo = _props.updateTodo;
 
       var todoItems = todos.map(function (todo) {
         return _react2.default.createElement(_todo_list_item2.default, {
           key: 'todo-list-item' + todo.id,
           todo: todo,
-          receiveTodo: receiveTodo });
+          updateTodo: updateTodo });
       });
 
       return _react2.default.createElement(
@@ -12502,6 +12502,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createTodo: function createTodo(todo) {
       return dispatch((0, _todo_actions.createTodo)(todo));
+    },
+    updateTodo: function updateTodo(todo) {
+      return dispatch((0, _todo_actions.updateTodo)(todo));
     }
   };
 };
@@ -12567,7 +12570,7 @@ var TodoListItem = function (_React$Component) {
       e.preventDefault();
       var toggledTodo = (0, _merge2.default)({}, this.props.todo, { done: !this.props.todo.done });
 
-      this.props.receiveTodo(toggledTodo);
+      this.props.updateTodo(toggledTodo);
     }
   }, {
     key: 'render',

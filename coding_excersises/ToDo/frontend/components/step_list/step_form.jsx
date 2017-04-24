@@ -21,11 +21,10 @@ class StepForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const step = Object.assign({}, this.state, { id: uniqueId() });
-    this.props.receiveStep(step);
-    this.setState({
-      title: "",
-      body: ""
-    }); // reset form
+    // this.props.receiveStep(step);
+    this.props.createStep(this.todo_id,step).then(
+      () => this.setState({ title: "", body: "" })
+    ); // reset form
   }
 
   render() {

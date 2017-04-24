@@ -11923,12 +11923,13 @@ var StepForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var step = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
-      this.props.receiveStep(step);
-      this.setState({
-        title: "",
-        body: ""
+      // this.props.receiveStep(step);
+      this.props.createStep(this.todo_id, step).then(function () {
+        return _this3.setState({ title: "", body: "" });
       }); // reset form
     }
   }, {
@@ -12062,6 +12063,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     receiveStep: function receiveStep(step) {
       return dispatch((0, _step_actions.receiveStep)(step));
+    },
+    createStep: function createStep(step) {
+      return dispatch((0, _step_actions.createStep)(step));
     }
   };
 };
@@ -12113,7 +12117,7 @@ var StepListItem = function (_React$Component) {
     key: 'toggleStep',
     value: function toggleStep(e) {
       var toggledStep = (0, _merge2.default)({}, this.props.step, { done: !this.props.step.done });
-      this.props.receiveStep(toggledStep);
+      this.props.updateStep(toggledStep);
     }
   }, {
     key: 'render',
@@ -12199,6 +12203,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
     },
     createStep: function createStep(step) {
       return dispatch((0, _step_actions.createStep)(step));
+    },
+    updateStep: function updateStep(step) {
+      return dispatch((0, _step_actions.updateStep)(step));
     }
 
   };

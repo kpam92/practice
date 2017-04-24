@@ -3704,6 +3704,16 @@ var removeTodo = exports.removeTodo = function removeTodo(todo) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.updateStep = exports.fetchSteps = exports.createStep = exports.removeStep = exports.receiveStep = exports.receiveSteps = exports.REMOVE_STEP = exports.RECEIVE_STEP = exports.RECEIVE_STEPS = undefined;
+
+var _step_api_util = __webpack_require__(335);
+
+var StepAPIUtil = _interopRequireWildcard(_step_api_util);
+
+var _error_actions = __webpack_require__(71);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 var RECEIVE_STEPS = exports.RECEIVE_STEPS = "RECEIVE_STEPS";
 var RECEIVE_STEP = exports.RECEIVE_STEP = "RECEIVE_STEP";
 var REMOVE_STEP = exports.REMOVE_STEP = "REMOVE_STEP";
@@ -3726,6 +3736,30 @@ var removeStep = exports.removeStep = function removeStep(step) {
   return {
     type: REMOVE_STEP,
     step: step
+  };
+};
+
+var createStep = exports.createStep = function createStep(todoId, step) {
+  return function (dispatch) {
+    return StepAPIUtil.createStep(todoId, step).then(function (step) {
+      return dispatch(receiveStep(step));
+    });
+  };
+};
+
+var fetchSteps = exports.fetchSteps = function fetchSteps() {
+  return function (dispatch) {
+    return StepAPIUtil.fetchSteps().then(function (steps) {
+      return dispatch(receiveSteps(steps));
+    });
+  };
+};
+
+var updateStep = exports.updateStep = function updateStep(step) {
+  return function (dispatch) {
+    return StepAPIUtil.updateStep(step).then(function (step) {
+      return dispatch(receiveStep(step));
+    });
   };
 };
 
@@ -28201,6 +28235,41 @@ function symbolObservablePonyfill(root) {
 	}
 
 	return result;
+};
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchSteps = exports.fetchSteps = function fetchSteps(todo_id) {
+  return $.ajax({
+    method: 'GET', url: '/api/' + todo_id + '/steps'
+  });
+};
+
+var createStep = exports.createStep = function createStep(todo_id, step) {
+  return $.ajax({
+    method: 'POST', url: '/api/' + todo_id + '/steps', data: { step: step }
+  });
+};
+
+var updateStep = exports.updateStep = function updateStep(step) {
+  return $.ajax({
+    method: 'PATCH', url: '/api/steps/' + step.id, data: { step: step }
+  });
+};
+
+var deleteStep = exports.deleteStep = function deleteStep(step) {
+  return $.ajax({
+    method: 'DELETE',
+    url: 'api/steps/' + step.id
+  });
 };
 
 /***/ })

@@ -3704,7 +3704,7 @@ var removeTodo = exports.removeTodo = function removeTodo(todo) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updateStep = exports.fetchSteps = exports.createStep = exports.removeStep = exports.receiveStep = exports.receiveSteps = exports.REMOVE_STEP = exports.RECEIVE_STEP = exports.RECEIVE_STEPS = undefined;
+exports.destroyStep = exports.updateStep = exports.fetchSteps = exports.createStep = exports.removeStep = exports.receiveStep = exports.receiveSteps = exports.REMOVE_STEP = exports.RECEIVE_STEP = exports.RECEIVE_STEPS = undefined;
 
 var _step_api_util = __webpack_require__(335);
 
@@ -3759,6 +3759,14 @@ var updateStep = exports.updateStep = function updateStep(step) {
   return function (dispatch) {
     return StepAPIUtil.updateStep(step).then(function (step) {
       return dispatch(receiveStep(step));
+    });
+  };
+};
+
+var destroyStep = exports.destroyStep = function destroyStep(step) {
+  return function (dispatch) {
+    return StepAPIUtil.deleteStep(step).then(function (step) {
+      return dispatch(removeStep(step));
     });
   };
 };

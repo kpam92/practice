@@ -33,3 +33,7 @@ export const fetchSteps = () => dispatch => (
 export const updateStep = step => dispatch => (
   StepAPIUtil.updateStep(step).then(step => dispatch(receiveStep(step)))
 );
+
+export const destroyStep = step => dispatch => (
+  StepAPIUtil.deleteStep(step).then(step => dispatch(removeStep(step)))
+);

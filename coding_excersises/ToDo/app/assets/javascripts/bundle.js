@@ -11925,10 +11925,11 @@ var StepForm = function (_React$Component) {
     value: function handleSubmit(e) {
       var _this3 = this;
 
+      // debugger;
       e.preventDefault();
       var step = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
       // this.props.receiveStep(step);
-      this.props.createStep(this.todo_id, step).then(function () {
+      this.props.createStep(this.props.todo_id, step).then(function () {
         return _this3.setState({ title: "", body: "" });
       }); // reset form
     }
@@ -12005,7 +12006,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var StepList = function StepList(_ref) {
   var steps = _ref.steps,
       todo_id = _ref.todo_id,
-      receiveStep = _ref.receiveStep;
+      receiveStep = _ref.receiveStep,
+      createStep = _ref.createStep;
 
   var stepItems = steps.map(function (step) {
     return _react2.default.createElement(_step_list_item_container2.default, {
@@ -12021,7 +12023,7 @@ var StepList = function StepList(_ref) {
       { className: 'step-list' },
       stepItems
     ),
-    _react2.default.createElement(_step_form2.default, { todo_id: todo_id, receiveStep: receiveStep })
+    _react2.default.createElement(_step_form2.default, { todo_id: todo_id, receiveStep: receiveStep, createStep: createStep })
   );
 };
 

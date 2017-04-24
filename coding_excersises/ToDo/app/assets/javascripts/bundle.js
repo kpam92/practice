@@ -12065,8 +12065,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     receiveStep: function receiveStep(step) {
       return dispatch((0, _step_actions.receiveStep)(step));
     },
-    createStep: function createStep(step) {
-      return dispatch((0, _step_actions.createStep)(step));
+    createStep: function createStep(id, step) {
+      return dispatch((0, _step_actions.createStep)(id, step));
     }
   };
 };
@@ -12989,7 +12989,7 @@ var createStep = exports.createStep = function createStep(todo_id, step) {
   return $.ajax({
     method: 'POST',
     url: '/api/todos/' + todo_id + '/steps',
-    data: { step: step }
+    data: step
   });
 };
 

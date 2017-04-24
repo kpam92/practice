@@ -4,17 +4,24 @@ export const fetchSteps = todo_id =>(
    })
 );
 
-export const createStep = (todo_id,step) => (
+// export const createStep = (todo_id,step) => (
+//   $.ajax({
+//     method: 'POST', url: `/api/todos/${todo_id}/steps`, data: {step}
+//   })
+// );
+export const createStep = (todo_id, step) => (
   $.ajax({
-    method: 'POST', url: `/api/todos/${todo_id}/steps`, data: { step }
+    method: 'POST',
+    url: `/api/todos/${todo_id}/steps`,
+    data: { step }
   })
-)
+);
 
 export const updateStep = step => (
   $.ajax({
     method: 'PATCH', url: `/api/steps/${step.id}`, data: { step }
   })
-)
+);
 
 export const deleteStep = step => (
   $.ajax({

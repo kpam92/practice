@@ -12257,6 +12257,11 @@ var TodoDetailView = function (_React$Component) {
   }
 
   _createClass(TodoDetailView, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.requestSteps();
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -12315,6 +12320,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
   var todo = _ref.todo;
   return {
+    fetchSteps: function (_fetchSteps) {
+      function fetchSteps() {
+        return _fetchSteps.apply(this, arguments);
+      }
+
+      fetchSteps.toString = function () {
+        return _fetchSteps.toString();
+      };
+
+      return fetchSteps;
+    }(function () {
+      return dispatch(fetchSteps(todo.id));
+    }),
     destroyTodo: function destroyTodo() {
       return dispatch((0, _todo_actions.deleteTodo)(todo));
     }
@@ -12387,6 +12405,7 @@ var TodoForm = function (_React$Component) {
 
       e.preventDefault();
       var todo = Object.assign({}, this.state, { id: (0, _idGenerator.uniqueId)() });
+      debugger;
       this.props.createTodo({ todo: todo }).then(function () {
         return _this3.setState({ title: "", body: "" });
       });

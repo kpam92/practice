@@ -37,6 +37,6 @@ class Api::StepsController < Api::ApiController
   private
 
   def step_params
-    params.require(:step).permit(:title,:body,:done)
+    params.require(:step).permit(:title,:body,:done, :todo_id)
   end
 end

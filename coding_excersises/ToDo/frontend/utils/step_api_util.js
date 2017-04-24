@@ -6,7 +6,7 @@ export const fetchSteps = todo_id =>(
 
 export const createStep = (todo_id,step) => (
   $.ajax({
-    method: 'POST', url: `/api/${todo_id}/steps`, data: { step }
+    method: 'POST', url: `/api/todos/${todo_id}/steps`, data: { step }
   })
 )
 

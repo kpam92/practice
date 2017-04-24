@@ -28279,7 +28279,7 @@ var fetchSteps = exports.fetchSteps = function fetchSteps(todo_id) {
 
 var createStep = exports.createStep = function createStep(todo_id, step) {
   return $.ajax({
-    method: 'POST', url: '/api/' + todo_id + '/steps', data: { step: step }
+    method: 'POST', url: '/api/todos/' + todo_id + '/steps', data: { step: step }
   });
 };
 

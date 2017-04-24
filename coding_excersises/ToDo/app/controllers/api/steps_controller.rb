@@ -16,6 +16,14 @@ class Api::StepsController < Api::ApiController
   end
 
   def update
+    step = Step.find(params[:id])
+
+    if step
+      step.update(step_params)
+      render json: step
+    else
+      render json: step.errors.full_messages, status: 422
+    end
   end
 
   def show

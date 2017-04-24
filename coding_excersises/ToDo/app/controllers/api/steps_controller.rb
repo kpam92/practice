@@ -29,6 +29,11 @@ class Api::StepsController < Api::ApiController
   def show
   end
 
+  def destroy
+    step = Step.find(params[:id]).destroy
+    render json: step
+  end
+
   private
 
   def step_params

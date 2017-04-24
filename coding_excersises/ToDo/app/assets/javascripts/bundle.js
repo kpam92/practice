@@ -12150,7 +12150,7 @@ var StepListItem = function (_React$Component) {
             'button',
             {
               className: 'delete-button',
-              onClick: this.props.removeStep
+              onClick: this.props.deleteStep
             },
             'Delete'
           )
@@ -12193,7 +12193,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
     },
     receiveStep: function receiveStep(step) {
       return dispatch((0, _step_actions.receiveStep)(step));
+    },
+    deleteStep: function deleteStep() {
+      return dispatch((0, _step_actions.deleteStep)(step));
+    },
+    createStep: function createStep(step) {
+      return dispatch((0, _step_actions.createStep)(step));
     }
+
   };
 };
 // Actions

@@ -32,7 +32,7 @@ class StepListItem extends React.Component {
           </button>
           <button
             className="delete-button"
-            onClick={ this.props.deleteStep }
+            onClick={ this.props.destroyStep }
             >
             Delete
           </button>

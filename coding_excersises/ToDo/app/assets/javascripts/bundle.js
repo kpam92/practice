@@ -12155,7 +12155,7 @@ var StepListItem = function (_React$Component) {
             'button',
             {
               className: 'delete-button',
-              onClick: this.props.deleteStep
+              onClick: this.props.destroyStep
             },
             'Delete'
           )
@@ -12199,8 +12199,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
     receiveStep: function receiveStep(step) {
       return dispatch((0, _step_actions.receiveStep)(step));
     },
-    deleteStep: function deleteStep() {
-      return dispatch((0, _step_actions.deleteStep)(step));
+    destroyStep: function destroyStep() {
+      return dispatch((0, _step_actions.destroyStep)(step));
     },
     createStep: function createStep(step) {
       return dispatch((0, _step_actions.createStep)(step));

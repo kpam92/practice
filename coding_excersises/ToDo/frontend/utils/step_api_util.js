@@ -1,6 +1,6 @@
 export const fetchSteps = todo_id =>(
   $.ajax({
-     method: 'GET', url: `/api/${todo_id}/steps`
+     method: 'GET', url: `/api/todos/${todo_id}/steps`
    })
 );
 

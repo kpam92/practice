@@ -3747,9 +3747,9 @@ var createStep = exports.createStep = function createStep(todoId, step) {
   };
 };
 
-var fetchSteps = exports.fetchSteps = function fetchSteps() {
+var fetchSteps = exports.fetchSteps = function fetchSteps(id) {
   return function (dispatch) {
-    return StepAPIUtil.fetchSteps().then(function (steps) {
+    return StepAPIUtil.fetchSteps(id).then(function (steps) {
       return dispatch(receiveSteps(steps));
     });
   };
@@ -12259,7 +12259,7 @@ var TodoDetailView = function (_React$Component) {
   _createClass(TodoDetailView, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.requestSteps();
+      this.props.fetchSteps(this.props.todo.id);
     }
   }, {
     key: 'render',
@@ -12320,19 +12320,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
   var todo = _ref.todo;
   return {
-    fetchSteps: function (_fetchSteps) {
-      function fetchSteps() {
-        return _fetchSteps.apply(this, arguments);
-      }
-
-      fetchSteps.toString = function () {
-        return _fetchSteps.toString();
-      };
-
-      return fetchSteps;
-    }(function () {
-      return dispatch(fetchSteps(todo.id));
-    }),
+    fetchSteps: function fetchSteps() {
+      return dispatch((0, _step_actions.fetchSteps)(todo.id));
+    },
     destroyTodo: function destroyTodo() {
       return dispatch((0, _todo_actions.deleteTodo)(todo));
     }
@@ -12986,7 +12976,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var fetchSteps = exports.fetchSteps = function fetchSteps(todo_id) {
   return $.ajax({
-    method: 'GET', url: '/api/' + todo_id + '/steps'
+    method: 'GET', url: '/api/todos/' + todo_id + '/steps'
   });
 };
 

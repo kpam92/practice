@@ -17,40 +17,59 @@ class BSTNode
 end
 
 
-def balanced_tree?(root)
+# def balanced_tree?(root)
+#
+#   #basecase of if there is no child
+#   return 0 if root.nil?
+#   #basecase of if this node has no children
+#   return 1 if @right.nil? && @left.nil? && !@parent.nil?
+#
+#   #this is a recursive call down the tree
+#   left = balanced_tree?(@left)
+#   right = balanced_tree?(@right)
+#
+#   #this will return a false if somewhere down the line there
+#   #was an unbalance in subtrees
+#   return false if (left == false || right == false)
+#   # left ||= 0
+#   # right ||= 0
+#
+#   #if both left and right calls returned a number, then
+#   #this code will check that it only has, at most, a difference
+#   #of 1
+#   byebug;
+#   difference = (left - right).abs
+#   if difference == 1 || difference == 0
+#     byebug;
+#     return true if @parent.nil?
+#     return [left,right].max + 1
+#   else
+#     return false
+#   end
+#
+# end
 
-  #basecase of if there is no child
-  return 0 if root.nil?
-  #basecase of if this node has no children
-  return 1 if @right.nil? && @left.nil? && !@parent.nil?
+def is_balanced_binary_tree(root)
 
-  #this is a recursive call down the tree
-  left = balanced_tree?(@left)
-  right = balanced_tree?(@right)
+  def check_balance(tree)
+    return [true, -1] if tree.nil?
 
-  #this will return a false if somewhere down the line there
-  #was an unbalance in subtrees
-  return false if (left == false || right == false)
-  # left ||= 0
-  # right ||= 0
+    left_result = check_balance(tree.left)
+    return [false, 0] unless left_result[0]
+    right_result = check_balance(tree.right)
+    return [false, 0] unless right_result[0]
 
-  #if both left and right calls returned a number, then
-  #this code will check that it only has, at most, a difference
-  #of 1
-  byebug;
-  difference = (left - right).abs
-  if difference == 1 || difference == 0
-    byebug;
-    return true if @parent.nil?
-    return [left,right].max + 1
-  else
-    return false
+    is_balanced = (left_result[1] - right_result[1]).abs <= 1
+    height = [left_result[1],right_result[1]].max + 1
+    return [is_balanced, height]
   end
 
+  return check_balance(root)[0]
 end
+
 
 
 root = BSTNode.new(0)
 root.left = BSTNode.new(1,root)
-root.left.right = BSTNode.new(2,root)
-balanced_tree?(root)
+root.right = BSTNode.new(2,root)
+is_balanced_binary_tree(root)

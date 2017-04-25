@@ -33,5 +33,15 @@ end
 def is_balanced_binary_tree(root)
 
   def check_balance(tree)
+    return [true, -1] if tree.nil?
+
+    left_result = check_balance(root.left)
+    return [false, 0] unless left_result[0]
+    right_result = check_balance(root.right)
+    return [false, 0] unless right_result[0]
+
+    is_balanced = (left_result[1] - right_result[1]).abs <= 1
+    height = [left_result[1],right_result[1]].max + 1
+    return [is_balanced, height]
   end
 end

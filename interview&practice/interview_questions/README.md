@@ -21,6 +21,7 @@
 
 * What is a closure, and how/why would you use one?
 * What's a typical use case for anonymous functions?
+<br><br>One typical use for an anonymous function would be an IIFE, as described above, where the function is only used once, and immediately invoked after its declaration. This is anonymous because it is only used once in the code and shouldn't be named so that it doesn't crowd the namespace. Other than that, an anonymous function can be used in places where it only needs to be called once. This can also be used as inline functions or closures, functions within a function, that are invoked only once within that code.
 * How do you organize your code? (module pattern, classical inheritance?)
 * What's the difference between host objects and native objects?
 <br><br> Native objects are objects inherent to JS, both in the browser and in node. This includes string, array, integer, boolean and many more.<a href="http://es5.github.io/#x8">This is a list of many more</a>. Host objects are those that are available in the environment you are working in, such as having access to window ad hashHistory.

@@ -69,7 +69,10 @@ end
 
 
 
-root = BSTNode.new(0)
-root.left = BSTNode.new(1,root)
-root.right = BSTNode.new(2,root)
-is_balanced_binary_tree(root)
+# root = BSTNode.new(0)
+# root.left = BSTNode.new(1,root)
+# root.left.right = BSTNode.new(1,root)
+# root.right = BSTNode.new(2,root)
+# root.right.right = BSTNode.new(2,root)
+# root.right.right.right = BSTNode.new(2,root)
+# is_balanced_binary_tree(root)

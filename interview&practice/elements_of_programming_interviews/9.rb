@@ -28,3 +28,10 @@ class Stack
     @values[-1][1]
   end
 end
+
+
+def is_balanced_binary_tree(root)
+
+  def check_balance(tree)
+  end
+end

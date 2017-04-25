@@ -10,7 +10,7 @@
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
   <br><br>An IIFE is an immediately invoked function expression. This function shouldn't clutter up the global namespace by declaring the function with a variable name because it is supposed to be an anonymous immediately invoked function that is not called anywhere else. A better way to recreate the IIFE above is
-  
+
   ```js
     (function(){})()
   ```
@@ -44,7 +44,7 @@
   var y = 7;    // declare var y and assign 7 to y
   //will output '5 undefined'
   ```
-  the code above displays how hoisting will hoist declaration (var y) to the top, but not initialization (y = 7)
+  the code above displays how hoisting will hoist declaration (var y) to the top, but not initialization (y = 7). Also keep note that function declarations are hoisted with both declaration and initialization (i.e. function foo() {console.log('hi')}). But function expressions only have the declaration hoisted to the top (i.e. var foo = function bar() {console.log('hi')})
 * Describe event bubbling.
 * What's the difference between an "attribute" and a "property"?
 * Why is extending built-in JavaScript objects not a good idea?

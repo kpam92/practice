@@ -58,6 +58,12 @@
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
 * Why is it called a Ternary expression, what does the word "Ternary" indicate?
+<br><br> A ternary expression takes three conditionals, and returns an output. The first conditional is a boolean, and the next two are the possible outputs, determinant on the first conditional's result. It will output the second piece if true, and the third if false. These are usually used in variable assignment in JS. Below is an example.
+```javascript
+let age = 17
+let entry = age >= 21 ? true : false
+```
+"Ternary" is derived from the n-ary operation, 'ter' means that it deals with three conditionals.
 * What is `"use strict";`? what are the advantages and disadvantages to using it?
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 * Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?

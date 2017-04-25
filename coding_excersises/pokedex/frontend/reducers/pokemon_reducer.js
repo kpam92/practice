@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_POKEMON } from '../actions/pokemon_actions';
+import { merge } from 'lodash';
 
 const pokemonReducer = (state = {}, action) => {
   Object.freeze(state)
@@ -9,3 +10,5 @@ const pokemonReducer = (state = {}, action) => {
       return state;
   }
 }
+
+export default pokemonReducer;

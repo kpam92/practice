@@ -67,7 +67,15 @@ def is_balanced_binary_tree(root)
   return check_balance(root)[0]
 end
 
-
+# How this works:
+# The program starts with the root node, then recursively calls the
+# helper function 'check_balance' to determine whether the entire tree
+# is balanced. The helper function gets called until it reaches the end
+# of the tree, with base cases for nil nodes. When the stack goes back down,
+# each height of the left and right side of each node are calculated, and
+# both the height and boolean of all balanced expressions are returned. The
+# final return is checking the boolean of whether the entire tree is balanced.
+# This entails O(n) time and space, where n is the number of total nodes.
 
 # root = BSTNode.new(0)
 # root.left = BSTNode.new(1,root)

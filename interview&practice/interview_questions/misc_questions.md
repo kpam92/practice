@@ -21,6 +21,8 @@ related questions and answers to them.
    (function(){console.log('example3');})();
    ```
 
+   NOTE: hoisting will shoot up the entirety of function declarations, but it will only hoist the declaration of a function expression, not the initialization!
+
 * difference between .__proto__ and .prototype
   - .__proto__ is used to find the prototype of an instance of a class, while .prototype would be used on the entire class itself. i.e. 'Dog.prototype' vs. 'Fido.__proto__'.The ‘prototype’ property points to the object that will be asigned as the prototype of instances created with that function when using ‘new’.
 

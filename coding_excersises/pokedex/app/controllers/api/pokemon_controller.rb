@@ -1,5 +1,4 @@
-class Api::PokemonsController < ApplicationController
-
+class Api::PokemonController < ApplicationController
   def index
     @pokemons = Pokemon.all
   end
@@ -13,5 +12,4 @@ class Api::PokemonsController < ApplicationController
   def pokemon_params
     params.require(:pokemon).permit(:image_url, :attack, :defense, :name, :poke_type, moves: [])
   end
-
 end

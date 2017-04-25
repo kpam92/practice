@@ -9,6 +9,18 @@ related questions and answers to them.
 
 * binary trees, BFS vs. DFS
 
+* Difference between function declarations and function expressions
+  <br><br>Function declarations are name function variables that are declared without being assigned to a variable.
+  ```js
+  function bar() {console.log('foo')}
+  ```
+   A function expression is a function that is part of a larger syntax, usually variable assignment. This includes IIFE's as well.
+   ```js
+   var a = function() {console.log('example1')}
+   var a = function foo() {console.log('example2')}
+   (function(){console.log('example3');})();
+   ```
+
 * difference between .__proto__ and .prototype
   - .__proto__ is used to find the prototype of an instance of a class, while .prototype would be used on the entire class itself. i.e. 'Dog.prototype' vs. 'Fido.__proto__'.The ‘prototype’ property points to the object that will be asigned as the prototype of instances created with that function when using ‘new’.
 

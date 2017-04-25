@@ -9,10 +9,9 @@ const PokemonReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_POKEMON:
-      debugger;
       return merge({}, action.pokemon);
     default:
-      
+
       return state;
   }
 };

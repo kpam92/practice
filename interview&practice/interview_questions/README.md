@@ -23,7 +23,7 @@
 * What's a typical use case for anonymous functions?
 * How do you organize your code? (module pattern, classical inheritance?)
 * What's the difference between host objects and native objects?
-<br><br> Native objects are objects inherent to JS, both in the browser and in node. This includes string, array, integer, boolean and many more.<a href="http://es5.github.io/#x8" target="_blank">This is a list of many more</a>. Host objects are those that are available in the environment you are working in, such as having access to window ad hashHistory.
+<br><br> Native objects are objects inherent to JS, both in the browser and in node. This includes string, array, integer, boolean and many more.<a href="http://es5.github.io/#x8">This is a list of many more</a>. Host objects are those that are available in the environment you are working in, such as having access to window ad hashHistory.
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 * What's the difference between `.call` and `.apply`?
 * Explain `Function.prototype.bind`.

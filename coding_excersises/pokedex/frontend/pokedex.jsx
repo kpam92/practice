@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.requestAllPokemon = requestAllPokemon;
   window.selectAllPokemon = selectAllPokemon;
   window.store = store;
-  ReactDOM.render(<Root/>, rootEl);
+  ReactDOM.render(<Root store={store}/>, rootEl);
 });

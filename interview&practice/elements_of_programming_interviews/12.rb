@@ -18,7 +18,7 @@ def bsearch(array,target)
     return bsearch(array[0...middle],target)
   else
     left = bsearch(array[middle+1..-1],target)
-    left.nil? ? nil : left
+    left.nil? ? nil : left + (middle + 1)
   end
-  
+
 end

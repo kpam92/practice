@@ -54,4 +54,27 @@ end
 # index of the item that equals the target, or it returns nil.
 # We traverse to the right side of the array when the middle item is
 # lower than the target. Because it runs like regular bsearch, the
-# worst case is O(nlogn).
+# worst case is O(logn) space and time.
+
+
+# how the book does it
+
+def first_idx(array, target)
+  left = 0
+  right = array.length - 1
+  result = nil
+
+  while left <= right
+    mid = (left + right) / 2
+
+    if array[mid] > target
+      right = mid - 1
+    elsif array[mid] == target
+      result = array[mid]
+      right = mid - 1
+    else
+      left = mid + 1
+    end
+  end
+  result
+end

@@ -46,3 +46,12 @@ def first_idx(array, target)
     left.nil? ? middle_target : left + (middle)
   end
 end
+
+# how it works:
+# This function looks at the middle target to see if it is the target.
+# If it is the target, then it recursively calls first_idx on the left
+# half of the array. At its basecase, the function either returns the
+# index of the item that equals the target, or it returns nil.
+# We traverse to the right side of the array when the middle item is
+# lower than the target. Because it runs like regular bsearch, the
+# worst case is O(nlogn).

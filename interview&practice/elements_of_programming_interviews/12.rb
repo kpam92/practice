@@ -1,5 +1,5 @@
 # Searching
-
+ require 'byebug'
 
 # Write a method that takes a sorted array and a key and
 # returns the index of the first occurence of that key in the array.
@@ -36,7 +36,7 @@ def first_idx(array, target)
   end
 
   middle_target = middle if array[middle] == target
-
+  byebug
   if array[middle] >= target
     # bsearch left
     right = first_idx(array[0...middle],target)
@@ -47,3 +47,5 @@ def first_idx(array, target)
     left.nil? ? middle_target : left + (middle + 1)
   end
 end
+
+first_idx([1,2,2,2,2],21)

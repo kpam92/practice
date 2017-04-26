@@ -36,16 +36,13 @@ def first_idx(array, target)
   end
 
   middle_target = middle if array[middle] == target
-  byebug
   if array[middle] >= target
     # bsearch left
     right = first_idx(array[0...middle],target)
     right.nil? ? middle_target : right
   else
     # if middle is larger than target, bsearch right
-    left = first_idx(array[middle + 1..-1], target)
+    left = first_idx(array[middle..-1], target)
     left.nil? ? middle_target : left + (middle + 1)
   end
 end
-
-first_idx([1,2,2,2,2],21)

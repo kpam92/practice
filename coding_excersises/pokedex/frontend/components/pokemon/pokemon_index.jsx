@@ -5,8 +5,19 @@ class PokemonIndex extends React.Component {
     super()
   };
 
+  componentDidMount(){
+    this.props.requestAllPokemon();
+  }
+
   render() {
-    return()
+    const poke = this.props.pokemon.forEach(pokemon => (
+      <li>{pokemon.name}</li>
+    ))
+    return(
+      <ul>
+        {poke}
+      </ul>
+    )
   };
 };
 

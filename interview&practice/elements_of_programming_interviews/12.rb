@@ -22,3 +22,6 @@ def bsearch(array,target)
   end
 
 end
+
+def first_idx(array,target)
+end

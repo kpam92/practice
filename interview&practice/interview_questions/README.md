@@ -20,6 +20,21 @@
 
 
 * What is a closure, and how/why would you use one?
+<br><br> A closure is a function, anonymous or named, within another function, that has access to variables within its own scope as well as those in the scope above.
+```javascript
+function foo(x,y){
+
+  var z = 'mi';
+
+  function closure(){
+    return `${x} ${y} ${z}`;
+  };
+
+  return closure();
+};
+
+foo('do','re'); //returns 'do re mi'
+```
 * What's a typical use case for anonymous functions?
 <br><br>One typical use for an anonymous function would be an IIFE, as described above, where the function is only used once, and immediately invoked after its declaration. This is anonymous because it is only used once in the code and shouldn't be named so that it doesn't crowd the namespace. Other than that, an anonymous function can be used in places where it only needs to be called once. This can also be used as inline functions or closures, functions within a function, that are invoked only once within that code.
 * How do you organize your code? (module pattern, classical inheritance?)

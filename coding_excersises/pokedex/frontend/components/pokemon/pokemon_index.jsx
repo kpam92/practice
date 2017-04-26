@@ -10,12 +10,10 @@ class PokemonIndex extends React.Component {
   }
 
   render() {
-    const poke = this.props.pokemon.forEach(pokemon => (
-      <li>{pokemon.name}</li>
-    ))
+    const { pokemon } = this.props;
     return(
       <ul>
-        {poke}
+        {pokemon.map(poke => <li>{poke.name}</li>)}
       </ul>
     )
   };

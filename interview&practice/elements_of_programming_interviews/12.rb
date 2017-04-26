@@ -78,3 +78,12 @@ def first_idx(array, target)
   end
   result
 end
+
+# how this works:
+# This solution is more streamlined as it does not work recursively,
+# but instead, it finds a midpoint, then depending on its comparison
+# to the target, it restricts the range of where the first index could
+# possibly be. Because this still cuts the range in half each time,
+# its worse case is still O(logn), but its space would be O(1) because
+# it only saves three variables. This is better than my initial solution
+# because it takes up less space.

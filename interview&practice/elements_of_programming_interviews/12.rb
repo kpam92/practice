@@ -43,6 +43,6 @@ def first_idx(array, target)
   else
     # if middle is larger than target, bsearch right
     left = first_idx(array[middle..-1], target)
-    left.nil? ? middle_target : left + (middle + 1)
+    left.nil? ? middle_target : left + (middle)
   end
 end

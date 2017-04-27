@@ -59,7 +59,16 @@ def lca_2(node1, node2)
 
   idx = (depth1 - depth2).abs
   while idx > 0
-    
+    node1 = node1.parent
+    idx -= 1
   end
+
+  until node1.nil?
+    node1 = node1.parent
+    node2 = node2.parent
+    return node1 if node1 == node2
+  end
+
+  nil
 
 end

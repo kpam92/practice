@@ -32,3 +32,7 @@ def lca_1(node1, node2)
 end
 
 # how it works:
+# this iterates through the first node's parents, and stores them in
+# a hash. The second node then iterates up through its parents and
+# returns the first node that is present in the hash. This takes up
+# O(h) space and time, where h is the height.

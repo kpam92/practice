@@ -39,8 +39,15 @@ end
 
 # optimized solution
 def depth(node)
-  
+  h = 0
+
+  until node.nil?
+    h += 1
+    node = node.parent
+  end
+  h
 end
+
 def lca_2(node1, node2)
 
 end

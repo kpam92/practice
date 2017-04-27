@@ -50,4 +50,16 @@ end
 
 def lca_2(node1, node2)
 
+  depth1 = depth(node1)
+  depth2 = depth(node2)
+
+  # this switches the positions of the two nodes to make the
+  # deeper node be node1
+  node2, node1 = node1, node2 if depth(node2) > depth(node1)
+
+  idx = (depth1 - depth2).abs
+  while idx > 0
+    
+  end
+
 end

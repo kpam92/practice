@@ -22,5 +22,13 @@ def lca_1(node1, node2)
     parents[node1.parent] = true
     node1 = node1.parent
   end
-  
+
+  until node2.nil?
+    return node2.parent if parents[node2.parent]
+    node2 = node2.parent
+  end
+
+  nil
 end
+
+# how it works:

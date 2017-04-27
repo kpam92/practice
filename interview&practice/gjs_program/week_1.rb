@@ -16,4 +16,11 @@ class BSTnode
 end
 
 def lca_1(node1, node2)
+  parents = {}
+
+  until node1.parent.nil?
+    parents[node1.parent] = true
+    node1 = node1.parent
+  end
+  
 end

@@ -72,3 +72,11 @@ def lca_2(node1, node2)
   nil
 
 end
+
+
+# how it works
+# This version makes the deeper node climb up until it is of equal
+# depth of the other one, then both climb up until they equal each
+# other or returns nil if there is no common ancestor. This still
+# has O(h) time, but now has O(1) space because we don't store all
+# the values.

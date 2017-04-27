@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestAllPokemon: () => dispatch(requestAllPokemon)
+  requestAllPokemon: () => dispatch(requestAllPokemon())
 });
 
 

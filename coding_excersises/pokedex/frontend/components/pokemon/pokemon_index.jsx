@@ -6,6 +6,7 @@ class PokemonIndex extends React.Component {
   };
 
   componentDidMount(){
+
     this.props.requestAllPokemon();
   }
 
@@ -13,7 +14,7 @@ class PokemonIndex extends React.Component {
     const { pokemon } = this.props;
     return(
       <ul>
-        {pokemon.map(poke => <li>{poke.name}</li>)}
+        {pokemon.map((poke,idx) => <li key={idx}>{poke.name}</li>)}
       </ul>
     )
   };

@@ -11,7 +11,6 @@ const PokemonReducer = (state = {}, action) => {
     case RECEIVE_ALL_POKEMON:
       return merge({}, action.pokemon);
     default:
-
       return state;
   }
 };

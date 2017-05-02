@@ -64,6 +64,30 @@ Closures are the closest thing JS has to having private methods, where a user do
   ```
   the code above displays how hoisting will hoist declaration (var y) to the top, but not initialization (y = 7). Also keep note that function declarations are hoisted with both declaration and initialization (i.e. function foo() {console.log('hi')}). But function expressions only have the declaration hoisted to the top (i.e. var foo = function bar() {console.log('hi')})
 * Describe event bubbling.
+<br><br> Event bubbling is what takes place when a user interacts with a specific element, where the event propogates up
+through each ancestor element.
+```html
+<div class="ancestor">
+  <div class="parent">
+    <button> Click me! </button>
+  </div>
+</div>
+```
+```javascript
+$( "button" ).click(function(event) {
+  console.log( "button was clicked!" );
+});
+
+$( ".parent" ).click(function(event) {
+  console.log( "child element was clicked!" );
+});
+
+$( ".ancestor" ).click(function(event) {
+  console.log( "descendant element was clicked!" );
+});
+```
+if the user were to click on the button, all the event listeners on the parent and ancestor elements would go off as well.
+
 * What's the difference between an "attribute" and a "property"?
 * Why is extending built-in JavaScript objects not a good idea?
 * Difference between document load event and document DOMContentLoaded event?

@@ -96,7 +96,7 @@ if the user were to click on the button, all the event listeners on the parent a
   <br><br> Both are relational operators, the difference is that `==` will compare for equality after doing any necessary
   conversions, while `===` is stricter, and provides no conversions before comparing both items.
 * Explain the same-origin policy with regards to JavaScript.
-  <br><br> The same-origin policy prevents malicious attacks from other sites, preventing code from a foreign site from executing. If JavaScript sees that its origin is different, the script stops. The origin is determined by the protocol, domain, and port.
+  <br><br> The same-origin policy prevents malicious attacks from other sites, preventing code from a foreign site from executing. If JavaScript sees that its origin is different, the script stops. The origin is determined by the protocol(https), domain(www.domain.com), and port(8080).
 * Make this work:
 ```javascript
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]

@@ -13,7 +13,31 @@ class Stack
   end
 
   def pop
-    @values.pop(x)
+    @values.pop
+  end
+
+end
+
+
+def Queue
+
+  def initialize
+    @en = Stack.new
+    @de = Stack.new
+  end
+
+  def push(x)
+    @en.push(x)
+  end
+
+  def pop
+    raise 'empty queue' if @de.empty? && @de.empty?
+    if @de.empty?
+      until @en.empty?
+        @de.push(@en.pop)
+      end
+    end
+    @de.pop
   end
 
 end

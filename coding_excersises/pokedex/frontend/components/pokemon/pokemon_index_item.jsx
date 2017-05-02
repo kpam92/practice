@@ -6,8 +6,8 @@ const PokemonIndexItem = ({pokemon, }) => (
       <span>{pokemon.id}</span>
       <img src={pokemon.image_url} alt={pokemon.name} />
       <span>{pokemon.name}</span>
-    
-  </li>
-)
 
-export default PokemonIndexItem
+  </li>
+);
+
+export default PokemonIndexItem;

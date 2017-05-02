@@ -67,6 +67,7 @@ Closures are the closest thing JS has to having private methods, where a user do
 * What's the difference between an "attribute" and a "property"?
 * Why is extending built-in JavaScript objects not a good idea?
 * Difference between document load event and document DOMContentLoaded event?
+  - DOMContentLoaded events are triggered after the document has been fully loaded, and before css and images are loaded. document load events are triggered after the document has been loaded, along with all the images and styles.
 * What is the difference between `==` and `===`?
 * Explain the same-origin policy with regards to JavaScript.
   <br><br> The same-origin policy prevents malicious attacks from other sites, preventing code from a foreign site from executing. If JavaScript sees that its origin is different, the script stops. The origin is determined by the protocol, domain, and port.

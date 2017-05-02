@@ -28,3 +28,6 @@ related questions and answers to them.
 
 * What is a max-heap? min-heap?
   - a max-heap is a form of a binary tree where a node's children are all smaller than or equal to it. (don't get this at all confused with the structuring of a binary search tree). These nodes are then indexed in a BFS fashion, so if a node is at index K, then you would find its direct children at index 2K + 1(left) and 2K + 2(right). min-heap is the same rules but opposite order.
+
+* What is the difference between object oriented programming and functional programming?
+  -

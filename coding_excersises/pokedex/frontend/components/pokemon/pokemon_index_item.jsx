@@ -1,4 +1,4 @@
-import 'react' from 'react';
+import React from 'react';
 
 const PokemonIndexItem = ({pokemon, }) => (
   <li className="pokemon-index-item">

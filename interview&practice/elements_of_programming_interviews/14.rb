@@ -31,4 +31,5 @@ end
 # both arrays are iterated through, collecting items that equal each other
 # in a Hash set. Depending on other options, a respective array is iterated
 # forward once, until one of the arrays is done being cycled through. The
-# hash keys are then returned.
+# hash keys are then returned. This has a time complexity of O(n), n being
+# the shorter array

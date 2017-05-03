@@ -17,7 +17,7 @@ def common_array(array1,array2)
     elsif array1[idx1] > array2[idx2]
       idx2 += 1
     elsif array1[idx1] < array2[idx2]
-      idx2 += 1
+      idx1 += 1
     else
       idx1 += 1
       idx2 += 1

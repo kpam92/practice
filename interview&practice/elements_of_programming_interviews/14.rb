@@ -33,3 +33,5 @@ end
 # forward once, until one of the arrays is done being cycled through. The
 # hash keys are then returned. This has a time complexity of O(n), n being
 # the shorter array
+
+# The book solves the problem in a similar fashion

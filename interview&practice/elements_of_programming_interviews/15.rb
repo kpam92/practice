@@ -22,13 +22,19 @@ def valid_bst?(node)
   right_side = valid_bst?(node.right)
   return [false, nil] if [false,nil] if left_side[0] == false || right_side[0] == false
 
-  answer = nil
+  answer = [false,nil]
 
-  if (left_side[1] == nil || left_side[1] <= node.value)
-      && (right_side[1] == nil || right_side[1] >= node.value)
+  if (left_side[1] == nil || left_side[1] <= node.value) && (right_side[1] == nil || right_side[1] >= node.value)
     answer = [true, node.value]
   end
 
   node.parent.nil? ? answer[0] : answer
-  
+
 end
+
+a = BSTNode.new(2)
+b = BSTNode.new(1,a)
+c = BSTNode.new(3,a)
+d = BSTNode.new(4,c)
+a.left,a.right = b,c
+c.right = d

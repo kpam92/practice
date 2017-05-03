@@ -26,3 +26,9 @@ def common_array(array1,array2)
   end
   result.keys
 end
+
+# How it works:
+# both arrays are iterated through, collecting items that equal each other
+# in a Hash set. Depending on other options, a respective array is iterated
+# forward once, until one of the arrays is done being cycled through. The
+# hash keys are then returned.

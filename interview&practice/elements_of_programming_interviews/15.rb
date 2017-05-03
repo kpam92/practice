@@ -32,9 +32,18 @@ def valid_bst?(node)
 
 end
 
-a = BSTNode.new(2)
-b = BSTNode.new(1,a)
-c = BSTNode.new(3,a)
-d = BSTNode.new(4,c)
-a.left,a.right = b,c
-c.right = d
+# a = BSTNode.new(2)
+# b = BSTNode.new(1,a)
+# c = BSTNode.new(3,a)
+# d = BSTNode.new(4,c)
+# a.left,a.right = b,c
+# c.right = d
+# valid_bst?(a)
+
+# How it works:
+# The function recursively goes down the tree, returning if it is called
+# on a nil child, or if it is called on a node with no children. When
+# the stack tracks back up, we make sure that each child is either smaller
+# or larger (or equal to) the parent node, and also checking the boolean to
+# make sure that all previous comparisons were successful. We return the final
+# result when parent is nil. This is O(h) time, h being the height.

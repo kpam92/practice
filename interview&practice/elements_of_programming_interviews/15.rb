@@ -13,3 +13,6 @@ class BSTNode
     @right = nil
   end
 end
+
+def valid_bst?(node)
+end

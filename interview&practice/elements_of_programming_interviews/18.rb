@@ -9,6 +9,7 @@
 def three_sum(array,target)
 
   array.each_with_index do |base,idx|
+    break if idx > array.length - 3
     idx1 = idx + 1
     idx2 = array.length - 1
 

@@ -108,6 +108,9 @@ if the user were to click on the button, all the event listeners on the parent a
 * Make this work:
 ```javascript
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+
+// solution
+function duplicate(array) {return array.concat(array)}
 ```
 * Why is it called a Ternary expression, what does the word "Ternary" indicate?
 <br><br> A ternary expression takes three conditionals, and returns an output. The first conditional is a boolean, and the next two are the possible outputs, determinant on the first conditional's result. It will output the second piece if true, and the third if false. These are usually used in variable assignment in JS. Below is an example.

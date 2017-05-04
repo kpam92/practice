@@ -22,4 +22,6 @@ def three_sum(array,target)
         idx2 -= 1
       end
     end
+  end
+  false
 end

@@ -44,6 +44,13 @@ Closures are the closest thing JS has to having private methods, where a user do
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
   <br><br> `function Person(){}` is a function declaration, both declaring and initializing the function 'Person'. `var person = Person()` is a variable that stores the result of a function call of Person(). `var person = new Person()` is instantiating a new instance from class Person.
 * What's the difference between `.call` and `.apply`?
+  <br><br> Both methods are means of applying a  `this` context object for a certain function; their difference is in how they accept the extra arguments that the method may take. Call accepts arguments separated by commas after the object to bind, while Apply takes the arguments as an array that follows the object. A good way to remember is the A in apply. A for apply which takes Array arguments. Call take arguments after Commas.
+  ```javascript
+  function foo(x,y) { return `${this.name} x y`}
+
+  foo.call(object, “other argument”, “another one”);
+  foo.apply(object, [“argument1”, “argument2”, “argument3”]);
+  ```
 * Explain `Function.prototype.bind`.
 * When would you use `document.write()`?
 * What's the difference between feature detection, feature inference, and using the UA string?

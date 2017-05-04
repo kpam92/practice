@@ -42,7 +42,7 @@ Closures are the closest thing JS has to having private methods, where a user do
 * What's the difference between host objects and native objects?
 <br><br> Native objects are objects inherent to JS, both in the browser and in node. This includes string, array, integer, boolean and many more.<a href="http://es5.github.io/#x8">This is a list of many more</a>. Host objects are those that are available in the environment you are working in, such as having access to window ad hashHistory.
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
-  <br><br>
+  <br><br> `function Person(){}` is a function declaration, both declaring and initializing the function 'Person'. `var person = Person()` is a variable that stores the result of a function call of Person(). `var person = new Person()` is instantiating a new instance from class Person.
 * What's the difference between `.call` and `.apply`?
 * Explain `Function.prototype.bind`.
 * When would you use `document.write()`?

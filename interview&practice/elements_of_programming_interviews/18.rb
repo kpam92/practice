@@ -3,6 +3,10 @@
 # which add up to the specified number. Output the indexes
 
 def two_sum(array,target)
+  seen_nums = Hash.new {|h,k| h = []}
+
+  array.each do |num|
+  end
 end
 
 # Design an algorithm that takes as input an array and a number,

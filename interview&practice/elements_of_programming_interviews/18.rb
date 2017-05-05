@@ -3,11 +3,17 @@
 # which add up to the specified number. Output the indexes
 
 def two_sum(array,target)
-  seen_nums = Hash.new {|h,k| h = []}
+  seen_nums = Hash.new {|h,k| h[k] = []}
 
-  array.each do |num|
+  array.each_with_index do |num,idx|
+    curr_diff = target - num
+    return [seen_nums[curr_diff][0],idx] if seen_nums[curr_diff].length > 0
+    seen_nums[num] << idx
   end
+  seen_nums
 end
+
+# How it works:
 
 # Design an algorithm that takes as input an array and a number,
 # and determines if there are three entries in the array

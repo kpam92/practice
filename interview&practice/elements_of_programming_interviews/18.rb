@@ -14,6 +14,9 @@ def two_sum(array,target)
 end
 
 # How it works:
+# The function is greedy as it traverses the array once, first checking
+# if the counterpart exists, and if not, then collects that instance of
+# the number. It returns nil if nothing is found. It is O(n) time and space.
 
 # Design an algorithm that takes as input an array and a number,
 # and determines if there are three entries in the array

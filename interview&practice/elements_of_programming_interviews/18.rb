@@ -26,3 +26,9 @@ def three_sum(array,target)
   end
   false
 end
+
+
+# how it works:
+The function iterates through each number, with the exception of numbers
+that [-2] spaces close to the end, then iterates through possible combinations
+of each base. This 

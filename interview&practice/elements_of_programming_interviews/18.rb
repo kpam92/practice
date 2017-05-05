@@ -1,4 +1,11 @@
 # Design an algorithm that takes as input an array and a number,
+# and determines if there are two entries in the array
+# which add up to the specified number. Output the indexes
+
+def two_sum(array,target)
+end
+
+# Design an algorithm that takes as input an array and a number,
 # and determines if there are three entries in the array
 # (not necessarily distinct) which add up to the specified number.
 # This means you can use use any amount of the integers in the array.
@@ -31,4 +38,4 @@ end
 # how it works:
 The function iterates through each number, with the exception of numbers
 that [-2] spaces close to the end, then iterates through possible combinations
-of each base. This 
+of each base. This

@@ -8,6 +8,7 @@ related questions and answers to them.
 * What are the upsides to ES6, and fat arrow functions?
 
 * binary trees, BFS vs. DFS
+<br><br> Bread first search traverses through each level first, while Depth first search goes to the farthest reaches first, then moves up. BFS is best seen as a queue, DFS as a stack. BFS is slower and requires more memory.
 
 * Difference between function declarations and function expressions
   <br><br>Function declarations are name function variables that are declared without being assigned to a variable.

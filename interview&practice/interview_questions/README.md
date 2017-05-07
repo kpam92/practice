@@ -73,6 +73,7 @@ Closures are the closest thing JS has to having private methods, where a user do
   doggy.greeting.bind(Person)(); \\returns `Kevin says hi`
   ```
 * When would you use `document.write()`?
+<br><br>This function writes to the document/web page the content that you put as the argument, i.e. `<h1>hi<h1>`. Using this after the DOM has loaded will overwrite all of the page. So, the common use for this is to upload third party code and script to the page, examples include ads and Google analytics.
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?

@@ -52,6 +52,9 @@ Closures are the closest thing JS has to having private methods, where a user do
   foo.apply(object, [“argument1”, “argument2”, “argument3”]);
   ```
 * Explain `Function.prototype.bind`.
+  <br><br> the bind() function explicitly couples the the original function with a new context as to what  `this` refers to in its code.
+  ```javascript
+  ```
 * When would you use `document.write()`?
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain Ajax in as much detail as possible.

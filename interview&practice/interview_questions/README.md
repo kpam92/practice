@@ -54,6 +54,23 @@ Closures are the closest thing JS has to having private methods, where a user do
 * Explain `Function.prototype.bind`.
   <br><br> the bind() function explicitly couples the the original function with a new context as to what  `this` refers to in its code.
   ```javascript
+  class Dog {
+    constructor(name){
+      this.name = name
+    }
+
+    greeting(){
+      return `${this.name} says hi`
+    }
+  };
+
+  var doggy = new Dog('Pepper');
+
+  var Person = {
+    name: 'Kevin'
+  };
+
+  doggy.greeting.bind(Person)(); \\returns `Kevin says hi`
   ```
 * When would you use `document.write()`?
 * What's the difference between feature detection, feature inference, and using the UA string?

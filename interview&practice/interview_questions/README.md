@@ -141,7 +141,7 @@ let entry = age >= 21 ? true : false
 ```
 "Ternary" is derived from the n-ary operation, 'ter' means that it deals with three conditionals.
 * What is `"use strict";`? what are the advantages and disadvantages to using it?
-<br><br>`use strict` helps catch common mistakes by throwing exceptions, throws errors when the user does unsafe actions, and disables certain features, such as hoisting. Using this mode helps avoid certain errors and write cleaner code. 
+<br><br>`use strict` helps catch common mistakes by throwing exceptions, throws errors when the user does unsafe actions, and disables certain features, such as hoisting. Using this mode helps avoid certain errors and write cleaner code.
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 * Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 * Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
@@ -160,3 +160,4 @@ let entry = age >= 21 ? true : false
 * What is event loop?
   * What is the difference between call stack and task queue?
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+  <br><br>`function foo() {}` is a function declaration. It is initializing and declaring this specific function in the namespace 'foo.' `var foo = function(){}` is a functional expression, where the variable is declared and initialized as an anonymous function. The functional declaration is hoisted to the top in its entirety, while only declaration of a function expression is hoisted up.

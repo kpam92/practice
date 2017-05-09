@@ -50,15 +50,15 @@ related questions and answers to them.
   this.props = {
     userId: 1,
     user: {
-      fname: 'Ned',
-      lname: 'Ruggeri'
+      fname: 'Kevin',
+      lname: 'Mathews'
     }
   };
 
   const { userId, user: { fname, lname } } = this.props;
   userId; //=> 1
-  fname; //=> 'Ned'
-  lname; //=> 'Ruggeri'
+  fname; //=> 'Kevin'
+  lname; //=> 'Mathews'
   ```
 * Describe the box model in CSS.
   - This term is usually when describing layout and design, specifically the box that wraps around every HTML element. This box includes padding, border, and the content.

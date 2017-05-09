@@ -151,6 +151,7 @@ let entry = age >= 21 ? true : false
 * What are the pros and cons of using Promises instead of callbacks?
 * What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
 * What tools and techniques do you use debugging JavaScript code?
+<br><br> Putting `debugger` in JS code is a great way to analyze code and see where bugs are occurring. Another resource is creating RSpec testing and JEST for React/Redux.
 * What language constructions do you use for iterating over object properties and array items?
 * Explain the difference between mutable and immutable objects.
   * What is an example of an immutable object in JavaScript?

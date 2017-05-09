@@ -17,6 +17,7 @@
   the parenthesis around the anonymous function turns the code into an expression, and the parenthesis that follow immediately invoke the expression.
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
+  <br><br> Undefined means that a variable is declared but not defined. null is a value of a variable and a type of object.
 
 
 * What is a closure, and how/why would you use one?

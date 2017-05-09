@@ -57,7 +57,7 @@ related questions and answers to them.
   lname; //=> 'Ruggeri'
   ```
 * Describe the box model in CSS.
-  -
+  - This term is usually when describing layout and design, specifically the box that wraps around every HTML element. This box includes padding, border, and the content.
 
 * What is Flex Box in CSS?
   -

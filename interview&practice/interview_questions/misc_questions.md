@@ -34,8 +34,28 @@ related questions and answers to them.
   -
 
 * What is the object destructuring?
-  -
+  - Object destructuring in ES6 makes it possible to extract parts of an object and assign those parts to different variables.
+  ```javascript
+  const { a: x, b: y } = { a: 1, b: 2 };
 
+  x; //=> 1
+  y; //=> 2
+  ```
+  This is used most often in React component to destructure props to avoid having to preface wanted variable with  `this.props.*`.
+  ```javascript
+  this.props = {
+    userId: 1,
+    user: {
+      fname: 'Ned',
+      lname: 'Ruggeri'
+    }
+  };
+
+  const { userId, user: { fname, lname } } = this.props;
+  userId; //=> 1
+  fname; //=> 'Ned'
+  lname; //=> 'Ruggeri'
+  ```
 * Describe the box model in CSS.
   -
 

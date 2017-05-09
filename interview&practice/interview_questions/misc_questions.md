@@ -33,7 +33,7 @@ related questions and answers to them.
 * What is the event loop in JavaScript?
   -
 
-* What is the destructuring?
+* What is the object destructuring?
   -
 
 * Describe the box model in CSS.
@@ -43,7 +43,7 @@ related questions and answers to them.
   -
 
 * What is a media_query in CSS?
-  - Media_queries are the means of having specific code for certain d
+  - Media_queries are the means of having specific code for certain dimensions, usually used in CSS to allow website and applications suitable for desktop,tablet, and mobile.
 
 * What is the difference between object oriented programming and functional programming?
   - The main difference seems to be in terms of data vs. behavior, and identity vs. value. Object-oriented languages are good when you have a fixed set of operations on things, and as your code evolves, you primarily add new things. This can be accomplished by adding new classes which implement existing methods, and the existing classes are left alone. Functional languages are good when you have a fixed set of things, and as your code evolves, you primarily add new operations on existing things. This can be accomplished by adding new functions which compute with existing data types, and the existing functions are left alone.

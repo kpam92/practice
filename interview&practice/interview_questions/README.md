@@ -144,6 +144,7 @@ let entry = age >= 21 ? true : false
 <br><br>`use strict` helps catch common mistakes by throwing exceptions, throws errors when the user does unsafe actions, and disables certain features, such as hoisting. Using this mode helps avoid certain errors and write cleaner code.
 * Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
 * Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+<br><br> It is better to leave the global scope as is for many reasons. Variables in the global namespace can be updated and changed anywhere in the code, so it makes it harder to trace and find where updates are. It then makes it harder to read code if variables are declared in the global namespace away from threads where they are used. This also make 'smelly' code that leaves the reader to assume the worst if a programmer writes lazy code. Lastly, naming in the global namespace creates a greater chance for name clashing of variables.
 * Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 * Explain what a single page app is and how to make one SEO-friendly.
 * What is the extent of your experience with Promises and/or their polyfills?

@@ -59,8 +59,8 @@ related questions and answers to them.
 * Describe the box model in CSS.
   - This term is usually when describing layout and design, specifically the box that wraps around every HTML element. This box includes padding, border, and the content.
 
-* What is Flex Box in CSS?
-  -
+* What is flexbox in CSS?
+  - Flexbox is a layout module in CSS3 made to improve the items align, directions and order in the container even when they are with dynamic or even unknown size. The prime characteristic of the flex container is the ability to modify the width or height of its children to fill the available space in the best possible way on different screen sizes.
 
 * What is a media_query in CSS?
   - Media_queries are the means of having specific code for certain dimensions, usually used in CSS to allow website and applications suitable for desktop,tablet, and mobile.

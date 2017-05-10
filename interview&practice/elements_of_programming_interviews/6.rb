@@ -112,3 +112,10 @@ end
 # This solution iterates through once, keeping track of the highest
 # difference and changing the place of the low value when it passes along.
 # It has O(n) time complexity and O(1) space complexity.
+
+# Write a program which takes as input an array of digits that represent
+# a decimal number ([1,2,3] === 123), and returns an array that shows that
+# number + 1 ([1,2,4])
+
+def decimal_adder(array)
+end

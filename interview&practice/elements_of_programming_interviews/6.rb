@@ -118,4 +118,22 @@ end
 # number + 1 ([1,2,4])
 
 def decimal_adder(array)
+
+  idx = array.length - 1
+  sorted = false
+
+  until sorted
+    sorted = true
+    curr_num = array[idx] + 1
+
+    if curr_num == 10 && idx > 0
+      sorted = false
+      array[idx] = 0
+      idx -= 1
+    elsif curr_num == 10 && idx == 0
+       array[idx] = 0
+       array.unshift(1)
+    end
+  end
+  array
 end

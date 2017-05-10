@@ -133,6 +133,8 @@ def decimal_adder(array)
     elsif curr_num == 10 && idx == 0
        array[idx] = 0
        array.unshift(1)
+    else
+      array[idx] = curr_num
     end
   end
   array

@@ -139,3 +139,10 @@ def decimal_adder(array)
   end
   array
 end
+
+# How it works:
+# The function iterates backwards through the array, adding 1 to the
+# initial number, and only continuing if the number exceeds 1 digit.
+# The space is O(1) because it only has variables, and has a runtime
+# of O(n+1), n representing the length of the array(the + 1 comes from
+# the addition of a new digit)

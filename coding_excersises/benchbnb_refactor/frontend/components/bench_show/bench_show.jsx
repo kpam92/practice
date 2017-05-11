@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
+import ReviewShow from '../review/review_show';
 import BenchMap from '../bench_map/bench_map';
 
 class BenchShow extends React.Component {
@@ -67,12 +67,7 @@ class BenchShow extends React.Component {
     return (
       reviews.map((review) => {
         return(
-          <div key={review.id}>
-            <ul className="review-list">
-              <li>Rating: { review.rating }</li>
-              <li>{ review.body }</li>
-            </ul>
-          </div>
+          <ReviewShow rating={review.rating} body={review.body} key={review.id} />
         );
       })
     );

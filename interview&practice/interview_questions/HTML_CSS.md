@@ -1,5 +1,6 @@
 ##### HTML
 * What does a doctype do?
+- It tells the browser what version the language the page is written in and how to render your document.
 * What's the difference between standards mode and quirks mode?
 * What's the difference between HTML and XHTML?
 * Are there any problems with serving pages as application/xhtml+xml?

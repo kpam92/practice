@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 import BenchMap from '../bench_map/bench_map';
-import ReviewShow from '../review/review_show';
 
 class BenchShow extends React.Component {
   constructor(props) {
@@ -102,16 +101,9 @@ class BenchShow extends React.Component {
 
   render() {
     const { bench, benchId, fetchBench, children } = this.props;
-    const { reviews } = bench;
-    const currBenchReviews = reviews.map((review) => {
-      return(
-        <ReviewShow review={review}/>
-      );
-    })
     const benches = {
       [benchId]: bench
     };
-
     return(
       <div className="single-bench-show">
         <div className="single-bench-map">
@@ -136,7 +128,7 @@ class BenchShow extends React.Component {
             <br/>
             <div className="reviews">
               <h3>Reviews</h3>
-              {currBenchReviews}
+              {this.reviewList(bench.reviews)}
             </div>
           </div>
           { this.reviewSection() }

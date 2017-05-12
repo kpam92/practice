@@ -79,6 +79,7 @@ Closures are the closest thing JS has to having private methods, where a user do
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?
 <br><br> Advantages: better interactivity and more dynamic pages. Easier navigation. More succinct and compact code.
+<br><br> Disadvantages: Reload and back are rendered useless, and can refresh page prior to ajax call. 
 * Explain how JSONP works (and how it's not really Ajax).
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?

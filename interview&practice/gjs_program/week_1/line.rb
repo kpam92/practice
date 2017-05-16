@@ -19,3 +19,9 @@
 # 10.[1*,2,2]
 # 11.[2,2]
 # The answer would be 11
+
+
+def wait(array,idx)
+  idx = 0
+  counter = 0
+end

@@ -43,7 +43,7 @@ end
 
 # Let's see if we can optimize This
 
-def wait2(array,target)
+def waitingTime(array,target)
   result = 0
 
   array[0..target].each_with_index do |num,idx|

@@ -21,11 +21,11 @@
 # The answer would be 11
 
 
-def wait(array,idx)
+def wait(array,target)
   idx = 0
   counter = 0
 
-  until tickets[p] == 0
+  until tickets[target] == 0
     if tickets[idx] > 0
         tickets[idx] -= 1
         counter += 1
@@ -34,3 +34,8 @@ def wait(array,idx)
   end
   counter
 end
+
+# How it works:
+# The problem iterates through the line, counting 1 while subtracting
+# from each number, skipping 0 values. It then returns the counter when
+# array[target] == 0

@@ -25,12 +25,12 @@ def wait(array,target)
   idx = 0
   counter = 0
 
-  until tickets[target] == 0
-    if tickets[idx] > 0
-        tickets[idx] -= 1
+  until array[target] == 0
+    if array[idx] > 0
+        array[idx] -= 1
         counter += 1
     end
-    idx = (idx + 1) % tickets.length
+    idx = (idx + 1) % array.length
   end
   counter
 end
@@ -44,11 +44,29 @@ end
 # Let's see if we can optimize This
 
 def wait2(array,target)
-  extra_length = array[target+1..-1].length
   result = 0
-  array[0...target].each do |target|
+
+  array[0..target].each_with_index do |num,idx|
+    if array[idx] >= target
+      result += array[target]
+    else
+      result += num
+    end
   end
-  array[target+1..-1].each do |target|
+
+  array[target+1..-1].each_with_index do |num,idx|
+    if array[idx] >= target
+      result += array[target] - 1
+    else
+      result += num
+    end
   end
   result
 end
+
+#How it works
+# This solution iterates only once over the array, adding less than
+# or up to the target amount if before the target, and less than or
+# one less than target amount if after. This is O(n) time complexity
+# rather than the previous example, where the iterating loop could go
+# on for an extremely large time.

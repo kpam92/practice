@@ -44,17 +44,11 @@ end
 # Let's see if we can optimize This
 
 def wait2(array,target)
-  extra_length = tickets[p+1..-1].length
+  extra_length = array[target+1..-1].length
   result = 0
-  tickets.each_with_index do |ticket,idx|
-    if ticket >= tickets[p]
-      result += tickets[p]
-    elsif ticket < tickets[p] && idx < p
-      result += ticket
-      result -= extra_length
-    else
-      result += ticket
-    end
+  array[0...target].each do |target|
+  end
+  array[target+1..-1].each do |target|
   end
   result
 end

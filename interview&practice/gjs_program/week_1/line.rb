@@ -24,4 +24,13 @@
 def wait(array,idx)
   idx = 0
   counter = 0
+
+  until tickets[p] == 0
+    if tickets[idx] > 0
+        tickets[idx] -= 1
+        counter += 1
+    end
+    idx = (idx + 1) % tickets.length
+  end
+  counter
 end

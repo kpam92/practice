@@ -39,3 +39,9 @@ end
 # The problem iterates through the line, counting 1 while subtracting
 # from each number, skipping 0 values. It then returns the counter when
 # array[target] == 0
+
+
+# Let's see if we can optimize This
+
+def wait2(array,target)
+end

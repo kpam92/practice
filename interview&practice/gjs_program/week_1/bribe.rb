@@ -9,7 +9,7 @@
 # Fascinated by this chaotic queue, you decide you must know the minimum number of bribes that took place to get the queue into its current state!
 #
 # Note: Each  wears sticker , meaning they were initially the  person in queue.
-
+require 'byebug'
 def bribe(array)
 
     line = []
@@ -19,17 +19,17 @@ def bribe(array)
     idx = 0
     while idx < line.length
       curr_person = line[idx]
-      if curr_person[0] != idx
-        # add one to curr_person's bribe count
-        switches += 1
+
+      if curr_person[0] != (idx + 1)
         curr_person[1] += 1
-        return 'Too Chaotic' if curr_person[1] > 2
-        # if current person is not in their place, switch with original place
-        curr_person, line[curr_person[0]] = line[curr_person[0]], curr_person
+        switches += 1
+        line[idx], line[curr_person[0] - 1] = line[curr_person[0] - 1], line[idx]
       else
         idx += 1
       end
     end
-    
+
     switches
 end
+
+puts bribe([1,2,4,3])

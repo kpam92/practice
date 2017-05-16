@@ -11,7 +11,25 @@
 # Note: Each  wears sticker , meaning they were initially the  person in queue.
 
 def bribe(array)
+
     line = []
     array.each {|num| line << [num,0]} #this creates a dup array with a num for tracking bribes
+    switches = 0
 
+    idx = 0
+    while idx < line.length
+      curr_person = line[idx]
+      if curr_person[0] != idx
+        # add one to curr_person's bribe count
+        switches += 1
+        curr_person[1] += 1
+        return 'Too Chaotic' if curr_person[1] > 2
+        # if current person is not in their place, switch with original place
+        curr_person, line[curr_person[0]] = line[curr_person[0]], curr_person
+      else
+        idx += 1
+      end
+    end
+    
+    switches
 end

@@ -23,6 +23,7 @@ def bribe(array)
       if curr_person[0] != (idx + 1)
         curr_person[1] += 1
         switches += 1
+        return 'too chaotic' if curr_person[1] > 2
         line[idx], line[curr_person[0] - 1] = line[curr_person[0] - 1], line[idx]
       else
         idx += 1
@@ -32,4 +33,19 @@ def bribe(array)
     switches
 end
 
+
+def bribe(array)
+    result = 0
+    idx1 = array.length - 1
+    while idx1 >= 0
+      amount = array[idx1] - (idx1 + 1).abs
+      if (amount > 2)
+          return "Too chaotic"
+      else
+        result += amount
+      end
+      idx1 -= 1
+    end
+    result
+end
 puts bribe([1,2,4,3])

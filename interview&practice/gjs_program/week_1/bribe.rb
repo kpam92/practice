@@ -37,24 +37,25 @@ end
 def bribe(array)
     result = 0
     idx1 = array.length - 1
-      while idx1 >= 0
-        if ((array[idx1] - (idx1 + 1).abs) > 2)
-            return"Too chaotic"
-        end
-
-        if idx1 > 1
-          idx2 = array[idx1] - 2
-        else
-          idx2 = 0
-        end
-
-        while idx2 < idx1
-          result += 1 if (array[idx2] > array[idx1])
-          idx2 += 1
-        end
-        idx1 += 1
+    while idx1 >= 0
+      # byebug
+      if ((array[idx1] - (idx1 + 1).abs) > 2)
+          return"Too chaotic"
       end
-    result
+
+      if idx1 > 1
+        idx2 = array[idx1] - 2
+      else
+        idx2 = 0
+      end
+
+      while idx2 < idx1
+        result += 1 if (array[idx2] > array[idx1])
+        idx2 -= 1
+      end
+      idx1 -= 1
+    end
+  result
 end
 
 

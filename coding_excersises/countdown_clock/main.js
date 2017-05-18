@@ -2,7 +2,7 @@ var countDownDisplay = new Date("Jul 5, 2019 15:37:25");
 var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
 
 
-  setInterval(function() {
+  var x = setInterval(function() {
     document.getElementById('title').innerHTML = countDownDisplay;
     // Get todays date and time
     var now = new Date().getTime();
@@ -37,9 +37,8 @@ var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
     document.getElementById('minutes').innerHTML = minutes;
     document.getElementById('seconds').innerHTML = seconds;
 
-    // If the count down is over, write some text
+
     if (distance < 0) {
-        clearInterval(x);
         document.getElementById('days').innerHTML = "00";
         document.getElementById('hours').innerHTML = "00";
         document.getElementById('minutes').innerHTML = "00";
@@ -50,7 +49,6 @@ var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
 
 document.addEventListener("submit", function(evt) {
     evt.preventDefault();
-
     var time = document.getElementById('time').value
     var date = document.getElementById('date').value
     if (time.length === 0 || date.length === 0){

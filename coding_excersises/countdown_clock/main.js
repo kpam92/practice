@@ -56,7 +56,8 @@ document.addEventListener("submit", function(evt) {
     if (time.length === 0 || date.length === 0){
       alert('Date or Time is empty!')
     } else {
-      countDownDate = new Date(time + ' ' + date)
+      countDownDisplay = new Date(time + ' ' + date);
+      countDownDate = new Date(time + ' ' + date).getTime();
     }
 
 }, true);

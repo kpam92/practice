@@ -1,6 +1,7 @@
 * {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  color: #c7c4c4;
 }
 .container {
   width: 650px;
@@ -12,7 +13,8 @@
   margin: 20px;
   width: 50px;
   height: 50px;
-  background: red;
+  background: #f8f6f6;
+  color:#45b2ec;
   text-align: center;
   vertical-align: middle;
   padding: 20px 30px 10px;
@@ -21,8 +23,6 @@
 }
 #display > div {
   float: left;
-  /*background: yellow;*/
-  /*border: 1px solid black;*/
 }
 
 #display h2 {

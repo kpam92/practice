@@ -3,6 +3,7 @@
 <head>
   <script src='main.js'></script>
   <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <title>Countdown clock</title>
 </head>
 
@@ -10,29 +11,36 @@
   <div id="display">
     <div>
       <div id='days'></div>
+      <h2>Days</h2>
     </div>
     <div>
       <div id='hours'></div>
+      <h2>Hours</h2>
     </div>
     <div>
       <div id='minutes'></div>
+      <h2>Minutes</h2>
     </div>
     <div>
       <div id='seconds'></div>
+      <h2>Seconds</h2>
     </div>
   </div>
-  <h1>
-  remaining
-  </h1>
-  <form>
-    <label>Enter date:
-    <input type="date" id="date">
-    </label>
-    <label>Enter time:
-    <input type="time" id="time">
-    </label>
-    <button onSubmit="">submit</button>
-  </form>
+  <div class="form">
+
+    <h1>
+    remaining
+    </h1>
+    <form>
+      <label>Enter date:
+      <input type="date" id="date">
+      </label>
+      <label>Enter time:
+      <input type="time" id="time">
+      </label>
+      <button onSubmit="">submit</button>
+    </form>
+  </div>
 </body>
 
 </html>

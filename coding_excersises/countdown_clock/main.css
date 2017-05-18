@@ -14,8 +14,8 @@
 }
 #display > div {
   float: left;
-  background: yellow;
-  border: 1px solid black;
+  /*background: yellow;*/
+  /*border: 1px solid black;*/
 }
 
 #display h2 {

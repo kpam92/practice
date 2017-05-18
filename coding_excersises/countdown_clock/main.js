@@ -1,8 +1,9 @@
+var countDownDisplay = new Date("Jul 5, 2019 15:37:25");
 var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
 
-// Update the count down every 1 second
-  setInterval(function() {
 
+  setInterval(function() {
+    document.getElementById('title').innerHTML = "Countdown until " + countDownDisplay;
     // Get todays date and time
     var now = new Date().getTime();
 
@@ -57,5 +58,5 @@ document.addEventListener("submit", function(evt) {
     } else {
       countDownDate = new Date(time + ' ' + date)
     }
-    
+
 }, true);

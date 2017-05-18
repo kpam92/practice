@@ -45,3 +45,12 @@ var x = setInterval(function() {
         document.getElementById('seconds').innerHTML = "00";
     }
 }, 1000);
+
+
+document.addEventListener("submit", function(evt) {
+  
+    evt.preventDefault();
+    var time = document.getElementById('time').value
+    var date = document.getElementById('date').value
+    console.log(evt);
+}, true);

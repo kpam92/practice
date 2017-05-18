@@ -3,7 +3,7 @@ var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
 
 
   setInterval(function() {
-    document.getElementById('title').innerHTML = "Countdown until " + countDownDisplay;
+    document.getElementById('title').innerHTML = countDownDisplay;
     // Get todays date and time
     var now = new Date().getTime();
 

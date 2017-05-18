@@ -3,40 +3,43 @@
 <head>
   <script src='main.js'></script>
   <link rel="stylesheet" href="main.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 <title>Countdown clock</title>
 </head>
 
 <body>
-  <div id="title"></div>
-  <div id="display">
-    <div>
-      <div id='days'></div>
-      <h2>Days</h2>
+  <div class="container">
+    <h1>COUNTDOWN UNTIL:</h1>
+    <div id="title"></div>
+    <div id="display">
+      <div>
+        <div id='days'></div>
+        <h2>Days</h2>
+      </div>
+      <div>
+        <div id='hours'></div>
+        <h2>Hours</h2>
+      </div>
+      <div>
+        <div id='minutes'></div>
+        <h2>Minutes</h2>
+      </div>
+      <div>
+        <div id='seconds'></div>
+        <h2>Seconds</h2>
+      </div>
     </div>
-    <div>
-      <div id='hours'></div>
-      <h2>Hours</h2>
+    <div class="form">
+      <form>
+        <label>Enter date:
+        <input type="date" id="date">
+        </label>
+        <label>Enter time:
+        <input type="time" id="time">
+        </label>
+        <button onSubmit="">submit</button>
+      </form>
     </div>
-    <div>
-      <div id='minutes'></div>
-      <h2>Minutes</h2>
-    </div>
-    <div>
-      <div id='seconds'></div>
-      <h2>Seconds</h2>
-    </div>
-  </div>
-  <div class="form">
-    <form>
-      <label>Enter date:
-      <input type="date" id="date">
-      </label>
-      <label>Enter time:
-      <input type="time" id="time">
-      </label>
-      <button onSubmit="">submit</button>
-    </form>
   </div>
 </body>
 

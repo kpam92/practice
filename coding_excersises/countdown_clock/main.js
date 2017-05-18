@@ -49,8 +49,13 @@ var countDownDate = new Date("Jul 5, 2019 15:37:25").getTime();
 
 document.addEventListener("submit", function(evt) {
     evt.preventDefault();
+
     var time = document.getElementById('time').value
     var date = document.getElementById('date').value
-    countDownDate = new Date(time + ' ' + date)
-    console.log(evt);
+    if (time.length === 0 || date.length === 0){
+      alert('Date or Time is empty!')
+    } else {
+      countDownDate = new Date(time + ' ' + date)
+    }
+    
 }, true);

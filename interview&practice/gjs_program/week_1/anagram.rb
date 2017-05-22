@@ -1,3 +1,5 @@
+require 'byebug'
+
 def anagram?(word1,word2)
     word1.chars.sort == word2.chars.sort
 end
@@ -17,7 +19,7 @@ words.each do |word|
     result[word] = word if sorted == false
 
 end
-
+byebug
 result.values.each do |value|
     #[amor,roma,omar]
     puts value.join(' - ')
@@ -25,3 +27,6 @@ result.values.each do |value|
 end
 
 end
+
+words = ["AMOR","XISELA","JAMON","ROMA","OMAR","MORA","MIRAR","ESPONJA","RAMO","JAPONES","RIMAR","ARMO","MOJAN","MARO","ORAM","XISELA","MIMAR","MONJA","ALEXIS"]
+print_anagrams(words)

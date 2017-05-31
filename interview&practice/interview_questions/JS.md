@@ -167,4 +167,4 @@ let entry = age >= 21 ? true : false
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
   <br><br>`function foo() {}` is a function declaration. It is initializing and declaring this specific function in the namespace 'foo.' `var foo = function(){}` is a functional expression, where the variable is declared and initialized as an anonymous function. The functional declaration is hoisted to the top in its entirety, while only declaration of a function expression is hoisted up.
 * Why does the following quirk happen in JS, 'console.log(0.1 + 0.2) //0.300000000004'
-  <br><br>
+  <br><br>This is an example of JS's binary floating point math. In most programming languages, it is based on the IEEE 754 standard. JavaScript uses 64-bit floating point representation, which is the same as Java's double. The crux of the problem is that numbers are represented in this format as a whole number times a power of two; rational numbers (such as 0.1, which is 1/10) whose denominator is not a power of two cannot be exactly represented.

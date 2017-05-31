@@ -39,7 +39,7 @@ end
 # The book uses a different approach that uses the bottom-up dynamic programming approach
 
 
-def max_duffel_bag_value(cake_arrays, weight_capacity)
+def cake_thief(cake_arrays, weight_capacity)
 
   # we make an array to hold the maximum possible value at every
   # duffel bag weight capacity from 0 to weight_capacity

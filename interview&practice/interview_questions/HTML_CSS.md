@@ -24,6 +24,7 @@
 * Describe Floats and how they work.
 <br><br> Floats are `left`, `right`, and `none`. A float will take the element out of its original flow and pushes it to the direction specified.
 * Describe z-index and how stacking context is formed.
+<br><br> The z-index indicates the position of the element as it stacks on top of other elements. It's best to think of the elements as pieces of paper on top of each other. An element with a higher z-index will be higher up on the stack and presumably more visible to the viewer.
 * Describe BFC(Block Formatting Context) and how it works.
 * What are the various clearing techniques and which is appropriate for what context?
 * Explain CSS sprites, and how you would implement them on a page or site.

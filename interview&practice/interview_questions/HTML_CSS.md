@@ -18,6 +18,7 @@
 ##### CSS
 
 * What is the difference between classes and ID's in CSS?
+<br><br> Both are selectors for elements on the page, but usually you have more classes on a page, while ID's are used for singular elements. An ID is a more specific selector than a class.
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 * Describe Floats and how they work.
 * Describe z-index and how stacking context is formed.

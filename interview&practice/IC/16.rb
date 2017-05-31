@@ -72,6 +72,7 @@ def cake_thief(cake_arrays, weight_capacity)
               # value with the cake compare to the current_max_value?
               current_max_value = [max_value_using_cake, current_max_value].max
           end
+          print max_values_at_capacities
       end
 
       # add each capacity's max value to our array so we can use them

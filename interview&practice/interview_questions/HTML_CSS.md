@@ -22,6 +22,7 @@
 * What's the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
 <br><br>Normalizing means to make a consistent look and feel of document styles for various browsers, while resetting is to clear the default CSS style of DOM elements.
 * Describe Floats and how they work.
+<br><br> Floats are `left`, `right`, and `none`. A float will take the element out of its original flow and pushes it to the direction specified.
 * Describe z-index and how stacking context is formed.
 * Describe BFC(Block Formatting Context) and how it works.
 * What are the various clearing techniques and which is appropriate for what context?

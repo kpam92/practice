@@ -79,7 +79,7 @@ Closures are the closest thing JS has to having private methods, where a user do
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?
 <br><br> Advantages: better interactivity and more dynamic pages. Easier navigation. More succinct and compact code.
-<br><br> Disadvantages: Reload and back are rendered useless, and can refresh page prior to ajax call. 
+<br><br> Disadvantages: Reload and back are rendered useless, and can refresh page prior to ajax call.
 * Explain how JSONP works (and how it's not really Ajax).
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
@@ -166,3 +166,5 @@ let entry = age >= 21 ? true : false
   * What is the difference between call stack and task queue?
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
   <br><br>`function foo() {}` is a function declaration. It is initializing and declaring this specific function in the namespace 'foo.' `var foo = function(){}` is a functional expression, where the variable is declared and initialized as an anonymous function. The functional declaration is hoisted to the top in its entirety, while only declaration of a function expression is hoisted up.
+* Why does the following quirk happen in JS, 'console.log(0.1 + 0.2) //0.300000000004'
+  <br><br>

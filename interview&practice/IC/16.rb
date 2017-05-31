@@ -8,16 +8,21 @@ def cake_thief(cakes, duffel_max)
 
   #pushes a ratio value of value to cake
   cakes.each do |cake|
-      cake.unshift(cake[0].to_f/cake[1].to_f)
+      if cake[0] == 0 && cake[1] > 0
+        return 'INFINITY CAKES'
+      elsif cake[0] == 0
+        cake.unshift(0)
+      else
+        cake.unshift(cake[0].to_f/cake[1].to_f)
+      end
   end
-
+  print cakes
   cakes.sort! {|x,y| x[0] <=> y[0]}
 
   result = 0
 
   while cakes.length > 0
-    current_cake = cakes[1]
-    return result if current_cake[1] > duffel_max
+    current_cake = cakes[0]
     current_max = duffel_max/current_cake[1]
     result += current_max * current_cake[2]
     duffel_max -= current_max * current_cake[1]

@@ -1,4 +1,3 @@
-require 'byebug'
 
 def anagram?(word1,word2)
     word1.chars.sort == word2.chars.sort
@@ -12,14 +11,15 @@ words.each do |word|
     result.keys.each do |key|
         if anagram?(key,word)
             result[key] << word
+
             sorted = true
         end
     end
 
-    result[word] = word if sorted == false
+    result[word] << word if sorted == false
 
 end
-byebug
+
 result.values.each do |value|
     #[amor,roma,omar]
     puts value.join(' - ')

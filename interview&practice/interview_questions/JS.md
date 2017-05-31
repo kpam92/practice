@@ -156,6 +156,14 @@ let entry = age >= 21 ? true : false
 * What tools and techniques do you use debugging JavaScript code?
 <br><br> Putting `debugger` in JS code is a great way to analyze code and see where bugs are occurring. Another resource is creating RSpec testing and JEST for React/Redux.
 * What language constructions do you use for iterating over object properties and array items?
+<br><br> For iterating through an array, best to use a for loop to iterate through indices, or to use `forEach()` or another iterating method. Best method to iterate through an object is to map over the keys
+```javascript
+var obj = { first: "John", last: "Doe" };
+// Visit non-inherited enumerable keys
+Object.keys(obj).forEach(function(key) {
+    console.log(key);
+});
+```
 * Explain the difference between mutable and immutable objects.
   * What is an example of an immutable object in JavaScript?
   * What are the pros and cons of immutability?

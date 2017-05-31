@@ -28,6 +28,7 @@
 * Describe BFC(Block Formatting Context) and how it works.
 * What are the various clearing techniques and which is appropriate for what context?
 * Explain CSS sprites, and how you would implement them on a page or site.
+<br><br> A sprite is a large image that is made up of smaller images. This is effective for holding multiple images the developer may want to use, and singling out specific parts to display that specific image. It takes up less bandwidth, and easier to render because multiple images are store in one single file. This is most commonly seen in moving animations (think of 16bit video games with moving figures), and for smaller icons displayed on a website.
 * What are your favourite image replacement techniques and which do you use when?
 * How would you approach fixing browser-specific styling issues?
 * How do you serve your pages for feature-constrained browsers?

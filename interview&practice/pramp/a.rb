@@ -55,6 +55,7 @@ def matcher(text,letter, matching)
 end
 
 puts is_match('aa','.*')
+puts is_match('aaa','a*a')
 
 # Time Complexity: in the worst case, the solution above runs in time exponential in the size of the pattern. Patterns that take the most time, are the ones with multiple '*' symbols, that may provoke an exponential number of recursion calls: For example, for the text “bbbbbbbb” and the pattern “.*.*.*.*a”, this function will open a new recursive call to itself for every single way to divide the text in four (the number of “.*”).
 #

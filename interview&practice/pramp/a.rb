@@ -6,10 +6,11 @@ def is_match(text, pattern)
   # your code goes here
   idx1 = 0
   idx2 = 0
-  while idx1 < text.length
+  while idx2 < pattern.length || idx1 < text.length
+    return false if text[idx1].nil? || pattern[idx2].nil?
     if pattern[idx2..idx2+1] == '.*'
       return true if pattern[idx2+2] == nil
-      curr_result = second_matcher(text[idx1..-1],pattern[idx2+2], false)
+      curr_result = matcher(text[idx1..-1],pattern[idx2+2], false)
       idx1 += curr_result
       idx2 += 2
     elsif pattern[idx2] == '.'
@@ -24,7 +25,6 @@ def is_match(text, pattern)
       idx1 += 1
       idx2 += 1
     else
-      byebug
       return false
     end
   end

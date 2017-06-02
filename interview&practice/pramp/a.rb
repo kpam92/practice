@@ -1,8 +1,8 @@
-https://leetcode.com/problems/regular-expression-matching/#/description
+# https://leetcode.com/problems/regular-expression-matching/#/description
 
 
 
-def isMatch(text, pattern)
+def is_match(text, pattern)
   # your code goes here
   idx1 = 0
   idx2 = 0
@@ -11,13 +11,18 @@ def isMatch(text, pattern)
       idx1 += 1
       idx2 += 1
     elsif pattern[idx2+1] == '*'
-      curr_result = matcher(text[idx1..-1],pattern[idx2])
+      curr_result = matcher(text[idx1..-1],pattern[idx2], true)
 
       idx1 += curr_result
       idx2 += 2
     elsif pattern[idx2] == text[idx1]
       idx1 += 1
       idx2 += 1
+    elsif pattern[idx2..idx2+1] == '.*'
+        return true if pattern[idx2+2] == nil
+        curr_result = second_matcher(text[idx1..-1],pattern[idx2+2], false)
+        idx1 += curr_result
+        idx2 += 2
     else
       return false
     end
@@ -25,16 +30,26 @@ def isMatch(text, pattern)
    true
 end
 
-def matcher(text,letter)
+def matcher(text,letter, matching?)
 
   idx = 0
-  while idx < text.length
-    if text[idx] != letter
-      return idx
+    if matching?
+        while idx < text.length
+            if text[idx] != letter
+              return idx
+            else
+              idx += 1
+            end
+        end
     else
-      idx += 1
+        while idx < text.length
+            if text[idx] == letter
+              return idx
+            else
+              idx += 1
+            end
+        end
     end
-  end
   idx
 end
 

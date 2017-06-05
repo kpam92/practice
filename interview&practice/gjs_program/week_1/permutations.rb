@@ -12,7 +12,7 @@ def perm(length)
 
   current.each do |letter|
     appended_end.each do |latter_part|
-      result.push(current+latter_part)
+      result.push(letter+latter_part)
     end
   end
   result

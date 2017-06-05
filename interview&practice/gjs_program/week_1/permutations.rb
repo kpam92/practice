@@ -4,5 +4,16 @@
 
 
 def perm(length)
-  
+  return ['A','B'] if length < 2
+
+  result = []
+  appended_end = perm(length - 1)
+  current = ['A','B']
+
+  current.each do |letter|
+    appended_end.each do |latter_part|
+      result.push(current+latter_part)
+    end
+  end
+  result
 end

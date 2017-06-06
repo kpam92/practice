@@ -46,5 +46,27 @@ end
 # the different permutations will their mnemonic letters
 
 def num_perm(string)
-  
+  num_hash = {
+    '2' => ['A','B','C'],
+    '3' => ['D','E','F'],
+    '4' => ['G','H','I'],
+    '5' => ['J','K','L'],
+    '6' => ['M','N','O'],
+    '7' => ['P','Q','R','S'],
+    '8' => ['T','U','V'],
+    '9' => ['W','X','Y','Z']
+  }
+  result = []
+
+  return num_hash[string] if string.length < 2
+
+  curr_num = num_hash[string[0]]
+  appended_end = num_perm(string[1..-1])
+
+  curr_num.each do |letter|
+    appended_end.each do |latter_part|
+      result.push(letter + latter_part)
+    end
+  end
+  result
 end

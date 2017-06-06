@@ -40,3 +40,11 @@ def perm(length)
   end
   result
 end
+
+
+# create a method that will intake a string of numbers, and return
+# the different permutations will their mnemonic letters
+
+def num_perm(string)
+  
+end

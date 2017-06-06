@@ -17,3 +17,9 @@ def perm(length)
   end
   result
 end
+
+# How it works:
+#
+# This recursively calls on itself, appending all possible combinations
+# on to the two letters. It's time complexity would be 0(2^n), where
+# n is the length given

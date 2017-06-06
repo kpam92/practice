@@ -58,7 +58,8 @@ def num_perm(string)
   }
   result = []
 
-  return num_hash[string] if string.length < 2
+  return num_hash[string] if string.length == 1
+  return [] if string.length < 1
 
   curr_num = num_hash[string[0]]
   appended_end = num_perm(string[1..-1])

@@ -66,10 +66,34 @@ end
 
 
 # 6.5 Write a problem that takes a sorted array and outputs that array
-# with all duplicates deleted.
+# with all duplicates deleted, then add a 0 to the end of the array, so
+# that the array stays the same length
 
 def duplicate_deleter(array)
+  count = 0
+  original_length = array.length
+  end_idx = (array.length - 1)
+  zeroes = 0
+
+  until count == original_length
+      curr_num = array.shift
+      if curr_num == array[-1]
+        zeroes += 1
+      else
+        array.push(curr_num)
+      end
+      count += 1
+  end
+  array.concat([0] * zeroes)
+
 end
+
+# How it works:
+# This solution iterates through the sorted array in place by popping the first
+# element, then checking for a duplicate. If a duplicate exists, we add 1 to 'zeroes',
+# if not, then we push it back on to the end, keeping track of the array's original length.
+# This has O(n) time complexity where n is the length of the array, and O(1) space complexity
+# because we only store variables.
 
 # 6.6 Write a program that takes an array denoting the daily stock price,
 # and returns the maximum profit that could be made by buying and

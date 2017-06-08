@@ -65,6 +65,12 @@ end
 # complexity is O(1)
 
 
+# 6.5 Write a problem that takes a sorted array and outputs that array
+# with all duplicates deleted.
+
+def duplicate_deleter(array)
+end
+
 # 6.6 Write a program that takes an array denoting the daily stock price,
 # and returns the maximum profit that could be made by buying and
 # then selling one share of that stock.

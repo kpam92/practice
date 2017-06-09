@@ -9,6 +9,9 @@
       var url = url || 'google.com'
       ...
   }
+
+  //----------------------------------
+  
   var link = function (height = 50, color = 'blue', url = 'google.com') {
     ...
   }
@@ -17,6 +20,8 @@
   - Instead of adding strings together, you can now interpolate with ${}
   ```javascript
   var title = 'My name is ' + name + '.'
+
+  //----------------------------------
 
   var title = `My name is ${name}.`
   ```    
@@ -30,6 +35,8 @@
   + "BECAUSE I AM WHAT⁉ SICKENING‼\n\t "
   + "YOU COULD NEVER HAVE A SUGAR DADDY\n\t "
   + "BECAUSE YOU ARE NOT THAT KIND OF GIRL.\n\t"
+
+  //----------------------------------
 
   var monologue = `I DON’T HAVE A SUGAR DADDY .
   I’VE NEVER HAD A SUGAR DADDY .
@@ -48,6 +55,8 @@
   house = data.house;
   mouse = data.mouse;
 
+  //----------------------------------
+
   var { house, mouse } = props
   // now you have access to variables 'house' and 'mouse'
   //you can also reassign them to new variables
@@ -56,12 +65,34 @@
   //now var 'x' and 'y' are declared with the values of 'house' and 'mouse'
 
   ```    
-* How do you serve a page with content in multiple languages?
+* FAT ARROW FUNCTIONS
+  - fat arrow functions work in making sure that the 'this' context is lexically scoped, meaning that
+  in a fat arrow function closure, the 'this' will not be reassigned to the global scope. This differs
+  from functional scope of 'this', where in regularly defined functions, 'this' will be global. Now we
+  don't need to bind or use a 'that' variable.
+  ```javascript
+  var logUpperCase = function() {
+  var _this = this
+
+    this.string = this.string.toUpperCase()
+    return function () {
+      return console.log(_this.string)
+    }
+  }
+
+  logUpperCase.call({ string: 'es6 rocks' })()
+
+  //----------------------------------
+  var logUpperCase = function() {
+  this.string = this.string.toUpperCase()
+    return () => console.log(this.string)
+  }
+
+  logUpperCase.call({ string: 'es6 rocks' })()
+  ```    
+
 * What kind of things must you be wary of when design or developing for multilingual sites?
 * What are data- attributes good for?
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a cookie, sessionStorage and localStorage.
 * Describe the difference between <script>, <script async> and <script defer>.
-* Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
-* What is progressive rendering?
-* Have you used different HTML templating languages before?

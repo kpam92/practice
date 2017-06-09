@@ -1,6 +1,18 @@
 ### Top features of ES6 vs. es5
 
 * default parameters
+- Now instead of having to hard code in default parameters, you can now set them within declaration explicitly.
+```javascript
+var link = function (height, color, url) {
+    var height = height || 50
+    var color = color || 'blue'
+    var url = url || 'google.com'
+    ...
+}
+var link = function (height = 50, color = 'blue', url = 'google.com') {
+  ...
+}
+```
 * What's the difference between standards mode and quirks mode?
 * What's the difference between HTML and XHTML?
 * Are there any problems with serving pages as application/xhtml+xml?

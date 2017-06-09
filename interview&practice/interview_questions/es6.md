@@ -109,7 +109,7 @@ var wait1000 =  new Promise(function(resolve, reject) {
 * 'Let' and 'Const'
 - Var's are functionally scoped, so any vars declared and changed in any closure scope will persist.
 - Const is immutable, so if no reassigning takes place, you should use this.
-- Let can be reassigned and is limited in scope to the expression it is defined
+- Let can be reassigned and is limited in scope to the expression it is defined (note: let doesn't hoist)
   - NOTE: Let and var are not completely interchangeable, use them for their specific strengths
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a cookie, sessionStorage and localStorage.

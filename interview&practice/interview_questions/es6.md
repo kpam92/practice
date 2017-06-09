@@ -13,7 +13,13 @@ var link = function (height = 50, color = 'blue', url = 'google.com') {
   ...
 }
 ```
-* What's the difference between standards mode and quirks mode?
+* Template Literals/Interpolation
+  - Instead of adding strings together, you can now interpolate with ${}
+    ```javascript
+    var title = 'My name is ' + name + '.'
+
+    var title = `My name is ${name}.`
+    ```    
 * What's the difference between HTML and XHTML?
 * Are there any problems with serving pages as application/xhtml+xml?
 * How do you serve a page with content in multiple languages?

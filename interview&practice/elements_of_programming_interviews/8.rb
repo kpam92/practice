@@ -53,3 +53,11 @@ end
 # it turns in to one list. Iterating once, the time complexity is
 # O(n) (really O(m+n)), and space complexity is O(1) because nodes
 # are just reassigned, and nothing new is created in terms of space.
+
+
+# 8.2 Given a singly linked-list, an argument of value x, and value y, find
+# the subset of the linked list and reverse all elements from x to y in the
+# linked list
+
+def reverse_subset(head, x, y)
+end

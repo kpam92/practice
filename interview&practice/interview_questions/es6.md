@@ -11,7 +11,7 @@
   }
 
   //----------------------------------
-  
+
   var link = function (height = 50, color = 'blue', url = 'google.com') {
     ...
   }
@@ -91,7 +91,21 @@
   logUpperCase.call({ string: 'es6 rocks' })()
   ```    
 
-* What kind of things must you be wary of when design or developing for multilingual sites?
+* Promises
+- Promises are functions that are called after there is a successful return from a previous function. This functions just like callbacks, but are better for when there are multiple steps; promises are then easier to follow the flow in code and debug
+```javascript
+setTimeout(function(){
+  console.log('Yay!')
+}, 1000)
+
+//----------------------------------
+var wait1000 =  new Promise(function(resolve, reject) {
+  setTimeout(resolve, 1000)
+}).then(function() {
+  console.log('Yay!')
+})
+//note that this example isn't the optimal time when to use callbacks, but rather with more complex methods (that I didn't want to clutter and confuse in an example)
+```    
 * What are data- attributes good for?
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a cookie, sessionStorage and localStorage.

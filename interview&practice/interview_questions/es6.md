@@ -111,6 +111,31 @@ var wait1000 =  new Promise(function(resolve, reject) {
 - Const is immutable, so if no reassigning takes place, you should use this.
 - Let can be reassigned and is limited in scope to the expression it is defined (note: let doesn't hoist)
   - NOTE: Let and var are not completely interchangeable, use them for their specific strengths
-* Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+* Class in ES6
+- Creating classes is easier in ES6, rather than ES5 creating with prototype methods.
+```javascript
+function Kitten(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Kitten.prototype.meow = function () {
+  console.log(this.name + ' says "meow!"');
+};
+
+
+//-------------------------------
+
+class Kitten() {
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+  }
+
+  meow() {
+    console.log(`${this.name} says "meow!"`)
+  }
+}
+```
 * Describe the difference between a cookie, sessionStorage and localStorage.
 * Describe the difference between <script>, <script async> and <script defer>.

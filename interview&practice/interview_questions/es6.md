@@ -1,7 +1,7 @@
 ### Top features of ES6 vs. es5
 
 * default parameters
-- Now instead of having to hard code in default parameters, you can now set them within declaration explicitly.
+  - Now instead of having to hard code in default parameters, you can now set them within declaration explicitly.
 ```javascript
 var link = function (height, color, url) {
     var height = height || 50

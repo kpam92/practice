@@ -137,5 +137,5 @@ class Kitten() {
   }
 }
 ```
-* Describe the difference between a cookie, sessionStorage and localStorage.
-* Describe the difference between <script>, <script async> and <script defer>.
+* Modules
+* Object Literals.

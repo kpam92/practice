@@ -2,17 +2,17 @@
 
 * default parameters
   - Now instead of having to hard code in default parameters, you can now set them within declaration explicitly.
-```javascript
-var link = function (height, color, url) {
-    var height = height || 50
-    var color = color || 'blue'
-    var url = url || 'google.com'
+  ```javascript
+  var link = function (height, color, url) {
+      var height = height || 50
+      var color = color || 'blue'
+      var url = url || 'google.com'
+      ...
+  }
+  var link = function (height = 50, color = 'blue', url = 'google.com') {
     ...
-}
-var link = function (height = 50, color = 'blue', url = 'google.com') {
-  ...
-}
-```
+  }
+  ```
 * Template Literals/Interpolation
   - Instead of adding strings together, you can now interpolate with ${}
   ```javascript
@@ -41,7 +41,17 @@ var link = function (height = 50, color = 'blue', url = 'google.com') {
 
   ```    
 
-* Are there any problems with serving pages as application/xhtml+xml?
+* Object Desctructuring
+  - Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays.
+  ```javascript
+  var data = props;
+  house = data.house;
+  mouse = data.mouse;
+
+  var { house, mouse } = props
+  // now you have access to variables 'house' and 'mouse'
+
+  ```    
 * How do you serve a page with content in multiple languages?
 * What kind of things must you be wary of when design or developing for multilingual sites?
 * What are data- attributes good for?

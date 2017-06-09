@@ -15,12 +15,32 @@ var link = function (height = 50, color = 'blue', url = 'google.com') {
 ```
 * Template Literals/Interpolation
   - Instead of adding strings together, you can now interpolate with ${}
-    ```javascript
-    var title = 'My name is ' + name + '.'
+  ```javascript
+  var title = 'My name is ' + name + '.'
 
-    var title = `My name is ${name}.`
-    ```    
-* What's the difference between HTML and XHTML?
+  var title = `My name is ${name}.`
+  ```    
+* Multiple line strings
+  - Instead of hard coding in line breaks, use back ticks and it notices line breaks
+  ```javascript
+  var monologue = "I DON’T HAVE A SUGAR DADDY.\n\t"
+  + "I’VE NEVER HAD A SUGAR DADDY.\n\t "
+  + "IF I WANTED A SUGAR DADDY,\n\t "
+  + "YES I PROBABLY COULD GO OUT AND GET ONE.\n\t "
+  + "BECAUSE I AM WHAT⁉ SICKENING‼\n\t "
+  + "YOU COULD NEVER HAVE A SUGAR DADDY\n\t "
+  + "BECAUSE YOU ARE NOT THAT KIND OF GIRL.\n\t"
+
+  var monologue = `I DON’T HAVE A SUGAR DADDY .
+  I’VE NEVER HAD A SUGAR DADDY .
+  IF I WANTED A SUGAR DADDY,
+  YES I PROBABLY COULD GO OUT AND GET ONE.
+  BECAUSE I AM WHAT⁉ SICKENING‼
+  YOU COULD NEVER HAVE A SUGAR DADDY
+  BECAUSE YOU ARE NOT THAT KIND OF GIRL.`
+
+  ```    
+
 * Are there any problems with serving pages as application/xhtml+xml?
 * How do you serve a page with content in multiple languages?
 * What kind of things must you be wary of when design or developing for multilingual sites?

@@ -50,6 +50,10 @@
 
   var { house, mouse } = props
   // now you have access to variables 'house' and 'mouse'
+  //you can also reassign them to new variables
+
+  var { house: x, mouse: y } = props
+  //now var 'x' and 'y' are declared with the values of 'house' and 'mouse'
 
   ```    
 * How do you serve a page with content in multiple languages?

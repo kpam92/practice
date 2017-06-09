@@ -55,9 +55,67 @@ end
 # are just reassigned, and nothing new is created in terms of space.
 
 
-# 8.2 Given a singly linked-list, an argument of value x, and value y, find
-# the subset of the linked list and reverse all elements from x to y in the
-# linked list
 
 def reverse_subset(head, x, y)
+  curr_node = head
+  next_node_up = head.next_node
+
+  until next_node_up.val = x
+    curr_node = next_node_up
+    next_node_up = curr_node.next_node
+  end
+
+  beginning_node = curr_node # holds the node right before the subset
+
+  first_node = next_node_up
+  middle_node = next_node_up.next_node
+
+  # if statement below catches edge case of having only two nodes next to each other.
+  if middle_node.val == y
+    first_node.next_node = middle_node.next_node
+    middle_node.next_node = first_node
+    beginning_node.next_node = middle_node
+    return list_values(head)
+  end
+
+  third_node = middle_node.next_node
+
+  #this loop will run until first node is the last one
+  until first_node.val == y
+    middle_node.next_node = first_node
+    first_node = middle_node
+    middle_node = third_node
+    third_node = third_node.next_node
+  end
+
+  # this assigns the node right before the subset to have the last
+  # of the subset as its next node
+  curr_node.next_node = first_node
+
+  # this assigns the first of the subset, which is now the last, to
+  # have the node right after the subset as its next node
+  next_node_up.next_node = middle_node
+
+  return list_values(head)
+
 end
+
+def list_values(head)
+  until head.nil?
+    puts head.val
+    head = head.next_node
+  end
+end
+
+
+a = Node.new('a')
+b = Node.new('b')
+c = Node.new('c')
+d = Node.new('d')
+e = Node.new('e')
+f = Node.new('f')
+a.next_node = b
+b.next_node = c
+c.next_node = d
+d.next_node = e
+e.next_node = f

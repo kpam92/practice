@@ -106,7 +106,11 @@ var wait1000 =  new Promise(function(resolve, reject) {
 })
 //note that this example isn't the optimal time when to use callbacks, but rather with more complex methods (that I didn't want to clutter and confuse in an example)
 ```    
-* What are data- attributes good for?
+* 'Let' and 'Const'
+- Var's are functionally scoped, so any vars declared and changed in any closure scope will persist.
+- Const is immutable, so if no reassigning takes place, you should use this.
+- Let can be reassigned and is limited in scope to the expression it is defined
+  - NOTE: Let and var are not completely interchangeable, use them for their specific strengths
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a cookie, sessionStorage and localStorage.
 * Describe the difference between <script>, <script async> and <script defer>.

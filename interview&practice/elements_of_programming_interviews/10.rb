@@ -86,7 +86,7 @@ end
 # is_balanced_binary_tree(root)
 
 
-# Create a method that returns an array of arrays where each array is the
+# 9.7 Create a method that returns an array of arrays where each array is the
 # collection of values of each depth in order from left to right
 
 def depth_displayer(head)

@@ -53,17 +53,15 @@ def length_of_longest_substring(s)
   while j < s.length && i < s.length
     if seen[s[j]] && (s[j] == s[j - 1])
       i = j
-      j = i + 1
       seen = Hash.new()
       seen[s[i]] = i
     elsif seen[s[j]]
       i = seen[s[j]] + 1
       seen[s[j]] = j
-      j += 1
     else
       seen[s[j]] = j
-      j += 1
     end
+    j += 1
     longest = [longest, (j - i)].max
   end
   longest

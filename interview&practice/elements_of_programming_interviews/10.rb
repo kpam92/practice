@@ -84,3 +84,34 @@ end
 # root.right.right = BSTNode.new(2,root)
 # root.right.right.right = BSTNode.new(2,root)
 # is_balanced_binary_tree(root)
+
+
+# Create a method that returns an array of arrays where each array is the
+# collection of values of each depth in order from left to right
+
+def depth_displayer(head)
+  depth_array([head])
+end
+
+def depth_array(array)
+  return [] if array.empty?
+  next_array = []
+  result = []
+
+  array.each do |node|
+    result << node.value
+    next_array << node.left if node.left
+    next_array << node.right if node.right
+  end
+
+  return [[result]].concat(depth_array(next_array))
+end
+
+root = BSTNode.new(5)
+root.left = BSTNode.new(2,root)
+root.left.right = BSTNode.new(3,root)
+root.right = BSTNode.new(7,root)
+root.right.right = BSTNode.new(8,root)
+root.right.right.right = BSTNode.new(9,root)
+
+puts depth_displayer(root)

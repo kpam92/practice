@@ -14,6 +14,23 @@ def length_of_longest_substring(s)
 
     idx = 0
 
+    result = ['',0]
+
+    curr_string = ''
+
     while idx < s.length
+        if seen[s[idx]].nil?
+          curr_string += s[idx]
+        else
+          seen = Hash.new()
+          curr_string = s[idx]
+        end
+
+        if curr_string.length > result[1]
+          result = [curr_string, curr_string.length]
+        end
+        
+        idx += 1
+    end
 
 end

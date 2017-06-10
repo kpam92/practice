@@ -39,6 +39,37 @@ def length_of_longest_substring(s)
     result[0]
 end
 
+
+def length_of_longest_substring(s)
+
+  seen = Hash.new()
+
+  longest = 0
+
+  i = 0
+  j = 1
+  length = 1
+  seen[s[0]] = 0
+  while j < s.length && i < s.length
+    if seen[s[j]] && (s[j] == s[j - 1])
+      i = j
+      j = i + 1
+      seen = Hash.new()
+      seen[s[i]] = i
+    elsif seen[s[j]]
+      i = seen[s[j]] + 1
+      seen[s[j]] = j
+      j += 1
+    else
+      seen[s[j]] = j
+      j += 1
+    end
+    longest = [longest, (j - i)].max
+  end
+  longest
+end
+
 puts length_of_longest_substring('bbbbb')
 puts length_of_longest_substring('abcabcbb')
 puts length_of_longest_substring('pwwkew')
+puts length_of_longest_substring('dvdf')

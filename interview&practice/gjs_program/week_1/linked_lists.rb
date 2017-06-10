@@ -23,34 +23,32 @@ def add_two_numbers(l1, l2)
     first_list = l1
     second_list = l2
 
-    until l1.nil?
-        length1 += 1
+    until l1.next.nil?
         l1 = l1.next
+        length1 += 1
     end
 
-    until l2.nil?
-        length2 += 1
+    until l2.next.nil?
         l2 = l2.next
+        length2 += 1
     end
 
     if length1 > length2
         until length2 == length1
             length2 += 1
-            curr_node = ListNode.new(0)
-            curr_node.next = second_list
-            second_list = curr_node
+            l2.next = ListNode.new(0)
+            l2 = l2.next
         end
     elsif length2 > length1
         until length1 == length2
             length1 += 1
-            curr_node = ListNode.new(0)
-            curr_node.next = first_list
-            first_list = curr_node
+            l1.next = ListNode.new(0)
+            l1 = l1.next
         end
     end
 
     curr_val = first_list.val + second_list.val
-    remainder = 1 if curr_val > 9
+    remainder = curr_val / 10
 
 
     result = ListNode.new(curr_val % 10)
@@ -60,15 +58,9 @@ def add_two_numbers(l1, l2)
     curr_result_node = result
 
     until first_list.nil?
-        curr_val = (first_list.val + second_list.val + remainder)
-            if curr_val > 10
-                remainder = (first_list.val + second_list.val) % 9
-            elsif curr_val == 10
-                remainder
-            else
-                remainder = 0
-            end
-        curr_result_node.next = ListNode.new(curr_val - remainder)
+        curr_val = (first_list.val + second_list.val) + remainder
+        curr_result_node.next = ListNode.new(curr_val % 10)
+        remainder = curr_val / 10
         curr_result_node = curr_result_node.next
         first_list = first_list.next
         second_list = second_list.next

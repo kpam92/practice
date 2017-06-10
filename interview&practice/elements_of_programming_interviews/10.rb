@@ -104,14 +104,23 @@ def depth_array(array)
     next_array << node.right if node.right
   end
 
-  return [[result]].concat(depth_array(next_array))
+  return [result].concat(depth_array(next_array))
 end
 
-root = BSTNode.new(5)
-root.left = BSTNode.new(2,root)
-root.left.right = BSTNode.new(3,root)
-root.right = BSTNode.new(7,root)
-root.right.right = BSTNode.new(8,root)
-root.right.right.right = BSTNode.new(9,root)
 
-puts depth_displayer(root)
+# How it works:
+#
+# This method utilizes a recursive call, first creating an array of nodes
+# in the queue, while throwing the left and right nodes of each one into
+# a new queue to be called on the stack until there are no elements left.
+# The time complexity is O(n), where n is the number of nodes in the tree
+# as we iterate through each one once.
+
+# root = BSTNode.new(5)
+# root.left = BSTNode.new(2,root)
+# root.left.right = BSTNode.new(3,root)
+# root.right = BSTNode.new(7,root)
+# root.right.right = BSTNode.new(8,root)
+# root.right.right.right = BSTNode.new(9,root)
+#
+# print depth_displayer(root)

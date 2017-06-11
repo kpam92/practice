@@ -28,3 +28,10 @@ end
 
 # puts is_valid(']')
 # puts is_valid('[')
+
+# how it works
+# this solution utilizes a hash and a stack, where each opening bracket
+# is thrown into the stack, and will pop off the stack when its partner
+# is seen, otherwise it returns false. If at the end the stack is empty
+# it will return true. This iterates through the entire string, so it has
+# O(n) time complexity, where n is the length of the string.

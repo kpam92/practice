@@ -22,13 +22,13 @@ def multiply(num1, num2)
     '0' => 0,
   }
 
-  num1 > num2 ? (num1, num2 = num2, num1) : next
+  num1 > num2 ? (num1, num2 = num2, num1) :
 
   idx1 = num2.length - 1
   multiplier = 1
 
   while idx1 >= 0
-    curr_num = num_convert[num1[idx]]
+    curr_num = num_convert[num1[idx1]]
     curr_prod = 0
     curr_multiplier = 1
     idx2 = num2.length - 1

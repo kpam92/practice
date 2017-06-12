@@ -34,16 +34,16 @@ def multiply(num1, num2)
     idx2 = num2.length - 1
 
     while idx2 >= 0
-      curr_num * num_convert[num2[idx2]] * multiplier
-
+      curr_prod += (curr_num * num_convert[num2[idx2]] * curr_multiplier)
       idx2 -= 1
     end
 
+    curr_multiplier *= 10
     idx1 -= 1
   end
 end
 
-def add_zero(n)
-  n == 0 ? n = 10 : n *= 10
-  n
-end
+# def add_zero(n)
+#   n == 0 ? n = 10 : n *= 10
+#   n
+# end

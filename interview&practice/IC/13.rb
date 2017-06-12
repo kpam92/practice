@@ -10,7 +10,7 @@ def find_rotation_point(array)
 
   while floor_index < ceiling_index
 
-    guess_index = (floor_index + ceiling_index)
+    guess_index = floor_index + ((ceiling_index - floor_index) / 2)
 
     if array[floor_index] <= array[guess_index]
       floor_index = guess_index

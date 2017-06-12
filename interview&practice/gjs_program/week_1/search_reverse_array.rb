@@ -6,12 +6,17 @@
 #
 # You may assume no duplicate exists in the array.
 
+require 'byebug'
+
 def search(nums, target)
   middle_idx = nums.length / 2
 
   return middle_idx if nums[middle_idx] == target
+  return 0 if nums[0] == target
   return -1 if nums.length < 2
-  if nums[middle_idx] > target
+
+  byebug
+  if nums[0] > nums[middle_idx] && target.between?(nums[0],nums[middle_idx])
     return search(nums[0...middle_idx],target)
   else
     next_result = search(nums[middle_idx..-1], target)
@@ -20,3 +25,5 @@ def search(nums, target)
   end
   nil
 end
+
+puts search([4,5,6,7,0,1,2],0)

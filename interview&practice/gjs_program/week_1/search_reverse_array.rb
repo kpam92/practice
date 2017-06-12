@@ -15,15 +15,26 @@ def search(nums, target)
   return 0 if nums[0] == target
   return -1 if nums.length < 2
 
-  byebug
-  if nums[0] > nums[middle_idx] && target.between?(nums[0],nums[middle_idx])
+  if (nums[0] < nums[middle_idx] && target.between?(nums[0],nums[middle_idx])) ||
+    (nums[0] > nums[middle_idx] && !target.between?(nums[middle_idx],nums[0]))
     return search(nums[0...middle_idx],target)
   else
     next_result = search(nums[middle_idx..-1], target)
     return middle_idx + search(nums[middle_idx..-1],target) if next_result != -1
     return -1
   end
-  nil
+
 end
 
-puts search([4,5,6,7,0,1,2],0)
+
+# You will bsearch the left of middle under two conditions:
+# the first is that the first item is smaller than the middle item
+# and target is between them. This means that the drop isn't between
+# 0 and target index, and if target is within that range, you will find it
+# there.
+# the other condition is that the middle item is smaller than the first item
+# and the target isn't within the range of the middle index and first index,
+# indicating that it's not going to be found within that range on the right.
+# Everything else will then be found in the right side.
+#
+# puts search([4,5,6,7,0,1,2],0)

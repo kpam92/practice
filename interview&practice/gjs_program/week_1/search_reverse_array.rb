@@ -7,5 +7,16 @@
 # You may assume no duplicate exists in the array.
 
 def search(nums, target)
+  middle_idx = nums.length / 2
 
+  return middle_idx if nums[middle_idx] == target
+  return -1 if nums.length < 2
+  if nums[middle_idx] > target
+    return search(nums[0...middle_idx],target)
+  else
+    next_result = search(nums[middle_idx..-1], target)
+    return middle_idx + search(nums[middle_idx..-1],target) if next_result != -1
+    return -1
+  end
+  nil
 end

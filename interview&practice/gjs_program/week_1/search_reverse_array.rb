@@ -38,3 +38,32 @@ end
 # Everything else will then be found in the right side.
 #
 # puts search([4,5,6,7,0,1,2],0)
+
+
+# more optimized solution
+
+def search(nums, target)
+    l = 0
+    r = nums.length-1
+    while l<=r do
+        m = (l+r)/2
+        if nums[m] == target
+            return m
+        end
+        if nums[l]<=nums[m]
+            if target<nums[m] and target>=nums[l]
+                r = m-1
+            else
+                l = m+1
+            end
+        end
+        if nums[m]<=nums[r]
+            if target>nums[m] and target<=nums[r]
+                l = m+1
+            else
+                r = m-1
+            end
+        end
+    end
+    -1
+end

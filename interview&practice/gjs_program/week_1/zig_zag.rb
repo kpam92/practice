@@ -23,7 +23,8 @@ def convert(s, num_rows)
 
       if array_idx == (num_rows - 1) && idx != (s.length - 1)
         idx += 1
-        converted[num_rows/2] += s[idx]
+        median = num_rows.even? ? (num_rows/2 - 1) : num_rows/2
+        converted[median] += s[idx]
 
         # to make sure array_idx is 0 next time
         array_idx = -1
@@ -34,3 +35,5 @@ def convert(s, num_rows)
     end
   converted.join
 end
+
+puts convert("A", 1)

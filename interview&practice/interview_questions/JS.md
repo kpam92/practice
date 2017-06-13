@@ -169,6 +169,7 @@ Object.keys(obj).forEach(function(key) {
   * What is an example of an immutable object in JavaScript?
   * What are the pros and cons of immutability?
   * How can you achieve immutability in your own code?
+<br><br> Simply, mutable objects can be changed, while immutable ones cannot. An example of an immutable object is a declared 'const' in JS. Mutable: 'let' and 'var'. Immutability is advantageous for constant variables that you wouldn't want to have the option of changing. Immutability is an extra insurance. On the other hand, because immutability is strict, you have to make sure that you define your variables in a conscious manner. 
 * Explain the difference between synchronous and asynchronous functions.
 <br><br> synchronous functions occur in a specific order in the code, where step 3 won't occur before step 1. But, an asynchronous function may occur at any point, waiting for a specific event to be triggered. In context, asynchronous functions may occur in JS through event listeners, where a user interacts with a specific part of the application, i.e. hovering or clicking. These events occur in the background. These are useful for having dynamic and interactive pages, where certain actions can cause code to run, and information to be fetched from the DB without a re-render.
 * What is event loop?

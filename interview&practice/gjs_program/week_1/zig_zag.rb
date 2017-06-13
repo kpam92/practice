@@ -13,9 +13,24 @@
 
 def convert(s, num_rows)
     converted = []
+    num_rows.times { converted << ''}
+
+    array_idx = 0
     idx = 0
 
     while idx < s.length
+      converted[array_idx] += s[idx]
 
+      if array_idx == (num_rows - 1) && idx != (s.length - 1)
+        idx += 1
+        converted[num_rows/2] += s[idx]
+
+        # to make sure array_idx is 0 next time
+        array_idx = -1
+      end
+
+      idx += 1
+      array_idx += 1
     end
+  converted.join
 end

@@ -12,6 +12,9 @@
 
 
 def convert(s, num_rows)
+
+  return s if num_rows == 1
+
   result = []
   num_rows.times { result << ""}
 
@@ -40,4 +43,5 @@ def convert(s, num_rows)
   result.join
 end
 
-puts convert("A", 1)
+puts convert("ABCD", 1)
+puts convert("ABCD", 2)

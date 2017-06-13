@@ -121,6 +121,7 @@ $( ".ancestor" ).click(function(event) {
 if the user were to click on the button, all the event listeners on the parent and ancestor elements would go off as well.
 
 * What's the difference between an "attribute" and a "property"?
+<br><br> Attributes are defined by HTML, Properties are defined by the DOM.  Properties are found within elements and are similar to instance variables. They can be multiple types of input (string, boolean, etc.). Attributes are similar to properties, but are defined by the HTML, and only return strings.
 * Why is extending built-in JavaScript objects not a good idea?
 * Difference between document load event and document DOMContentLoaded event?
   <br><br> DOMContentLoaded events are triggered after the document has been fully loaded, and before css and images are loaded. document load events are triggered after the document has been loaded, along with all the images and styles.

@@ -12,28 +12,32 @@
 
 
 def convert(s, num_rows)
-    converted = []
-    num_rows.times { converted << ''}
+  result = []
+  num_rows.times { result << ""}
 
-    array_idx = 0
-    idx = 0
+  array_idx = 0
+  idx = 0
+  forward = true
 
-    while idx < s.length
-      converted[array_idx] += s[idx]
+  while idx < s.length
+    result[array_idx] += s[idx]
 
-      if array_idx == (num_rows - 1) && idx != (s.length - 1)
-        idx += 1
-        median = num_rows.even? ? (num_rows/2 - 1) : num_rows/2
-        converted[median] += s[idx]
-
-        # to make sure array_idx is 0 next time
-        array_idx = -1
-      end
-
-      idx += 1
+    if forward && array_idx != (num_rows - 1)
+      array_idx += 1
+    elsif !forward && array_idx != 0
+      array_idx -= 1
+    elsif forward
+      forward = false
+      array_idx -= 1
+    else
+      forward = true
       array_idx += 1
     end
-  converted.join
+
+    idx += 1
+  end
+
+  result.join
 end
 
 puts convert("A", 1)

@@ -22,16 +22,8 @@ const mathProblem = {
   answer: function() {
     return eval(`${this.firstNum} ${this.operationSymbol} ${this.secondNum}`)
   }
-  // () => { eval(`${this.firstNum} ${this.operationSymbol} ${this.secondNum}`);},
 };
 
-// Use the mathProblem obj to display the problem for the user
-// const firstDisplayNum = document.getElementById('first-num');
-// firstDisplayNum.innerHTML = mathProblem.firstNum;
-// const displaySymbol = document.getElementById('operation');
-// displaySymbol.innerHTML = mathProblem.operationSymbol;
-// const secondDisplayNum = document.getElementById('second-num');
-// secondDisplayNum.innerHTML = mathProblem.secondNum;
 
 const evaluateAnswer = (event) => {
   event.preventDefault();

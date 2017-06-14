@@ -34,7 +34,9 @@ const mathProblem = {
 // secondDisplayNum.innerHTML = mathProblem.secondNum;
 
 const evaluateAnswer = (event) => {
-  const userAnswer = event.currentTarget.children[5].value;
+  event.preventDefault();
+  // alert(event.currentTarget.children[5].value)
+  const userAnswer = parseInt(event.currentTarget.children[5].value);
   renderFeedback(userAnswer === mathProblem.answer());
 }
 

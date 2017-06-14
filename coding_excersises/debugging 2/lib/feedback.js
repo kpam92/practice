@@ -8,9 +8,9 @@ const storeNumberFact = (event) => {
   }
 }
 
-const getNumberFact = () => {
+const getNumberFact = (number) => {
   const req = new XMLHttpRequest();
-  req.open('GET', 'http://numbersapi.com/random/trivia', true);
+  req.open('GET', `http://numbersapi.com/${number}`, true);
   req.onreadystatechange = storeNumberFact;
   req.send();
 };

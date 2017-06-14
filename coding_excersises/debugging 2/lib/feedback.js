@@ -21,6 +21,9 @@ const renderFeedback = (answerIsCorrect) => {
   if (answerIsCorrect) {
     correctFeedback.style.display = "block";
     wrongFeedback.style.display = "none";
+    setTimeout(() => {
+      location.reload();
+    }, 8000);
   } else {
     correctFeedback.style.display = "none";
     wrongFeedback.style.display = "block";

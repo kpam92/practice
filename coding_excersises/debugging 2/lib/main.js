@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   displaySymbol.innerHTML = mathProblem.operationSymbol;
   const secondDisplayNum = document.getElementById('second-num');
   secondDisplayNum.innerHTML = mathProblem.secondNum;
+  window.mathProblem = mathProblem;
   // add evaluateAnswer callback to the form
   const mathForm = document.getElementById('math-form');
   mathForm.addEventListener('submit', evaluateAnswer);

@@ -19,9 +19,10 @@ const mathProblem = {
   firstNum: getRandNum(),
   secondNum: getRandNum(),
   operationSymbol: getRandSymbol(),
-  answer: () => {
-    eval(`${this.firstNum} ${this.operationSymbol} ${this.secondNum}`);
-  },
+  answer: function() {
+    return eval(`${this.firstNum} ${this.operationSymbol} ${this.secondNum}`)
+  }
+  // () => { eval(`${this.firstNum} ${this.operationSymbol} ${this.secondNum}`);},
 };
 
 // Use the mathProblem obj to display the problem for the user

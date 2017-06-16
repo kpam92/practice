@@ -12,9 +12,9 @@
 def three_sum(nums)
   result = Hash.new
 
-  seen = Hash.new {|h| h = 0}
+  seen = Hash.new
 
-  nums.each {|num| seen[num] += 1 }
+  nums.each {|num| seen[num] = true}
 
   idx1 = 0
 
@@ -23,8 +23,21 @@ def three_sum(nums)
     idx2 = idx1 + 1
 
     while idx2 < nums.length
-      
+      next if nums[idx1] == nums[idx2]
+      curr_num = nums[idx1] + nums[idx2]
+      search_integer = 0 - curr_num
+      next if (search_integer == nums[idx1]) || (search_integer == nums[idx2])
+
+      if seen[search_integer]
+        curr_result = [nums[idx1],nums[idx2], search_integer].sort
+        result[curr_result] = true
+      end
+
+      idx2 += 1
     end
+
+    idx1 += 1
   end
 
+  result.keys
 end

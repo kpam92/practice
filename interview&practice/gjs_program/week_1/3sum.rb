@@ -50,3 +50,15 @@ def three_sum(nums)
 
   result.keys
 end
+
+
+# How it works
+# 
+# This iterates once over the entire array, storing the number of instances
+# of each number. Then we iterate again over the array with two indices,
+# checking the result of adding the pair, and checking if that number exists
+# in the seen hash. We use a hash dup to check make sure that we aren't
+# checking with duplicates of the same instance. If this passes, then we add
+# the instance in our result hash. If the same combination existed previously,
+# it won't repeat. The time complexity is O(n^2), where n is the length of the
+# array because we have to check each number in two loops.

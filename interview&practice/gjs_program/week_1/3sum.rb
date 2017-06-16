@@ -10,5 +10,21 @@
 
 
 def three_sum(nums)
+  result = Hash.new
+
+  seen = Hash.new {|h| h = 0}
+
+  nums.each {|num| seen[num] += 1 }
+
+  idx1 = 0
+
+  while idx1 < nums.length - 1
+
+    idx2 = idx1 + 1
+
+    while idx2 < nums.length
+      
+    end
+  end
 
 end

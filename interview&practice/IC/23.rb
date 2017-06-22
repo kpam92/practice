@@ -12,5 +12,17 @@ class LinkedListNode
   end
 end
 
-def linked_cycle?(list)
+def linked_cycle?(node)
+
+  slow_iterator = node
+  fast_iterator = node
+
+  until fast_iterator.nil? && slow_iterator.nil?
+    slow_iterator = slow_iterator.next
+    fast_iterator = fast_iterator.next.next
+
+    return true if slow_iterator == fast_iterator
+    
+  end
+  false
 end

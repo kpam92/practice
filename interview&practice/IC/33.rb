@@ -11,3 +11,9 @@ def find_duplicate(array)
 end
 
 # how it works
+
+# Because there is only one duplicate within the array of sorted integers,
+# we find the sum of the range from the first integer to the last, and compare
+# that to the sum of the array to find the one duplicate. This is O(1) space,
+# with O(n) time, where n is the length of the array, because we have to iterate
+# through the integers once in order to find the sum.

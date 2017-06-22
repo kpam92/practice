@@ -17,40 +17,40 @@ def linked_cycle?(node)
   slow_iterator = node
   fast_iterator = node
 
-  until fast_iterator.nil? && slow_iterator.nil?
+  while fast_iterator != nil && fast_iterator.next != nil
+
     slow_iterator = slow_iterator.next
     fast_iterator = fast_iterator.next.next
 
     return true if slow_iterator == fast_iterator
-
   end
   false
 end
 
-
-a = LinkedListNode(1)
-b = LinkedListNode(2)
-c = LinkedListNode(3)
-d = LinkedListNode(4)
-e = LinkedListNode(5)
-f = LinkedListNode(6)
-
-a.next = b
-b.next = c
-c.next = d
-d.next = e
-e.next = f
-f.next = a
-
-puts linked_cycle?(a)
-
-g = LinkedListNode(1)
-h = LinkedListNode(1)
-i = LinkedListNode(1)
-j = LinkedListNode(1)
-
-g.next = h
-h.next = i
-i.next = j
-
-puts linked_cycle?(g)
+# 
+# a = LinkedListNode.new(1)
+# b = LinkedListNode.new(2)
+# c = LinkedListNode.new(3)
+# d = LinkedListNode.new(4)
+# e = LinkedListNode.new(5)
+# f = LinkedListNode.new(6)
+#
+# a.next = b
+# b.next = c
+# c.next = d
+# d.next = e
+# e.next = f
+# f.next = a
+#
+# puts linked_cycle?(a)
+#
+# g = LinkedListNode.new(1)
+# h = LinkedListNode.new(1)
+# i = LinkedListNode.new(1)
+# j = LinkedListNode.new(1)
+#
+# g.next = h
+# h.next = i
+# i.next = j
+#
+# puts linked_cycle?(g)

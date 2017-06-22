@@ -3,7 +3,7 @@
 
 
 def find_duplicate(array)
-  initial_sum = (array[0]..array[1]).reduce(:+)
+  initial_sum = (array[0]..array[-1]).reduce(:+)
 
   array_sum = array.reduce(:+)
 

@@ -13,4 +13,45 @@ class LinkedListNode
 end
 
 def k_to_last(k, node)
+
+  length = 0
+
+  current = node
+
+  while current
+    length += 1
+    current = current.next
+  end
+
+  length_to_k = length - k
+
+  current = node
+
+  length_to_k.times { current = current.next}
+
+  current
 end
+
+
+a = LinkedListNode.new(1)
+b = LinkedListNode.new(2)
+c = LinkedListNode.new(3)
+d = LinkedListNode.new(4)
+e = LinkedListNode.new(5)
+f = LinkedListNode.new(6)
+g = LinkedListNode.new(1)
+h = LinkedListNode.new(1)
+i = LinkedListNode.new(1)
+j = LinkedListNode.new(1)
+
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = g
+g.next = h
+h.next = i
+i.next = j
+
+puts k_to_last(2,a)

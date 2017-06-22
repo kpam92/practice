@@ -36,3 +36,12 @@ def reverse_list(node)
 
   first_node
 end
+
+
+a = LinkedListNode.new(1)
+b = LinkedListNode.new(2)
+c = LinkedListNode.new(3)
+a.next = b
+b.next = c
+
+puts reverse_list(a)

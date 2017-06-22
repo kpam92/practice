@@ -27,7 +27,14 @@ def linked_cycle?(node)
   false
 end
 
-# 
+# how it works
+
+# There is a slow iterator that jumps one step, while the fast one
+# jumps two steps. We iterate until the fast iterator reaches the end
+# of the list, or we discover that it is looped and that the fast iterator
+# has caught up to the slow iterator. This takes O(1) space, and O(n) space
+# where n is the length of the list.
+
 # a = LinkedListNode.new(1)
 # b = LinkedListNode.new(2)
 # c = LinkedListNode.new(3)

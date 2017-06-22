@@ -33,6 +33,11 @@ def k_to_last(k, node)
 end
 
 
+# how it works
+
+# We traverse through the entire list, finding out the length,
+# then we calculate which node to traverse to, then we reach that node.
+# This takes O(1) space, and O(n)time, where n is the length of the list.
 
 # a = LinkedListNode.new(1)
 # b = LinkedListNode.new(2)

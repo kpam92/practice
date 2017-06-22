@@ -108,14 +108,17 @@ def list_values(head)
 end
 
 
-a = Node.new('a')
-b = Node.new('b')
-c = Node.new('c')
-d = Node.new('d')
-e = Node.new('e')
-f = Node.new('f')
-a.next_node = b
-b.next_node = c
-c.next_node = d
-d.next_node = e
-e.next_node = f
+# a = Node.new('a')
+# b = Node.new('b')
+# c = Node.new('c')
+# d = Node.new('d')
+# e = Node.new('e')
+# f = Node.new('f')
+# a.next_node = b
+# b.next_node = c
+# c.next_node = d
+# d.next_node = e
+# e.next_node = f
+
+
+# Find if a node list is cyclical : check IC/23.rb

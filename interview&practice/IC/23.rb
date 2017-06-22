@@ -22,7 +22,35 @@ def linked_cycle?(node)
     fast_iterator = fast_iterator.next.next
 
     return true if slow_iterator == fast_iterator
-    
+
   end
   false
 end
+
+
+a = LinkedListNode(1)
+b = LinkedListNode(2)
+c = LinkedListNode(3)
+d = LinkedListNode(4)
+e = LinkedListNode(5)
+f = LinkedListNode(6)
+
+a.next = b
+b.next = c
+c.next = d
+d.next = e
+e.next = f
+f.next = a
+
+puts linked_cycle?(a)
+
+g = LinkedListNode(1)
+h = LinkedListNode(1)
+i = LinkedListNode(1)
+j = LinkedListNode(1)
+
+g.next = h
+h.next = i
+i.next = j
+
+puts linked_cycle?(g)

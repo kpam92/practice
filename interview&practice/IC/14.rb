@@ -11,4 +11,19 @@
 
 
 def in_flight(flight_length, movie_lengths)
+  movies = Hash.new {|h,k| h[k] = 0 }
+
+  movie_lengths.each {|x| movies[x] += 1}
+
+  movie_lengths.each do |movie|
+    curr_length = flight_length - movie
+
+    if curr_length == movie
+      return true if movies[curr_length] > 1
+    else
+      return true if movies[curr_length] > 0 
+    end
+  end
+
+  false
 end

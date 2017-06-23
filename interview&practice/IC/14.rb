@@ -21,9 +21,16 @@ def in_flight(flight_length, movie_lengths)
     if curr_length == movie
       return true if movies[curr_length] > 1
     else
-      return true if movies[curr_length] > 0 
+      return true if movies[curr_length] > 0
     end
   end
 
   false
 end
+
+# how it works
+
+# We first fill a hash with all the occurences of movie times,
+# then we iterate through the movie lengths again, subtracting them from
+# the flight_length, and looking for the partner. This is O(n) space and time,
+# where n is the length of the movies.

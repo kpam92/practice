@@ -8,3 +8,7 @@
 # Assume your users will watch exactly two movies
 # Don't make your users watch the same movie twice
 # Optimize for runtime over memory
+
+
+def in_flight(flight_length, movie_lengths)
+end

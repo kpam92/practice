@@ -17,8 +17,8 @@ def stocks(prices)
   idx2 = 0
 
   while idx2 < prices.length
-    curr_highest = prices[idx2] - prices[idx2]
-
+    curr_highest = prices[idx2] - prices[idx1]
+    highest_so_far = curr_highest if curr_highest > highest_so_far
     idx1 = idx2 if prices[idx2] < prices[idx1]
 
     idx2 += 1
@@ -27,4 +27,4 @@ def stocks(prices)
   highest_so_far
 end
 
-puts stocks([10, 7, 5, 8, 11, 9])
+# puts stocks([10, 7, 5, 8, 11, 9])

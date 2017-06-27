@@ -5,4 +5,9 @@
  # - highest product can include two negative integers
 
  def highest_three_prod(array)
+   return nil if array.length < 3
+
+   highest_one = array[0]
+   lowest_two = 
+
  end

@@ -23,6 +23,9 @@ def except_curr_prod(array)
     result[idx] *= curr_prod
     idx -= 1
   end
-  
+
   result
 end
+
+
+puts except_curr_prod([1, 7, 3, 4])

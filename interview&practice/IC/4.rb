@@ -14,13 +14,14 @@ def merge_ranges(ranges)
 
   while idx < ranges.length
     curr = ranges[idx]
+
     if curr[0] > curr_range[1]
       # [1,2] -- [3,4]
       result << curr_range
       curr_range = curr
     elsif curr[0] >= curr_range[0] && curr[1] <= curr_range[1]
       # [1,4] -- [2,3] --> [1,4]
-      next
+
     elsif curr[0] < curr_range[0] && curr[1] > curr_range[1]
       # [1,2] -- [0,3] --> [0,3]
       curr_range = curr
@@ -36,4 +37,7 @@ def merge_ranges(ranges)
   result
 end
 
-puts merge_ranges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]])
+# p merge_ranges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]])
+# p merge_ranges([[1, 2], [2, 3]])
+p merge_ranges([[1, 5], [2, 3]])
+# p merge_ranges([[1, 10], [2, 6], [3, 5], [7, 9]])

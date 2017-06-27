@@ -43,7 +43,7 @@ end
 # the current range. If the current range falls within the current held variable,
 # we alter the current variable and continue. If the range is afterwards, we push
 # the current variable on to our result, and hold a new range. This takes O(n) space
-# and O(nlogn)time (because we sorted), where n is the length of the array of ranges.
+# and O(nlogn)time (because we sortedg), where n is the length of the array of ranges.
 
 # p merge_ranges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]])
 # p merge_ranges([[1, 2], [2, 3]])

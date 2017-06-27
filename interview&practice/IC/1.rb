@@ -28,3 +28,11 @@ def stocks(prices)
 end
 
 # puts stocks([10, 7, 5, 8, 11, 9])
+
+# how it works:
+
+# We iterate through the stocks with two markers, the first one is the
+# current lowest stock price. We find the current difference, and change
+# the highest_so_far if we find a bigger difference. We change the first marker
+# to the the second if we find a lower integer. This takes O(1) space, and O(n)
+# time, where n is the length of the array of stock prices.

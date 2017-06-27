@@ -4,8 +4,8 @@
 
 class BinaryTreeNode
 
-  attr_accessor :value
-  attr_reader :left, :right
+  attr_accessor :value, :left, :right
+  # attr_reader :left, :right
 
   def initialize(value)
       @value = value
@@ -30,7 +30,7 @@ def balanced_tree(node)
 end
 
 def balanced(node)
-  return [1,true] if node.left.nil? && node.right.nil?
+  return [1,true] if node.nil? || (node.left.nil? && node.right.nil?)
 
   right = balanced(node.right)
   left = balanced(node.left)
@@ -46,7 +46,11 @@ end
 a = BinaryTreeNode.new(2)
 b = BinaryTreeNode.new(1)
 c = BinaryTreeNode.new(3)
+d = BinaryTreeNode.new(4)
+e = BinaryTreeNode.new(5)
 a.left = b
 a.right = c
+b.right = e
+c.right = d
 
 puts balanced_tree(a)

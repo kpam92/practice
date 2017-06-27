@@ -15,7 +15,6 @@ def except_curr_prod(array)
     result.push(array[idx] * result[-1])
     idx += 1
   end
-  puts result
 
   idx = array.length - 2
   curr_prod = 1
@@ -25,9 +24,21 @@ def except_curr_prod(array)
 
     idx -= 1
   end
-  
+
   result
 end
 
 
-puts except_curr_prod([1, 7, 3, 4])
+
+# How it works:
+# To find the product of every number except the element in an array,
+# we split it up into integers that come before 'k' in the array, and
+# integers that come after 'k' in the array. So, we first iterate through
+# the array, collecting the product of the integers and adding them to a
+# new array. Then, we iterate down, and collect the ones that would come
+# afterwards. This takes O(n) space and time, where n is the length of the
+# array. We us n space for creating a new result array, and n space for iterating
+# through every element in the initial array.
+
+# puts except_curr_prod([1, 7, 3, 4])
+# puts except_curr_prod([1, 2,3,4])

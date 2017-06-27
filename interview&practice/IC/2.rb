@@ -5,4 +5,24 @@
 
 
 def except_curr_prod(array)
+
+  result = [1]
+
+  #getting all product before integer
+  idx = 0
+
+  while idx < array.length - 1
+    result.push(array[idx] * result[-1])
+  end
+
+  idx = array.length - 1
+  curr_prod = 1
+  while idx >= 0
+
+    curr_prod = array[idx] * curr_prod
+    result[idx] *= curr_prod
+    idx -= 1
+  end
+  
+  result
 end

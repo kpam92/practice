@@ -36,6 +36,7 @@
 * What are the different ways to visually hide content (and make it available only for screen readers)?
 * Have you ever used a grid system, and if so, what do you prefer?
 * Have you used or implemented media queries or mobile specific layouts/CSS?
+<br><br>Media queries are a means of creating css specific to viewport dimensions. This means that the user can see content on desktop, tablet, and mobile.
 * Are you familiar with styling SVG?
 * How do you optimize your webpages for print?
 * What are some of the "gotchas" for writing efficient CSS?

@@ -13,6 +13,7 @@ def except_curr_prod(array)
 
   while idx < array.length - 1
     result.push(array[idx] * result[-1])
+    idx += 1
   end
 
   idx = array.length - 1

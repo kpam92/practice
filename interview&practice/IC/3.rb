@@ -50,4 +50,4 @@
 
  end
 
- puts highest_three_prod([−10,−10,1,3,2])
+ puts highest_three_prod([-10,-10,1,3,2,20,20])

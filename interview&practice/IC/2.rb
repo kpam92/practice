@@ -15,16 +15,17 @@ def except_curr_prod(array)
     result.push(array[idx] * result[-1])
     idx += 1
   end
+  puts result
 
-  idx = array.length - 1
+  idx = array.length - 2
   curr_prod = 1
   while idx >= 0
-
-    curr_prod = array[idx] * curr_prod
+    curr_prod = array[idx + 1] * curr_prod #4
     result[idx] *= curr_prod
+
     idx -= 1
   end
-
+  
   result
 end
 

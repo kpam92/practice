@@ -30,7 +30,8 @@ def balanced_tree(node)
 end
 
 def balanced(node)
-  return [1,true] if node.nil? || (node.left.nil? && node.right.nil?)
+  return [0,true] if node.nil?
+  return [1,true] if node.left.nil? && node.right.nil?
 
   right = balanced(node.right)
   left = balanced(node.left)
@@ -43,14 +44,23 @@ def balanced(node)
 
 end
 
-a = BinaryTreeNode.new(2)
-b = BinaryTreeNode.new(1)
-c = BinaryTreeNode.new(3)
-d = BinaryTreeNode.new(4)
-e = BinaryTreeNode.new(5)
-a.left = b
-a.right = c
-b.right = e
-c.right = d
+#how it works:
+# this recursive solution works through a binary tree, finding the depth
+# of each node. It returns the depth once it reaches the last node, and the
+# parent node then compares each node's depth, making sure the difference
+# is no greater than 1, and returns up. If any depth is more than one, it
+# returns false, and trickles up. This solution is O(n) space and time, where
+# n is the amount of nodes in the tree, because we iterate through each one.
 
-puts balanced_tree(a)
+
+# a = BinaryTreeNode.new(2)
+# b = BinaryTreeNode.new(1)
+# c = BinaryTreeNode.new(3)
+# d = BinaryTreeNode.new(4)
+# e = BinaryTreeNode.new(5)
+# a.left = b
+# a.right = c
+# b.right = e
+# e.right = d
+#
+# puts balanced_tree(a)

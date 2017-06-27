@@ -10,4 +10,14 @@
 
 
 def stocks(prices)
+
+  highest_so_far = 0
+
+  idx1 = 0
+  idx2 = 0
+
+  while idx2 < prices.length
+    curr_highest = prices[idx2] - prices[idx2]
+    
+  end
 end

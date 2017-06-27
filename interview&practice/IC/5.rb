@@ -8,6 +8,25 @@
 # computes the number of ways to make the amount of money with coins of the available denominations.
 
 
-def coin_computer(amount, array)
+def coin_computer(target, array)
   
+  computer(target,[],array,0)
+end
+
+def computer(target,curr_amount,array,index)
+  result = []
+
+  while index < array.length
+    amount_sum = curr_amount.reduce(:+)|| 0
+    curr_sum = amount_sum + array[index]
+
+    if curr_sum < target
+      result.concat(computer(target,curr_sum,array,index))
+    elsif curr_sum === target
+      result << curr_amount.concat([array[index]])
+    end
+
+    index += 1
+  end
+  result
 end

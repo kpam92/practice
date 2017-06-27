@@ -3,4 +3,37 @@
 # Write a function merge_ranges() that takes an array of meeting time ranges and returns an array of condensed ranges.
 
 def merge_ranges(ranges)
+
+  ranges = ranges.sort {|x,y| x[0] <=> y[0]}
+  result = []
+
+
+  idx = 1
+
+  curr_range = ranges[0]
+
+  while idx < ranges.length
+    curr = ranges[idx]
+    if curr[0] > curr_range[1]
+      # [1,2] -- [3,4]
+      result << curr_range
+      curr_range = curr
+    elsif curr[0] >= curr_range[0] && curr[1] <= curr_range[1]
+      # [1,4] -- [2,3] --> [1,4]
+      next
+    elsif curr[0] < curr_range[0] && curr[1] > curr_range[1]
+      # [1,2] -- [0,3] --> [0,3]
+      curr_range = curr
+    elsif curr[0] <= curr_range[1] && curr[0] > curr_range[0] && curr[1] >= curr_range[1]
+      #[1,3] -- [2,4] --> [1,4]
+      curr_range[1] = curr[1]
+    end
+    idx += 1
+  end
+
+  result << curr_range if result[-1] != curr_range
+
+  result
 end
+
+puts merge_ranges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]])

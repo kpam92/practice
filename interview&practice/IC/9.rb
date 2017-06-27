@@ -3,8 +3,8 @@
 
 class BinaryTreeNode
 
-  attr_accessor :value
-  attr_reader :left, :right
+  attr_accessor :value, :left, :right
+  # attr_reader :left, :right
 
   def initialize(value)
       @value = value
@@ -44,8 +44,19 @@ def node_valid?(node)
   end
 end
 
-a  = BinaryTreeNode.new(2)
-a.insert_left(1)
-a.insert_left(3)
+a = BinaryTreeNode.new(3)
+b = BinaryTreeNode.new(1)
+c = BinaryTreeNode.new(5)
+d = BinaryTreeNode.new(0)
+e = BinaryTreeNode.new(2)
+f = BinaryTreeNode.new(4)
+g = BinaryTreeNode.new(6)
+
+a.left = b
+a.right = c
+b.left = d
+b.right = e
+c.left = f
+c.right = g
 
 puts valid_search_tree(a)

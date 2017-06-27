@@ -23,3 +23,30 @@ class BinaryTreeNode
       return @right
   end
 end
+
+
+def balanced_tree(node)
+  balanced(node)[1]
+end
+
+def balanced(node)
+  return [1,true] if node.left.nil? && node.right.nil?
+
+  right = balanced(node.right)
+  left = balanced(node.left)
+
+  if left[1] == false || right[1] == false || (left[0] - right[0]).abs > 1
+    return [-1,false]
+  else
+    return [[left[0],right[0]].max + 1,true]
+  end
+
+end
+
+a = BinaryTreeNode.new(2)
+b = BinaryTreeNode.new(1)
+c = BinaryTreeNode.new(3)
+a.left = b
+a.right = c
+
+puts balanced_tree(a)

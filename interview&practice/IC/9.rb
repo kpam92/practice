@@ -25,22 +25,25 @@ end
 
 
 def valid_search_tree(head)
-  node_valid?(head)[1]
+  node_valid?(head)[2]
 end
 
 def node_valid?(node)
-  return [nil,true] if node.nil?
-  return [node.value,true] if node.right.nil? && node.left.nil?
+  return [nil, nil, true] if node.nil?
+  return [node.value,node.value,true] if node.right.nil? && node.left.nil?
 
   left = node_valid?(node.left)
   right = node_valid?(node.right)
 
-  return [nil,false] if left[1] == false || right[1] == false
+  return [nil,nil,false] if left[2] == false || right[2] == false
 
-  if (left.nil?|| left[0] < node.value) && (right.nil?|| right[0] > node.value)
-    return [node.value, true]
+  curr_highest = [(left[1]||node.value - 1),(right[1]||node.value - 1),node.value].max
+  curr_lowest = [(left[0]||node.value+ 1),(right[0]||node.value+ 1),node.value].min
+
+  if (left.nil?|| node.left.value < node.value) && (right.nil?|| node.right.value > node.value) && (right[0] > node.value) && (right[1] > node.value) && (left[0] < node.value) && (left[1] < node.value)
+    return [curr_lowest,curr_highest,true]
   else
-    return [nil,false]
+    return [nil,nil,false]
   end
 end
 
@@ -50,19 +53,19 @@ end
 # that each left node is less than the parent node, and that the right node is
 # higher. This is O(n) space and time, where n is the amount of nodes.
 
-# a = BinaryTreeNode.new(3)
-# b = BinaryTreeNode.new(1)
-# c = BinaryTreeNode.new(5)
-# d = BinaryTreeNode.new(0)
-# e = BinaryTreeNode.new(2)
-# f = BinaryTreeNode.new(4)
-# g = BinaryTreeNode.new(6)
-#
-# a.left = b
-# a.right = c
-# b.left = d
-# b.right = e
-# c.left = f
-# c.right = g
-#
-# puts valid_search_tree(a)
+a = BinaryTreeNode.new(3)
+b = BinaryTreeNode.new(1)
+c = BinaryTreeNode.new(5)
+d = BinaryTreeNode.new(0)
+e = BinaryTreeNode.new(2)
+f = BinaryTreeNode.new(4)
+g = BinaryTreeNode.new(6)
+
+a.left = b
+a.right = c
+b.left = d
+b.right = e
+c.left = f
+c.right = g
+
+puts valid_search_tree(a)

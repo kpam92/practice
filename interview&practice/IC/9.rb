@@ -44,19 +44,25 @@ def node_valid?(node)
   end
 end
 
-a = BinaryTreeNode.new(3)
-b = BinaryTreeNode.new(1)
-c = BinaryTreeNode.new(5)
-d = BinaryTreeNode.new(0)
-e = BinaryTreeNode.new(2)
-f = BinaryTreeNode.new(4)
-g = BinaryTreeNode.new(6)
 
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.left = f
-c.right = g
+# How it works:
+# This recursive solution does a DFS call, then trickles back up, making sure
+# that each left node is less than the parent node, and that the right node is
+# higher. This is O(n) space and time, where n is the amount of nodes.
 
-puts valid_search_tree(a)
+# a = BinaryTreeNode.new(3)
+# b = BinaryTreeNode.new(1)
+# c = BinaryTreeNode.new(5)
+# d = BinaryTreeNode.new(0)
+# e = BinaryTreeNode.new(2)
+# f = BinaryTreeNode.new(4)
+# g = BinaryTreeNode.new(6)
+#
+# a.left = b
+# a.right = c
+# b.left = d
+# b.right = e
+# c.left = f
+# c.right = g
+#
+# puts valid_search_tree(a)

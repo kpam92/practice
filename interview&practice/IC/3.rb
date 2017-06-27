@@ -50,4 +50,14 @@
 
  end
 
- puts highest_three_prod([-10,-10,1,3,2,20,20])
+ # puts highest_three_prod([-10,-10,1,3,2,20,20])
+
+ # how it works:
+ # We keep in mind that the highest product of three may include two
+ # negative numbers. So, we have a lot of integers to keep track of.
+ # This includes the current highest number, highest two number product,
+ # lowest number, lowest two number product, and highest three number product.
+ # After iterating through the entire array and keeping track of these variables,
+ # we return either the highest product of three, or the product of the highest one
+ # and the lowest two product. This take O(1) space, and O(n) time, where n is the
+ # length of the array.

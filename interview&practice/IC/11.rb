@@ -49,7 +49,7 @@ class Trie
 
     true
   end
-  
+
 end
 
 class Node
@@ -74,3 +74,10 @@ class Node
     @children["*"] = true
   end
 end
+
+
+# How it works:
+# This class saves space by having nodes that may be in multiple visited stored
+# spaces. So, instead of storing multiple 'wwww''s, we now only have to store each letter
+# once, and we look through the children and find the next possible options. This stores a
+# great amount of space.

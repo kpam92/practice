@@ -11,4 +11,24 @@
 
 
 class Trie
+
+  def initialize
+    @children = {}
+  end
+
+  def insert_link(link)
+    
+  end
+end
+
+class Node
+
+  attr_accessor :value, :parent, :children
+
+  def initialize(value,parent)
+    @value = value
+    @parent = parent
+    @children = {}
+  end
+
 end

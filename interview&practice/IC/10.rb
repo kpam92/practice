@@ -24,7 +24,7 @@ end
 def second_largest(head)
   left = false
   if head.right.nil?
-    return nil if head.left.nil?
+    return 'Tree has to have more than one node' if head.left.nil?
     head = head.left
     left = true
   end

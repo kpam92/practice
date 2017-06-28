@@ -30,19 +30,27 @@ def second_largest(head)
   parent.value
 end
 
-a = BinaryTreeNode.new(3)
-b = BinaryTreeNode.new(1)
-c = BinaryTreeNode.new(5)
-d = BinaryTreeNode.new(0)
-e = BinaryTreeNode.new(2)
-f = BinaryTreeNode.new(4)
-g = BinaryTreeNode.new(6)
+# How it works:
+# Because this is a binary search tree with all nodes on the right being
+# larger than those on the left, the second largest element will always be
+# the parent of the right most node. So, we traverse down the right of the
+# tree, and return the parent of the rightmost element. This take O(1) space,
+# and O(n) time, where n is the height of the tree.
 
-a.left = b
-a.right = c
-b.left = d
-b.right = e
-c.left = f
-c.right = g
 
-puts second_largest(a)
+# a = BinaryTreeNode.new(3)
+# b = BinaryTreeNode.new(1)
+# c = BinaryTreeNode.new(5)
+# d = BinaryTreeNode.new(0)
+# e = BinaryTreeNode.new(2)
+# f = BinaryTreeNode.new(4)
+# g = BinaryTreeNode.new(6)
+#
+# a.left = b
+# a.right = c
+# b.left = d
+# b.right = e
+# c.left = f
+# c.right = g
+#
+# puts second_largest(a)

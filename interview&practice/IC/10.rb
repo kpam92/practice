@@ -23,4 +23,10 @@ class BinaryTreeNode
 end
 
 def second_largest(head)
+  parent = nil
+  until head.right.nil?
+    parent = head
+    head = head.right
+  end
+  parent
 end

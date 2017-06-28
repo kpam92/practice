@@ -13,12 +13,43 @@
 class Trie
 
   def initialize
-    @children = {}
+    @head = Node.new("*",nil)
   end
 
   def insert_link(link)
-    
+    idx = 0
+    curr_node = this.head
+    while idx < link.length
+      if !curr_node.contain?(link[idx])
+        curr_node.insert(link[idx])
+      end
+      curr_node = curr_node.children[link[idx]]
+      if idx == link.length - 1
+        curr_node.insert_end
+      end
+      idx += 1
+    end
   end
+
+  def visited?(link)
+    idx = 0
+    curr_node = this.head
+
+    while idx < link.length
+
+      return false unless curr_node.contain(link[idx])
+      curr_node = curr_node.children[link[idx]]
+
+      if idx == link.length - 1
+        return false unless curr_node.children['*']
+      end
+
+      idx += 1
+    end
+
+    true
+  end
+  
 end
 
 class Node
@@ -31,4 +62,15 @@ class Node
     @children = {}
   end
 
+  def contain?(value)
+    @children[value] != nil
+  end
+
+  def insert(value)
+    @children[value] = Node.new(value,this)
+  end
+
+  def insert_end
+    @children["*"] = true
+  end
 end

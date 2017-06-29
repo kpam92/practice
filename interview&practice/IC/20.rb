@@ -11,7 +11,11 @@ class Stack
 
   # push a new item to the last index
   def push(item)
-      @items.push(item)
+      if @items.empty?
+        @items.push([item,item])
+      else
+        @items.push([item,[item,@items[-1][1]].max])
+      end
   end
 
   # remove the last item
@@ -29,6 +33,11 @@ class Stack
       if @items.empty?
           return nil
       end
-      return @items[-1]
+      return @items[-1][0]
+  end
+
+  def get_max
+    return nil if @items.empty?
+    return @items[-1][1]
   end
 end

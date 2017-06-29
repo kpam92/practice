@@ -9,6 +9,7 @@
 
 
 def find_singular_id(array)
+
   seen = Hash.new { |h,k| h[k] = 0 }
 
   array.each do |id|
@@ -18,5 +19,20 @@ def find_singular_id(array)
   seen.each do |key,value|
     return key if value == 1
   end
-  
+
 end
+
+
+# def find_unique_delivery_id(delivery_ids)
+#
+#   unique_delivery_id = 0
+#
+#   delivery_ids.each do |delivery_id|
+#       unique_delivery_id ^= delivery_id
+#   end
+#
+#   return unique_delivery_id
+# end
+
+# Their solution is O(1) space and O(n) time, whereas the one up above
+# has the same time, but O(n) space. Look up XOR.

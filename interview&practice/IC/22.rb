@@ -28,7 +28,7 @@ def delete_node(node)
   next_node = node.next
 
   until next_node.nil?
-    
+
     node.value = next_node.value
 
     if next_node.next.nil?
@@ -39,3 +39,8 @@ def delete_node(node)
     next_node = node.next
   end
 end
+
+# The first solution is a classic way of traversing through a linked list
+# and deleting a node by taking its prev pointer. The second solution is
+# more limited as it doesn't work on deleting the last node, but it does
+# delete faster than the former.

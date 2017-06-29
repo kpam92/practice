@@ -22,7 +22,7 @@ def fib_no_rec(number)
     curr_num = x + y
     x = y
     y = curr_num
-    num -= 1
+    number -= 1
   end
 
   curr_num
@@ -33,9 +33,9 @@ end
 # puts fib(2)
 # puts fib(3)
 # puts fib(4)
-
-puts fib_no_rec(0)
-puts fib_no_rec(1)
-puts fib_no_rec(2)
-puts fib_no_rec(3)
-puts fib_no_rec(4)
+# 
+# puts fib_no_rec(0)
+# puts fib_no_rec(1)
+# puts fib_no_rec(2)
+# puts fib_no_rec(3)
+# puts fib_no_rec(4)

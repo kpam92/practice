@@ -8,6 +8,9 @@ def fib(number)
 
 end
 
+
+def fib_no_rec(number)
+end
 puts fib(0)
 puts fib(1)
 puts fib(2)

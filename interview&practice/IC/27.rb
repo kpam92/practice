@@ -44,6 +44,12 @@ def reverse_word(word)
   word
 end
 
+# How it works:
 
-puts decipher("this is dumb")
-puts decipher("find you will pain only go you recordings security the into if")
+# this solution first reverses the entire word (O(n) time), then we iterate
+# through the string, and reverse each word (O(n) time). So, because this
+# is in-space, we use O(1) space, and O(n) time ,where n is the length of the
+# string.
+
+# puts decipher("this is dumb")
+# puts decipher("find you will pain only go you recordings security the into if")

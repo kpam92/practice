@@ -28,12 +28,19 @@ def fib_no_rec(number)
   curr_num
 end
 
+
+#how it works
+# The firs solution is recursive and uses a call-stack. The first one has 
+# O(logn) time complexity at the cost of space, where the second one iterates,
+# having O(1) space and O(n) time, where n is the number. You would use either
+# dependent on what you wish to sacrifice.
+
 # puts fib(0)
 # puts fib(1)
 # puts fib(2)
 # puts fib(3)
 # puts fib(4)
-# 
+#
 # puts fib_no_rec(0)
 # puts fib_no_rec(1)
 # puts fib_no_rec(2)

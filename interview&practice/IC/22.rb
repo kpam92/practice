@@ -10,16 +10,32 @@ class LinkedListNode
   end
 end
 
-def delete_node(head, node)
-  prev = nil
-  curr_node = head
+# def delete_node(head, node)
+#   prev = nil
+#   curr_node = head
+#
+#   until curr_node == node
+#     prev = curr_node
+#     curr_node = curr_node.next
+#   end
+#
+#   prev.next = curr_node.next
+#
+#   head
+# end
 
-  until curr_node == node
-    prev = curr_node
-    curr_node = curr_node.next
+def delete_node(node)
+  next_node = node.next
+
+  until next_node.nil?
+    
+    node.value = next_node.value
+
+    if next_node.next.nil?
+      node.next = nil
+    end
+
+    node = next_node
+    next_node = node.next
   end
-
-  prev.next = curr_node.next
-
-  head
 end

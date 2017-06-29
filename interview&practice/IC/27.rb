@@ -15,17 +15,19 @@ def decipher(string)
     if string[idx1] != ' '
 
       idx2 = idx1 + 1
-       while string[idx2] != ' '
+       while string[idx2] != ' ' && idx2 < string.length
          idx2 += 1
        end
 
        string[idx1...idx2] = reverse_word(string[idx1...idx2])
-       idx1 = idx2 += 1
+       idx1 = idx2
      else
-       idx1 += 1
      end
 
+     idx1 += 1
   end
+
+  string
 end
 
 def reverse_word(word)
@@ -44,3 +46,4 @@ end
 
 
 puts decipher("this is dumb")
+puts decipher("find you will pain only go you recordings security the into if")

@@ -13,8 +13,10 @@ class Stack
   def push(item)
       if @items.empty?
         @items.push([item,item])
+        return nil
       else
         @items.push([item,[item,@items[-1][1]].max])
+        return nil
       end
   end
 

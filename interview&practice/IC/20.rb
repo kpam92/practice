@@ -43,3 +43,11 @@ class Stack
     return @items[-1][1]
   end
 end
+
+#How it works:
+
+# This stack class keeps track of the current max element. This occurs
+# through coupling each element in the stack with the current max element
+# when that value was added to the stack. This means that when we pop and push,
+# we will still always have easy access to the max of the stack. This also allows
+# us to keep having O(1) pushes,pops, and get_max.

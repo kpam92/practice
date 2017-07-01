@@ -1,5 +1,5 @@
 # I like parentheticals (a lot).
-# "Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing."
+text = "Sometimes (when I nest them (my parentheticals) too much (like this (and this))) they get confusing."
 #
 # Write a function that, given a sentence like the one above, along with the position of an opening parenthesis, finds the corresponding closing parenthesis.
 #
@@ -25,3 +25,6 @@ def par_partner(string,index)
 
   'no partner'
 end
+
+
+puts par_partner(text, 10)

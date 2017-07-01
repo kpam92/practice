@@ -6,6 +6,8 @@ text = "Sometimes (when I nest them (my parentheticals) too much (like this (and
 # Example: if the example string above is input with the number 10 (position of the first parenthesis), the output should be 79 (position of the last parenthesis).
 
 def par_partner(string,index)
+  return "index isn't a parenthesis" unless string[index] == '('
+  
   queue = []
 
   idx = index + 1

@@ -4,5 +4,4 @@
 # output: 'ratcatdogcat'
 
 def longest_compound(array)
-  
 end

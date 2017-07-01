@@ -33,8 +33,13 @@ def valid_pal_perm(string)
   true
 end
 
+# How it works:
 
- puts valid_pal_perm("civic") # should return true
- puts valid_pal_perm("ivicc") # should return true
- puts valid_pal_perm("civil") # should return false
- puts valid_pal_perm("livci") # should return false
+# This iterates through the string, collecting each instance, then we iterate
+# through the hash, and return true if is one or no odd instances. This takes O(n)
+# space and time, where n is the length of the string.
+
+ # puts valid_pal_perm("civic") # should return true
+ # puts valid_pal_perm("ivicc") # should return true
+ # puts valid_pal_perm("civil") # should return false
+ # puts valid_pal_perm("livci") # should return false

@@ -9,4 +9,26 @@
 # "livci" should return false
 
 def valid_pal_perm(string)
+
+  seen = Hash.new {|h,k| h[k] = 0}
+
+  idx = 0
+  while idx < string.length
+
+    seen[string[idx]] += 1
+    idx += 1
+  end
+
+  odd = false
+
+  seen.each do |key,value|
+
+    if value % 2 == 1
+      return false if odd
+      odd = true
+    end
+
+  end
+
+  true
 end

@@ -32,3 +32,9 @@ def valid_pal_perm(string)
 
   true
 end
+
+
+ puts valid_pal_perm("civic") # should return true
+ puts valid_pal_perm("ivicc") # should return true
+ puts valid_pal_perm("civil") # should return false
+ puts valid_pal_perm("livci") # should return false

@@ -7,19 +7,19 @@ text = "Sometimes (when I nest them (my parentheticals) too much (like this (and
 
 def par_partner(string,index)
   return "index isn't a parenthesis" unless string[index] == '('
-  
-  queue = []
+
+  stack = []
 
   idx = index + 1
 
   while idx < string.length
 
     if string[idx] == "("
-      queue.push("(")
-    elsif string[idx] == ")" && queue.empty?
+      stack.push("(")
+    elsif string[idx] == ")" && stack.empty?
       return idx
     elsif string[idx] == ")"
-      queue.pop(1)
+      stack.pop(1)
     end
 
     idx += 1
@@ -29,4 +29,12 @@ def par_partner(string,index)
 end
 
 
-puts par_partner(text, 10)
+# How it works:
+# 
+# This function uses a stack, where we add to the stack when we encounter
+# and open parenthesis, and we pop off the stack when we encounter a closed one,
+# if there is anything to pop. If the stack is empty when we encounter a closed one,
+# this signifies the match to our initial parenthesis. This takes O(1) space, and
+# O(n) time, where n is the length of the string.
+
+# puts par_partner(text, 10)

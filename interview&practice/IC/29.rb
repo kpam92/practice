@@ -37,6 +37,14 @@ def bracket_validator(string)
 
 end
 
-puts bracket_validator("{ [ ] ( ) }" )
-puts bracket_validator("{ [ ( ] ) }")
-puts bracket_validator("{ [ }")
+# How it works
+# This solution uses a stack, making sure that the opening and closing brackets
+# are the in the correct order. This takes O(n) space and time, where n is the
+# length of the string.
+
+
+
+# puts bracket_validator("{ [ ] ( ) }" )
+# puts bracket_validator(" " )
+# puts bracket_validator("{ [ ( ] ) }")
+# puts bracket_validator("{ [ }")

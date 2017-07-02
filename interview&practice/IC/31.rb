@@ -28,4 +28,11 @@ def permutate(set)
   result
 end
 
+# How it works:
+# This solution works recursively, finding all permutations of a word,
+# by building up each letter, and utilizing a recursive call with all the
+# different combination with the remaining set in different combinations.
+# This takes O(n^2) space and time through the recursive call and the amount
+# of different permutations.
+
 # puts permutations('ca')

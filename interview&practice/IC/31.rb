@@ -17,7 +17,7 @@ def permutate(set)
   result = []
   return [] if set.empty?
 
-  set.each do |letter|
+  set.each do |letter,value|
     curr_set = set.dup
     curr_set.delete(letter)
     curr_result = permutate(curr_set)
@@ -28,4 +28,4 @@ def permutate(set)
   result
 end
 
-puts permutations('cat')
+# figure out tomorrow

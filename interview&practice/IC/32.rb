@@ -20,4 +20,14 @@
 # And we'll treat highest_possible_score as a constant instead of factoring it into our big O time and space costs, because the highest possible score isn’t going to change. Even if we do redesign the game a little, the scores will stay around the same order of magnitude.
 
 def sort_score(array)
+  scores = {}
+  (1..100).each {|x| scores[x] = 0}
+
+  array.each {|x| scores[x] += 1}
+
+  result = []
+
+  scores.each {|x,y| y.times {result.push(x)}}
+
+  result
 end

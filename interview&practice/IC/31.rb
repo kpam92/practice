@@ -9,23 +9,23 @@
 def permutations(string)
   characters = Hash.new
   string.chars.each { |x| characters[x] = true }
-
   permutate(characters)
 end
 
 def permutate(set)
   result = []
-  return [] if set.empty?
+  return [""] if set.empty?
 
   set.each do |letter,value|
     curr_set = set.dup
     curr_set.delete(letter)
     curr_result = permutate(curr_set)
-    curr_result.map {|x| x = letter + x }
+    curr_result.map! {|x| x = letter + x }
+
     result.concat(curr_result)
   end
 
   result
 end
 
-# figure out tomorrow
+# puts permutations('ca')

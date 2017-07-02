@@ -31,3 +31,8 @@ def sort_score(array)
 
   result
 end
+
+# How it works:
+# This creates an entire range from the scores of 0 to 100, then calcuates
+# the occurences of each score, then pushes each score into a sorted array.
+# This take O(n) space and time where n is the highest score.

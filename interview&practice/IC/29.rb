@@ -36,3 +36,7 @@ def bracket_validator(string)
   stack.empty?
 
 end
+
+puts bracket_validator("{ [ ] ( ) }" )
+puts bracket_validator("{ [ ( ] ) }")
+puts bracket_validator("{ [ }")

@@ -27,3 +27,5 @@ def permutate(set)
 
   result
 end
+
+puts permutations('cat')

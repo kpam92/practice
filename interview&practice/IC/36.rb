@@ -4,4 +4,20 @@
 
 
 def riffle?(deck, half1,half2)
+
+  idx = 0
+
+  while idx < deck.length
+    if deck[idx] == half1[0]
+      half1.shift(1)
+    elsif deck[idx] == half2[0]
+      half2.shift(1)
+    else
+      return false
+    end
+
+    idx += 1
+  end
+
+  true
 end

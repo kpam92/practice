@@ -19,5 +19,9 @@ def riffle?(deck, half1,half2)
     idx += 1
   end
 
-  half2.empty && half1.empty
+  half2.empty? && half1.empty?
 end
+
+# puts riffle?([1,2,3],[1,2,3],[])
+# puts riffle?([1,2,3],[1,3],[2])
+# puts riffle?([1,2,3,4],[1,3],[2])

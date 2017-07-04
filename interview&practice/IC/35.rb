@@ -5,4 +5,22 @@
 
 
 def shuffle(array)
+  nums = {}
+  (1..array.length - 1).each {|x| nums[x] = true}
+
+  array.each do |num|
+    idx = 1 + rand(nums.keys.length - 1)
+    num = [num, idx]
+    nums.delete(idx)
+  end
+
+  idx = 0
+
+  while idx < array.length
+    array[array[idx][1]] = [array[array[idx][1]],array[idx]]
+    idx += 1
+  end
+
+  array.each {|x| x = x[1]}
+  array
 end

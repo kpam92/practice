@@ -28,7 +28,8 @@ end
 # This solution depends on making sure that the next card of the shuffled deck
 # is either the first card in half1 or half2. So we increment through the shuffled
 # deck, and shift off the card from the respective half. We return false if it doesn't
-# exist in either half, or if at the end, the halves aren't empty
+# exist in either half, or if at the end, the halves aren't empty. This takes O(1) space,
+# and O(n) time, where n is the length of the shuffled array.
 
 # puts riffle?([1,2,3],[1,2,3],[])
 # puts riffle?([1,2,3],[1,3],[2])

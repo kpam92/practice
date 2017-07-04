@@ -7,20 +7,27 @@
 def shuffle(array)
   nums = {}
   (1..array.length - 1).each {|x| nums[x] = true}
-
-  array.each do |num|
-    idx = 1 + rand(nums.keys.length - 1)
-    num = [num, idx]
-    nums.delete(idx)
-  end
-
   idx = 0
-
   while idx < array.length
-    array[array[idx][1]] = [array[array[idx][1]],array[idx]]
+    if nums.keys.length == 1
+      rand_idx = 0
+    else
+      rand_idx = rand(nums.keys.length)
+    end
+    array[idx] = [array[idx], nums.keys[rand_idx]]
+    nums.delete(nums.keys[rand_idx])
     idx += 1
   end
 
-  array.each {|x| x = x[1]}
+  # idx = 0
+  #
+  # while idx < array.length
+  #   array[array[idx][1]] = [array[array[idx][1]],array[idx]]
+  #   idx += 1
+  # end
+
+  # array.map {|x| x = x[1]}
   array
 end
+
+print shuffle([1,2,3,4,5])

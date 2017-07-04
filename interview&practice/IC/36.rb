@@ -19,5 +19,5 @@ def riffle?(deck, half1,half2)
     idx += 1
   end
 
-  true
+  half2.empty && half1.empty
 end

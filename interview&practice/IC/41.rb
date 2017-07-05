@@ -11,13 +11,17 @@ def find_dup(array)
   idx = 0
 
   while idx < array.length
-    if array[(array[idx]).abs] < 0
+    if array[(array[idx]).abs - 1] < 0
       return array[idx].abs
     else
-      array[(array[idx]).abs] *= -1
+      array[(array[idx]).abs - 1] *= -1
     end
 
     idx += 1
   end
-  return nil
+  return 'no repeating character'
 end
+
+
+puts find_dup([1,1,2,3,4,5,6,7,7,8])
+puts find_dup([1,2,3,4,5,6,7,8])

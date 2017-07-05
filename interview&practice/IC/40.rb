@@ -15,10 +15,12 @@ def find_dup(array)
   if array[halfway] == array[halfway + 1] || array[halfway] == array[halfway - 1]
     return array[halfway]
   end
-  return nil if array.length < 4
+  return 'no repeating character' if array.length < 4
   if array[halfway] == halfway + 1
     find_dup(array[halfway..-1])
   else
     find_dup(array[0..halfway])
   end
 end
+
+puts find_dup([1,2,3,4,5,6,7])

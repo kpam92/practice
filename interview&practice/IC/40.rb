@@ -23,4 +23,16 @@ def find_dup(array)
   end
 end
 
-puts find_dup([1,2,3,4,5,6,7])
+# How it works:
+
+# This solution uses a binary search method. Knowing that this array is sorted,
+# with integers within the entire range, we find the halfway point. If that integer
+# is more than what should be there in a normal range, then we know that the duplicate
+# will be found in the first range. If not, then the duplicate is in the second half. We
+# keep calling a recursive call on the respective half until we find the duplicate. If we
+# don't find a duplicate and the array is less than 4 integers, then we return nil.
+
+# puts find_dup([1,2,3,4,5,6,7])
+# puts find_dup([1,2,3,4,5,6,6,7])
+# puts find_dup([1,1,2,3,4,5,6,6,7])
+# puts find_dup([1,1,2,3,4,5,6,6,7,7])

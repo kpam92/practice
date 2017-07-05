@@ -8,4 +8,16 @@
 # But we can actually do better. We can find a duplicate integer in O(n)O(n) time while keeping our space cost at O(1)O(1).
 
 def find_dup(array)
+  idx = 0
+
+  while idx < array.length
+    if array[(array[idx]).abs] < 0
+      return array[idx].abs
+    else
+      array[(array[idx]).abs] *= -1
+    end
+
+    idx += 1
+  end
+  return nil
 end

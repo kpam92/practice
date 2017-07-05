@@ -11,4 +11,14 @@
 
 
 def find_dup(array)
+  halfway = array.length/2
+  if array[halfway] == array[halfway + 1] || array[halfway] == array[halfway - 1]
+    return array[halfway]
+  end
+  return nil if array.length < 4
+  if array[halfway] == halfway + 1
+    find_dup(array[halfway..-1])
+  else
+    find_dup(array[0..halfway])
+  end
 end

@@ -17,7 +17,13 @@ def merge_arrays(array1,array2)
   result.concat(array1).concat(array2)
 end
 
-my_array     = [3, 4, 6, 10, 11, 15]
-alices_array = [1, 5, 8, 12, 14, 19]
+# How it works:
 
-puts merge_arrays(my_array, alices_array)
+# This solution compares the first element of each array,and pushes the smaller
+# element. After one array is empty, we then concat the remainder on to the
+# result array. This takes O(n) space and time, where n is the length of the array.
+
+# my_array     = [3, 4, 6, 10, 11, 15]
+# alices_array = [1, 5, 8, 12, 14, 19]
+#
+# puts merge_arrays(my_array, alices_array)

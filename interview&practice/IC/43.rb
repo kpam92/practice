@@ -5,4 +5,19 @@
 
 
 def merge_arrays(array1,array2)
+  result = []
+  until array1.empty? || array2.empty?
+    if array1[0] < array2[0]
+      result.push(array1.shift(1))
+    else
+      result.push(array2.shift(1))
+    end
+  end
+
+  result.concat(array1).concat(array2)
 end
+
+my_array     = [3, 4, 6, 10, 11, 15]
+alices_array = [1, 5, 8, 12, 14, 19]
+
+puts merge_arrays(my_array, alices_array)

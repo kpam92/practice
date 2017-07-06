@@ -34,4 +34,11 @@ def most_lived(array)
 
 end
 
+# How it works:
+
+# This solution creates a hash with all the dates from the earliest year, to
+# the latest, then iterates through the ranges, and adds to the values in the hash.
+# We then find the years that have the most people living, and return the array.
+# This takes O(n) space and time, where n is the range from earliest year to latest.
+
 # p most_lived([[1910,1969], [1950,2050], [1969, 2020]])

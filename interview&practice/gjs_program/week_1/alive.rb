@@ -9,10 +9,10 @@ def most_lived(array)
     highest = death if (highest.nil? || birth > highest)
   end
 
-  years = Hash.new {h[k] = 0}
+  years = Hash.new {|h,k| h[k] = 0}
 
   array.each do |birth,death|
-    while birth < death
+    while birth <= death
       years[birth] += 1
       birth += 1
     end
@@ -33,3 +33,5 @@ def most_lived(array)
   curr_result
 
 end
+
+# p most_lived([[1910,1969], [1950,2050], [1969, 2020]])

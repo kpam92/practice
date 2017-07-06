@@ -1,13 +1,6 @@
 # Given a list of peoples' birth year and death year, find the year(s) in which the most people were alive. Ex: [[1910,1969], [1950,2050], [1969, 2020]] should return [1969]
 
 def most_lived(array)
-  lowest = nil
-  highest = nil
-
-  array.each do |birth,death|
-    lowest = birth if (lowest.nil? || birth < lowest)
-    highest = death if (highest.nil? || birth > highest)
-  end
 
   years = Hash.new {|h,k| h[k] = 0}
 

@@ -58,18 +58,21 @@ def merge(array1,array2)
 
 end
 
-# arr = (1..1000).to_a.shuffle
-# puts merge_sort(arr)
-# puts merge_sort([1,9,2,8,3,7,4,6,5])
-
 # O(n) space, O(nlogn) time
-
 
 # quick sort
 
 def quick_sort(array)
+  return array if array.length <= 1
+
+  pivot = [array[0]]
+  left = array[1..-1].select {|x| x < array[0]}
+  right = array[1..-1].select {|x| x >= array[0]}
+
+  quick_sort(left) + pivot + quick_sort(right)
 
 end
 
+# O(nlogn) space O(n^2) time
 
 # heap sort

@@ -26,7 +26,8 @@ def island_count(matrix)
   while row < matrix.length
     column = 0
     while column < matrix[row].length
-      if matrix[column][row] == 1
+      # puts [row,column]
+      if matrix[row][column] == 1
 
         island_count += 1
         matrix = sink_island(row, column, matrix)
@@ -44,19 +45,21 @@ def sink_island(row, column, map)
   map[row][column] = 0
 
   # north
-  if map[row-1][column] == 1
+  if row < 0 && map[row-1][column] == 1
     map = sink_island(row-1, column, map)
   end
   # south
-  if map[row+1][column] == 1
+
+  if row < map.length - 1 && map[row+1][column] == 1
     map = sink_island(row+1, column, map)
   end
+
   # east
-  if map[row][colum+1] == 1
+  if column < map[row].length - 1 && map[row][column+1] == 1
     map = sink_island(row, column+1, map)
   end
   # west
-  if map[row][colum-1] == 1
+  if column > 0 && map[row][column-1] == 1
     map = sink_island(row, column-1, map)
   end
 
@@ -64,5 +67,8 @@ def sink_island(row, column, map)
 end
 
 
-world_1 = [[11110],[11010],[11000],[00000]]
+world_1 = [[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]]
+
+world_2 = [[1,1,0,0,0],[1,1,0,0,0],[0,0,1,0,0],[0,0,0,1,1]]
 puts island_count(world_1)
+puts island_count(world_2)

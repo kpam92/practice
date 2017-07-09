@@ -136,7 +136,14 @@ def spiralize(matrix)
 end
 
 
-matrix = [[1,2,3,4],[10,11,12,5],[9,8,7,6]]
+# How it works:
+
+# This solution iterates through the matrix dependent on the direction,
+# peeling away from the array by having variables for the top,bottom,left, and
+# right boundaries of the remaining array. This solution takes O(1) space
+# and O(n) time, where n is the amount of items.
+
+# matrix = [[1,2,3,4],[10,11,12,5],[9,8,7,6]]
 # matrix = [[1,2],[4,3]]
 # matrix = [
 #   [1,2,3,4,5],
@@ -145,4 +152,4 @@ matrix = [[1,2,3,4],[10,11,12,5],[9,8,7,6]]
 #   [14,23,22,21,8],
 #   [13,12,11,10,9]
 # ]
-puts spiralize(matrix)
+# puts spiralize(matrix)

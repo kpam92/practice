@@ -19,9 +19,12 @@ class BinaryMinHeap
 
   public
   def self.child_indices(len, parent_index)
+    [(2*parent_index) + 1, (2*parent_index) + 2].select {|x| x < len}
   end
 
   def self.parent_index(child_index)
+    raise 'root has no parent' if child_index == 0
+    (child_index - 1)/2
   end
 
   def self.heapify_down(array, parent_idx, len = array.length, &prc)

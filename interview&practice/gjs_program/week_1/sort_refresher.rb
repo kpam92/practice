@@ -58,11 +58,18 @@ def merge(array1,array2)
 
 end
 
+# arr = (1..1000).to_a.shuffle
+# puts merge_sort(arr)
 # puts merge_sort([1,9,2,8,3,7,4,6,5])
 
 # O(n) space, O(nlogn) time
 
 
 # quick sort
+
+def quick_sort(array)
+
+end
+
 
 # heap sort

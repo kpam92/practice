@@ -25,7 +25,7 @@ def island_count(matrix)
 
   while row < matrix.length
     column = 0
-    while column < row.length
+    while column < matrix[row].length
       if matrix[column][row] == 1
 
         island_count += 1

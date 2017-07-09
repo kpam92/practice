@@ -36,6 +36,8 @@ def island_count(matrix)
 
     row += 1
   end
+
+  island_count
 end
 
 def sink_island(row, column, map)

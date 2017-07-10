@@ -1,5 +1,7 @@
 class BinaryMinHeap
   def initialize(&prc)
+    @store = []
+    @prc = prc|| Proc.new {|x,y| x <=> y}
   end
 
   def count
@@ -12,6 +14,7 @@ class BinaryMinHeap
   end
 
   def push(val)
+    @store.push(val)
   end
 
   protected
@@ -31,5 +34,11 @@ class BinaryMinHeap
   end
 
   def self.heapify_up(array, child_idx, len = array.length, &prc)
+    parent = array[self.parent_index(child_idx)]
+    prc = prc|| Proc.new {|x,y| x  <=> y}
+    until prc.call(array[self.parent_index(child_idx)], array[child_idx]) >= 0
+      array[child_idx],array[self.parent_index(child_idx)] = array[self.parent_index(child_idx)], array[child_idx]
+    end
+    array
   end
 end

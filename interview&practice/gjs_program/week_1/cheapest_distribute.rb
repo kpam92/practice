@@ -55,3 +55,24 @@ def get_cheapest_cost(node)
 
   node.value + lowest
 end
+
+a = Node.new(0)
+b = Node.new(5)
+c = Node.new(3)
+d = Node.new(6)
+e = Node.new(4)
+f = Node.new(2)
+g = Node.new(0)
+h = Node.new(1)
+i = Node.new(5)
+j = Node.new(1)
+k = Node.new(10)
+l = Node.new(1)
+
+a.add_children([b,c,d])
+b.add_children([e])
+c.add_children([f,g])
+d.add_children([h,i])
+f.add_children([j])
+g.add_children([k])
+j.add_children([l])

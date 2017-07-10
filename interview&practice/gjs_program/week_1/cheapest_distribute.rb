@@ -26,3 +26,22 @@
 #
 # 0 ≤ rootNode.cost ≤ 100000
 # [output] integer
+
+
+class Node
+
+ attr_accessor :value, :children
+
+ def initialize(value)
+   @value = value
+   @children = []
+ end
+
+  def add_children(nodes)
+    @children.concat(nodes)
+  end
+
+end
+
+def get_cheapest_cost(node)
+end

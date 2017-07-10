@@ -11,10 +11,9 @@
 # ]
 
 def spiralize(n)
+
   result = []
-  row = []
-  n.times { row << nil }
-  n.times { result << row }
+  n.times { result << Array.new(n) }
 
   top = 0
   bottom = n - 1
@@ -35,7 +34,7 @@ def spiralize(n)
       direction = 'down'
 
     elsif direction == 'down'
-      row = right
+      row = top
       while row <= bottom
         result[row][right] = num
         row += 1
@@ -55,17 +54,22 @@ def spiralize(n)
 
     elsif direction == 'up'
       row = bottom
-      while row <= top
+      while row >= top
         result[row][left] = num
         row -= 1
         num += 1
       end
-      left -= 1
+      left += 1
       direction = 'right'
     end
+
   end
 
   result
 end
 
-puts spiralize(3)
+# How it works:
+
+# This solution creates an empty array of nxn, then we iterate through it
+# while filling in the integers in spiral fashion. This solution takes
+#   O(n) space and time, where n is the amount of integers in the matrix.

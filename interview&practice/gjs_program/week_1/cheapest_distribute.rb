@@ -44,4 +44,14 @@ class Node
 end
 
 def get_cheapest_cost(node)
+  return node.value if node.children.empty?
+
+  lowest = nil
+
+  node.children.each do |child|
+    curr_result = get_cheapest_cost(child)
+    result = curr_result if lowest.nil? || curr_result < result
+  end
+
+  node.value + lowest
 end

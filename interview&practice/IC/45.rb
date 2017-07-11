@@ -37,4 +37,30 @@ COLORS = [
 ]
 
 def colorize(graph)
+  length = 0
+  graph.each {|x| length = x.neighbors.length if x.neighbors.length > length }
+
+  colors = COLORS[0..length + 1]
+
+  graph.each do |node|
+
+    illegal_colors = Set.new
+
+    node.neighbors.each do |neighbor|
+      illegal_colors.add(neighbor.color) unless neighbor.color.nil?
+    end
+
+    colors.each do |color|
+      unless illegal_colors.include(color)
+        node.color = color
+        break
+      end
+    end
+  end
 end
+
+# How it works:
+
+# This solution iterates over the graph, finds all illegal colors,
+# then assigns the first legal one. This takes O(n + m) time, where
+# n is the number of nodes, and m is the edges.

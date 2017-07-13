@@ -31,17 +31,17 @@ def longest_pal(string)
     idx += 1
   end
 
-  result[longest_pal[idx][0],longest_pal_idx[1]]
+  result_string[longest_pal_idx[0]..longest_pal_idx[1]]
 end
 
 def longest_sub(string,idx1,idx2,curr_pal)
   while idx1 >= 0 && idx2 < string.length
-    if (!idx1 > 96 && !idx1 < 123) && (!idx2 > 96 && !idx2 < 123)
+    if (string[idx1].ord < 97 || string[idx1].ord > 122) && (string[idx2].ord < 96 || string[idx2].ord > 122)
       idx1 -= 1
       idx2 += 1
-    elsif (!idx1 > 96 && !idx1 < 123)
+    elsif (string[idx1].ord < 96 || string[idx1].ord > 122)
       idx1 -= 1
-    elsif (!idx2 > 96 && !idx1 < 123)
+    elsif (string[idx2].ord < 96 || string[idx2].ord > 122)
       idx2 += 1
     elsif string[idx1] == string[idx2]
       curr_pal = string[idx1] + curr_pal + string[idx2]
@@ -51,7 +51,7 @@ def longest_sub(string,idx1,idx2,curr_pal)
       break
     end
   end
-  [curr_pal,[idx1,idx2]]
+  [curr_pal,[idx1 + 1,idx2 - 1]]
 end
 
-puts longest_pal("abcdababakel")
+puts longest_pal("abc da  ba bakel")

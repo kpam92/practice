@@ -9,4 +9,19 @@ def shifted_array_search(array,target)
 end
 
 def shift_array(array)
+
+  middle_idx = array.length/2
+
+  left_idx = 1
+  right_idx = array.length - 1
+
+  until array[middle_idx - 1] > array[middle_idx]
+    if array[0] > array[middle_idx]
+      right_idx = middle_idx + 1
+    elsif array[0] < array[middle_idx]
+      left_idx = middle_idx - 1
+    end
+    middle_idx = left_idx + ((right_idx - left_idx)/2)
+  end
+
 end

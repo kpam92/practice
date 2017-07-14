@@ -3,3 +3,10 @@
 # Given shiftArr and an integer num, implement a function shiftedArrSearch that finds and returns the index of num in shiftArr. If num isn’t in shiftArr, return -1. Assume that the offset doesn’t equal to 0 (i.e. assume the array is shifted at least once) or to arr.length - 1 (i.e. assume the shifted array isn’t fully reversed).
 #
 # Explain your solution and analyze its time and space complexities.
+
+
+def shifted_array_search(array,target)
+end
+
+def shift_array(array)
+end

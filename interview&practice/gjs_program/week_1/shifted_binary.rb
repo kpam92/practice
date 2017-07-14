@@ -61,7 +61,11 @@ def shift_array(array)
 end
 # puts shift_array([4,5,6,7,8,9,10,11,12,13,14,15,16,1])
 
-
+# How it works:
+# the solution uses a helper function to find the index of the shift,
+# then adjusts the array, and binary searches through to find the the index.
+# This has O(logn), because of the binary search through the array twice. This
+# has O(1) space complexity.
 
 
 

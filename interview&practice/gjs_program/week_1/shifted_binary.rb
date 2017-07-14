@@ -17,11 +17,15 @@ def shift_array(array)
 
   until array[middle_idx - 1] > array[middle_idx]
     if array[0] > array[middle_idx]
-      right_idx = middle_idx + 1
+      right_idx = middle_idx - 1
     elsif array[0] < array[middle_idx]
-      left_idx = middle_idx - 1
+      left_idx = middle_idx + 1
     end
     middle_idx = left_idx + ((right_idx - left_idx)/2)
   end
 
+  middle_idx
+
 end
+
+puts shift_array([4,5,6,7,8,9,10,11,12,13,14,15,16,1])

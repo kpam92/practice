@@ -34,4 +34,22 @@ def exist(board, word)
 end
 
 def checker(board,row,column,word)
+    board[row][column] = "."
+    return true if word.length == 1
+    word = word[1..-1]
+    result = false
+    if row > 0 && board[row - 1][column] = word[0]
+    # north
+        result = true if checker(board,row - 1, column, word) == true
+    elsif row < board.length - 1 && board[row + 1][column] = word[0]
+    # south
+        result = true if checker(board,row + 1, column, word) == true
+    elsif column > 0 && board[row][column - 1] = word[0]
+    # east
+         result = true if checker(board,row, column - 1, word) == true
+    elsif column < board[row].length - 1 && board[row][column + 1] = word[0]
+         result = true if checker(board,row, column + 1, word) == true
+    # west
+    end
+    result
 end

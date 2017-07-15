@@ -13,3 +13,10 @@
 # word = "ABCCED", -> returns true,
 # word = "SEE", -> returns true,
 # word = "ABCB", -> returns false.
+
+
+def exist(board,word)
+end
+
+def checker(board,row,column,word)
+end

@@ -53,3 +53,13 @@ def checker(board,row,column,word)
     end
     result
 end
+
+
+matrix = [
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+puts exist("ABCCED") # -> should return true,
+puts exist("SEE") # -> should return true,
+puts exist("ABCB") # -> should return false.

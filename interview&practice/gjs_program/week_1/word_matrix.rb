@@ -60,6 +60,6 @@ matrix = [
   ['S','F','C','S'],
   ['A','D','E','E']
 ]
-puts exist("ABCCED") # -> should return true,
-puts exist("SEE") # -> should return true,
-puts exist("ABCB") # -> should return false.
+puts exist(matrix,"ABCCED") # -> should return true,
+puts exist(matrix,"SEE") # -> should return true,
+puts exist(matrix,"ABCB") # -> should return false.

@@ -15,7 +15,22 @@
 # word = "ABCB", -> returns false.
 
 
-def exist(board,word)
+def exist(board, word)
+    row = 0
+    result = false
+    while row < board.length
+        column = 0
+        while column < board[row].length
+            if board[row][column] == word[0]
+                result = true if checker(board,row,column,word) == true
+            end
+            column += 1
+        end
+
+        row += 1
+    end
+
+    result
 end
 
 def checker(board,row,column,word)

@@ -74,3 +74,40 @@ world_2 = ["10111","10101","11101"]
 # puts island_count(world_1)
 puts island_count(world_2)
 # puts island_count(world_1)
+
+def island_count_iterative(matrix)
+
+  count = 0
+
+  row = 0
+  while row < matrix.length
+    column = 0
+
+    while column < matrix[row].length
+      if matrix[row][column] == "1"
+        count += 1
+        sink_iterative(matrix, row, column)
+      end
+    end
+    row += 1
+  end
+
+end
+
+def sink_iterative(map,row,column)
+  queue = [[row,column]]
+  while queue.length > 1
+    curr_row, curr_column = queue.shift
+    map[curr_row][curr_column] = '0'
+    # north
+    if row > 0 && map[curr_row - 1][curr_column] == '1'
+      queue << [curr_row - 1,curr_column]
+    end
+    # south
+    if row < matrix.length - 1 && map[curr_row + 1][curr_column] == '1'
+      queue << [curr_row + 1][column]
+    end
+    # east
+    # west
+  end
+end

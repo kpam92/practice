@@ -100,14 +100,23 @@ def sink_iterative(map,row,column)
     curr_row, curr_column = queue.shift
     map[curr_row][curr_column] = '0'
     # north
-    if row > 0 && map[curr_row - 1][curr_column] == '1'
+    if curr_row > 0 && map[curr_row - 1][curr_column] == '1'
       queue << [curr_row - 1,curr_column]
     end
     # south
-    if row < matrix.length - 1 && map[curr_row + 1][curr_column] == '1'
-      queue << [curr_row + 1][column]
+    if curr_row < matrix.length - 1 && map[curr_row + 1][curr_column] == '1'
+      queue << [curr_row + 1][curr_column]
     end
     # east
+    if curr_column < matrix[curr_row] - 1 && map[curr_row][curr_column + 1] == '1'
+      queue << [curr_row][curr_column + 1]
+    end
     # west
+    if curr_column > 0 && map[curr_row][curr_column - 1] == '1'
+      queue << [curr_row][curr_column - 1]
+    end
   end
 end
+
+puts island_count(world_1)
+puts island_count(world_2)

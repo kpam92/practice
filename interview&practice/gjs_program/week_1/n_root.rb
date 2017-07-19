@@ -16,4 +16,25 @@
 
 
 def root(x,n)
+  return 0 if x == 0
+
+  curr_num = x/2
+  lower_bound = 0
+  upper_bound = [x,1].max
+
+  while curr_num - lower_bound >= 0.001
+    curr_square = curr_num**n
+    if curr_square > x
+      upper_bound = curr_num
+    elsif curr_square < x
+      lower_bound = curr_num
+    else
+      break
+    end
+
+    curr_num (upper_bound + lower_bound)/2
+
+  end
+
+  curr_num
 end

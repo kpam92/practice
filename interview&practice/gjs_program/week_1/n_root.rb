@@ -32,9 +32,11 @@ def root(x,n)
       break
     end
 
-    curr_num (upper_bound + lower_bound)/2
+    curr_num = (upper_bound + lower_bound)/2
 
   end
 
   curr_num
 end
+
+puts root(9,2)

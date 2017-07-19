@@ -46,6 +46,12 @@ def next_biggest(array1,array2)
   return [1, idx]
 end
 
+# How it works:
+# this method iterates over the first element of each array, and finds the largest
+# value. If they are equal, then we use the next_biggest helper function to find
+# the next largest value in the arrays. This method is O(n) where n is the length of
+# both arrays, since our helper function will iterate over new elements once collectively.
+
 # puts biggest_num([1,3,2], [9,1,1])
-puts next_biggest([1,1,2], [1,1,1])
-puts biggest_num([1,1,2,1], [1,3,1])
+# puts next_biggest([1,1,2], [1,1,1])
+# puts biggest_num([1,1,2,1], [1,3,1])

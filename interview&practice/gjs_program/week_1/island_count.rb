@@ -122,7 +122,11 @@ def sink_iterative(map,row,column)
   map
 end
 
+# How it works
 
+# This solution iteratively sinks islands in a BFS strategy with a 
+# queue to sink islands instead of recursion. This optimizes space
+# for a O(m*n) space and time, where m and n are rows and columns
 
 
 # puts island_count_iterative(world_1)

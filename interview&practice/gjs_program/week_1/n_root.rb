@@ -39,4 +39,12 @@ def root(x,n)
   curr_num
 end
 
-puts root(9,2)
+# How it works:
+
+# This solution runs in a binary search, looking through the range of
+# 1 to the number, and minimizing the window, until a number is found,
+# or when the window shrinks to a certain number, satisfying the search
+# for a root between numbers. This takes O(logn) time and O(1) space.
+
+# puts root(9,2)
+# puts root(7,3)

@@ -13,7 +13,7 @@ def biggest_num(array1,array2)
       result += array2.shift.to_s
     elsif array1[0] == array2[0]
 
-      array, num = next_biggest(array1,array2)
+      # array, num = max_number(array1,array2)
       if array == 1
         result += array1.shift(num).map(&:to_s).join
       else

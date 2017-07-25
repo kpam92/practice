@@ -16,6 +16,10 @@ end
 # this solution uses a recursive approach to figure out the answer. But this
 # fails when I get to the input of 38. So let's try a bottom-up approach.
 
+
+def climb_stairs(n)
+end
+
 # puts climb_stairs(38)
 # puts climb_stairs(4)
 # puts climb_stairs(5)

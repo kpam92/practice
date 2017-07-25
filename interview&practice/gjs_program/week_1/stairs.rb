@@ -11,3 +11,7 @@ def climb_stairs(n)
 
   climb_stairs(n - 1) + climb_stairs(n - 2)
 end
+
+puts climb_stairs(3)
+puts climb_stairs(4)
+puts climb_stairs(5)

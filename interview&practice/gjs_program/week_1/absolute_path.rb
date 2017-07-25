@@ -7,4 +7,16 @@
 
 
 def absolute_path(string)
+  words = string.split("/")
+  result = []
+  idx = 0
+
+  while idx < words.length
+    if condition
+    elsif
+    elsif condition
+    elsif condition
+    else
+    end
+  end
 end

@@ -18,6 +18,14 @@ end
 
 
 def climb_stairs(n)
+
+  t = Array.new(n, 0)
+
+  climb_helper(n,t)
+end
+
+def climb_helper(n,t)
+  
 end
 
 # puts climb_stairs(38)

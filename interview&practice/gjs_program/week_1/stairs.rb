@@ -7,11 +7,15 @@
 
 def climb_stairs(n)
   return 1 if n == 1
-  return 3 if n == 2
+  return 2 if n == 2
 
   climb_stairs(n - 1) + climb_stairs(n - 2)
 end
 
-puts climb_stairs(3)
-puts climb_stairs(4)
-puts climb_stairs(5)
+
+# this solution uses a recursive approach to figure out the answer. But this
+# fails when I get to the input of 38. So let's try a bottom-up approach.
+
+# puts climb_stairs(38)
+# puts climb_stairs(4)
+# puts climb_stairs(5)

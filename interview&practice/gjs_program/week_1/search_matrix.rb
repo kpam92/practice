@@ -14,7 +14,8 @@
 # Given target = 3, return true.
 
 def matrix_exist?(matrix, target)
-  return false if (matrix[0][0] > target || matrix[-1][-1])
+  return false if matrix.flatten.empty?
+  return false if (matrix[0][0] > target || matrix[-1][-1] < target)
 
   idx = 0
 
@@ -45,3 +46,13 @@ def binary_search(array,target)
   end
 
 end
+
+matrix = [
+  [1,   3,  5,  7],
+  [10, 11, 16, 20],
+  [23, 30, 34, 50]
+]
+
+# puts matrix_exist?(matrix,3)
+# puts matrix_exist?(matrix,1)
+# puts matrix_exist?(matrix,50)

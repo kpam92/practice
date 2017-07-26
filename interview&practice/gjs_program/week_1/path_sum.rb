@@ -15,6 +15,8 @@
 #    [5,8,4,5]
 # ]
 
+
+
 class Node
 
   attr_accessor :value, :right, :left
@@ -23,10 +25,53 @@ class Node
     @value = value
     @right = nil
     @left = nil
+
   end
 end
 
+a = Node.new(5)
+b = Node.new(4)
+c = Node.new(8)
+a.left = b
+a.right = c
+d = Node.new(11)
+b.right = d
+e = Node.new(13)
+f = Node.new(4)
+c.left = e
+c.right = f
+g = Node.new(7)
+h = Node.new(2)
+d.left = g
+d.right = h
+i = Node.new(5)
+j = Node.new(1)
+f.left = i
+f.right = j
 
 def sum_paths(root, sum)
-  # return root.value
+  paths = sum_helper(root)
+
+  paths.count(sum)
 end
+
+def sum_helper(root)
+  return [root.value] if root.left.nil? && root.right.nil?
+
+  result = []
+  if root.right
+    curr_right = sum_paths(root.right)
+    curr_right = curr_right.map { |x| x = x.unshift(root.value) }
+    result.concat(curr_right)
+  end
+
+  if root.left
+    curr_left = sum_paths(root.left)
+    curr_left = curr_left.map { |x| x = x.unshift(root.value) }
+    result.concat(curr_left)
+  end
+
+  result
+end
+
+puts sum_helper(a)

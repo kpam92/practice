@@ -52,7 +52,7 @@ f.right = j
 def sum_paths(root, sum)
   paths = sum_helper(root)
 
-  paths.count(sum)
+  paths.select {|x| x.reduce(:+) == sum}
 end
 
 def sum_helper(root)
@@ -73,5 +73,10 @@ def sum_helper(root)
 
   result
 end
+
+
+
 # print sum_helper(a)
 # puts sum_helper(a)
+# print sum_paths(a, 22)
+# print sum_paths(a, 18)

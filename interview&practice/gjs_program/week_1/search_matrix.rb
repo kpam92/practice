@@ -32,4 +32,16 @@ def matrix_exist?(matrix, target)
 end
 
 def binary_search(array,target)
+
+
+  middle_idx = array.length/2
+  return true if array[middle_idx] == target
+  return false if array.length < 2
+
+  if array[middle_idx] > target
+    return binary_search(array[0...middle_idx],target)
+  else
+    return binary_search(array[middle_idx..-1],target)
+  end
+
 end

@@ -52,6 +52,13 @@ matrix = [
   [10, 11, 16, 20],
   [23, 30, 34, 50]
 ]
+# How it works
+
+# We iterate through the matrix rows until we find one that has the range
+# of our target, then use binary search to look for a value. This takes
+# O(logn) for the binary serach, where n is the length of the row, and O(m)
+# for iterating through the array, where m is the number of rows. So the total
+# cost is O(logn + m)
 
 # puts matrix_exist?(matrix,3)
 # puts matrix_exist?(matrix,1)

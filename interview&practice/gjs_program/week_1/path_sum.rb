@@ -56,22 +56,22 @@ def sum_paths(root, sum)
 end
 
 def sum_helper(root)
-  return [root.value] if root.left.nil? && root.right.nil?
+  return [[root.value]] if root.left.nil? && root.right.nil?
 
   result = []
   if root.right
-    curr_right = sum_paths(root.right)
+    curr_right = sum_helper(root.right)
     curr_right = curr_right.map { |x| x = x.unshift(root.value) }
     result.concat(curr_right)
   end
 
   if root.left
-    curr_left = sum_paths(root.left)
+    curr_left = sum_helper(root.left)
     curr_left = curr_left.map { |x| x = x.unshift(root.value) }
     result.concat(curr_left)
   end
 
   result
 end
-
-puts sum_helper(a)
+# print sum_helper(a)
+# puts sum_helper(a)

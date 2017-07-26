@@ -16,5 +16,20 @@
 def matrix_exist?(matrix, target)
   return false if (matrix[0][0] > target || matrix[-1][-1])
 
+  idx = 0
 
+  while idx < matrix.length
+    if target > matrix[idx][0] && target < matrix[idx][-1]
+      return binary_search(matrix[idx], target)
+    elsif target == matrix[idx][0] || target == matrix[idx][-1]
+      return true
+    end
+
+    idx += 1
+  end
+
+  false
+end
+
+def binary_search(array,target)
 end

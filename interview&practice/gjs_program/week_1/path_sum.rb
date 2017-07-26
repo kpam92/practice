@@ -74,6 +74,10 @@ def sum_helper(root)
   result
 end
 
+# How it works
+# This solution works in a DFS manner, collecting all paths, then selecting
+# those that sum to the target. The time complexity is O(n) where n is the amount
+# of nodes, and the space is O(n), where n is the amount of different paths
 
 
 # print sum_helper(a)

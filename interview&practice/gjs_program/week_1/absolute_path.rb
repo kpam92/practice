@@ -13,18 +13,24 @@ def absolute_path(string)
 
   while idx < words.length
     if words[idx] == "" || words[idx] == "."
-      next
-    elsif word == ".."
+
+    elsif words[idx] == ".."
       result.pop
     else
       result.push(words[idx])
     end
 
     idx += 1
+
   end
 
-  result.join("/")
+  "/" + result.join("/")
 end
 
-puts absolute_path("/home/")
-puts absolute_path("/a/./b/../../c/")
+# how it works
+# This solution splits the path by slashes, then adds and pops from the
+# result dependent on each item. This takes O(n) time and space, where n
+# is the amount of paths within the string.
+
+# puts absolute_path("/home/")
+# puts absolute_path("/a/./b/../../c/")

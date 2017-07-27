@@ -13,4 +13,27 @@
 
 
 def pascal(n)
+  result = []
+
+  idx = 1
+  while idx <= n
+    result << Array.new(idx,1)
+    idx += 1
+  end
+
+  idx1 = 0
+
+  while idx1 < result.length
+    idx2 = 0
+    while idx2 < result[idx1].length
+      if idx2 == 0 || idx2 == result[idx1].length - 1
+      else
+        result[idx1][idx2] = result[idx1 - 1][idx2 - 1] + result[idx1 - 1][idx2]
+      end
+      idx2 += 1
+    end
+    idx1 += 1
+  end
+
+  result
 end

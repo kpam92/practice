@@ -37,3 +37,10 @@ def pascal(n)
 
   result
 end
+
+
+# How it works
+
+# This solution creates a pyramid matrix, then iterates through each middle
+# item, and equals it to the higher two numbers in the pyramid. This is O(n)
+# time and space where n is the amount of numbers

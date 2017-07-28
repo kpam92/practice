@@ -23,3 +23,25 @@ def max_depth(node)
 
   1 + curr_depth
 end
+
+a = Node.new(5)
+b = Node.new(4)
+c = Node.new(8)
+a.left = b
+a.right = c
+d = Node.new(11)
+b.right = d
+e = Node.new(13)
+f = Node.new(4)
+c.left = e
+c.right = f
+g = Node.new(7)
+h = Node.new(2)
+d.left = g
+d.right = h
+i = Node.new(5)
+j = Node.new(1)
+f.left = i
+f.right = j
+
+puts max_depth(a)

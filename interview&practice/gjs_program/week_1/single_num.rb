@@ -12,7 +12,7 @@ def find_single_num(array)
 
   array.each do |num|
     if nums[num]
-      nums.delete[num]
+      nums.delete(num)
     else
       nums[num] = true
     end
@@ -20,3 +20,12 @@ def find_single_num(array)
 
   nums.keys[0]
 end
+
+
+# puts find_single_num([2,2,1])
+
+# How it works:
+# This solution iterates through the numbers, then adds them to the nums
+# hash, and takes them away if the second one is found. Afterwards, we return
+# the only number in the hash. This takes O(n) time, and O(n/2) space, which
+# then turns in to O(n) space.

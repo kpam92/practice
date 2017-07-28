@@ -24,7 +24,11 @@ def max_depth(node)
   1 + curr_depth
 end
 
-
+# How it works
+#
+# This solution is a DFS method that treks to the farthest node, and recursively
+# returns depth. We check every single node, so the space is O(1), and time complexity
+# is O(n), where n is the number of nodes.
 
 
 #               5

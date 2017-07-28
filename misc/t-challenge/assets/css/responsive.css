@@ -1,0 +1,30 @@
+@media only screen and (max-width: 1900px) {
+    .mobile-hidden {
+        display: block;
+    }
+    .mobile-show {
+        display: none;
+    }
+    .content-div-mobile {
+      border: 0;
+    }
+    .content-div-desktop {
+      border: 1px solid #ffffff;
+      background: rgba(0, 0, 0, 0.5);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+    .mobile-show {
+        display: block;
+    }
+    .content-div-mobile {
+      border: 1px solid #ffffff;
+      margin-right: 10px;
+    }
+    .content-div-desktop {
+      border: 0;
+    }
+}

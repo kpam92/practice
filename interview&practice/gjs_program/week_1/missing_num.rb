@@ -8,4 +8,5 @@
 
 
 def missing_num(array)
+  result = array
 end

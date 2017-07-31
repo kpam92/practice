@@ -52,6 +52,7 @@
 * What's the difference between inline and inline-block?
 * What's the difference between a relative, fixed, absolute and statically positioned element?
 * The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
+<br><br> Cascading refers to the heirarchy and inheritance of each element on a page, and what takes precedence. ID - Class, psuedo-class - element, psuedo-element;  
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 * Have you played around with the new CSS Flexbox or Grid specs?
 * How is responsive design different from adaptive design?

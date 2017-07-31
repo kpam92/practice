@@ -10,8 +10,8 @@ add(2, 5); // 7
 add(2)(5); // 7
 ```
 ```javascript
-multiply = (n,m) => (n * m)
-add = (n) => ((m) => multiply(n,m))
+_add = (n,m) => (n + m)
+add = (n) => ((m) => _add(n,m))
 ```
 * What is the difference between var, let, and const?
   - Let is scoped to the block that it is assigned, and can be changed. This is good for declaring a variable that may be reassigned for a loop. This does not hoist up!

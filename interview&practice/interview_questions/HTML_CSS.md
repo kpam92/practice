@@ -56,5 +56,6 @@
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
 * Have you played around with the new CSS Flexbox or Grid specs?
 * How is responsive design different from adaptive design?
+<br><br> responsive entails one layout that changes depending on screen size, while adaptive means that there are distinct layouts that show dependent on screen size.
 * Have you ever worked with retina graphics? If so, when and what techniques did you use?
 * Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?

@@ -1,6 +1,11 @@
 This is a page to put miscellaneous software development
 related questions and answers to them.
 
+
+* What is the difference between var, let, and const?
+  - Let is scoped to the block that it is assigned, and can be changed. This is good for declaring a variable that may be reassigned for a loop. This does not hoist up!
+  - Const can't be reassigned, so it signifies a variable that will not change value at all in functions.
+  - Var is similar to let, except it hoists, and is available to the scope of the entire function it is declared, not just the enclosed block.
 * What is dynamic programming?
 <br><br>is a technique for solving problems recursively and is applicable when the computations of the subproblems overlap.
 * What happens when you type in 'www.google.com' and press enter?

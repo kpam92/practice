@@ -2,7 +2,7 @@ This is a page to put miscellaneous software development
 related questions and answers to them.
 
 * What is dynamic programming?
-
+<br><br>is a technique for solving problems recursively and is applicable when the computations of the subproblems overlap.
 * What happens when you type in 'www.google.com' and press enter?
 
 * What are the upsides to ES6, and fat arrow functions?

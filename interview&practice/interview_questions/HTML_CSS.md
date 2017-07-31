@@ -26,6 +26,7 @@
 * Describe z-index and how stacking context is formed.
 <br><br> The z-index indicates the position of the element as it stacks on top of other elements. It's best to think of the elements as pieces of paper on top of each other. An element with a higher z-index will be higher up on the stack and presumably more visible to the viewer.
 * Describe BFC(Block Formatting Context) and how it works.
+<br><br> block formatting context is a part of a visual CSS rendering of a Web page. It is the region in which the layout of block boxes occurs and in which floats interact with each other
 * What are the various clearing techniques and which is appropriate for what context?
 * Explain CSS sprites, and how you would implement them on a page or site.
 <br><br> A sprite is a large image that is made up of smaller images. This is effective for holding multiple images the developer may want to use, and singling out specific parts to display that specific image. It takes up less bandwidth, and easier to render because multiple images are store in one single file. This is most commonly seen in moving animations (think of 16bit video games with moving figures), and for smaller icons displayed on a website.

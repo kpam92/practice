@@ -2,6 +2,17 @@ This is a page to put miscellaneous software development
 related questions and answers to them.
 
 
+* What is a currying function? Show an example.
+<br><br> A currying function is one that needs x amount of arguments to complete. So, until that requirement is met, it will only return the function itself. Once enough arguments are given, it will return the correct answer.
+<br><br> make this work:
+```javascript
+add(2, 5); // 7
+add(2)(5); // 7
+```
+```javascript
+multiply = (n,m) => (n * m)
+add = (n) => ((m) => multiply(n,m))
+```
 * What is the difference between var, let, and const?
   - Let is scoped to the block that it is assigned, and can be changed. This is good for declaring a variable that may be reassigned for a loop. This does not hoist up!
   - Const can't be reassigned, so it signifies a variable that will not change value at all in functions.

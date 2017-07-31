@@ -51,6 +51,7 @@
 * List as many values for the display property that you can remember.
 * What's the difference between inline and inline-block?
 * What's the difference between a relative, fixed, absolute and statically positioned element?
+<br><br> Static is the default, and has the element positioned as it would regularly in relation to everything on the page. Relative means 'relative to itself'. This means that assigning top,left,right,bottom values will move the element in relation to its normal positioning. Absolute positions the element in relation to its parent element in a similar manner to relative positioning. This positioning doesn't affect any other element on the page, and doesn't affect any other elements as well. Fixed positioning is relative to the viewport, i.e. navigation bars and 'back to the top' icons.
 * The 'C' in CSS stands for Cascading. How is priority determined in assigning styles (a few examples)? How can you use this system to your advantage?
 <br><br> Cascading refers to the heirarchy and inheritance of each element on a page, and what takes precedence. ID - Class, psuedo-class - element, psuedo-element;  
 * What existing CSS frameworks have you used locally, or in production? How would you change/improve them?

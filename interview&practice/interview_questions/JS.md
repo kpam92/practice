@@ -77,6 +77,7 @@ Closures are the closest thing JS has to having private methods, where a user do
 <br><br>This function writes to the document/web page the content that you put as the argument, i.e. `<h1>hi<h1>`. Using this after the DOM has loaded will overwrite all of the page. So, the common use for this is to upload third party code and script to the page, examples include ads and Google analytics.
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain Ajax in as much detail as possible.
+<br><br> AJAX stands for  asynchronous javascript and xml. It is the use of javscript to send and receive information using HTTP without reloading the page.
 * What are the advantages and disadvantages of using Ajax?
 <br><br> Advantages: better interactivity and more dynamic pages. Easier navigation. More succinct and compact code.
 <br><br> Disadvantages: Reload and back are rendered useless, and can refresh page prior to ajax call.
@@ -169,7 +170,7 @@ Object.keys(obj).forEach(function(key) {
   * What is an example of an immutable object in JavaScript?
   * What are the pros and cons of immutability?
   * How can you achieve immutability in your own code?
-<br><br> Simply, mutable objects can be changed, while immutable ones cannot. An example of an immutable object is a declared 'const' in JS. Mutable: 'let' and 'var'. Immutability is advantageous for constant variables that you wouldn't want to have the option of changing. Immutability is an extra insurance. On the other hand, because immutability is strict, you have to make sure that you define your variables in a conscious manner. 
+<br><br> Simply, mutable objects can be changed, while immutable ones cannot. An example of an immutable object is a declared 'const' in JS. Mutable: 'let' and 'var'. Immutability is advantageous for constant variables that you wouldn't want to have the option of changing. Immutability is an extra insurance. On the other hand, because immutability is strict, you have to make sure that you define your variables in a conscious manner.
 * Explain the difference between synchronous and asynchronous functions.
 <br><br> synchronous functions occur in a specific order in the code, where step 3 won't occur before step 1. But, an asynchronous function may occur at any point, waiting for a specific event to be triggered. In context, asynchronous functions may occur in JS through event listeners, where a user interacts with a specific part of the application, i.e. hovering or clicking. These events occur in the background. These are useful for having dynamic and interactive pages, where certain actions can cause code to run, and information to be fetched from the DB without a re-render.
 * What is event loop?

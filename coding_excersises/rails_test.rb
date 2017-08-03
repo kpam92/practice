@@ -11,7 +11,13 @@
 # number_of_logins
 
 class Person < ActiveRecord::Base
-  has_many :blog_posts
+  
+  # would have below validations if in rails 4 or 5
+  # validates :first_name, :last_name, :age, null: false
+
+  has_many(:blog_posts,
+           foreign_key: :user_id,
+           class_name: 'Post')
 
   before_save :verify_valid_age
 
@@ -22,11 +28,11 @@ class Person < ActiveRecord::Base
   end
 
   def is_teenager
-    age < 18 ? true : false
+    self.age < 18 ? true : false
   end
 
   def full_name
-    if first_name && last_name
+    if self.first_name && self.last_name
       "#{first_name} #{last_name}"
     else
       nil
@@ -40,7 +46,7 @@ class Person < ActiveRecord::Base
   end
 
   def set_nickname
-    new_nickname = ''
+    # new_nickname = ''
     blog_post_count = self.blog_posts.count
     puts blog_post_count
 
@@ -63,13 +69,12 @@ class Person < ActiveRecord::Base
     #   'Guru'
     # end
     puts experience_level
-    new_nickname = experience_level + ' Writer'
-    if !number_of_logins.nil?
-      if number_of_logins == 42
-        new_nickname = 'Special ' + new_nickname
-      end
+    # new_nickname = experience_level + ' Writer'
+    if !self.number_of_logins.nil? && self.number_of_logins == 42
+      new_nickname = 'Special ' + new_nickname
     end
-    nickname = new_nickname
-    save
+    self.nickname = new_nickname
+    # save
   end
+
 end

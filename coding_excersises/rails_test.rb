@@ -54,10 +54,9 @@ class Person < ActiveRecord::Base
     end
   end
   # added "Person" for easy reading
+  # changed to sum
   def self.total_logins
-    Person.all.inject(0) do |sum, person|
-      sum += person.number_of_logins
-    end
+    Person.all.sum(:number_of_logins)
   end
 
   # split up some of the logic
@@ -67,7 +66,7 @@ class Person < ActiveRecord::Base
     # instead of querying db for posts matching to this person,
     # we utilize their has_many blog_posts relation to find the blog post
     # count instead
-    
+
     blog_post_count = self.blog_posts.count
     puts blog_post_count
 

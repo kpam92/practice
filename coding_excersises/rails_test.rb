@@ -15,38 +15,59 @@ class Person < ActiveRecord::Base
   # would have below validations if in rails 4 or 5
   # validates :first_name, :last_name, :age, null: false
 
+  # flushed out the has many relation
   has_many(:blog_posts,
            foreign_key: :user_id,
            class_name: 'Post')
 
   before_save :verify_valid_age
 
+  # changed 'or' to || and fixed the added error syntax
+  # added 'self' to age for easy reading
   def verify_valid_age
-    if age < 12 || age > 120
-      self.errors.add('Age in invalid!')
+    if self.age < 12 || self.age > 120
+      self.errors.add(:age, message:'Age in invalid!')
     end
   end
 
-  def is_teenager
+  # added "?" to emphasize it being a boolean method
+  # added 'self' to age for easy reading
+  def is_teenager?
     self.age < 18 ? true : false
   end
 
+  # alternative method to check if user is an actual teenager
+  # def is_teenager?
+  #   (self.age < 20 && self.age > 12 ) ? true : false
+  # end
+
+
+  # added "self" for easy reading
+  # returns 'no x name' dependent on missing name
   def full_name
     if self.first_name && self.last_name
       "#{first_name} #{last_name}"
-    else
-      nil
+    elsif self.last_name
+      'no first name'
+    elsif self.first_name
+      'no last name'
     end
   end
-
+  # added "Person" for easy reading
   def self.total_logins
     Person.all.inject(0) do |sum, person|
       sum += person.number_of_logins
     end
   end
 
+  # split up some of the logic
+  # kept the 'puts' statements for logging in the console.
   def set_nickname
-    # new_nickname = ''
+
+    # instead of querying db for posts matching to this person,
+    # we utilize their has_many blog_posts relation to find the blog post
+    # count instead
+    
     blog_post_count = self.blog_posts.count
     puts blog_post_count
 
@@ -67,6 +88,10 @@ class Person < ActiveRecord::Base
     puts new_nickname[0..-7]
 
     self.nickname = new_nickname
+
+    # didn't see a need for this save below, would leave it if
+    # the person was retrieved from the db and filed under a variable.
+
     # save
   end
 

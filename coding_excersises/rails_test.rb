@@ -11,7 +11,7 @@
 # number_of_logins
 
 class Person < ActiveRecord::Base
-  
+
   # would have below validations if in rails 4 or 5
   # validates :first_name, :last_name, :age, null: false
 
@@ -40,7 +40,7 @@ class Person < ActiveRecord::Base
   end
 
   def self.total_logins
-    all.inject(0) do |sum, person|
+    Person.all.inject(0) do |sum, person|
       sum += person.number_of_logins
     end
   end
@@ -59,20 +59,13 @@ class Person < ActiveRecord::Base
     else
       new_nickname = 'Guru Writer'
     end
-    # experience_level = if blog_post_count < 10
-    #   'Beginner'
-    # elsif blog_post_count < 20
-    #   'Apprentice'
-    # elsif blog_post_count < 30
-    #   'Expert'
-    # else
-    #   'Guru'
-    # end
-    puts experience_level
     # new_nickname = experience_level + ' Writer'
     if !self.number_of_logins.nil? && self.number_of_logins == 42
       new_nickname = 'Special ' + new_nickname
     end
+
+    puts new_nickname[0..-7]
+
     self.nickname = new_nickname
     # save
   end

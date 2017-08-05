@@ -24,6 +24,11 @@ def first_uniq(string)
   -1
 end
 
+# How it works:
+# this solution looks through every letter, then adds that instance's index to the hash.
+# If the letter already exists in the hash, then it is set to false. It then returns the first
+# true index, or -1. This solution takes O(n) space and time, where n is the length of the string
 
-puts first_uniq('leetcode')
-puts first_uniq('loveleetcode')
+# puts first_uniq('leetcode')
+# puts first_uniq('loveleetcode')
+# puts first_uniq('lleettccooddee')

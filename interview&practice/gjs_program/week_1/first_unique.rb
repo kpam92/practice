@@ -12,7 +12,7 @@
 def first_uniq(string)
   seen = Hash.new
 
-  string.chars.each do |letter,idx|
+  string.chars.each.with_index do |letter,idx|
     if seen[letter]
       seen[letter] = false
     else

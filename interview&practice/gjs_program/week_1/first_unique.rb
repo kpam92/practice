@@ -23,3 +23,7 @@ def first_uniq(string)
   seen.each {|h,k| return k unless k == false }
   -1
 end
+
+
+puts first_uniq('leetcode')
+puts first_uniq('loveleetcode')

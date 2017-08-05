@@ -10,4 +10,16 @@
 # Note: You may assume the string contain only lowercase letters.
 
 def first_uniq(string)
+  seen = Hash.new
+
+  string.chars.each do |letter,idx|
+    if seen[letter]
+      seen[letter] = false
+    else
+      seen[letter] = idx
+    end
+  end
+
+  seen.each {|h,k| return k unless k == false }
+  -1
 end

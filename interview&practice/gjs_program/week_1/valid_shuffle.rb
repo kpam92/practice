@@ -2,4 +2,29 @@
 
 
 def valid_shuffle(string1,string2,shuffled_deck)
+
+  until string1.empty? && string2.empty?
+
+    if string1[0] == shuffled_deck[0]
+      string1 = string1[1..-1]
+    elsif string2[0] == shuffled_deck[0]
+      string2 = string2[1..-1]
+    else
+      return false
+    end
+
+    shuffled_deck = shuffled_deck[1..-1]
+  end
+
+  if shuffled_deck.empty?
+    return true
+  else
+    return false
+  end
 end
+
+str1="abc"
+str2="def"
+str3="dabecf"
+
+puts valid_shuffle(str1,str2,str3)

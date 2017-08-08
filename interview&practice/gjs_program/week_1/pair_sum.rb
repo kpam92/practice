@@ -4,29 +4,21 @@
 
 def pair_sum(array, target)
 
-  numbers = Hash.new { |h,k| h[k] = 0 }
-
-  array.each {|num| numbers[num] += 1 }
+  seen = Hash.new
 
   result = Hash.new
 
-  numbers.map do |key, value|
-    until value == 0
-      second_val = target - value
-
-      if second_val == val && value > 1
-        value -= 1
-        result[[value,value]] = true
-      elsif second_val != val && numbers[second_val]
-        result[[value,second_val].sort] = true
-        numbers[second_val] -= 1
-      end
-      value -= 1
+  array.each do |value|
+    second_val = target - value
+    if seen[second_val]
+      seen.delete(second_val)
+      result[[[value, second_val].min, [value, second_val].max]] = true
+    else
+      seen[value] = true
     end
   end
 
   result.keys
-
 end
 
-puts pair_sum([1, 1, 2, 3, 4],4)
+# print pair_sum([1, 1, 2, 3, 4],4)

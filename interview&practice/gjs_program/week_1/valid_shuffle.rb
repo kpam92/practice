@@ -23,8 +23,15 @@ def valid_shuffle(string1,string2,shuffled_deck)
   end
 end
 
-str1="abc"
-str2="def"
-str3="dabecf"
+# str1="abc"
+# str2="def"
+# str3="dabecf"
+#
+# puts valid_shuffle(str1,str2,str3)
 
-puts valid_shuffle(str1,str2,str3)
+# How it works:
+#
+# This solution iterates through the shuffled deck, matching with a string,
+# and popping off each element as it goes. If it doesn't match up, or the deck still
+# has letters after both decks are empty, it returns false. This has O(n) time, where n
+# is the length of the shuffled deck, and O(1) space.

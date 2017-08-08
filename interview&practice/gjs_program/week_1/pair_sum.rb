@@ -22,3 +22,8 @@ def pair_sum(array, target)
 end
 
 # print pair_sum([1, 1, 2, 3, 4],4)
+
+# How it works:
+# This solution iterates through the array, adding each number to the seen
+# hash if no partner is found. If a partner is found, then its added to the result.
+# This has O(n) space and time, where n is the length of the array.

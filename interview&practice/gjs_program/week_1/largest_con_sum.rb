@@ -17,6 +17,15 @@
  end
 
 
-puts largest_con_sum([1,2,-100,400,1])
+# How it works:
+#
+# This greedy solution keeps track of the current largest sum, as well as the
+# current sum, making sure that if the number ever become negative, we reset the
+# beginning number of the sum. At each number, we compare the current sum and the
+# largest current sum. This takes O(1) space, and O(n) time, where n is the length
+# of the array.
+#
+# puts largest_con_sum([1,2,-100,400,1])
+# puts largest_con_sum([1,2,-100,400,1,-10,11])
 # puts largest_con_sum([])
 # puts largest_con_sum([])

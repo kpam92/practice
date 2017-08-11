@@ -14,22 +14,22 @@ body {
 }
 
 button {
-	background-color: #6786a2;
-	// border-color: none;
-	color: #FFFFFF;
+	background-color: $light-blue;
+	border-color: $dark-blue;
+	color: white;
 	font-weight: bold;
-	padding: 8px;
-	border-radius: 8px;
-	transition: none;
-	font-family: sans-serif;
-	// text-transform:
-	font-size: 14px;
+	padding: 7px 9px;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	font-family: $sans-serif;
+	text-transform: uppercase;
+	font-size: 11px;
 	text-align: center;
 }
 
 button:hover {
-	// background-color:
-	// border-color:
+	background-color: $blue;
+  border-color: $darkest-blue;
 }
 
 /*

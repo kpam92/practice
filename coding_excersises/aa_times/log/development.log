@@ -592,3 +592,328 @@ Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:32:12 -0700
+Started GET "/" for ::1 at 2017-08-12 23:38:03 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.3ms)
+  Rendered shared/_masthead.html.erb (0.3ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:38:03 -0700
+Started GET "/assets/application.self-5ba7386949a4f6f9823739ba6775487d47bc824d34952c0ca29316ae7d3f4d53.css?body=1&livereload=1502606715827" for ::1 at 2017-08-12 23:45:15 -0700
+Started GET "/assets/application.self-5ba7386949a4f6f9823739ba6775487d47bc824d34952c0ca29316ae7d3f4d53.css?body=1&livereload=1502606715829" for ::1 at 2017-08-12 23:45:15 -0700
+Started GET "/" for ::1 at 2017-08-12 23:45:43 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.3ms)
+  Rendered shared/_masthead.html.erb (0.4ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/kevinmathews/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:7)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from initialize at /Users/kevinmathews/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/better_errors-2.1.1/lib/better_errors/raised_exception.rb:8)
+
+Sass::SyntaxError - Invalid CSS after "</header>": expected "{", was "":
+  sass (3.4.22) lib/sass/scss/parser.rb:1189:in `expected'
+  sass (3.4.22) lib/sass/scss/parser.rb:1125:in `expected'
+  sass (3.4.22) lib/sass/scss/parser.rb:1120:in `tok!'
+  sass (3.4.22) lib/sass/scss/parser.rb:656:in `block'
+  sass (3.4.22) lib/sass/scss/parser.rb:649:in `ruleset'
+  sass (3.4.22) lib/sass/scss/parser.rb:675:in `block_child'
+  sass (3.4.22) lib/sass/scss/parser.rb:665:in `block_contents'
+  sass (3.4.22) lib/sass/scss/parser.rb:125:in `stylesheet'
+  sass (3.4.22) lib/sass/scss/parser.rb:41:in `parse'
+  sass (3.4.22) lib/sass/engine.rb:406:in `_to_tree'
+  sass (3.4.22) lib/sass/engine.rb:312:in `to_tree'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
+  sass (3.4.22) lib/sass/stack.rb:88:in `block in with_import'
+  sass (3.4.22) lib/sass/stack.rb:115:in `with_frame'
+  sass (3.4.22) lib/sass/stack.rb:88:in `with_import'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:36:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+  sass (3.4.22) lib/sass/stack.rb:79:in `block in with_base'
+  sass (3.4.22) lib/sass/stack.rb:115:in `with_frame'
+  sass (3.4.22) lib/sass/stack.rb:79:in `with_base'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:160:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
+  sass (3.4.22) lib/sass/stack.rb:88:in `block in with_import'
+  sass (3.4.22) lib/sass/stack.rb:115:in `with_frame'
+  sass (3.4.22) lib/sass/stack.rb:88:in `with_import'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:325:in `visit_import'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:36:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+  sass (3.4.22) lib/sass/stack.rb:79:in `block in with_base'
+  sass (3.4.22) lib/sass/stack.rb:115:in `with_frame'
+  sass (3.4.22) lib/sass/stack.rb:79:in `with_base'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:160:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:52:in `visit_children'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:36:in `block in visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+  sass (3.4.22) lib/sass/tree/visitors/base.rb:36:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:159:in `visit'
+  sass (3.4.22) lib/sass/tree/visitors/perform.rb:8:in `visit'
+  sass (3.4.22) lib/sass/tree/root_node.rb:36:in `css_tree'
+  sass (3.4.22) lib/sass/tree/root_node.rb:20:in `render'
+  sass (3.4.22) lib/sass/engine.rb:281:in `render'
+  sass-rails (5.0.6) lib/sass/rails/template.rb:47:in `evaluate'
+  tilt (2.0.5) lib/tilt/template.rb:102:in `render'
+  sprockets (3.7.0) lib/sprockets/legacy_tilt_processor.rb:25:in `call'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:75:in `call_processor'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:57:in `block in call_processors'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:56:in `call_processors'
+  sprockets (3.7.0) lib/sprockets/loader.rb:134:in `load_from_unloaded'
+  sprockets (3.7.0) lib/sprockets/loader.rb:60:in `block in load'
+  sprockets (3.7.0) lib/sprockets/loader.rb:317:in `fetch_asset_from_dependency_cache'
+  sprockets (3.7.0) lib/sprockets/loader.rb:44:in `load'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.7.0) lib/sprockets/bundle.rb:23:in `block in call'
+  sprockets (3.7.0) lib/sprockets/utils.rb:196:in `dfs'
+  sprockets (3.7.0) lib/sprockets/bundle.rb:24:in `call'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:75:in `call_processor'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:57:in `block in call_processors'
+  sprockets (3.7.0) lib/sprockets/processor_utils.rb:56:in `call_processors'
+  sprockets (3.7.0) lib/sprockets/loader.rb:134:in `load_from_unloaded'
+  sprockets (3.7.0) lib/sprockets/loader.rb:60:in `block in load'
+  sprockets (3.7.0) lib/sprockets/loader.rb:317:in `fetch_asset_from_dependency_cache'
+  sprockets (3.7.0) lib/sprockets/loader.rb:44:in `load'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.7.0) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.7.0) lib/sprockets/base.rb:66:in `find_asset'
+  sprockets (3.7.0) lib/sprockets/base.rb:92:in `[]'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:355:in `find_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:347:in `find_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:229:in `block in lookup_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:242:in `block in resolve_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:241:in `resolve_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:228:in `lookup_debug_asset'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:170:in `block in stylesheet_link_tag'
+  sprockets-rails (3.2.0) lib/sprockets/rails/helper.rb:169:in `stylesheet_link_tag'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__13686755558079366_70277620748280'
+  actionview (5.0.0.1) lib/action_view/template.rb:158:in `block in render'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.0.0.1) lib/action_view/template.rb:348:in `instrument'
+  actionview (5.0.0.1) lib/action_view/template.rb:156:in `render'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (5.0.0.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.0.0.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.0.0.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.0.0.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.0.0.1) lib/action_controller/metal/renderers.rb:144:in `render_to_body'
+  actionpack (5.0.0.1) lib/abstract_controller/rendering.rb:26:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.0.0.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/kevinmathews/.rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.0.0.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (5.0.0.1) lib/action_controller/metal/implicit_render.rb:36:in `default_render'
+  actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack (2.0.1) lib/rack/etag.rb:25:in `call'
+  rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.1) lib/rack/head.rb:12:in `call'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+  rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+  web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+  railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:23:in `_call'
+  rack-livereload (0.3.16) lib/rack/livereload.rb:14:in `call'
+  actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+  puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+  puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+  puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+  puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+
+Started POST "/__better_errors/19f58d5914c29344/variables" for ::1 at 2017-08-12 23:45:43 -0700
+Started GET "/" for ::1 at 2017-08-12 23:45:49 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.2ms)
+  Rendered shared/_masthead.html.erb (0.3ms)
+  Rendered shared/_sections_nav.html.erb (0.2ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 92ms (Views: 90.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-dded7c6973fa4c55b02a10de253b42b6eff1748e8dc9f3eef918700333c24877.css?body=1" for ::1 at 2017-08-12 23:45:49 -0700
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:45:49 -0700
+Started GET "/assets/application.self-dded7c6973fa4c55b02a10de253b42b6eff1748e8dc9f3eef918700333c24877.css?body=1&livereload=1502606778989" for ::1 at 2017-08-12 23:46:18 -0700
+Started GET "/assets/application.self-dded7c6973fa4c55b02a10de253b42b6eff1748e8dc9f3eef918700333c24877.css?body=1&livereload=1502606778990" for ::1 at 2017-08-12 23:46:18 -0700
+Started GET "/" for ::1 at 2017-08-12 23:46:19 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.3ms)
+  Rendered shared/_masthead.html.erb (0.3ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.2ms)
+  Rendered shared/_main_content.html.erb (0.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-06dddb8c8d65559e5267ff99b5bde7ea830af28b7744915343e503b58afa4dd4.css?body=1" for ::1 at 2017-08-12 23:46:19 -0700
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:46:19 -0700
+Started GET "/" for ::1 at 2017-08-12 23:46:20 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.5ms)
+  Rendered shared/_masthead.html.erb (0.5ms)
+  Rendered shared/_sections_nav.html.erb (0.4ms)
+  Rendered shared/_search_modal.html.erb (0.2ms)
+  Rendered shared/_main_content.html.erb (0.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:46:20 -0700
+Started GET "/" for ::1 at 2017-08-12 23:51:36 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.6ms)
+  Rendered shared/_masthead.html.erb (0.6ms)
+  Rendered shared/_sections_nav.html.erb (1.6ms)
+  Rendered shared/_search_modal.html.erb (1.1ms)
+  Rendered shared/_main_content.html.erb (0.4ms)
+  Rendered static_pages/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:51:36 -0700
+Started GET "/assets/application.self-06dddb8c8d65559e5267ff99b5bde7ea830af28b7744915343e503b58afa4dd4.css?body=1&livereload=1502607100831" for ::1 at 2017-08-12 23:51:40 -0700
+Started GET "/assets/application.self-06dddb8c8d65559e5267ff99b5bde7ea830af28b7744915343e503b58afa4dd4.css?body=1&livereload=1502607100834" for ::1 at 2017-08-12 23:51:40 -0700
+Started GET "/" for ::1 at 2017-08-12 23:52:47 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.2ms)
+  Rendered shared/_masthead.html.erb (0.2ms)
+  Rendered shared/_sections_nav.html.erb (0.2ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-5fdb7d3d3558d0c6ccff05028923b55178fa1f22689108e8a543c1020c6d3b50.css?body=1" for ::1 at 2017-08-12 23:52:47 -0700
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:52:47 -0700
+Started GET "/" for ::1 at 2017-08-12 23:52:49 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.2ms)
+  Rendered shared/_masthead.html.erb (0.2ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.3ms)
+  Rendered shared/_main_content.html.erb (0.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:52:49 -0700
+Started GET "/" for ::1 at 2017-08-12 23:52:51 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.7ms)
+  Rendered shared/_masthead.html.erb (0.5ms)
+  Rendered shared/_sections_nav.html.erb (0.4ms)
+  Rendered shared/_search_modal.html.erb (0.2ms)
+  Rendered shared/_main_content.html.erb (0.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-12 23:52:51 -0700
+Started GET "/" for ::1 at 2017-08-13 00:04:04 -0700
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.3ms)
+  Rendered shared/_masthead.html.erb (0.4ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.2ms)
+  Rendered shared/_main_content.html.erb (0.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2017-08-13 00:04:04 -0700
+Started GET "/assets/application.self-5fdb7d3d3558d0c6ccff05028923b55178fa1f22689108e8a543c1020c6d3b50.css?body=1&livereload=1502607879432" for ::1 at 2017-08-13 00:04:39 -0700
+Started GET "/assets/application.self-5fdb7d3d3558d0c6ccff05028923b55178fa1f22689108e8a543c1020c6d3b50.css?body=1&livereload=1502607879433" for ::1 at 2017-08-13 00:04:39 -0700

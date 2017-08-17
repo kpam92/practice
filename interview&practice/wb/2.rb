@@ -7,4 +7,8 @@ end
 # Write a function that takes an array of integers and returns their sum. Use recursion.
 
 def array_sum(array)
+  curr_num = array.pop
+  return curr_num if array.empty?
+
+  curr_num + array_sum(array)
 end

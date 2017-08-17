@@ -3,9 +3,21 @@
 # Solve it both iteratively and recursively.
 
 def fibs_it(n)
+  return [] if n == 0
+  return [0] if n == 1
+  return [0,1] if n == 2
+
+  result = [0,1]
+
+  until result.length == n
+    result.push((result[-2] + result[-1]))
+  end
+
+  result
 end
 
 def fibs_rec(n)
+  return [] if n == 0
   return [0] if n == 1
   return [0,1] if n == 2
 

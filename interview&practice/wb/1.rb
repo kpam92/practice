@@ -19,8 +19,11 @@ def digital_helper(num)
   until num == 0
     result += (num - (num % multiplier)) / multiplier
     num %= multiplier
-    multiplier /= 100
+    multiplier /= 10
   end
 
   result
 end
+
+
+# puts digital_root(9999)

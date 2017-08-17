@@ -2,3 +2,9 @@
 
 def longest_common_substring(string1, string2)
 end
+
+
+# Write a function that takes an array of integers and returns their sum. Use recursion.
+
+def array_sum(array)
+end

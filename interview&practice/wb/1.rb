@@ -9,4 +9,18 @@ def digital_root(num)
 end
 
 def digital_helper(num)
+  result = 0
+  multiplier = 10000000
+
+  until num % multiplier != num
+    multiplier /= 10
+  end
+
+  until num == 0
+    result += (num - (num % multiplier)) / multiplier
+    num %= multiplier
+    multiplier /= 100
+  end
+
+  result
 end

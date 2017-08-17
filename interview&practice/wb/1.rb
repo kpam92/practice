@@ -28,5 +28,25 @@ end
 
 # Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet. Assume lowercase and no punctuation. Preserve spaces.
 
-def caesar_cipher(string)
+def caesar_cipher(string, shift)
+  idx = 0
+
+  while idx < string.length
+    
+    if string[idx].ord > 96 && string[idx].ord < 123
+      curr_ord = string[idx].ord + shift
+
+      if curr_ord > 122
+        curr_ord -= 26
+      elsif curr_ord < 97
+        curr_ord += 26
+      end
+
+      string[idx] = curr_ord.chr
+    end
+
+    idx += 1
+  end
+
+  string
 end

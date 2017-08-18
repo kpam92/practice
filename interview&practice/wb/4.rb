@@ -4,4 +4,16 @@
 # 2307 => 23 + 07 = 30
 
 def silly_years(number)
+  result = []
+  number += 1
+  until result.length == 10
+    result << number if silly?(number)
+    number += 1
+  end
+  result
+end
+
+def silly?(number)
+  number = number.to_s
+  number[0..1].to_i + number[2..3].to_i == number[1..2].to_i
 end

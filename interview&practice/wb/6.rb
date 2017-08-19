@@ -13,5 +13,12 @@ end
 
 # Given an array and index, find if it's possible to reach the value 0 by starting at the given index and repeatedly moving left/right by the distance found at array[index].
 
-def can_win?(array,idx)
+def can_win?(array,idx, seen = {})
+  return true if array[idx] == 0
+  return false if (idx > array.length - 1 || idx < 0 || seen[array[idx]])
+
+  seen[array[idx]] = true
+
+  can_win?(array, idx + array[idx], seen) ||
+  can_win?(array, idx - array[idx], seen)
 end

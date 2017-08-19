@@ -9,3 +9,9 @@ def subsetter(array)
 
   subs + new_subs
 end
+
+
+# Given an array and index, find if it's possible to reach the value 0 by starting at the given index and repeatedly moving left/right by the distance found at array[index].
+
+def can_win?(array,idx)
+end

@@ -25,3 +25,33 @@ def move_zeros(array)
 
   array
 end
+
+# Implement the 'look and say' function. 'Look and say' takes an input array and outputs an array that describes the count of the elements in the input array as they appear in order.
+
+def look_and_say(array)
+  result = []
+
+  idx = 1
+  curr_num = array[0]
+  curr_times = 1
+
+  return [[curr_times,curr_num]] if array.length == 1
+  while idx < array.length
+    if array[idx] == curr_num
+      curr_times += 1
+    else
+      result << [curr_times,curr_num]
+      curr_num = array[idx]
+      curr_times = 1
+
+    end
+
+    if idx == array.length - 1
+      result << [curr_times, curr_num]
+    end
+
+    idx += 1
+  end
+
+  result
+end

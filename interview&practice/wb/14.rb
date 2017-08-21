@@ -46,11 +46,15 @@ def print_spiral(matrix)
 
   result
 end
-
-matrix = [
-  [1,2,3],
-  [8,9,4],
-  [7,6,5]
-]
-
-puts print_spiral(matrix)
+# 
+# matrix = [
+#   [1,2,3],
+#   [8,9,4],
+#   [7,6,5]
+# ]
+# matrix = [
+#   [1,2],
+#   [4,3]
+# ]
+#
+# puts print_spiral(matrix)

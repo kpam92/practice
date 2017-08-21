@@ -40,7 +40,7 @@ def print_spiral(matrix)
       result.push(matrix[curr_bottom][left])
       curr_bottom -= 1
     end
-    left -= 1
+    left += 1
 
   end
 

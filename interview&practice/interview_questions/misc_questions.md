@@ -20,7 +20,14 @@ add = (n) => ((m) => _add(n,m))
 * What is dynamic programming?
 <br><br>is a technique for solving problems recursively and is applicable when the computations of the subproblems overlap.
 * What happens when you type in 'www.google.com' and press enter?
-
+  1. You type `google.com` into the address bar of your browser.
+  2. The browser checks the cache for a DNS record to find the corresponding IP address of `google.com`.
+  3. If the requested URL is not in the cache, ISP’s DNS server initiates a DNS query to find the IP address of the server that hosts `google.com`.
+  4. Browser initiates a TCP connection with the server.
+  5. The browser sends an HTTP request to the web server.
+  6. The server handles the request and sends back a response.
+  7. The server sends out an HTTP response.
+  8. The browser displays the HTML content (for HTML responses which is the most common).
 * What are the upsides to ES6, and fat arrow functions?
   look on es6 doc
 

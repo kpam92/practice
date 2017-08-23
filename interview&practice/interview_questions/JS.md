@@ -175,6 +175,7 @@ Object.keys(obj).forEach(function(key) {
 <br><br> synchronous functions occur in a specific order in the code, where step 3 won't occur before step 1. But, an asynchronous function may occur at any point, waiting for a specific event to be triggered. In context, asynchronous functions may occur in JS through event listeners, where a user interacts with a specific part of the application, i.e. hovering or clicking. These events occur in the background. These are useful for having dynamic and interactive pages, where certain actions can cause code to run, and information to be fetched from the DB without a re-render.
 * What is event loop?
   * What is the difference between call stack and task queue?
+<br><br> Look at misc_questions for answer
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
   <br><br>`function foo() {}` is a function declaration. It is initializing and declaring this specific function in the namespace 'foo.' `var foo = function(){}` is a functional expression, where the variable is declared and initialized as an anonymous function. The functional declaration is hoisted to the top in its entirety, while only declaration of a function expression is hoisted up.
 * Why does the following quirk happen in JS, 'console.log(0.1 + 0.2) //0.300000000004'

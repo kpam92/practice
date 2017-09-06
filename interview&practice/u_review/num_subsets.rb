@@ -6,12 +6,13 @@ def subsets(array)
   curr_num = array.shift
 
   remaining_sets = subsets(array)
+  result = result.concat(remaining_sets)
 
   remaining_sets.each do |set|
-    result.push(set.unshift(curr_num))
+    result.unshift([curr_num] + set)
   end
 
   result
 end
 
-puts subsets([1,2,3])
+# p subsets([1,2,3])

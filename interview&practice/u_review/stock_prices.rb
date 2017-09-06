@@ -9,4 +9,23 @@
 
 
 def stock_picker(array)
+  curr_highest = nil
+  return 0 if array.length < 2
+
+  buy = 0
+  sell = 1
+  curr_highest = array[sell] - array[buy]
+
+  while sell < array.length
+    curr_diff = array[sell] - array[buy]
+    curr_highest = curr_diff if curr_diff > curr_highest
+    buy = sell if array[sell] < array[buy]
+    sell += 1
+  end
+
+  curr_highest
 end
+
+  stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
+
+  puts stock_picker(stock_prices_yesterday)

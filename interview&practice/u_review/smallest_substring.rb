@@ -28,12 +28,12 @@ def get_shortest_unique_substring(arr, str)
   curr_hash = seen.clone
   idx = 0
   while true
-    if curr_hash[str[idx]] && (curr_hash[str[idx] - 1] > 0)
-      hash[string[idx]] -= 1
+    if curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) > 0
+      curr_hash[str[idx]] -= 1
       idx += 1
-    elsif curr_hash[str[idx]] && (curr_hash[str[idx] - 1] == 0)
+    elsif curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) == 0
         curr_result = short_helper(str[idx..-1],curr_hash,'beginning')
-        shortest == curr_result if curr_result.length < shortest
+        shortest == curr_result if curr_result.length < shortest.length
     else
         idx += 1
     end
@@ -42,12 +42,12 @@ def get_shortest_unique_substring(arr, str)
   curr_hash = seen.clone
   idx = str.length - 1
   while true
-    if curr_hash[str[idx]] && (curr_hash[str[idx] - 1] > 0)
-      hash[string[idx]] -= 1
+    if curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) > 0
+      curr_hash[str[idx]] -= 1
       idx -= 1
-    elsif curr_hash[str[idx]] && (curr_hash[str[idx] - 1] == 0)
+    elsif curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) == 0
         curr_result = short_helper(str[0..idx],curr_hash,'end')
-        shortest == curr_result if curr_result.length < shortest
+        shortest == curr_result if curr_result.length < shortest.length
     else
         idx -= 1
     end
@@ -62,11 +62,11 @@ def short_helper(string,seen_hash,direction)
   idx = direction == 'beginning' ? 0 : string.length - 1
 
   while true
-    if hash[string[idx]] && (hash[string[idx] - 1] > 0)
-      hash[string[idx]] -= 1
+    if seen_hash[string[idx]] && (seen_hash[string[idx]] - 1) > 0
+      seen_hash[string[idx]] -= 1
       idx += 1 if direction == 'beginning'
       idx -= 1 if direction == 'end'
-    elsif !hash[string[idx]]
+    elsif !seen_hash[string[idx]]
       idx += 1 if direction == 'beginning'
       idx -= 1 if direction == 'end'
     else

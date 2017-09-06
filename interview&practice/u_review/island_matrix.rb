@@ -17,4 +17,42 @@
 # Answer: 3
 
 def island_count(matrix)
+  idx1 = 0
+  result = 0
+  while idx1 < matrix.length
+    idx2 = 0
+    while idx2 < matrix[idx1].length
+      if matrix[idx1][idx2] == '1'
+        result += 1
+        sink_island(matrix, idx1, idx2)
+      end
+
+      idx2 += 1
+    end
+
+    idx1 += 1
+  end
+
+  result
+end
+
+def sink_island(map, row, column)
+
+  map[row][column] = '0'
+  # sink north
+  if row > 0 && map[row - 1][column] == '1'
+    sink_island(map, row - 1, column)
+  end
+  # sink south
+  if row < map.length - 1 && map[row + 1][column] == '1'
+    sink_island(map, row + 1, column)
+  end
+  # sink east
+  if column < map[row].length - 1 && map[row][colum + 1] == '1'
+    sink_island(map, row, column + 1)
+  end
+  # sink west
+  if column > 0 && map[row][colum - 1] == '1'
+    sink_island(map, row, column - 1)
+  end
 end

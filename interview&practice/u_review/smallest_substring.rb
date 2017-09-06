@@ -8,75 +8,41 @@
 #
 # output: "zyx"
 
-def get_shortest_unique_substring(arr, str)
-  # your code goes here
-  # iterate through the string
-  seen = Hash.new
+def get_shortest_unique_substring(arr, string)
+  curr_shortest = string
+  seen_hash = {}
+  arr.each { |x| seen_hash[x] = 0 }
 
-  arr.each {|x| seen[x] = 0}
+  idx1 = 0
+  idx2 = 1
+  seen_hash[string[idx1]] += 1 if seen_hash[string[idx1]]
+  seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
 
-  str.chars.each  {|letter| seen[letter] += 1 if seen[letter]}
-
-  arr.each {|letter| return '' if seen[letter] == 0}
-
-  return '' if str.empty? || seen.values.include?(0)
-  open = 0
-  close = str.length - 1
-
-  shortest = str
-
-  curr_hash = seen.clone
-  idx = 0
-  while true
-    if curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) > 0
-      curr_hash[str[idx]] -= 1
-      idx += 1
-    elsif curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) == 0
-        curr_result = short_helper(str[idx..-1],curr_hash,'beginning')
-        shortest == curr_result if curr_result.length < shortest.length
-    else
-        idx += 1
-    end
+  while seen_hash.values.include?(0)
+    idx2 += 1
+    seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
+    return '' if (idx2 == string.length - 1) && seen_hash.values.include?(0)
   end
 
-  curr_hash = seen.clone
-  idx = str.length - 1
-  while true
-    if curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) > 0
-      curr_hash[str[idx]] -= 1
-      idx -= 1
-    elsif curr_hash[str[idx]] && (curr_hash[str[idx]] - 1) == 0
-        curr_result = short_helper(str[0..idx],curr_hash,'end')
-        shortest == curr_result if curr_result.length < shortest.length
+  curr_shortest = string[0..idx2] if string[0..idx2].length < curr_shortest.length
+
+  while idx2 < string.length
+    if seen_hash[string[idx1]] && (seen_hash[string[idx1]] - 1 > 0)
+      seen_hash[string[idx1]] -= 1
+      idx1 += 1
+    elsif seen_hash[string[idx2]] && string[idx2] == string[idx1]
+      idx1 += 1
+      idx2 += 1
+    elsif !seen_hash[string[idx1]]
+      idx1 += 1
     else
-        idx -= 1
+      idx2 += 1
+      seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
     end
+    curr_shortest = string[idx1..idx2] if string[idx1..idx2].length < curr_shortest.length
   end
 
-
-  shortest
-end
-
-def short_helper(string,seen_hash,direction)
-
-  idx = direction == 'beginning' ? 0 : string.length - 1
-
-  while true
-    if seen_hash[string[idx]] && (seen_hash[string[idx]] - 1) > 0
-      seen_hash[string[idx]] -= 1
-      idx += 1 if direction == 'beginning'
-      idx -= 1 if direction == 'end'
-    elsif !seen_hash[string[idx]]
-      idx += 1 if direction == 'beginning'
-      idx -= 1 if direction == 'end'
-    else
-        if direction == 'beginning'
-          return string[idx..-1]
-        else
-          return string[0..idx]
-        end
-    end
-  end
+  curr_shortest
 end
 
 puts get_shortest_unique_substring(["A","B","C"], "ADOBECODEBANCDDD")

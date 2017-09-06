@@ -8,41 +8,47 @@
 #
 # output: "zyx"
 
-def get_shortest_unique_substring(arr, string)
-  curr_shortest = string
+def get_shortest_unique_substring(arr, str)
+  curr_shortest = str
   seen_hash = {}
   arr.each { |x| seen_hash[x] = 0 }
 
   idx1 = 0
   idx2 = 1
-  seen_hash[string[idx1]] += 1 if seen_hash[string[idx1]]
-  seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
+  seen_hash[str[idx1]] += 1 if seen_hash[str[idx1]]
+  seen_hash[str[idx2]] += 1 if seen_hash[str[idx2]]
 
   while seen_hash.values.include?(0)
     idx2 += 1
-    seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
-    return '' if (idx2 == string.length - 1) && seen_hash.values.include?(0)
+    seen_hash[str[idx2]] += 1 if seen_hash[str[idx2]]
+    return '' if (idx2 >= str.length - 1) && seen_hash.values.include?(0)
   end
 
-  curr_shortest = string[0..idx2] if string[0..idx2].length < curr_shortest.length
+  curr_shortest = str[0..idx2] if str[0..idx2].length < curr_shortest.length
 
-  while idx2 < string.length
-    if seen_hash[string[idx1]] && (seen_hash[string[idx1]] - 1 > 0)
-      seen_hash[string[idx1]] -= 1
+  while idx2 < str.length
+    if seen_hash[str[idx1]] && (seen_hash[str[idx1]] - 1 > 0)
+      seen_hash[str[idx1]] -= 1
       idx1 += 1
-    elsif seen_hash[string[idx2]] && string[idx2] == string[idx1]
+    elsif seen_hash[str[idx2]] && str[idx2] == str[idx1]
       idx1 += 1
       idx2 += 1
-    elsif !seen_hash[string[idx1]]
+    elsif !seen_hash[str[idx1]]
       idx1 += 1
     else
       idx2 += 1
-      seen_hash[string[idx2]] += 1 if seen_hash[string[idx2]]
+      seen_hash[str[idx2]] += 1 if seen_hash[str[idx2]]
     end
-    curr_shortest = string[idx1..idx2] if string[idx1..idx2].length < curr_shortest.length
+    curr_shortest = str[idx1..idx2] if str[idx1..idx2].length < curr_shortest.length
   end
 
   curr_shortest
 end
 
-puts get_shortest_unique_substring(["A","B","C"], "ADOBECODEBANCDDD")
+# puts get_shortest_unique_substring(["A","B","C"], "ADOBECODEBANCDDD")
+# puts get_shortest_unique_substring(["A"], "B")
+# puts get_shortest_unique_substring(["A"], "A")
+# puts get_shortest_unique_substring(["A","B","C"], "ADOBECODEBANCDDD")
+# puts get_shortest_unique_substring(["A","B","C","E","K","I"], "KADOBECODEBANCDDDEI")
+# puts get_shortest_unique_substring(["x","y","z"], "xyyzyzyx")
+# puts get_shortest_unique_substring(["x","y","z","r"], "xyyzyzyx")

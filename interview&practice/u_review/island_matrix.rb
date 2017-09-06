@@ -56,3 +56,15 @@ def sink_island(map, row, column)
     sink_island(map, row, column - 1)
   end
 end
+map1 = [[11110],
+        [11010],
+        [11000],
+        [00000]]
+
+map2 = [[11000],
+        [11000],
+        [00100],
+        [00011]]
+
+puts island_count(map1)
+puts island_count(map2)

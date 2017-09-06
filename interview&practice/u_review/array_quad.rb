@@ -16,5 +16,64 @@
 #                      # ascending order)
 
 
-def find_array_quadruplet(array, string)
+def find_array_quadruplet(array, sum)
+  array = merge_sort(array)
+  i = 0
+
+  while i < array.length - 3
+    j = i + 1
+    while j < array.length - 2
+         # r stores the complementing sum
+       r = sum - (array[i] + array[j])
+       low = j + 1
+       high = array.length - 1
+       while (low < high)
+          if (array[low] + array[high] < r)
+            low+= 1
+          elsif (array[low] + array[high] > r)
+            high-= 1
+          else
+            return [array[i], array[j], array[low], array[high]]
+          end
+        end
+
+        j += 1
+      end
+
+      i += 1
+    end
+    return []
 end
+
+
+
+# merge sort helper function
+
+def merge_sort(array)
+  return array if array.length < 2
+  halfway = array.length/2
+
+  array1 = array[0...halfway]
+  array2 = array[halfway..-1]
+
+  merger(merge_sort(array1),merge_sort(array2))
+end
+
+def merger(array1,array2)
+  result = []
+
+  until array1.empty? || array2.empty?
+    if array1[0] > array2[0]
+      result.push(array2.shift)
+    else
+      result.push(array1.shift)
+    end
+  end
+
+  result.concat(array1).concat(array2)
+end
+
+arr = [2, 7, 4, 0, 9]
+s = 20
+
+puts find_array_quadruplet(arr,s)

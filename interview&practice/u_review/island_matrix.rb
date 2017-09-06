@@ -15,7 +15,6 @@
 # 00100
 # 00011
 # Answer: 3
-require 'byebug'
 
 def island_count(matrix)
   idx1 = 0

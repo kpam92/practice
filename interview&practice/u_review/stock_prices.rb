@@ -26,6 +26,6 @@ def stock_picker(array)
   curr_highest
 end
 
-  stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
-
-  puts stock_picker(stock_prices_yesterday)
+  # stock_prices_yesterday = [10, 7, 5, 8, 11, 9]
+  #
+  # puts stock_picker(stock_prices_yesterday)

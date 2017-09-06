@@ -8,7 +8,7 @@
 #
 # output: "zyx"
 
-ef get_shortest_unique_substring(arr, str)
+def get_shortest_unique_substring(arr, str)
   # your code goes here
   # iterate through the string
   seen = Hash.new
@@ -21,20 +21,62 @@ ef get_shortest_unique_substring(arr, str)
 
   return '' if str.empty? || seen.values.include?(0)
   open = 0
-  close = arr.length - 1
+  close = str.length - 1
 
   shortest = str
 
-  while open < close
-    if seen[arr[close]] && ((seen[arr[close]] - 1) > 0)
-      close -= 1
+  curr_hash = seen.clone
+  idx = 0
+  while true
+    if curr_hash[str[idx]] && (curr_hash[str[idx] - 1] > 0)
+      hash[string[idx]] -= 1
+      idx += 1
+    elsif curr_hash[str[idx]] && (curr_hash[str[idx] - 1] == 0)
+        curr_result = short_helper(str[idx..-1],curr_hash,'beginning')
+        shortest == curr_result if curr_result.length < shortest
+    else
+        idx += 1
     end
-
-    if seen[arr[open]] && ((seen[arr[open]] - 1) > 0)
-      open += 1
-    end
-    shortest = arr[open..close] if arr[open..close].length < shortest.length
   end
+
+  curr_hash = seen.clone
+  idx = str.length - 1
+  while true
+    if curr_hash[str[idx]] && (curr_hash[str[idx] - 1] > 0)
+      hash[string[idx]] -= 1
+      idx -= 1
+    elsif curr_hash[str[idx]] && (curr_hash[str[idx] - 1] == 0)
+        curr_result = short_helper(str[0..idx],curr_hash,'end')
+        shortest == curr_result if curr_result.length < shortest
+    else
+        idx -= 1
+    end
+  end
+
 
   shortest
 end
+
+def short_helper(string,seen_hash,direction)
+
+  idx = direction == 'beginning' ? 0 : string.length - 1
+
+  while true
+    if hash[string[idx]] && (hash[string[idx] - 1] > 0)
+      hash[string[idx]] -= 1
+      idx += 1 if direction == 'beginning'
+      idx -= 1 if direction == 'end'
+    elsif !hash[string[idx]]
+      idx += 1 if direction == 'beginning'
+      idx -= 1 if direction == 'end'
+    else
+        if direction == 'beginning'
+          return string[idx..-1]
+        else
+          return string[0..idx]
+        end
+    end
+  end
+end
+
+puts get_shortest_unique_substring(["A","B","C"], "ADOBECODEBANCDDD")

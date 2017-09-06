@@ -22,6 +22,31 @@
 class TempRecorder
 
   def initialize
+    @temps = []
+    @max_max = [nil,nil]
+    @average = nil
+  end
 
+  def log(temperature)
+    if @temps.length < 86400
+      @temps.push(temperature)
+
+      if @temps.length == 1
+        @max_max = [temperature, 1]
+        @average = temperature
+      else
+        old_temperature = @temps.shift
+        max_calculator(old_temperature)
+        @average = ((@average * (@temps.length - 1)) + temperature) / @temps.length
+      end
+    else
+      @temps
+  end
+
+  def average_calculator(old_temperature)
+    @average = ((@average * 86400) - old temperature + @temps[-1]) * 86400
+  end
+
+  def max_calculator(temperature)
   end
 end

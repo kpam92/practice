@@ -21,10 +21,23 @@ end
 def linked_sum(node)
   sum = 0
 
-  until node.next.nil?
+  until node.nil?
     sum += node.value
     node = node.next
   end
 
   sum
 end
+
+a = Node.new(1)
+b = Node.new(1)
+c = Node.new(1)
+d = Node.new(1)
+e = Node.new(1)
+f = Node.new(1)
+g = Node.new(1)
+
+Node.chain([a,b,c,d,e,f,g])
+
+puts linked_sum(a)
+# puts f.next.value

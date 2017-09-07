@@ -57,15 +57,49 @@ end
 def get_shortest_two(string)
 
   return string if string.length == 1
-  if string.length == 2
-    string[0] == string[1] ? return string[0] : return string
-  end
-  seen_hash = Hash.new { |h,k| h[k] = 0 }
 
-  string.chars.each { |x| seen_hash[x] += 1 }
+  if string.length == 2
+    return string[0] == string[1] ?  string[0] : string
+  end
+
+  seen_hash = Hash.new { |h,k| h[k] = 0 }
+  string.chars.each { |x| seen_hash[x] = 0 }
 
   head = 0
-  tail = 1
+  tail = 0
+  seen_hash[string[head]] += 1
+
+  while seen_hash.values.include?(0)
+    tail += 1
+    seen_hash[string[tail]] += 1
+  end
+
+  shortest = string[0..tail]
+
+  while tail < string.length
+    if (seen_hash[string[head]] - 1) > 0
+      seen_hash[string[head]] -= 1
+      head += 1
+    elsif (string[head] == string[tail + 1])
+      head += 1
+      tail += 1
+    else
+      tail += 1
+      seen_hash[string[tail]] += 1
+    end
+    curr_shortest = string[head..tail]
+
+    shortest = curr_shortest if curr_shortest.length < shortest.length
+
+  end
+
+  shortest
 end
 
-puts get_shortest_two('ss')
+# puts get_shortest_two("ADOBECODEBANCDDD")
+# puts get_shortest_two("B")
+# puts get_shortest_two("A")
+# puts get_shortest_two("ADOBECODEBANCDDD")
+# puts get_shortest_two("KADOBECODEBANCDDDEI")
+# puts get_shortest_two("xyyzyzyx")
+# puts get_shortest_two("yyyyysyyyyyyyyyya")

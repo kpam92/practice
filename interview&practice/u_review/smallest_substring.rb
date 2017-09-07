@@ -52,3 +52,20 @@ end
 # puts get_shortest_unique_substring(["A","B","C","E","K","I"], "KADOBECODEBANCDDDEI")
 # puts get_shortest_unique_substring(["x","y","z"], "xyyzyzyx")
 # puts get_shortest_unique_substring(["x","y","z","r"], "xyyzyzyx")
+
+
+def get_shortest_two(string)
+
+  return string if string.length == 1
+  if string.length == 2
+    string[0] == string[1] ? return string[0] : return string
+  end
+  seen_hash = Hash.new { |h,k| h[k] = 0 }
+
+  string.chars.each { |x| seen_hash[x] += 1 }
+
+  head = 0
+  tail = 1
+end
+
+puts get_shortest_two('ss')

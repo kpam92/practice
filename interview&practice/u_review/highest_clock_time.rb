@@ -6,4 +6,8 @@
 # output: 19:43
 
 def highest_clock_time(array)
+  clock_checker(array.sort)
+end
+
+def clock_checker(array)
 end

@@ -12,7 +12,7 @@ def smallest_window(array)
   low += 1 until array[low] != array2[low]
 
   high = array.length - 1
-  high -= 1 until arra[high] != array2[high]
+  high -= 1 until array[high] != array2[high]
 
   high - low + 1
 end

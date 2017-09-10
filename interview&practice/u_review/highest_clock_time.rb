@@ -10,4 +10,5 @@ def highest_clock_time(array)
 end
 
 def clock_checker(array)
+
 end

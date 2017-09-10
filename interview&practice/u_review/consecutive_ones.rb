@@ -14,7 +14,7 @@ def con_one(array)
     if array[idx] == 1
       curr_streak = 1
       idx += 1
-      while array[idx] == 1 || idx < array.length
+      while array[idx] == 1 && idx < array.length
         curr_streak += 1
         idx += 1
       end

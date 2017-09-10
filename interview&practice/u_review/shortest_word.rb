@@ -13,7 +13,7 @@ def shortest_word_distance(words,word1,word2)
   seen_hash[word1].each do |x|
     seen_hash[word2].each do |y|
       curr_result = (x - y).abs
-      result = curr_result if result.length > curr_result.length || result.nil?
+      result = curr_result if result.nil? || result > curr_result
     end
   end
   result

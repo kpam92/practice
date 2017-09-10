@@ -7,5 +7,23 @@
 #     The maximum number of consecutive 1s is 3.
 
 def con_one(array)
-  
+  result = 0
+  idx = 0
+
+  while idx < array.length
+    if array[idx] == 1
+      curr_streak = 1
+      idx += 1
+      while array[idx] == 1 || idx < array.length
+        curr_streak += 1
+        idx += 1
+      end
+      result = curr_streak if curr_streak > result
+    end
+    idx += 1
+  end
+
+  result
 end
+
+puts con_one([1,1,0,1,1,1])

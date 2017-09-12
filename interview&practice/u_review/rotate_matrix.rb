@@ -21,9 +21,27 @@ def rotate_matrix(matrix)
   new_matrix
 end
 
+
+def rotate_cc_matrix(matrix)
+  result = Array.new(matrix.length) {Array.new(matrix[0].length)}
+
+  row = 0
+
+  while row < matrix.length
+    column = 0
+    while column < matrix[row].length
+      result[2 - column][row] = matrix[row][column]
+      column += 1
+    end
+    row += 1
+  end
+
+  result
+end
+
 matrix = [
-  [1,2,3],
-  [4,5,6],
+  [1,2,3], #[1,2] --> [0,1]
+  [4,5,6], #[0,2] --> [0,0]
   [7,8,9]
 ]
 new_matrix = [
@@ -33,3 +51,4 @@ new_matrix = [
 ]
 
 puts rotate_matrix(matrix) == new_matrix
+puts rotate_matrix(matrix)

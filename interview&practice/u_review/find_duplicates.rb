@@ -16,7 +16,7 @@ def duplicates(array)
   result
 end
 
-p duplicates([1,2,3,2,4]) == [2]
-p duplicates([1,2,3,2,1]) == [1,2]
-p duplicates([1,1,1,1,1]) == [1]
-p duplicates([1,2,3,4,5]) == []
+# p duplicates([1,2,3,2,4]) == [2]
+# p duplicates([1,2,3,2,1]) == [2,1]
+# p duplicates([1,1,1,1,1]) == [1]
+# p duplicates([1,2,3,4,5]) == []

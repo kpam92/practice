@@ -16,3 +16,18 @@ def subsets(array)
 end
 
 # p subsets([1,2,3])
+
+
+def subsetter(array)
+  return [[]] if array.empty?
+
+  curr_num = array.shift
+
+  curr_subsets = subsetter(array)
+  result = []
+  result = result.concat(curr_subsets)
+  curr_subsets.each {|set| result.unshift([curr_num] + set)}
+
+  result
+
+end

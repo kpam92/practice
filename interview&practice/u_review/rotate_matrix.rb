@@ -51,4 +51,4 @@ new_matrix = [
 ]
 
 puts rotate_matrix(matrix) == new_matrix
-puts rotate_matrix(matrix)
+p rotate_cc_matrix(matrix)

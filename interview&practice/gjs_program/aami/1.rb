@@ -31,4 +31,12 @@ end
 # Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet. Assume lowercase and no punctuation. Preserve spaces.
 
 def caesar_cipher(string,shift)
+  string = string.chars.map do |letter|
+
+    new_ord = letter.ord + shift
+    new_ord -= 26 if new_ord > 122
+    letter = new_ord.chr
+
+  end
+  string.join('')
 end

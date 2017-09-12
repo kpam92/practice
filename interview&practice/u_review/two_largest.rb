@@ -37,8 +37,9 @@ def highest_two(array)
 end
 
 p highest_two([4,4,4,4]) == [4,4]
-p highest_two([4,4,4,4,2]) == [4,4]
-p highest_two([1,2,4]) == [2,4]
-p highest_two([4,1]) == [1,4]
-p highest_two([1]) == [nil,1]
-p highest_two([]) == []
+# p highest_two([4,4,4,4,2]) == [4,4]
+# p highest_two([1,2,4]) == [2,4]
+# p highest_two([4,1]) == [4,1]
+# p highest_two([1]) == [nil,1]
+# p highest_two([]) == []
+# p highest_two([1,2,3,4,5,6,7,8,9,10,11,2]) == [10,11]

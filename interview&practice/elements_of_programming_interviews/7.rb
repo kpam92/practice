@@ -170,6 +170,7 @@ def validator(string,index,dot_amount)
 
   combinations = []
 
+  
 
   if index < string.length - 1 && string[index..index+1].to_i <= 255
 

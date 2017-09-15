@@ -59,3 +59,10 @@ def changer(array)
   end
   array
 end
+# how it works:
+# This function shifts the first letter,
+# then depending on if it equals 'a' or 'b', it
+# adds the respective changes by pushing the result onto the end
+# when the counter reaches 0, we return the resulting array
+# O(n) time where n is the length of the original array,
+# O(1) space because we only hold onto variables instead of additional memory.

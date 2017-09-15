@@ -111,3 +111,9 @@ def number_parse(string)
   result
 
 end
+
+# How it works:
+# this function takes out the first number and finds its set of letters,
+# then iterates over subsequent sequences of the set and returns those sets
+# with each letter in its sequence in a recursive manner. This takes O(4^n)
+# because of all the possibilities of each sequence.

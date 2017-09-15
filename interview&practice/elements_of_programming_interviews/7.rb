@@ -37,3 +37,10 @@ end
 # the 'ord' element to switch into its opposite string or integer
 # form. This uses O(n) time, and O(1) space complexity
 # *****CHECK WITH SOMEONE IF SPACE COMPLEXITY IS CORRECT
+
+# write a function that takes an array of letters and applies:
+# 1. replace each 'a' with 2 'd's
+# 2. delete each 'b'
+
+def changer(array)
+end

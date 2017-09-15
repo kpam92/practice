@@ -1,4 +1,4 @@
-
+require 'byebug'
 # 7.1 Implement methods that take a string representing
 # an integer and return the corresponding integer, and
 # vice-versa. Should handle negative numbers
@@ -123,4 +123,36 @@ end
 # find the n'th number in the sequence.
 
 def look_say(n)
+  return 0 if n == 0
+  return 1 if n == 1
+
+  counter = 1
+  result = ['1']
+  until counter == n
+
+    curr_result = []
+    count = 0
+    curr_num = result[0] #1
+
+    idx = 0
+    while idx < result.length
+      if result[idx] == curr_num
+        count += 1
+      else # result[idx] != curr_num
+        curr_result.push("#{count}","#{curr_num}")
+        count = 1
+        curr_num = result[idx]
+      end
+
+      if idx == result.length - 1
+
+        curr_result.push("#{count}","#{curr_num}")
+      end
+      idx += 1
+    end
+
+    result = curr_result
+    counter += 1
+  end
+  result.join
 end

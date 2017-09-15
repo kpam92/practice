@@ -42,5 +42,20 @@ end
 # 1. replace each 'a' with 2 'd's
 # 2. delete each 'b'
 
+# [a,c,d,b,b,c,a] ==> [d,d,c,d,c,d,d]
+# O(n) time and O(1) space
+
 def changer(array)
+  array_counter = array.length
+
+  while array_counter > 0
+    curr_letter = array.shift
+    if curr_letter == 'a'
+      array.push('d','d')
+    elsif curr_letter != 'b'
+      array.push(curr_letter)
+    end
+    array_counter -= 1
+  end
+  array
 end

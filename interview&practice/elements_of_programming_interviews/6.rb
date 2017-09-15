@@ -56,7 +56,7 @@ end
 # as we keep shifting values around) If the element is greater than
 # the target value, it is swapped with the farthest unknown value
 # on the right side. If the element is smaller, it is swapped to
-# the right mos side, potentially with a value equal to target.
+# the right most side, potentially with a value equal to target.
 # If element equals target, then the equal variable moves up, and
 # item will be moved closer to target after more sorting. The
 # sorted array is returned afterwards. The function only iterates

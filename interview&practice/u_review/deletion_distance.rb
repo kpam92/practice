@@ -19,33 +19,40 @@
 #
 # input:  str1 = "", str2 = ""
 # output: 0
-
+require 'byebug'
 def deletion_distance(string1,string2)
-  string1 = ' ' + string1
-  string2 = ' ' + string2
 
-  matrix = Array.new(string1.length) {Array.new(string2.length)}
+
+  matrix = Array.new(string1.length + 1) {Array.new(string2.length + 1) {0}}
 
   idx1 = 0
 
-  while idx1 < string1.length
+  while idx1 < string1.length + 1
+
     idx2 = 0
-    while idx2 < string2.length
+    while idx2 < string2.length + 1
+
       if idx1 == 0
         matrix[idx1][idx2] = idx2
       elsif idx2 == 0
+
         matrix[idx1][idx2] = idx1
-      elsif string1[idx1] == string2[idx2]
-        matrix[idx1][idx2] = 1 + [matrix[idx1 - 1][idx2],matrix[idx1][idx2 -1]].min
-      else # string1[idx1] != string2[idx2]
+
+      elsif string1[idx1 - 1] == string2[idx2 - 1]
         matrix[idx1][idx2] = matrix[idx1 - 1][idx2 - 1]
+      else # string1[idx1] != string2[idx2]
+        matrix[idx1][idx2] = 1 + [matrix[idx1 - 1][idx2],matrix[idx1][idx2 -1]].min
       end
 
-      idx1 += 1
+      idx2 += 1
     end
     idx1 += 1
   end
   matrix[-1][-1]
 end
 
-p deletion_distance('dog','frog')
+p deletion_distance('frog','dog')
+p deletion_distance('some','some')
+p deletion_distance('some','thing')
+p deletion_distance('this','that')
+p deletion_distance('','')

@@ -156,3 +156,27 @@ def look_say(n)
   end
   result.join
 end
+
+# Write a function to determine all possible forms of an IP adress,
+# given a number. ie, there are four numbers seperated by periods,
+# and each number is 0-255.
+
+def valid_ip(string)
+  return validator(string,0,0)
+end
+
+def validator(string,index,dot_amount)
+  return string if index >= string.length && dot_amount == 4
+
+  combinations = []
+
+
+  if index < string.length - 1 && string[index..index+1].to_i <= 255
+
+  end
+
+  if index < string.length - 2 && string[index..index+2].to_i <= 255
+  end
+
+
+end

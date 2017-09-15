@@ -66,3 +66,48 @@ end
 # when the counter reaches 0, we return the resulting array
 # O(n) time where n is the length of the original array,
 # O(1) space because we only hold onto variables instead of additional memory.
+
+
+# create a function that changes a string of numbers into all possible combinations
+# of letters from a telephone
+
+def number_parse(string)
+  # number_parser = {
+  #   '2' => ['A','B','C'],
+  #   '3' => ['D','E','F'],
+  #   '4' => ['G','H','I'],
+  #   '5' => ['J','K','L'],
+  #   '6' => ['M','N','O'],
+  #   '7' => ['P','Q','R','S'],
+  #   '8' => ['T','U','V'],
+  #   '9' => ['W','X','Y','Z']
+  # }
+  number_parser = {
+    '1' => ['1'],
+    '2' => %w(A B C),
+    '3' => %w(D E F),
+    '4' => %w(G H I),
+    '5' => %w(J K L),
+    '6' => %w(M N O),
+    '7' => %w(P Q R S),
+    '8' => %w(T U V),
+    '9' => %w(W X Y Z),
+    '0' => ['0']
+  }
+
+  return number_parser[string] if string.length == 1
+
+  curr_letter_set = number_parser[string[0]]
+  other_sets = number_parse(string[1..-1])
+
+  result = []
+
+  curr_letter_set.each do |letter|
+    other_sets.each do |set|
+      result << letter + set
+    end
+  end
+
+  result
+
+end

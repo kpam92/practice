@@ -117,3 +117,10 @@ end
 # then iterates over subsequent sequences of the set and returns those sets
 # with each letter in its sequence in a recursive manner. This takes O(4^n)
 # because of all the possibilities of each sequence.
+
+# Looksay sequence starts with '1', then afterwards follows with numbers of
+# how many digits appear. i.e. '1', '11','21','1211'. Given an integer,
+# find the n'th number in the sequence.
+
+def look_say(n)
+end

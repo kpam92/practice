@@ -24,8 +24,10 @@ def insert_interval(sets,n)
     curr_compare = sets.shift
     if intersect?(n,curr_compare)
       n = [[n[0],curr_compare[0]].min,[n[1],curr_compare[1]].max]
+      result.push(n) if sets.length == 0
     elsif n[1] < curr_compare[1]
       result.push(n)
+      result.push(curr_compare)
       result.concat(sets)
       break
     else
@@ -42,3 +44,5 @@ def intersect?(array1,array2)
 end
 
 p insert_interval([[1,2],[3,5],[6,7],[8,10],[12,16]],[4,9])
+p insert_interval([[1,3],[6,9]],[2,5])
+p insert_interval([[1,6]],[2,5])

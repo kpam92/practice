@@ -24,7 +24,7 @@ end
 def find_next_diff(array1,array2)
   idx = 0
   while idx < array1.length && idx < array2.length
-    if array1[idx1] == array[idx2]
+    if array1[idx] == array2[idx]
       if idx == array1.length - 1
         return ['array2',idx]
       elsif idx == array2.length - 1

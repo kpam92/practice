@@ -28,8 +28,8 @@ def single_riffle?(main,deck1,deck2)
 end
 
 
-main = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-deck1 = [1,2,4,6,8,10,13,14,15]
-deck1 = [3,5,7,9,11,16]
-
-p single_riffle?(main,deck1,deck2)
+# main = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+# deck1 = [1,2,4,6,8,10,13,14,15]
+# deck2 = [3,5,7,9,11,12,16]
+#
+# p single_riffle?(main,deck1,deck2)

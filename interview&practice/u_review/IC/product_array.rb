@@ -5,6 +5,7 @@ Write a function get_products_of_all_ints_except_at_index() that takes an array 
 
 
 def prod_of_others(array)
+  return nil if array.length == 1
   result = [1]
 
   curr_multiplier = 1
@@ -16,8 +17,18 @@ def prod_of_others(array)
     idx += 1
   end
 
+  curr_multiplier = array[-1]
+  idx = array.length - 2
+
+  while idx >= 0
+    result[idx] *= curr_multiplier
+    curr_multiplier *= array[idx]
+    idx -= 1
+  end
+
   result
 
 end
 
-puts prod_of_others([1, 7, 3, 4])
+# p prod_of_others([1, 7, 3, 4])
+# p prod_of_others([1,2,3])

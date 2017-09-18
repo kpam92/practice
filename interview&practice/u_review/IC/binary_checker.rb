@@ -26,19 +26,23 @@ end
 
 def valid_tree?(node)
   return true if node.left.nil? && node.right.nil?
-  return checker(node)[1]
+  return checker(node)[2]
 end
 
 def checker(node)
-  return [nil,true] if node.nil?
+  return [nil,nil,true] if node.nil?
 
   right = checker(node.right)
   left = checker(node.left)
+  # return [node.value,node.value,true] if right.nil?
 
-  return [nil,false] if right[1] == false || left[1] == false
-
-  if (right[0] != nil && right[0] < node.value) || (left[0] != nil && left[0] > node.value )
-     return [nil,false]
+  return [nil,nil,false] if right[2] == false || left[2] == false
+  curr_highest = [right[1]||node.value - 1,left[1]||node.value - 1,node.value].max
+  curr_lowest = [right[0]||node.value + 1,left[0]||node.value + 1,node.value].min
+  if (right[0].nil? || right[0] > node.value) && (left[1].nil? || left[1] < node.value )
+    return [curr_lowest,curr_highest, true]
+  else
+     return [nil,nil,false]
   end
 
   return [node.value,true]
@@ -49,6 +53,6 @@ a = BinaryTreeNode.new(10)
 a.insert_right(15)
 a.insert_left(5)
 a.right.insert_right(20)
-a.right.insert_left(12)
+a.right.insert_left(11)
 
 puts valid_tree?(a)

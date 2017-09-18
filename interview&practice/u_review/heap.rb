@@ -76,7 +76,11 @@ def heapify_down(arr)
       end
 
     end
+
+    p arr
+    p tail
   end
+  arr[0],arr[1] = arr[1],arr[0] if arr[0] > arr[1]
   arr
 end
 

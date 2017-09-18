@@ -9,23 +9,26 @@ Examples:
 "civil" should return false
 "livci" should return false
 =end
+require 'set'
 
 def perm_checker(string)
-  seen = Hash.new {|h,k| h[k] = 0}
+  seen = Set.new
 
   idx = 0
   while idx < string.length
-    seen[string[idx]] += 1
+    if seen.include?(string[idx])
+      seen.delete(string[idx])
+    else
+      seen.add(string[idx])
+    end
+
     idx += 1
   end
 
-  odd = false
-
-  seen.each do |key,value|
-    if value % 2 == 1
-      return false if odd == true
-      odd = true
-    end
-  end
-  true
+  seen.length <= 1
 end
+
+puts perm_checker('civic') == true
+puts perm_checker('ivicc') == true
+puts perm_checker('civil') == false
+puts perm_checker('livci') == false

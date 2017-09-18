@@ -6,30 +6,42 @@ For "(()", the longest valid parentheses substring is "()", which has length = 2
 Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
 =end
 
-def longest_parens(string)
-  stack = 0
+def longest_valid_parentheses(string)
+  stack = []
   longest = 0
   curr_length = 0
   idx = 0
 
   while idx < string.length
     if string[idx] == '('
-      stack += 1
-    else # string[idx] == ')'
-      if stack > 0
-        stack -= 1
-        curr_length += 2
-      else #stack == 0
-        longest = curr_length if curr_length > longest
-        curr_length = 0
+      stack.push([idx,'('])
+    else # string[idx][1] == ')'
+      if stack.length > 0 && stack[-1][1] == '('
+        stack.pop
+      else #stack == 0 || stack[-1][1] == ')'
+        stack.push([idx,')'])
       end
-      longest = curr_length if curr_length > longest
     end
-    idx += 1
+
   end
+    return string.length if stack.empty?
+
+    longest = 0
+    bottom = nil
+    idx = 0
+
+    while idx < stack.length
+        curr_diff = bottom.nil? ? stack[idx][0] : (stack[idx][0] - bottom - 1)
+
+        longest = curr_diff if curr_diff > longest
+        bottom = stack[idx][0]
+        idx += 1
+    end
+
+    longest = (string.length - stack[-1][0] - 1) if (string.length - stack[-1][0] - 1) > longest
 
   longest
 end
 
-p longest_parens(")()())")
-p longest_parens("(()")
+p longest_valid_parentheses(")()())")
+p longest_valid_parentheses("(()")

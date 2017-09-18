@@ -19,6 +19,12 @@ class BinaryMinHeap
 
   public
   def self.child_indices(len, parent_index)
+    children = []
+    child_1 = (2*parent_index) + 1
+    child_2 = (2*parent_index) + 2
+    children.push(child_1) if child_1 < len
+    children.push(child_2) if child_2 < len
+    children
   end
 
   def self.parent_index(child_index)

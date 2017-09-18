@@ -24,9 +24,9 @@ def rotation_point(array)
   while head <= tail
     middle = (head + tail)/2
     return head if middle == 0
-    if array[middle - 1][0] > array[middle]
+    if array[middle - 1] > array[middle]
       return middle
-    elsif array[middle][0] > array[0][0]
+    elsif array[middle] > array[0]
       head = middle + 1
     else
       tail = middle - 1

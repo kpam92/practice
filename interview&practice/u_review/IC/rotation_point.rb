@@ -32,7 +32,8 @@ def rotation_point(array)
       tail = middle - 1
     end
   end
-
+0
 end
 
-puts rotation_point(words)
+# puts rotation_point(words)
+# puts rotation_point(%w(d e f g a b c d))

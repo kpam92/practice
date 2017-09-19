@@ -25,7 +25,7 @@ def consecutive(arr)
     curr_sequence = []
     curr_num = x
     while seen.include?(curr_num)
-      count << curr_num
+      curr_sequence << curr_num
       curr_num += 1
     end
 
@@ -33,3 +33,6 @@ def consecutive(arr)
   end
   longest
 end
+
+p consecutive([100, 4, 200, 1, 3, 2])
+p consecutive([ 1, 11, 102, 12, 32, 13, 80, 10 ])

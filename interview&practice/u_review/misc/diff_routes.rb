@@ -9,18 +9,19 @@ in each location there are different choice, so write a code present all possibl
 =end
 
 def routes(array)
-  return [[]] if array.empty?
+  return array[0].map {|x| x = [x]} if array.length == 1
   curr_people = array.shift
+
   next_subs = routes(array)
-  result = next_subs
+  result = []
 
   curr_people.each do |curr_pass|
     next_subs.each do |curr_sub|
-      result.push([curr_pass] + curr_sub)
+      result << ([curr_pass] + curr_sub)
     end
   end
   result
 end
 
 
-puts routes([['a','b'],['c','d']])
+p routes([['a','b'],['c','d'],['e','f']])

@@ -11,6 +11,25 @@ Your algorithm should run in O(n) complexity.
 
 
 =end
+require 'set'
 
 def consecutive(arr)
+  seen = Set.new
+
+  arr.each {|x| seen.add(x)}
+
+  longest = []
+
+  seen.each do |x|
+    next if seen.include?(x - 1)
+    curr_sequence = []
+    curr_num = x
+    while seen.include?(curr_num)
+      count << curr_num
+      curr_num += 1
+    end
+
+    longest = curr_sequence if curr_sequence.length > longest.length
+  end
+  longest
 end

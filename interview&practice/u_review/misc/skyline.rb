@@ -10,5 +10,15 @@ For instance, the skyline in Figure B should be represented as:[ [2 10], [3 15],
 
 =end
 
-def skyline(array)
+def skyline(buildings)
+
+  max_x = buildins.max_by {|x| x[1]}[1]
+
+  height_array = []
+  (max_x+1).times do |i|
+    height_array << [i,0]
+  end
 end
+
+buildings = [ [2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8] ]
+puts skyline(buildings)

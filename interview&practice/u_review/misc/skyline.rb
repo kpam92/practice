@@ -27,7 +27,7 @@ def skyline(buildings)
 
   height_array.each_with_index do |coord,idx|
     next if idx == 0
-    height_array[idx-1][1] = coord[1] if coord[1] > height_array[idx-1][1]
+    height_array[idx-1][1] = coord[1] if coord[1] < height_array[idx-1][1]
   end
 
 

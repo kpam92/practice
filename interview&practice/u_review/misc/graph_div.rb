@@ -42,26 +42,48 @@ def fill_in_shape(matrix,row,column,side)
     matrix[row][column] = '=' + matrix[row][column]
     if matrix[row][column][1] == '\\'
       #check down
-      if (row < matrix.length - 1) && matrix[row+1][column] == '/'
+      if (row < matrix.length - 1) && matrix[row+1][column][0] == '/'
         fill_in_shape(matrix,row+1,column,'left')
       end
       #check left
-      if (column > 0) && matrix[row][column - 1] == '/'
+      if (column > 0) && matrix[row][column - 1][-1] == '/'
         fill_in_shape(matrix,row,column - 1,'right')
       end
     else # == '/'
       #check up
-      if (row > 0) && matrix[row-1][column] == '\\'
+      if (row > 0) && matrix[row-1][column][0] == '\\'
         fill_in_shape(matrix,row+1,column,'left')
       end
       #check left
-      if (column > 0) && matrix[row][column - 1] == '\\'
+      if (column > 0) && matrix[row][column - 1][-1] == '\\'
         fill_in_shape(matrix,row,column - 1,'right')
       end
     end
   else # side == 'right'
     matrix[row][column] += '='
+    if matrix[row][column][-2] == '\\'
+      #check up
+      if (row > 0) && matrix[row-1][column][-1] == '/'
+        fill_in_shape(matrix,row-1,column,'right')
+      end
+      #check right
+      if ( column < matrix[row].length - 1) && matrix[row][column+1][0] == '/'
+        fill_in_shape(matrix,row,column+1,'left')
+      end
+    else # == '/'
+      #check down
+      if (row < matrix.length - 1) && matrix[row+1][column][0] == '\\'
+        fill_in_shape(matrix,row+1,column,'right')
+      end
+      #check right
+      if ( column < matrix[row].length - 1) && matrix[row][column+1][0] == '\\'
+        fill_in_shape(matrix,row,column+1,'left')
+      end
+    end
   end
 end
-=/==\==/==\==/==\=
-=\==/==\==/==\==/=
+matrix = [
+  ['/','\\'],
+  ['\\','/']
+]
+puts shape_checker(matrix)

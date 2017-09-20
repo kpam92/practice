@@ -3,7 +3,7 @@ check to find if a binary tree is balanced
 =end
 class Node
 
-  attr_accessor :left, :rightmost
+  attr_accessor :left, :right
 
   def initialize
     @left = nil
@@ -17,7 +17,7 @@ class Node
 
 end
 
-def balanced_tree(root)
+def mirror_tree(root)
   return true if root.right.nil? && root.left.nil?
   return false if root.right.nil? || root.left.nil?
 
@@ -55,4 +55,4 @@ e.add_children(nil,h)
 i = Node.new
 f.add_children(i,nil)
 
-puts balanced_tree(a)
+puts mirror_tree(a)

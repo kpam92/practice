@@ -25,8 +25,30 @@ def skyline(buildings)
     end
   end
 
-  height_array
-end
+  height_array.each_with_index do |coord,idx|
+    next if idx == 0
+    height_array[idx-1][1] = coord[1] if coord[1] > height_array[idx-1][1]
+  end
+
+
+    result = []
+
+    (0..height_array.length-1).each do |i|
+
+      next if result.empty? && height_array[i][1].zero?
+
+      if i == 0
+        result << height_array[i]
+        next
+      end
+
+      result << height_array[i] if height_array[i][1] != height_array[i-1][1]
+
+      result << [i, 0] if i == height_array.length - 1
+    end
+
+    result
+  end
 
 buildings = [ [2, 9, 10], [3, 7, 15], [5, 12, 12], [15, 20, 10], [19, 24, 8] ]
 p skyline(buildings)

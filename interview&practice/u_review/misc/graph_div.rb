@@ -17,7 +17,7 @@ def shape_checker(matrix)
   idx1 = 0
   while idx1 < matrix.length
     idx2 = 0
-    while idx2 < matrix[idx].length
+    while idx2 < matrix[idx1].length
       if matrix[idx1][idx2][0] != '='
         count += 1
         fill_in_shape(matrix,idx1,idx2,'left')
@@ -52,7 +52,7 @@ def fill_in_shape(matrix,row,column,side)
     else # == '/'
       #check up
       if (row > 0) && matrix[row-1][column][0] == '\\'
-        fill_in_shape(matrix,row+1,column,'left')
+        fill_in_shape(matrix,row-1,column,'left')
       end
       #check left
       if (column > 0) && matrix[row][column - 1][-1] == '\\'
@@ -83,6 +83,7 @@ def fill_in_shape(matrix,row,column,side)
   end
 end
 matrix = [
+  ['\\','/'],
   ['/','\\'],
   ['\\','/']
 ]

@@ -25,8 +25,8 @@ return true if pattern.length == 2 && string.length > 1
 end
 
 def pattern_helper(pattern,string,a,b)
-  if pattern.length == 1
 
+  if pattern.length == 1
     if pattern == 'a'
       return true if a.nil? || string == a
       return false
@@ -35,31 +35,31 @@ def pattern_helper(pattern,string,a,b)
       return false
     end
   end
-  if pattern[0] == 'a' && !a.nil?
-    return false if string[0...a.length] != a
-    return pattern_helper(pattern[1..-1],string[a.length..-1],a,b)
 
-  elsif pattern[0] == 'b' && !b.nil?
-
-    return false if string[0...b.length] != b
-    return pattern_helper(pattern[1..-1],string[b.length..-1],a,b)
-
-  elsif pattern[0] == 'a' && a.nil?
-
-    idx = 0
-    while idx < string.length
-      curr_check = pattern_helper(pattern[1..-1],string[idx+1..-1],string[0..idx],b)
-      return curr_check if curr_check
-      idx += 1
+  if pattern[0] == 'a'
+    if a.nil?
+      idx = 0
+      while idx < string.length
+        curr_check = pattern_helper(pattern[1..-1],string[idx+1..-1],string[0..idx],b)
+        return curr_check if curr_check
+        idx += 1
+      end
+    else
+      return false if string[0...a.length] != a
+      return pattern_helper(pattern[1..-1],string[a.length..-1],a,b)
     end
 
-  elsif pattern[0] == 'b' && b.nil?
-
-    idx = 0
-    while idx < string.length
-      curr_check = pattern_helper(pattern[1..-1],string[idx+1..-1],a,string[0..idx])
-      return curr_check if curr_check
-      idx += 1
+  else # pattern[0] == 'b'
+    if b.nil?
+      idx = 0
+      while idx < string.length
+        curr_check = pattern_helper(pattern[1..-1],string[idx+1..-1],a,string[0..idx])
+        return curr_check if curr_check
+        idx += 1
+      end
+    else
+      return false if string[0...b.length] != b
+      return pattern_helper(pattern[1..-1],string[b.length..-1],a,b)
     end
   end
   false

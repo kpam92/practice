@@ -64,4 +64,4 @@ def pattern_helper(pattern,string,a,b)
   end
 end
 
-# puts pattern_matcher('baba',nil)
+puts pattern_matcher('baba','babab')

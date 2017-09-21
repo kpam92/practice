@@ -1,4 +1,4 @@
-
+require 'byebug'
 
 # Pattern Matching
 # You are given two strings, pattern and value. The pattern string consists of just
@@ -8,7 +8,8 @@
 
 
 def pattern_matcher(pattern,string)
-
+return true if pattern.length == 1 && string.length > 0
+return true if pattern.length == 2 && string.length > 1
   #normalize pattern to make 'a' be first
   if pattern[0] == 'b'
      (0...pattern.length).each do |x|
@@ -25,6 +26,7 @@ end
 
 def pattern_helper(pattern,string,a,b)
   if pattern.length == 1
+
     if pattern == 'a'
       return true if a.nil? || string == a
       return false
@@ -34,7 +36,6 @@ def pattern_helper(pattern,string,a,b)
     end
   end
   if pattern[0] == 'a' && !a.nil?
-
     return false if string[0...a.length] != a
     return pattern_helper(pattern[1..-1],string[a.length..-1],a,b)
 
@@ -60,8 +61,8 @@ def pattern_helper(pattern,string,a,b)
       return curr_check if curr_check
       idx += 1
     end
-
   end
+  false
 end
 
-puts pattern_matcher('baba','babab')
+p pattern_matcher('bbaba','catcatgocatgo')

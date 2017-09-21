@@ -1,5 +1,11 @@
 =begin
-check to find if a binary tree is balanced
+check to find if a binary tree is mirrored
+i.e
+          A
+       /     \
+      B      C
+      \     /   
+      D    E
 =end
 class Node
 

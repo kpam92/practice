@@ -39,7 +39,7 @@ end
 # puts pal_perm?('Tact Coa')
 
 def one_edit_away(string1,string2,edits = 0)
-  puts "#{string1} #{string2}"
+  # puts "#{string1} #{string2}"
   return true if string1 == string2
   return true if string1.empty? && string2.length == 1 && edits == 0
   return true if string2.empty? && string1.length == 1 && edits == 0
@@ -55,16 +55,18 @@ def one_edit_away(string1,string2,edits = 0)
       return false if edits == 1
       option1 = one_edit_away(string1[idx1..-1],string2[idx2+1..-1],1)
       option2 = one_edit_away(string1[idx1+1..-1],string2[idx2..-1],1)
-      return option1 || option2
+      option3 = one_edit_away(string1[idx1+1..-1],string2[idx2+1..-1],1)
+      return option1 || option2 || option3
     end
   end
-  
+
   (string1.length - string2.length).abs > 1 ? false : true
 end
 
 # puts one_edit_away('pale','pale')
 # puts one_edit_away('pale','bale')
-puts one_edit_away('pale','pales')
+# puts one_edit_away('ale','bale')
+# puts one_edit_away('pale','pales')
 # puts one_edit_away('pale','ple')
 # puts one_edit_away('pale','bake')
 # puts one_edit_away('pale','ke')

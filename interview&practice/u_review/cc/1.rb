@@ -116,11 +116,12 @@ def string_compression(string)
       result += "#{curr_letter}#{curr_count}"
       curr_letter = string[idx]
       curr_count = 1
+      return string if result.length >= string.length && idx < string.length - 1
     end
 
     if idx == string.length - 1
       result += "#{curr_letter}#{curr_count}"
-      return string if result.length == string.length
+      return string if result.length >= string.length
     end
 
     idx += 1
@@ -129,4 +130,53 @@ def string_compression(string)
   result
 end
 
-puts string_compression('aabcccccaaa')
+# puts string_compression('aabcccccaaa')
+# puts string_compression('abcdefg')
+
+def zero_matrix(matrix)
+  row = 0
+  rows = {}
+  columns = {}
+  while row < matrix.length
+    column = 0
+    while column < matrix[row].length
+      if matrix[row][column] == 0
+        rows[row] = true
+        columns[column] = true
+      end
+      column += 1
+    end
+    row += 1
+  end
+  zero_row(matrix,rows.keys)
+  zero_col(matrix,columns.keys)
+  matrix
+end
+def zero_row(matrix,rows)
+  rows.each do |row|
+    col = 0
+    while col < matrix[row].length
+      matrix[row][col] = 0
+      col += 1
+    end
+  end
+end
+
+def zero_col(matrix,columns)
+  columns.each do |col|
+    row = 0
+    while row < matrix.length
+      matrix[row][col] = 0
+      row += 1
+    end
+  end
+end
+
+matrix = [
+  [1,1,1,1,1,1],
+  [1,0,1,1,1,1],
+  [1,1,1,1,1,1],
+  [1,1,1,1,0,1]
+]
+
+puts zero_matrix(matrix)

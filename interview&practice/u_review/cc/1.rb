@@ -92,7 +92,7 @@ def one_edit_away(string1,string2)
   end
 
 end
-# 
+#
 # puts one_edit_away('pale','pale')
 # puts one_edit_away('pale','bale')
 # puts one_edit_away('ale','bale')
@@ -100,3 +100,33 @@ end
 # puts one_edit_away('pale','ple')
 # puts one_edit_away('pale','bake')
 # puts one_edit_away('pale','ke')
+
+def string_compression(string)
+  result = ''
+
+  curr_letter = string[0]
+  curr_count = 0
+
+  idx = 0
+
+  while idx < string.length
+    if string[idx] == curr_letter
+      curr_count += 1
+    else # string[idx] != curr_letter
+      result += "#{curr_letter}#{curr_count}"
+      curr_letter = string[idx]
+      curr_count = 1
+    end
+
+    if idx == string.length - 1
+      result += "#{curr_letter}#{curr_count}"
+      return string if result.length == string.length
+    end
+
+    idx += 1
+  end
+
+  result
+end
+
+puts string_compression('aabcccccaaa')

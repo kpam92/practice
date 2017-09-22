@@ -13,7 +13,7 @@ class Node
 end
 
 a = Node.new(1)
-a.add_children([2,3,4,5,6,7,8,9])
+a.create_children([2,3,4,5,6,7,8,9])
 
 def remove_dup(head)
   seen = {}
@@ -41,7 +41,19 @@ def k_to_last(head,k)
     count += 1
     curr = curr.next
   end
-  count
+
+  return 'doesn\'t exist' if k > count
+  trek = count - k + 1
+  curr = head
+  count = 1
+
+  until count == trek
+    count += 1
+    curr = curr.next
+  end
+
+  curr.value
+
 end
 
-p k_to_last(a,1)
+# p k_to_last(a,90)

@@ -43,22 +43,26 @@ end
 # p route?(a,f)
 
 class Node
-  attr_accessor :left, :right, :value
+  attr_accessor :left, :right, :value, :parent
 
   def initialize(value)
     @value = value
+    @parent = nil
+    @left = nil
+    @right = nil
   end
 
 end
 
-def b_tree(array)
+def b_tree(array,parent = nil)
   return nil if array.empty?
   middle = array.length/2
   left = array[0...middle]
   right = array[middle+1..-1]
   root = Node.new(array[middle])
-  root.left = b_tree(left)
-  root.right = b_tree(right)
+  root.parent = parent
+  root.left = b_tree(left,root)
+  root.right = b_tree(right,root)
   root
 end
 
@@ -167,14 +171,14 @@ def first_common_ancestor(node1,node2)
   depth_1 = 0
   curr = node1
   while curr
-    depth += 1
+    depth_1 += 1
     curr = curr.parent
   end
 
   depth_2 = 0
-  curr - node2
+  curr = node2
   while curr
-    depth += 1
+    depth_2 += 1
     curr = curr.parent
   end
 
@@ -191,7 +195,7 @@ def first_common_ancestor(node1,node2)
   end
 
   until node1.nil? || node2.nil?
-    return node1.val if node1 == node2
+    return node1.value if node1 == node2
     node1 = node1.parent
     node2 = node2.parent
   end
@@ -200,7 +204,7 @@ def first_common_ancestor(node1,node2)
 end
 
 curr_tree = b_tree([1,2,3,4,5,6,7,8,9,10])
-a = curr_tree.right.right.right
-b = curr_tree.right.right.left
-p a
-p b
+a = curr_tree.left.right
+b = curr_tree.right.left
+p curr_tree
+p first_common_ancestor(a,b)

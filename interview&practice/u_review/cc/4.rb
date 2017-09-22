@@ -52,6 +52,10 @@ class Node
     @right = nil
   end
 
+  def add_children(left,right)
+    @left = left
+    @right = right
+  end
 end
 
 def b_tree(array,parent = nil)
@@ -203,8 +207,63 @@ def first_common_ancestor(node1,node2)
   'no matching parent'
 end
 
-curr_tree = b_tree([1,2,3,4,5,6,7,8,9,10])
-a = curr_tree.left.right
-b = curr_tree.right.left
-p curr_tree
-p first_common_ancestor(a,b)
+# curr_tree = b_tree([1,2,3,4,5,6,7,8,9,10])
+# a = curr_tree.left.right
+# b = curr_tree.right.left
+# p curr_tree
+# p first_common_ancestor(a,b)
+
+
+def path_sums(node,value)
+  path_helper(node,value)[1]
+end
+
+def path_helper(node,value)
+  if node.left.nil? && node.right.nil?
+    curr_sum = node.value == value ? 1 : 0
+    return [[node.value],curr_sum]
+  end
+
+  result_sums = []
+  nice_paths = 0
+
+  if node.left
+    left = path_helper(node.left,value)
+    nice_paths += left[1]
+    left[0].each do |sum|
+      curr_sum = node.value + sum
+      nice_paths += 1 if curr_sum == value
+      result_sums.push(curr_sum)
+    end
+  end
+
+  if node.right
+    right = path_helper(node.right,value)
+    nice_paths += right[1]
+    right[0].each do |sum|
+      curr_sum = node.value + sum
+      nice_paths += 1 if curr_sum == value
+      result_sums.push(curr_sum)
+    end
+  end
+
+  [result_sums,nice_paths]
+
+end
+
+a = Node.new(10)
+b = Node.new(5)
+c = Node.new(-3)
+a.add_children(b,c)
+d = Node.new(3)
+e = Node.new(2)
+b.add_children(d,e)
+f = Node.new(11)
+c.add_children(nil,f)
+g = Node.new(3)
+h = Node.new(-2)
+d.add_children(g,h)
+i = Node.new(1)
+e.right = i
+p path_sums(a,8)
+# p a.value

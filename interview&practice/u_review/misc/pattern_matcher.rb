@@ -65,4 +65,4 @@ def pattern_helper(pattern,string,a,b)
   false
 end
 
-p pattern_matcher('bbaba','catcatgocatgo')
+p pattern_matcher('aba','aaaabaaaabaaaa')

@@ -35,3 +35,30 @@ def pal_perm?(string)
 end
 
 # puts pal_perm?('Tact Coa')
+
+def one_edit_away(string1,string2,edits = 0)
+  return true if string1 = string2
+  return true if string1.empty? && string2.length == 1 && edits == 0
+  return true if string2.empty? && string1.length == 1 && edits == 0
+  return false if string1.empty? || string2.empty?
+
+  idx1 = 0
+  idx2 = 0
+  while idx1 < string1.length && idx2 < string2.length
+    if string1[idx1] == string2[idx2]
+      idx1 += 1
+      idx2 += 1
+    elsif string1[idx1] != string2[idx2]
+      return false if edits == 1
+      option1 = one_edit_away(string1[idx..-1],string2[idx+1..-1],1)
+      option2 = one_edit_away(string1[idx+1..-1],string2[idx..-1],1)
+      return option1 || option2
+    end
+  end
+end
+
+puts one_edit_away('pale','pale')
+puts one_edit_away('pale','bale')
+puts one_edit_away('pale','pales')
+puts one_edit_away('pale','ple')
+puts one_edit_away('pale','bake')

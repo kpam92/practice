@@ -172,11 +172,18 @@ def zero_col(matrix,columns)
   end
 end
 
-matrix = [
-  [1,1,1,1,1,1],
-  [1,0,1,1,1,1],
-  [1,1,1,1,1,1],
-  [1,1,1,1,0,1]
-]
+# matrix = [
+#   [1,1,1,1,1,1],
+#   [1,0,1,1,1,1],
+#   [1,1,1,1,1,1],
+#   [1,1,1,1,0,1]
+# ]
+#
+# p zero_matrix(matrix)
 
-puts zero_matrix(matrix)
+def is_substring?(string1,string2)
+  return false if string1.length != string2
+  return true if string1 == string2
+  string1 += string1
+  string1.include?(string2)
+end

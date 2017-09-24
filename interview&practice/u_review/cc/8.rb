@@ -37,4 +37,112 @@ def triple_step(n)
   steps[-1]
 end
 
-puts triple_step(5)
+
+def make_change(amount,denominations)
+  ways = Array.new(amount+1) {0}
+  ways[0] = 1
+
+  denominations.each do |coin|
+    (coin..amount).each do |higher_amount|
+      remainder = higher_amount - coin
+      ways[higher_amount] += ways[remainder]
+    end
+  end
+  ways[-1]
+end
+
+# puts make_change(7,[5,3])
+
+def magic_index(array)
+  head = 0
+  tail = array.length - 1
+
+  while head <= tail
+    # p "head:#{head}tail:#{tail}"
+    middle = head + ((tail - head)/2)
+
+    if array[middle] == middle
+      return middle
+    elsif array[middle] > middle
+      tail = middle - 1
+    else # array[middle] < middle
+      head = middle + 1
+    end
+  end
+
+  return -1
+end
+
+# p magic_index([]) == -1
+# p magic_index([0]) == 0
+# p magic_index([1]) == -1
+# p magic_index([0,2,3,4,5,6,7,8]) == -1
+# p magic_index([-12,-9,-6,0,1,3,4,7])
+# p magic_index([0,1,2,3,4,5,6]) == 3
+# p magic_index([-40,-20,-1,1,2,3,5,7,9,12,13])
+
+matrix = [
+  [0,0,0,0,0,0],
+  [0,1,0,1,0,1],
+  [1,0,0,1,0,0],
+  [0,1,0,1,1,1],
+  [0,1,0,0,0,0]
+]
+def robot_step(matrix)
+  robot_stepper(matrix,0,0)[1]
+end
+
+def robot_stepper(matrix,row,column)
+  matrix[row][column] = 1
+  if row == matrix.length - 1 && column == matrix[row].length - 1
+    return [true,[]]
+  end
+
+  if column < matrix[row].length - 1 && matrix[row][column + 1] == 0
+    right_option = robot_stepper(matrix,row,column + 1)
+    if right_option[0]
+      return [true,['R'] + right_option[1]]
+    end
+  end
+
+  if row < matrix.length - 1 && matrix[row + 1][column] == 0
+    left_option = robot_stepper(matrix,row + 1,column)
+    if left_option[0]
+      return [true,['D'] + left_option[1]]
+    end
+  end
+
+  return [false,[]]
+end
+
+def coins(n)
+  ways = Array.new(n+1) {0}
+
+  ways[0] += 1
+
+  [1,5,10,25].each do |coin|
+    (coin..n).each do |higher_amount|
+      remainder = higher_amount - coin
+      ways[higher_amount] += ways[remainder]
+    end
+  end
+
+  ways[-1]
+end
+
+def subsets(array)
+  return [[]] if array.length == 0
+
+  curr_item = array.shift
+  result = []
+  next_subsets = subsets(array)
+  next_subsets.each {|x| result.push(x)}
+
+  next_subsets.each do |set|
+    result.push([curr_item] + set)
+  end
+
+  return result
+end
+
+p subsets(%w(a b c d e f))

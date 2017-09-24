@@ -33,7 +33,8 @@ def time_slots(array)
   while idx < time_slots.length
     curr_time, logged_in = time_slots[idx]
     logged += logged_in
-    result.push("#{curr_time}, #{logged}")
+    result.push([curr_time, logged])
+    idx += 1
   end
 
   result
@@ -43,4 +44,4 @@ times = [
   [3.1, 6.7],
   [8.9, 10.3]
 ]
-p time_slots(times)
+p time_slots(times) == [[1.2, 1], [3.1, 2], [4.5, 1], [6.7, 0], [8.9, 1], [10.3, 0]]

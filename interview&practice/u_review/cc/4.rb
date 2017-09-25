@@ -154,23 +154,36 @@ def builder(projects,dependencies)
 
   while proj_queue.length > 0
     curr_proj = proj_queue.shift
-    result.add(curr_proj.value) unless result.include?(curr_proj.valu)
-      curr_proj.children.each {|x| proj_queue.push(x) if x.parent.empty?}
+    result.add(curr_proj.value) unless result.include?(curr_proj.value)
+    curr_proj.children.each do |x|
+      x.parent.delete(curr_proj)
+      proj_queue.push(x) if x.parent.empty?
+    end
   end
 
-  # return 'can\'t do it bud' if result.length != projects
-  result
+  return 'can\'t do it bud' if result.length != projects.length
+  result.to_a
 end
+# dependencies = [
+#   ['f','c'],
+#   ['f','b'],
+#   ['b','a'],
+#   ['f','a'],
+#   ['d','c'],
+# ]
 dependencies = [
   ['f','c'],
   ['f','b'],
-  ['b','a'],
   ['f','a'],
-  ['d','c'],
+  ['b','a'],
+  ['b','h'],
+  ['b','e'],
+  ['a','e'],
+  ['d','g'],
 ]
-p builder(%w(a b c d e f),dependencies)
+p builder(%w(a b c d e f g h),dependencies)
 
-# 
+#
 # require 'set'
 # def build_order(projects,dependencies)
 #   adj = Hash.new {|h,k| h[k] = []}
@@ -297,5 +310,5 @@ h = Node.new(-2)
 d.add_children(g,h)
 i = Node.new(1)
 e.right = i
-p path_sums(a,8)
+# p path_sums(a,8)
 # p a.value

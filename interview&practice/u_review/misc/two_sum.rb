@@ -35,5 +35,28 @@ def sum_pair_two(array,k)
   nil
 end
 
-p sum_pair_two([1,2,3],4)
-p sum_pair_two([1],4)
+# p sum_pair_two([1,2,3],4)
+# p sum_pair_two([1],4)
+
+
+# C. the input array is sorted, still no extra space
+
+def sum_pair_three(array,k)
+  head = 0
+  tail = array.length - 1
+
+  while head < tail
+    curr = array[head] + array[tail]
+    if curr == k
+      return [head,tail]
+    elsif curr > k
+      tail -= 1
+    else # curr < k
+      head += 1
+    end
+  end
+  nil
+end
+
+# p sum_pair_three([1,2,3,4,10],7)
+# p sum_pair_three([1],4)

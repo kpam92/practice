@@ -122,54 +122,86 @@ end
 # d = Node.new(4)
 # a.right = d
 # p balanced_tree?(a)
+require 'set'
+class G_Node
 
-# class G_Node
+  attr_accessor :children, :parent, :value
+
+  def initialize(value)
+    @value = value
+    @children = Set.new
+    @parent = Set.new
+  end
+
+  def add_child(child)
+    child.parent.add(self)
+    @children.add(child)
+  end
+end
+
+def builder(projects,dependencies)
+  projects_hash = {}
+
+  projects.each {|x| projects_hash[x] = G_Node.new(x)}
+
+  dependencies.each do |parent,child|
+    projects_hash[parent].add_child(projects_hash[child])
+  end
+
+  proj_queue = []
+  projects_hash.values.each {|x| proj_queue.push(x) if x.parent.empty?}
+  result = Set.new
+
+  while proj_queue.length > 0
+    curr_proj = proj_queue.shift
+    result.add(curr_proj.value) unless result.include?(curr_proj.valu)
+      curr_proj.children.each {|x| proj_queue.push(x) if x.parent.empty?}
+  end
+
+  # return 'can\'t do it bud' if result.length != projects
+  result
+end
+dependencies = [
+  ['f','c'],
+  ['f','b'],
+  ['b','a'],
+  ['f','a'],
+  ['d','c'],
+]
+p builder(%w(a b c d e f),dependencies)
+
+# 
+# require 'set'
+# def build_order(projects,dependencies)
+#   adj = Hash.new {|h,k| h[k] = []}
+#   finished = []
+#   discovered = Set.new
+#   path = Set.new
+#   #key shows value of dependent project
+#   dependencies.each {|edge| adj[edge[1]].push(edge[0])}
+#   # run topological sort
+#   projects.forEach(project => topologicalSort(adj, discovered, finished, path, project));
 #
-#   attr_accessor :children, :parent, :value
+#   return finished.reverse();
+# end
 #
-#   def initialize(value)
-#     @value = value
-#     @children = []
-#   end
+# def topologicalSort(adj, discovered, finished, path, project)
+#   return if discovered.include?(project)
+#   discovered.add(project)
+#   path.add(project)
 #
-#   def add_child(child)
-#     child.parent = self
-#     @children.push(child)
-#   end
+#   for (const neighbour of adj[project]) {
+#     if (path.has(neighbour)) {
+#       throw new Error('dependencies are cyclic');
+#     }
+#
+#     topologicalSort(adj, discovered, finished, path, neighbour);
+#   }
+#   path.delete(project);
+#   finished.push(project);
 # end
 
-# def builder(projects,dependencies)
-#   projects_hash = {}
-#
-#   projects.each {|x| projects_hash[x] = G_Node.new(x)}
-#
-#   dependencies.each do |parent,child|
-#     projects_hash[parent].add_child(projects_hash[child])
-#   end
-#
-#   proj_queue = []
-#   projects_hash.values.each {|x| proj_queue.push(x) if x.parent.nil?}
-#   result = []
-#
-#   while proj_queue.length > 0
-#     curr_proj = proj_queue.shift
-#     result.push(curr_proj.value)
-#     until curr_proj.children.empty?
-#       proj_queue.push(curr_proj.children.pop)
-#     end
-#   end
-#
-#   # return 'can\'t do it bud' if result.length != projects
-#   result
-# end
-# dependencies = [
-#   ['f','c'],
-#   ['f','b'],
-#   ['b','a'],
-#   ['f','a'],
-#   ['d','c'],
-# ]
-# p builder(%w(a b c d e f),dependencies)
+
 
 def first_common_ancestor(node1,node2)
   depth_1 = 0

@@ -17,4 +17,23 @@ def sum_pair_one(array,k)
   nil
 end
 
-p sum_pair_one([1,2,3],4)
+# p sum_pair_one([1,2,3],4)
+# p sum_pair_one([1],4)
+
+# B. super fast computer but can't use extra space
+
+def sum_pair_two(array,k)
+  idx1 = 0
+  while idx1 < array.length - 1
+    idx2 = idx1 + 1
+    while idx2 < array.length
+      return [idx1,idx2] if array[idx1] + array[idx2] == k
+      idx2 += 1
+    end
+    idx1 += 1
+  end
+  nil
+end
+
+p sum_pair_two([1,2,3],4)
+p sum_pair_two([1],4)

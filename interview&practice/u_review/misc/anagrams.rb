@@ -6,7 +6,7 @@ Output: (geeksforgeeks, forgeeksgeeks), (geeksquiz, zuiqkeegs)
 =end
 
 def anagrams(arr)
-  arr.each do |string|
+  arr = arr.map do |string|
     curr_hash = Hash.new {|h,k| h[k] = 0}
     string.chars.each {|x| curr_hash[x] += 1}
     string = [curr_hash,string]
@@ -25,4 +25,4 @@ def anagrams(arr)
 end
 arr = ["geeksquiz", "geeksforgeeks", "abcd","forgeeksgeeks", "zuiqkeegs"]
 
-p anagrams(arr)
+# p anagrams(arr)

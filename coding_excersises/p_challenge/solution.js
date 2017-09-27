@@ -13,6 +13,12 @@ error = {
       id: ['Unsupported id'],
     }
   }],
+  url: {
+    site: {
+      code: ['This site code is invalid'],
+      id: ['Unsupported id'],
+    }
+  },
   tags: [{}, {
     non_field_errors: ['Only alphanumeric characters are allowed'],
     another_error: ['Only alphanumeric characters are allowed'],
@@ -41,7 +47,7 @@ function errorChanger(topObject) {
     if (Object.prototype.toString.call(topObject[key]) == '[object Array]') {
       return {key:key, value:[...new Set(arrayParser(topObject[key]))].join('. ')};
     } else if (Object.prototype.toString.call(topObject[key]) == '[object Object]') {
-      return {key:key, value:[...new Set(flatten(objectParser(topObject[key])))]};
+      return {key:key, value:[...new Set(objectParser(topObject[key]))].join('. ')};
     } else if (Object.prototype.toString.call(topObject[key]) == '[object String]') {
       // console.log(topObject[key])
       return {key:key,value:topObject[key]};

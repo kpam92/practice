@@ -1,3 +1,4 @@
+require 'set'
 # Given arr1 and arr2, find the intersection of both sets. It should be trivial to write an O(n**2) solution. Use sorting to solve in O(nlog(n)). Next, improve this to O(n) time (maybe use a non-array datastructure).
 
 #O(n^2)
@@ -28,5 +29,15 @@ def interection2(arr1,arr2)
     end
   end
 
+  result
+end
+
+#O(n)
+
+def intersection3(arr1,arr2)
+  seen = Set.new
+  result = []
+  arr1.each {|x| seen.add(x)}
+  arr2.each {|x| result << x if seen.include?(x)}
   result
 end

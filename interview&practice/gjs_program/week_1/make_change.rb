@@ -13,6 +13,7 @@ def make_change(coins,total)
   coins.each do |coin|
     (coin..total).each do |higher_amount|
       remainder = higher_amount - coin
+      next if higher_amount < coin
       if totals[higher_amount] > 0
         totals[higher_amount] = [totals[higher_amount],totals[remainder]  + 1].min
       else

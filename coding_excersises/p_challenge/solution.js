@@ -44,11 +44,11 @@ error = {
 
 function errorChanger(topObject) {
   return Object.keys(topObject).map(key => {
-    if (Object.prototype.toString.call(topObject[key]) == '[object Array]') {
-      return {key:key, value:[...new Set(arrayParser(topObject[key]))].join('. ')};
-    } else if (Object.prototype.toString.call(topObject[key]) == '[object Object]') {
-      return {key:key, value:[...new Set(objectParser(topObject[key]))].join('. ')};
-    } else if (Object.prototype.toString.call(topObject[key]) == '[object String]') {
+    if (Object.prototype.toString.call(topObject.get(key)) == '[object Array]') {
+      return {key:key, value:[...new Set(arrayParser(topObject.get(key)))].join('. ')};
+    } else if (Object.prototype.toString.call(topObject.get(key)) == '[object Object]') {
+      return {key:key, value:[...new Set(objectParser(topObject.get(key)))].join('. ')};
+    } else if (Object.prototype.toString.call(topObject.get(key)) == '[object String]') {
       // console.log(topObject[key])
       return {key:key,value:topObject[key]};
       // return 'hi'
@@ -68,15 +68,15 @@ function flatten(ary) {
 }
 function objectParser(currObject) {
   return flatten(Object.keys(currObject).map(key => {
-    if (Object.prototype.toString.call(currObject[key]) == '[object Array]') {
+    if (Object.prototype.toString.call(currObject.get(key)) == '[object Array]') {
       if (key == 'non_field_errors') {
-        console.log(flatten(arrayParser(currObject[key])))
+        console.log(flatten(arrayParser(currObject.get(key))))
       }
-      return flatten(arrayParser(currObject[key]));
+      return flatten(arrayParser(currObject.get(key)));
     }
-    else if (Object.prototype.toString.call(currObject[key]) == '[object Object]') {
-      return objectParser(currObject[key]);
-    } else if (Object.prototype.toString.call(currObject[key]) == '[object String]'){
+    else if (Object.prototype.toString.call(currObject.get(key)) == '[object Object]') {
+      return objectParser(currObject.get(key));
+    } else if (Object.prototype.toString.call(currObject.get(key)) == '[object String]'){
       return currObject[key];
     }
   }))

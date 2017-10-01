@@ -7,13 +7,13 @@ function transformErrors(currObject) {
   function errorChanger(topObject) {
     return topObject.keySeq().toArray().map(key => {
       if (key == 'url' || key == 'urls') {
-        return {key:key, value:topObject.get(key)};
+        return [key,topObject.get(key)];
       } else if (Object.prototype.toString.call(topObject.get(key).toJS()) == '[object Array]') {
-        return {key:key, value:[...new Set(arrayParser(topObject.get(key)))].join('. ')};
+        return [key,[...new Set(arrayParser(topObject.get(key)))].join(' ')];
       } else if (Object.prototype.toString.call(topObject.get(key).toJS()) == '[object Object]') {
-        return {key:key, value:[...new Set(objectParser(topObject.get(key)))].join('. ')};
+        return [key,[...new Set(objectParser(topObject.get(key)))].join(' ')];
       } else if (Object.prototype.toString.call(topObject.get(key).toJS()) == '[object String]') {
-        return {key:key,value:topObject[key]};
+        return [key,topObject[key] + '.'];
       }
       })
       // .reduce(function(obj,item){
@@ -39,7 +39,7 @@ function transformErrors(currObject) {
       else if (Object.prototype.toString.call(currObject.get(key)) == '[object Object]') {
         return objectParser(currObject.get(key));
       } else if (Object.prototype.toString.call(currObject.get(key)) == '[object String]'){
-        return currObject[key];
+        return currObject[key] + '.';
       }
     }))
   };
@@ -51,14 +51,14 @@ function transformErrors(currObject) {
       } else if (Object.prototype.toString.call(item) == '[object Object]'){
         return objectParser(item);
       } else if (Object.prototype.toString.call(item) == '[object String]'){
-        return item;
+        return item + '.';
       };
     }))
   };
 
 
   console.log(errorChanger(currObject));
-  return errorChanger(currObject);
+  return Immutable.Map(errorChanger(currObject));
 }
 
 it('should tranform errors', () => {

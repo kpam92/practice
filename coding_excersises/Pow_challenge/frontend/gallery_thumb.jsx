@@ -7,7 +7,9 @@ class GalleryThumb extends React.Component {
   }
 
   render(){
+    var {url, large_url} = this.props.photo;
     return(
+      <img className="thumbnails" src={url}/>
     )
   }
 }

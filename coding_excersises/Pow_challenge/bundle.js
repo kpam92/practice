@@ -22442,11 +22442,13 @@ var Gallery = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this, props));
 
     _this.state = {
-      activeImage: "",
-      inactiveImages: []
+      inactiveImages: [''],
+      currIndex: 0
     };
     _this.populateImages = _this.populateImages.bind(_this);
     _this.setActiveImage = _this.setActiveImage.bind(_this);
+    _this.alternatePhoto = _this.alternatePhoto.bind(_this);
+    _this.incrementTime();
     return _this;
   }
 
@@ -22454,6 +22456,22 @@ var Gallery = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.populateImages();
+    }
+  }, {
+    key: 'incrementTime',
+    value: function incrementTime() {
+      setInterval(this.alternatePhoto, 3000);
+    }
+  }, {
+    key: 'alternatePhoto',
+    value: function alternatePhoto() {
+      var _state = this.state,
+          inactiveImages = _state.inactiveImages,
+          currIndex = _state.currIndex;
+
+      var nextIdx = (currIndex + 1) % inactiveImages.length;
+      this.setState({ currIndex: nextIdx });
+      console.log(inactiveImages[0].url);
     }
   }, {
     key: 'populateImages',
@@ -22466,8 +22484,7 @@ var Gallery = function (_React$Component) {
           return data;
         }
       }).then(function (data) {
-        _this2.setState({ activeImage: data.images[0] });
-        _this2.setState({ inactiveImages: data.images.slice(1, data.images.length - 1) });
+        _this2.setState({ inactiveImages: data.images });
       });
     }
   }, {
@@ -22479,15 +22496,18 @@ var Gallery = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var inactiveImages = this.state.inactiveImages;
+      var _state2 = this.state,
+          inactiveImages = _state2.inactiveImages,
+          currIndex = _state2.currIndex;
 
       var photoDetails = inactiveImages.map(function (photo) {
         return _react2.default.createElement(_gallery_thumb2.default, { key: photo.id, photo: photo });
       });
+      var currentImage = inactiveImages[currIndex].url ? inactiveImages[currIndex].url : '';
       return _react2.default.createElement(
         'div',
         null,
-        '[ Active Gallery Image Here ]',
+        _react2.default.createElement('img', { className: 'active-image', src: currentImage }),
         photoDetails
       );
     }

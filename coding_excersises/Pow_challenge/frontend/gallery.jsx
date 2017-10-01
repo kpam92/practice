@@ -5,15 +5,28 @@ class Gallery extends React.Component {
    constructor(props){
      super(props);
      this.state = {
-       activeImage : "",
-       inactiveImages: []
+       inactiveImages: [''],
+       currIndex: 0
      }
      this.populateImages = this.populateImages.bind(this);
      this.setActiveImage = this.setActiveImage.bind(this);
+     this.alternatePhoto = this.alternatePhoto.bind(this);
+     this.incrementTime();
    }
 
    componentDidMount(){
      this.populateImages();
+   }
+
+   incrementTime() {
+     setInterval(this.alternatePhoto, 3000)
+   }
+
+   alternatePhoto(){
+     let {inactiveImages, currIndex} = this.state;
+     let nextIdx = (currIndex + 1) % inactiveImages.length;
+     this.setState({currIndex:nextIdx});
+     console.log(inactiveImages[0].url);
    }
 
   populateImages(){
@@ -21,8 +34,7 @@ class Gallery extends React.Component {
       url: 'http://www.splashbase.co/api/v1/images/latest',
       success: (data => {return data})
     }).then(data => {
-      this.setState({activeImage:data.images[0]});
-      this.setState({inactiveImages:data.images.slice(1,data.images.length - 1)});
+      this.setState({inactiveImages:data.images});
     });
   }
 
@@ -32,15 +44,15 @@ class Gallery extends React.Component {
   }
 
    render(){
-     var { inactiveImages } = this.state;
+     var { inactiveImages,currIndex } = this.state;
      const photoDetails = inactiveImages.map(photo => (
        <GalleryThumb key={photo.id} photo={photo}/>
       )
     );
+    var currentImage = inactiveImages[currIndex].url ? inactiveImages[currIndex].url : ''
     return (
       <div>
-      [ Active Gallery Image Here ]
-      {/*Include thumbnails here*/}
+      <img className='active-image'src={currentImage}/>
       {photoDetails}
     </div>
     )

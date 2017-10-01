@@ -1,3 +1,7 @@
 .thumbnails {
   max-width: 200px;
 }
+
+.active-image {
+  max-width: 400px;
+}

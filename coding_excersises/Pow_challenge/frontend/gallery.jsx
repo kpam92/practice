@@ -12,7 +12,7 @@ class Gallery extends React.Component {
      this.setActiveImage = this.setActiveImage.bind(this);
      this.alternatePhoto = this.alternatePhoto.bind(this);
      this.changeIndexClick = this.changeIndexClick.bind(this);
-     this.incrementTime = this.incrementTime.bind(this);
+     this.deleteImage = this.deleteImage.bind(this);
      this.incrementTime();
    }
 
@@ -45,18 +45,36 @@ class Gallery extends React.Component {
   }
 
   changeIndexClick(idx) {
-    // debugger;
     this.setState({currIndex:idx});
+  }
+  deleteImage(idx) {
+    let { currIndex } = this.state;
 
-    // this.incrementTime();
+    let newIdx = currIndex;
+    if (idx < currIndex) {
+      newIdx -= 1
+    };
+    // debugger;
+
+    let currImages = this.state.inactiveImages;
+    currImages.splice(idx,1);
+    this.setState({inactiveImages:currImages});
+    this.setState({currIndex:newIdx});
+
   }
    render(){
      var { inactiveImages,currIndex } = this.state;
      const photoDetails = inactiveImages.map((photo,index) => (
-       <GalleryThumb key={photo.id} photo={photo} index={index} changeIndex={this.changeIndexClick}/>
+       <GalleryThumb
+        key={photo.id}
+        photo={photo}
+        index={index}
+        changeIndex={this.changeIndexClick}
+        deleteImage={this.deleteImage}
+        />
      )
     );
-    var currentImage = inactiveImages[currIndex].url;
+    var currentImage = inactiveImages.length > 0 ? inactiveImages[currIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
     return (
       <div>
         <img className='active-image'src={currentImage}/>

@@ -22449,7 +22449,7 @@ var Gallery = function (_React$Component) {
     _this.setActiveImage = _this.setActiveImage.bind(_this);
     _this.alternatePhoto = _this.alternatePhoto.bind(_this);
     _this.changeIndexClick = _this.changeIndexClick.bind(_this);
-    _this.incrementTime = _this.incrementTime.bind(_this);
+    _this.deleteImage = _this.deleteImage.bind(_this);
     _this.incrementTime();
     return _this;
   }
@@ -22497,10 +22497,24 @@ var Gallery = function (_React$Component) {
   }, {
     key: 'changeIndexClick',
     value: function changeIndexClick(idx) {
-      // debugger;
       this.setState({ currIndex: idx });
+    }
+  }, {
+    key: 'deleteImage',
+    value: function deleteImage(idx) {
+      var currIndex = this.state.currIndex;
 
-      // this.incrementTime();
+
+      var newIdx = currIndex;
+      if (idx < currIndex) {
+        newIdx -= 1;
+      };
+      // debugger;
+
+      var currImages = this.state.inactiveImages;
+      currImages.splice(idx, 1);
+      this.setState({ inactiveImages: currImages });
+      this.setState({ currIndex: newIdx });
     }
   }, {
     key: 'render',
@@ -22512,9 +22526,15 @@ var Gallery = function (_React$Component) {
           currIndex = _state2.currIndex;
 
       var photoDetails = inactiveImages.map(function (photo, index) {
-        return _react2.default.createElement(_gallery_thumb2.default, { key: photo.id, photo: photo, index: index, changeIndex: _this3.changeIndexClick });
+        return _react2.default.createElement(_gallery_thumb2.default, {
+          key: photo.id,
+          photo: photo,
+          index: index,
+          changeIndex: _this3.changeIndexClick,
+          deleteImage: _this3.deleteImage
+        });
       });
-      var currentImage = inactiveImages[currIndex].url;
+      var currentImage = inactiveImages.length > 0 ? inactiveImages[currIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
       return _react2.default.createElement(
         'div',
         null,
@@ -22591,18 +22611,30 @@ var GalleryThumb = function (_React$Component) {
   }
 
   _createClass(GalleryThumb, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var _props = this.props,
           changeIndex = _props.changeIndex,
+          deleteImage = _props.deleteImage,
           index = _props.index;
       var _props$photo = this.props.photo,
           url = _props$photo.url,
           large_url = _props$photo.large_url;
 
-      return _react2.default.createElement("img", { className: "thumbnails", src: url, onClick: function onClick() {
-          return changeIndex(index);
-        } });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'span',
+          { className: 'delete', onClick: function onClick() {
+              return deleteImage(index);
+            } },
+          'X'
+        ),
+        _react2.default.createElement('img', { className: 'thumbnails', src: url, onClick: function onClick() {
+            return changeIndex(index);
+          } })
+      );
     }
   }]);
 

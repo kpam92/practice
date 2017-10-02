@@ -1,12 +1,15 @@
 import React from 'react';
 import GalleryThumb from './gallery_thumb';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import Transition from 'react-transition-group/Transition';
 
 class Gallery extends React.Component {
    constructor(props){
      super(props);
      this.state = {
        inactiveImages: [''],
-       currIndex: 0
+       currIndex: 0,
+       in: false
      }
      this.populateImages = this.populateImages.bind(this);
      this.setActiveImage = this.setActiveImage.bind(this);
@@ -25,13 +28,10 @@ class Gallery extends React.Component {
    }
 
    alternatePhoto(){
-    //  debugger;
-    //  let currImage = document.getElementById('active-image');
-    //  currImage.id = 'change-image';
+
      let {inactiveImages, currIndex} = this.state;
      let nextIdx = (currIndex + 1) % inactiveImages.length;
      this.setState({currIndex:nextIdx});
-    //  setTimeout(() => {currImage.id = 'active-image'},1000);
 
    }
 
@@ -79,9 +79,6 @@ class Gallery extends React.Component {
      )
     );
     var currentImage = inactiveImages.length > 0 ? inactiveImages[currIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
-    // var lastIndex = currIndex - 1 >= 0 ? currIndex - 1 : currIndex + inactiveImages.length - 2;
-    // var prevImage = inactiveImages.length > 0 ? inactiveImages[lastIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
-    // <img className='last-image'src={currentImage}/>
     return (
       <div className='photos'>
         <div className='active-container'>

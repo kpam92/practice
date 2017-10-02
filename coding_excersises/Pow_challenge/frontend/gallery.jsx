@@ -25,9 +25,14 @@ class Gallery extends React.Component {
    }
 
    alternatePhoto(){
+    //  debugger;
+    //  let currImage = document.getElementById('active-image');
+    //  currImage.id = 'change-image';
      let {inactiveImages, currIndex} = this.state;
      let nextIdx = (currIndex + 1) % inactiveImages.length;
      this.setState({currIndex:nextIdx});
+    //  setTimeout(() => {currImage.id = 'active-image'},1000);
+
    }
 
   populateImages(){
@@ -54,7 +59,6 @@ class Gallery extends React.Component {
     if (idx < currIndex) {
       newIdx -= 1
     };
-    // debugger;
 
     let currImages = this.state.inactiveImages;
     currImages.splice(idx,1);
@@ -75,9 +79,14 @@ class Gallery extends React.Component {
      )
     );
     var currentImage = inactiveImages.length > 0 ? inactiveImages[currIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
+    // var lastIndex = currIndex - 1 >= 0 ? currIndex - 1 : currIndex + inactiveImages.length - 2;
+    // var prevImage = inactiveImages.length > 0 ? inactiveImages[lastIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
+    // <img className='last-image'src={currentImage}/>
     return (
-      <div>
-        <img className='active-image'src={currentImage}/>
+      <div className='photos'>
+        <div className='active-container'>
+          <img id='active-image' src={currentImage}/>
+        </div>
         {photoDetails}
       </div>
     )

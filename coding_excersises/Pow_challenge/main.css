@@ -2,6 +2,15 @@
   max-width: 200px;
 }
 
-.active-image {
+#active-image {
   max-width: 400px;
+}
+#change-image {
+  max-width:20px;
+  transition-duration: 1.4s;
+}
+
+.active-container {
+  width:400px;
+  height: 400px;
 }

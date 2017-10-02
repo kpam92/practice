@@ -22467,12 +22467,16 @@ var Gallery = function (_React$Component) {
   }, {
     key: 'alternatePhoto',
     value: function alternatePhoto() {
+      //  debugger;
+      //  let currImage = document.getElementById('active-image');
+      //  currImage.id = 'change-image';
       var _state = this.state,
           inactiveImages = _state.inactiveImages,
           currIndex = _state.currIndex;
 
       var nextIdx = (currIndex + 1) % inactiveImages.length;
       this.setState({ currIndex: nextIdx });
+      //  setTimeout(() => {currImage.id = 'active-image'},1000);
     }
   }, {
     key: 'populateImages',
@@ -22509,7 +22513,6 @@ var Gallery = function (_React$Component) {
       if (idx < currIndex) {
         newIdx -= 1;
       };
-      // debugger;
 
       var currImages = this.state.inactiveImages;
       currImages.splice(idx, 1);
@@ -22535,10 +22538,17 @@ var Gallery = function (_React$Component) {
         });
       });
       var currentImage = inactiveImages.length > 0 ? inactiveImages[currIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
+      // var lastIndex = currIndex - 1 >= 0 ? currIndex - 1 : currIndex + inactiveImages.length - 2;
+      // var prevImage = inactiveImages.length > 0 ? inactiveImages[lastIndex].url : "https://www.oatey.com/ASSETS/WEB_THEMES//OATEY/images/NoImage.png";
+      // <img className='last-image'src={currentImage}/>
       return _react2.default.createElement(
         'div',
-        null,
-        _react2.default.createElement('img', { className: 'active-image', src: currentImage }),
+        { className: 'photos' },
+        _react2.default.createElement(
+          'div',
+          { className: 'active-container' },
+          _react2.default.createElement('img', { id: 'active-image', src: currentImage })
+        ),
         photoDetails
       );
     }

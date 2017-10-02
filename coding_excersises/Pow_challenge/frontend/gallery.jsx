@@ -11,10 +11,12 @@ class Gallery extends React.Component {
      this.populateImages = this.populateImages.bind(this);
      this.setActiveImage = this.setActiveImage.bind(this);
      this.alternatePhoto = this.alternatePhoto.bind(this);
+     this.changeIndexClick = this.changeIndexClick.bind(this);
+     this.incrementTime = this.incrementTime.bind(this);
      this.incrementTime();
    }
 
-   componentDidMount(){
+   componentWillMount(){
      this.populateImages();
    }
 
@@ -26,7 +28,6 @@ class Gallery extends React.Component {
      let {inactiveImages, currIndex} = this.state;
      let nextIdx = (currIndex + 1) % inactiveImages.length;
      this.setState({currIndex:nextIdx});
-     console.log(inactiveImages[0].url);
    }
 
   populateImages(){
@@ -43,18 +44,24 @@ class Gallery extends React.Component {
     this.setState({activeImage:currImage});
   }
 
+  changeIndexClick(idx) {
+    // debugger;
+    this.setState({currIndex:idx});
+
+    // this.incrementTime();
+  }
    render(){
      var { inactiveImages,currIndex } = this.state;
-     const photoDetails = inactiveImages.map(photo => (
-       <GalleryThumb key={photo.id} photo={photo}/>
-      )
+     const photoDetails = inactiveImages.map((photo,index) => (
+       <GalleryThumb key={photo.id} photo={photo} index={index} changeIndex={this.changeIndexClick}/>
+     )
     );
-    var currentImage = inactiveImages[currIndex].url ? inactiveImages[currIndex].url : ''
+    var currentImage = inactiveImages[currIndex].url;
     return (
       <div>
-      <img className='active-image'src={currentImage}/>
-      {photoDetails}
-    </div>
+        <img className='active-image'src={currentImage}/>
+        {photoDetails}
+      </div>
     )
     }
 }

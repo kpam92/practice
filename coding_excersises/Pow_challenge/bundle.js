@@ -22448,13 +22448,15 @@ var Gallery = function (_React$Component) {
     _this.populateImages = _this.populateImages.bind(_this);
     _this.setActiveImage = _this.setActiveImage.bind(_this);
     _this.alternatePhoto = _this.alternatePhoto.bind(_this);
+    _this.changeIndexClick = _this.changeIndexClick.bind(_this);
+    _this.incrementTime = _this.incrementTime.bind(_this);
     _this.incrementTime();
     return _this;
   }
 
   _createClass(Gallery, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
       this.populateImages();
     }
   }, {
@@ -22471,7 +22473,6 @@ var Gallery = function (_React$Component) {
 
       var nextIdx = (currIndex + 1) % inactiveImages.length;
       this.setState({ currIndex: nextIdx });
-      console.log(inactiveImages[0].url);
     }
   }, {
     key: 'populateImages',
@@ -22494,16 +22495,26 @@ var Gallery = function (_React$Component) {
       this.setState({ activeImage: currImage });
     }
   }, {
+    key: 'changeIndexClick',
+    value: function changeIndexClick(idx) {
+      // debugger;
+      this.setState({ currIndex: idx });
+
+      // this.incrementTime();
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _state2 = this.state,
           inactiveImages = _state2.inactiveImages,
           currIndex = _state2.currIndex;
 
-      var photoDetails = inactiveImages.map(function (photo) {
-        return _react2.default.createElement(_gallery_thumb2.default, { key: photo.id, photo: photo });
+      var photoDetails = inactiveImages.map(function (photo, index) {
+        return _react2.default.createElement(_gallery_thumb2.default, { key: photo.id, photo: photo, index: index, changeIndex: _this3.changeIndexClick });
       });
-      var currentImage = inactiveImages[currIndex].url ? inactiveImages[currIndex].url : '';
+      var currentImage = inactiveImages[currIndex].url;
       return _react2.default.createElement(
         'div',
         null,
@@ -22582,11 +22593,16 @@ var GalleryThumb = function (_React$Component) {
   _createClass(GalleryThumb, [{
     key: "render",
     value: function render() {
+      var _props = this.props,
+          changeIndex = _props.changeIndex,
+          index = _props.index;
       var _props$photo = this.props.photo,
           url = _props$photo.url,
           large_url = _props$photo.large_url;
 
-      return _react2.default.createElement("img", { className: "thumbnails", src: url });
+      return _react2.default.createElement("img", { className: "thumbnails", src: url, onClick: function onClick() {
+          return changeIndex(index);
+        } });
     }
   }]);
 

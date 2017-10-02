@@ -7,9 +7,10 @@ class GalleryThumb extends React.Component {
   }
 
   render(){
+    var {changeIndex,index } = this.props;
     var {url, large_url} = this.props.photo;
     return(
-      <img className="thumbnails" src={url}/>
+      <img className="thumbnails" src={url} onClick={() => changeIndex(index)}/>
     )
   }
 }
